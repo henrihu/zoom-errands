@@ -8,13 +8,19 @@
     "angular-messages": "~1.4.2",
     "angular-aria": "~1.4.2",
     "jquery": "~2.1.4",
-    "angular-resource": "~1.4.2",
     "angular-ui-router": "~0.2.15",
     "bootstrap-sass": "~3.3.5",
     "angular-bootstrap": "~0.13.4",
     "angular-toastr": "~1.5.0",
     "moment": "~2.10.6",
-    "angular": "~1.4.2"
+    "angular": "~1.4.2",
+    "angular-google-maps": "~2.2.1",
+    "restangular": "~1.5.1",
+    "ng-token-auth": "~0.0.28",
+    "angular-file-upload": "~2.2.0",
+    "angular-slick": "~0.2.1",
+    "bootstrap-ui-datetime-picker": "~2.0.4",
+    "angular-ui-select3": "ui-select#*"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.2"
