@@ -2,8 +2,8 @@
 <html ng-app="zeyogen">
   <head>
     <meta charset="utf-8">
-    <title>zeyogen</title>
-    <meta name="description" content="">
+    <title>ZoomErrands - Errand Delivery Services</title>
+    <meta name="description" content="Zoom Errands is the most reliable errands site.">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -19,12 +19,13 @@
     <!-- endinject -->
     <!-- endbuild -->
   </head>
-  <body>
+  <body ng-controller="AppController as vm">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div ui-view></div>
+    <div id="main" class="" flex layout="row" ui-view="main" 
+        style="width: 100%; left: 0px; right: 0px; position: absolute; height: 100%;"></div>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->

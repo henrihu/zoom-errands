@@ -6,16 +6,27 @@
     .config(routerConfig);
 
   /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      });
+  function routeConfig($stateProvider, $urlRouterProvider, $locationProvider)
+  {
+      $locationProvider.html5Mode(true);
 
-    $urlRouterProvider.otherwise('/');
+      // $urlRouterProvider.otherwise('/dashboard-project');
+      $urlRouterProvider.otherwise('/pages/homepage');
+
+      $stateProvider
+          .state('app', {
+              abstract: true,
+              views   : {
+                  'main@'         : {
+                      templateUrl: 'app/main/layouts/ze_layout.html'
+                  },  
+
+                  'navbar@app'    : {
+                      templateUrl: 'app/main/layouts/navbar.html'
+                  },                 
+
+              }
+          });
   }
 
 })();
