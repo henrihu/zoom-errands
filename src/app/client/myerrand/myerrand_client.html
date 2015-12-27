@@ -1,0 +1,50 @@
+<div id="myerrand-client" class="border-top">
+    <div id="login-form-wrapper"  class="container margin-top-40">
+        <div class="row">
+            <div id="login-form" class="col-md-12 ">
+                <p>Open Errands</p>
+                <table class="table table-bordered  table-responsive">
+                    <thead>                    
+                        <th>Date Time</th>
+                        <th>Title</th>                        
+                        <th>Address</th>                        
+                        <th>Type</th>
+                        <th>Escrow Access</th>
+                        <th>Serice Provider</th>                        
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="task in vm.tasks | filter:{ status: 'open' }">
+                            <td>{{task.datetime | date: 'dd MMM yyyy HH:mm'}}</td>
+                            <td><a ui-sref='app.client.editerrand({id: {{task.id}}})'>{{task.title}}</a></td>
+                            <td>{{task.address}}</td>                            
+                            <td>{{task.type.name}}</td>   
+                            <td>{{task.escrowable}}</td>
+                            <td>{{task.provider}}</td>                           
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>Closed Errands</p>
+                <table class="table table-bordered table-responsive ">   
+                    <thead>                    
+                        <th>Date Time</th>
+                        <th>Title</th>
+                        <th>Serice Provider</th>
+                        <th>Escrow Used</th>                        
+                        <th>Hours Used</th>                        
+                    </thead>                 
+                    <tbody>
+                        <tr ng-repeat="task in vm.tasks | filter:{ status: 'close' }">
+                            <td>{{task.datetime | date: 'dd MMM yyyy HH:mm'}}</td>
+                            <td>{{task.title}}</td>
+                            <td>{{task.provider.fname}} {{task.provider.lname}}</td>                            
+                            <td>{{task.usedEscrow}}</td>                            
+                            <td>{{task.usedHour}}</td>                            
+                        </tr>
+                    </tbody>
+                </table>                                 
+            </div>
+        </div>        
+    </div>
+</div>
+

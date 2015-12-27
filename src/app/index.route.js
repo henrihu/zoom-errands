@@ -6,7 +6,7 @@
     .config(routerConfig);
 
   /** @ngInject */
-  function routeConfig($stateProvider, $urlRouterProvider, $locationProvider)
+  function routerConfig($stateProvider, $urlRouterProvider, $locationProvider)
   {
       $locationProvider.html5Mode(true);
 
@@ -23,7 +23,7 @@
 
                   'navbar@app'    : {
                       templateUrl: 'app/main/layouts/navbar.html'
-                  },                 
+                  }                 
 
               }
           });

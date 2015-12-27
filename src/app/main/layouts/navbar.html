@@ -1,0 +1,108 @@
+<nav class="navbar navbar-default" ng-init="client_signedIn=(user.signedIn && user.configName=='default')">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img  src="assets/images/logos/ze_logo_header.png" />
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">             
+                
+            
+            <ul class="nav navbar-nav navbar-right">
+        		<li ng-if="user.signedIn">
+                    <a class="page-scroll" ui-sref="app.pages_homepage">
+                    	Home
+                    </a>
+                </li>
+
+                <li ng-if="user.signedIn && user.configName=='default'">
+                    <a class="page-scroll" ui-sref="app.client.dashboard">
+                        Dashboard
+                    </a>
+                </li> 
+
+                <li ng-if="user.signedIn && user.configName=='default'">
+                    <a class="page-scroll" ui-sref="app.client.myerrand">
+                        My Errands
+                    </a>
+                </li>  
+
+                <li ng-if="user.signedIn && user.configName=='default'">
+                    <a class="page-scroll" ui-sref="app.client.myerrand">
+                        Time Status
+                    </a>
+                </li>  
+
+                <li ng-if="user.signedIn && user.configName=='default'">
+                    <a class="page-scroll" ui-sref="app.client.myerrand">
+                        Purchase Hours
+                    </a>
+                </li>                
+
+                <li ng-if="user.signedIn" class="dropdown">
+                  <a href="#" class="dropdown-toggle image-padding"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <div layout="row" layout-align="end center" class="float-right">
+                        <div class="avatar-wrapper">
+                            <img md-menu-align-target class="avatar" ng-show="!user.signedIn" src="assets/images/avatars/profile.jpg">
+                            <img md-menu-align-target class="avatar" ng-show="user.signedIn" ng-src="{{user.photoUrl}}">
+                        </div>
+                        <!-- <span>ACCOUNT </span><span class="caret"></span> -->
+                        <span class="username" hide-sm>{{user.fname|capitalize}} {{user.lname|capitalize}}</span>
+                        <md-icon md-font-icon="icon-chevron-down"
+                                 class="icon s16" hide-sm></md-icon>
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu">                    
+                    <li><a ng-if="user.configName == 'default'" ui-sref="app.client.profile">My Profile</a></li>
+                    <li><a ng-if="user.configName == 'provider'" ui-sref="app.provider.profile">My Profile</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a class="cursor-pointer" ng-click="signOut()">Log out</a></li>
+                  </ul>
+                </li>
+
+                <li ng-if="!user.signedIn">
+                    <a class="page-scroll" ui-sref="app.pages_auth_register">
+                    	Sign Up
+                    </a>
+                </li>
+                <li ng-if="!user.signedIn">	                		
+                    <a class="page-scroll" href="#howitworks">
+                    	How It Works
+                    </a>
+                </li>
+                <li ng-if="!user.signedIn">	                		
+                    <a class="page-scroll" ui-sref="app.pages_auth_login">
+                    	Log In
+                    </a>
+                </li>
+                <li ng-if="!user.signedIn">	                		
+                    <a class="page-scroll text-primary" href="#contactus">
+                    	<md-icon md-font-icon="icon-phone" class="icon blue-500-fg"></md-icon>
+                    	(310) 425-6425
+                    </a>
+                </li>	                
+            </ul>            
+        </div>
+    </div>
+</nav>
+
+<div class="container" ng-if="user.signedIn && user.configName=='default'">
+    <div class"row">
+        <div class="col-sm-10 col-sm-offset-1" layout="row" layout-align="start center">    
+            <li class="margin-left-12   0 escrow-hours">
+                Errand hours remaining: 
+                <span class="text-primary">3.5</span>                                          
+            </li>
+
+            <li class="margin-left-10 escrow-hours">
+                Escrow balance: 
+                <span class="text-primary">{{23.21 | currency}}</span>
+            </li>
+        </div>  
+    </div>
+</div>

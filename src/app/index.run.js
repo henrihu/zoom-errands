@@ -6,21 +6,9 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log,$rootScope, $timeout) {
+  function runBlock() {
 
     // $log.debug('runBlock end');
-    $rootScope.$on('$stateChangeStart', function ()
-    {
-        $rootScope.loadingProgress = true;
-    });
-
-    $rootScope.$on('$stateChangeSuccess', function ()
-    {
-        $timeout(function ()
-        {
-            $rootScope.loadingProgress = false;
-        });
-    });
 
   }
 

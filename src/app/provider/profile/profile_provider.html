@@ -1,0 +1,139 @@
+<div id="profile-provider" class="border-top">
+    <div id="login-form-wrapper"  class="container">
+        <div class="row">
+            <div id="login-form" class="col-sm-6 col-sm-offset-3 text-center">
+                <!-- <div class="logo">
+                    <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
+                </div> -->
+
+                <div class="text-muted title">Profile</div>  
+                <div layout="row" layout-align="center" >
+                    <a ng-click="vm.triggerFileInput('photo')" class="avatar-image" layout="column" layout-align="center center">
+                        <div ng-if="!user.photo_file_name" class="blank-image font-size-16">
+                            <span class="glyphicon glyphicon-picture font-size-22" aria-hidden="true"></span>
+                            <p >Upload photo</p>
+                        </div>
+                        <img ng-if="user.photo_file_name"  ng-src="{{user.photoUrl}}" >
+                    </a>
+                </div>
+
+                <input id="imageuploader" ng-show="false" type="file" nv-file-select 
+                uploader="vm.uploader" filter="queueLimit" /> 
+                
+                <div class="row license-insuarance margin-top-25 margin-bottom-15" >
+                    <div class="col-xs-6 padding-right-5">                        
+                        <a ng-click="vm.triggerFileInput('driverlicense')" class="license-image" layout="column" layout-align="center center">
+                            <div ng-if="!user.driverlicense_file_name" class="blank-image font-size-16">
+                                <span class="glyphicon glyphicon-picture font-size-22" aria-hidden="true"></span>
+                                <p >Drivers License</p>
+                            </div>
+                            <img ng-if="user.driverlicense_file_name"  ng-src="{{user.driverUrl}}" >
+                        </a>
+                    </div> 
+
+                    <div class="col-xs-6 padding-left-5">                        
+                        <a ng-click="vm.triggerFileInput('proofinsurance')" class="license-image" layout="column" layout-align="center center">
+                            <div ng-if="!user.proofinsurance_file_name" class="blank-image font-size-16">
+                                <span class="glyphicon glyphicon-picture font-size-22" aria-hidden="true"></span>
+                                <p >Proof of Insurance</p>
+                            </div>
+                            <img ng-if="user.proofinsurance_file_name"  ng-src="{{user.proofUrl}}" >
+                        </a>
+                    </div>    
+                </div>
+
+                <form ng-submit="vm.updateAccount()" role="form" >
+                    <div id="account-info">
+                        <div class="col-xs-6 fname-input  margin-bottom-10">
+                            <input type="text" class="form-control" ng-model="vm.accountSetting.fname" placeholder="First Name"required>
+                        </div>  
+                        <div class="col-xs-6 lname-input  margin-bottom-10">
+                            <input type="text" class="form-control" ng-model="vm.accountSetting.lname" placeholder="Last Name"required>
+                        </div>
+                        <input ng-model="vm.accountSetting.address1" type="text" class="form-control email-input" placeholder="Address" required>                    
+                        <div class="col-xs-8 fname-input  margin-bottom-10">
+                            <input type="text" class="form-control" ng-model="vm.accountSetting.city" placeholder="City"required>
+                        </div>  
+                        <div class="col-xs-4 lname-input  margin-bottom-10">
+                            <!-- <input type="text" class="form-control" ng-model="vm.accountSetting.state" placeholder="State"required> -->
+                            <select class="form-control" ng-options="state for state in vm.states" ng-model="vm.accountSetting.state" required>
+                                <option value="" disabled>State</option>
+                            </select>
+                            <!-- <span class="customSelect" style="display: inline-block;"><span class="customSelectInner" style="width: 463px; display: inline-block;">{{vm.states.name || "選択してください。"}}</span></span>
+ -->
+                            <!-- <ui-select ng-model="selectedItem">
+                                <ui-select-match>
+                                    <span ng-bind="$select.selected.name"></span>
+                                </ui-select-match>
+                                <ui-select-choices repeat="item in (itemArray | filter: $select.search) track by item.id">
+                                    <span ng-bind="item.name"></span>
+                                </ui-select-choices>
+                            </ui-select> -->
+
+                        </div>
+                        <input ng-model="vm.accountSetting.zip" type="text" class="form-control email-input" placeholder="Zip Code" required>
+                        <input ng-model="vm.accountSetting.phone1" type="text" class="form-control email-input" placeholder="Telephone Number" required>
+                        <input ng-model="vm.accountSetting.email" type="email" class="form-control email-input" placeholder="E-mail address" required>
+                    </div>
+
+                    <div id="aggrement" class="margin-top-10 clearfix">
+                        <div class="col-sm-6 fname-input  margin-bottom-10">
+                            <a class="btn btn-agree col-sm-6"  ng-click="vm.showAdvanced($event, '1099', user.fname, user.lname, user.driverlicense_updated_at)">
+                                <span>1099 check</span>                                            
+                            </a>
+                        </div>  
+                        <div class="col-sm-6 lname-input  margin-bottom-10">
+                            <a class="btn btn-agree col-sm-6" 
+                                ng-click="vm.showAdvanced($event, 'confidentiality')">
+                                <span>Confidentiality check</span>                                             
+                            </a>  
+                        </div>
+                        <div class="col-sm-6 fname-input  margin-bottom-10">
+                            <a class="btn btn-agree col-sm-6" 
+                                ng-click="vm.showAdvanced($event, 'noncompete')">
+                                <span>Non-Compete check</span>                                             
+                            </a>  
+                        </div>  
+                        <div class="col-sm-6 lname-input  margin-bottom-10">
+                             <a class="btn btn-agree col-sm-6" 
+                                ng-click="vm.showAdvanced($event, 'delivery')">
+                                <span>Delivery promise</span>                                             
+                            </a>
+                        </div>                         
+                    </div>
+
+                    <div class="jobtype margin-top-25 ">
+                        <div class="subtitle font-size-20">Type of Service Provider</div>
+                        
+                        <div class="row type-check margin-top-15">                            
+                            <div ng-repeat="item in vm.types" class="col-sm-4 col-xs-6">
+                                <md-checkbox ng-model="item.value" class="gray-font-color margin-0">
+                                    {{item.name}}
+                                </md-checkbox>
+                            </div>                            
+                        </div>
+                    </div>
+
+                    <div class="jobtype margin-top-25 ">
+                        <div class="subtitle font-size-20">Send job notifications by:</div>
+                        
+                        <div class="" layout="row" layout-align="center"> 
+                            <md-checkbox  ng-model="vm.agreement.sms" class="gray-font-color">
+                                SMS
+                            </md-checkbox>
+
+                            <md-checkbox ng-model="vm.agreement.email" class="gray-font-color">
+                                E-Mail
+                            </md-checkbox>                           
+                        </div>
+                    </div>
+
+                    <div class=" col-md-8 col-md-offset-2">
+                       <md-button class="btn btn-login">Update Profile</md-button> 
+                    </div>                    
+                </form> 
+
+            </div>
+        </div>        
+    </div>
+</div>

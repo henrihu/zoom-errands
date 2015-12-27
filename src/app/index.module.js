@@ -2,41 +2,41 @@
   'use strict';
 
   angular
-    .module('zeyogen', [
-    	'ngCookies', 
-    	'ngTouch', 
-    	'ngSanitize', 
-    	'ngMessages', 
-    	'ngAria', 
-    	'ui.router', 
-    	'ui.bootstrap', 
-    	'toastr',
-    	'uiGmapgoogle-maps',
-    	'restangular',
-      'ng-token-auth',
-      'angularFileUpload',
-      'ui.bootstrap',
-      'ui.select',
-      'ui.bootstrap.datetimepicker',
+		.module('zeyogen', [
+			'ngCookies', 
+			'ngTouch', 
+			'ngSanitize', 
+			'ngMessages', 
+			'ngAria', 
+			'ui.router', 
+			'ui.bootstrap', 
+			'toastr',
+			'uiGmapgoogle-maps',
+			'restangular',
+			'ng-token-auth',
+			'angularFileUpload',
+			'ui.bootstrap',
+			'ui.select',
+			'ui.bootstrap.datetimepicker',
 
-      // Core
-      'app.core',
+			// Core
+			'app.core',
 
-      // Pages
-      'app.pages.auth.login',
-      'app.pages.auth.register',
-      'app.pages.auth.forgot-password',
-      'app.pages.auth.lock',
-      
-      
-      //homepage module
-      'app.pages.homepage',
+			// Pages
+			'app.pages.auth.login',
+			'app.pages.auth.register',
+			'app.pages.auth.forgot-password',
+			'app.pages.auth.lock',
 
-      // client module
-      'app.client',
-      // provider module
-      'app.provider'
 
-    ]);
+			//homepage module
+			'app.pages.homepage',
+
+			// client module
+			'app.client',
+			// provider module
+			'app.provider'
+									
+		]);
 
 })();

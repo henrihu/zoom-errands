@@ -1,0 +1,181 @@
+<div id="homepage" >
+	
+	
+	<header class="margin-bottom-40">
+	    <div class="container">
+	        <div class="intro-text">	            
+	            <div class="intro-heading">
+	            	<span class="text-dark">YOUR ERRANDS</span>
+	            	<span class="text-primary">OUTSOURCED</span>
+	            </div>
+	            <div class="intro-lead-in text-muted" >
+	            	Making life easier for businesses and individuals.
+	            </div>
+	            <md-button class="page-scroll md-raised md-primary bg-blue">Get Started</a>
+	        </div>
+	    </div>
+	</header>
+		
+	<!-- Services Section -->
+  <section id="steps">
+      <div class="container">          
+          <div class="row text-center">
+              <div ng-repeat="step in vm.steps" class="col-sm-4">
+              	<div class="col-md-10 col-md-offset-1">
+                  <img ng-src={{step.image}} class="step-image" alt="image">                  
+                  <h2 class="step-heading text-dark">{{step.title}}</h2>
+                  <p class="text-muted large">{{step.content}}</p>
+                </div>
+              </div>              
+          </div>
+      </div>
+  </section>
+
+  <!-- Carousel Section -->
+  <section id="carousel">
+      <div class="container">          
+          <div class="row text-center">
+          		<slick infinite=true slides-to-show=3 slides-to-scroll=1 
+          		arrows="true" mobile-first="true" responsive="vm.breakpointStep">		
+          			<div ng-repeat="card in vm.carousel" style="padding: 0px 35px;">					  
+		              <md-card style="padding: 3px;">
+									 	<img ng-src={{card.image}} class="md-card-image" alt="image">
+									 	<h2 class="text-primary">{{card.title}}</h2>
+									  <p class="text-muted">{{card.content}}</p>
+									</md-card>
+								</div>
+	            </slick> 
+          </div>
+      </div>
+  </section>
+
+  <section id="testimonial">
+  	<div class="container">
+  		<div class="row">
+  			<div ng-repeat="item in vm.testimonials" class="col-sm-6">
+  				<div class="col-xs-4">
+  					<img ng-src={{item.image}} class="testimonial-image" alt="image">
+  				</div>
+  				<div class="col-xs-8">
+  					<h2 class="text-primary">{{item.title}}</h2>
+  					<h4 class="text-muted">{{item.commenter}}</h4>
+  					<p class="text-italic text-justify hidden-xs">{{item.content}}</p>
+  				</div>
+  				<div class="col-xs-12 visible-xs-block">
+  					<p class="text-italic text-justify">{{item.content}}</p>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </section>
+
+  <section id="whyus">
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-md-12 text-center whyus-header">
+  				<h1 class="text-white font-size-28">WHY US?</h1>
+  			</div>   			
+				<div ng-repeat="item in vm.whyuses" class="col-md-4 col-sm-6 margin-top-30">
+					<div class="col-md-10 col-md-offset-1 text-center">
+  					<img ng-src={{item.image}} class="whyus-image" alt="image">            
+            <h2 class="step-heading text-white">{{item.title}}</h2>
+            <p class="text-white">{{item.content}}</p>
+          </div>  
+				</div>  			
+  		</div>
+  	</div>
+  </section>	
+
+  <!-- Carousel Section -->
+  <section id="team">
+      <div class="container">          
+          <div class="row text-center">
+          		<slick infinite=true slides-to-show=4 slides-to-scroll=1 
+          		arrows="true" responsive="vm.breakpointTeam">		
+          			<div ng-repeat="item in vm.team" class="text-center">	          				
+			            <img ng-src={{item.image}} class="team-image" alt="image">			            						 
+								 	<h2 >{{item.title}}</h2>
+								  <p class="large">{{item.content}}</p>
+								</div>
+	            </slick> 
+          </div>
+      </div>
+  </section>
+
+  <section id="logos">
+  	<div class="container">
+  		<div clas="row">
+  			<div ng-repeat="item in vm.logos1" class="col-md-2 col-sm-6 text-center">
+  				<img ng-src={{item.image}} class="logo-image" alt="{{item.alt}}">
+  			</div>
+  			<div ng-repeat="item in vm.logos2" class="col-md-4 col-sm-6 text-center">
+  				<img ng-src={{item.image}} class="logo-image" alt="{{item.alt}}">
+  			</div>
+  		</div>
+  	</div>
+  </section>	
+
+  <section id="footer">
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-md-3 col-sm-6">
+  				<h2>CONTACT US</h2>
+  				<p>Zoom Errands, Inc.</p>
+  				<p>10850 Wilshire Blvd #350, </p>
+  				<p>Los Angeles, CA 90024</p>
+  				<a href="mailto:info@zoomerrands.com"><p>info@zoomerrands.com</p></a>
+  				<p>(310) 425-6425</p>	
+  			</div>
+
+  			<div class="col-md-4 col-sm-6">
+  				<h2>ABOUT US</h2>
+  				<p>Zoom Errands is a FULLY MANAGED complete errand services provider company.
+  					This means you get the security and backing of a company behind everything we do.
+  					We started operations in 2010 and serve the country community.</p>  				
+  			</div>
+
+  			<div class="col-md-2 col-sm-6">
+  				<h2>SERVICES</h2>
+  				<p>Errand Services</p>
+  				<p>Household and Waiting</p>
+  				<p>Moving and Relocating</p>
+  				<p>Concierge Services</p>
+  				<p>Senior Services</p>
+  				<p>Business Services</p>	
+  			</div>
+  			
+  			<div class="col-md-2 col-sm-4">
+  				<h2>QUICK LINKS</h2>
+  				<a ui-sref="app.pages_auth_register_provider"><p>Serivce Provider Sign up</p></a>
+  				<a ui-sref="app.pages_auth_login_provider"><p>Service Provider Log in</p></a>
+  				<p>Testimonials</p>
+  				<p>Pricing</p>
+  				<p>Blog</p>
+  				<p>Privacy Policy</p>	
+  			</div>
+
+  			<div class="col-md-1 col-sm-2 social-icons">
+  				<div class="col-sm-12 col-xs-3">
+  				<a target="_blank" href="https://www.facebook.com/zoomerrands">
+  					<img src="assets/images/zoom/facebook.png" class="social-image" alt="f">
+  				</a>
+  				</div>
+  				<div class="col-sm-12 col-xs-3">
+  				<a target="_blank" href="https://www.twitter.com/zoomerrands">
+  					<img src="assets/images/zoom/twitter.png" class="social-image" alt="t">
+  				</a>
+  				</div>
+  				<div class="col-sm-12 col-xs-3">
+  				<a target="_blank" href="https://www.google.com/+Zoomerrandsinc">
+  					<img src="assets/images/zoom/googleplus.png" class="social-image" alt="g+">
+  				</a>	
+  				</div>
+  			</div>
+
+  		</div>
+  	</div>
+  </section>
+
+
+	
+</div>  

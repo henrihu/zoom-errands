@@ -1,0 +1,29 @@
+<div id="login" class="scrollable client-login" ms-scroll>
+    <div id="login-form-wrapper"  class="container">
+        <div class="row">
+            <div id="login-form" class="col-sm-6 col-sm-offset-3">
+                <div class="logo">
+                    <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
+                </div>
+
+                <div class="text-muted title">Login</div>  
+
+                <form ng-submit="submitLogin(vm.form, {config: 'default'})" role="form" >
+                    <input ng-model="vm.form.email" type="email" class="form-control email-input" placeholder="E-mail address">
+                    <input ng-model="vm.form.password" type="password" class="form-control password-input" placeholder="Password">
+                    <md-button class="btn btn-login">Login</md-button>
+                </form> 
+
+                <p class="or-divider">Or login with</p>
+
+                <md-button ng-click="authenticate('facebook', {config: 'default'})" class="btn btn-primary btn-facebook">Facebook</md-button>
+
+                <div class="row">
+                    <div class="col-xs-6 text-left"><a ui-sref="app.pages_auth_register">Sign up</a></div>
+                    <div class="col-xs-6 text-right"><a ui-sref="app.pages_auth_forgot-password">Forgot Password?</a></div>
+                </div>  
+            </div>
+        </div>
+        
+    </div>
+</div>

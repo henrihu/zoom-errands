@@ -1,0 +1,290 @@
+
+ // homepage scss ///////////////////////////
+#homepage {
+    background-color: white;
+
+.bg-blue {
+    background-color: $brand-primary ;
+}
+
+// .arrow-right {
+//   width: 0;
+//   height: 0;
+//   border-top: 60px solid transparent;
+//   border-bottom: 60px solid transparent;
+
+//   border-left: 60px solid green;
+// }
+// .arrow-down {
+//   //width: 0;
+//   //height: 0;
+//   ////border-left: 20px solid transparent;
+//   ////border-right: 20px solid transparent;
+//   //position: absolute;
+//   ////border-top: 20px solid #f00;
+
+// }
+// #arrow-down-1{
+//   border-top: 40px solid $purple-1;
+//   border-left: 50px solid transparent;
+//   border-right: 50px solid transparent;
+//   //left : 300px;
+//   width: 0;
+//   height: 0;
+//   position: absolute;
+// }
+// #arrow-down-2{
+//   border-top: 20px solid $purple-2;
+//   border-left: 20px solid transparent;
+//   border-right: 20px solid transparent;
+//   width: 0;
+//   height: 0;
+//   position: absolute;
+// }
+
+p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: $gray;
+}
+
+p.large {
+    font-size: 16px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: none;
+}
+
+a {
+    color: $brand-primary;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+    color: darken($brand-primary, 10%);
+}
+
+h1, h2, h3, h4, h5, h6 {    
+    font-weight: 700;
+    color: $gray;
+}
+
+.img-centered {
+    margin: 0 auto;
+}
+
+.bg-light-gray {
+    background-color: $gray-lighter;
+}
+
+.bg-darkest-gray {
+    // background-color: $gray-darkest;
+}
+
+// Restyled Primary Buttons
+
+.btn-primary {    
+    font-weight: 700;
+}
+
+.btn-xl {
+    // .button-variant(white; $brand-primary; $brand-primary);    
+    font-weight: 700;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 20px 40px;
+}
+
+// Custom Navigation Bar
+
+   
+
+header {    
+    text-align: center;
+    color: black;
+    .intro-text {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        .intro-heading {
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 50px;
+            margin-bottom: 15px;
+        }
+        .intro-lead-in {
+            font-size: 16px;
+            line-height: 22px;
+            margin-bottom: 45px;
+        }
+        button {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 6px 80px;
+            // min-width: 280px;
+            text-transform: none;
+        }
+        
+    }
+}
+
+@media(min-width:768px) {
+    header {
+        background-attachment: scroll;
+        background-image: url("/assets/images/zoom/header1.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 100% auto;
+        .intro-text {
+            padding-top: 50px;
+            padding-bottom: 200px;
+            .intro-heading {
+                font-weight: 700;
+                font-size: 42px;
+                line-height: 50px;
+                margin-bottom: 15px;
+            }
+            .intro-lead-in {
+                font-size: 21px;
+                line-height: 22px;
+                // margin-bottom: 75px;
+            }
+            
+        }
+    }
+}
+
+// Global Section Styles
+
+section {
+    padding: 50px 0;
+    h2.section-heading {
+        font-size: 40px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    h3.section-subheading {
+        font-size: 16px;
+        text-transform: none;
+        font-style: italic;
+        font-weight: 400;
+        margin-bottom: 75px;
+    }
+}
+
+@media(min-width:768px) {
+    section {
+        padding: 70px 0;
+    }
+}
+
+// Steps Section
+#steps {
+    .step-image{
+        margin: 20px 0px;
+    }
+    .step-heading {
+        margin: 15px 0;
+        text-transform: none;
+    } 
+}
+
+
+#carousel {
+    background: url("../../../assets/images/zoom/carousel-bg.png") no-repeat ;
+    background-size: cover;
+    .slick-prev::before, .slick-next::before {
+      opacity: 0;
+      color: transparent;
+      
+    }
+    .slick-prev {
+        background: url("../../../assets/images/zoom/step-prev.png") no-repeat;
+        background-size: auto 90%;
+        margin-left: -40px;
+        min-height: 40px;
+        
+    }
+    .slick-next {
+        background: url("../../../assets/images/zoom/step-next.png") no-repeat;
+        background-size: auto 90%;
+        margin-right: -40px;
+        min-height: 40px;
+    }
+}
+
+#testimonial {
+    .testimonial-image{
+        margin-top: 20%;
+    }
+}
+
+#whyus {
+    background: url("../../../assets/images/zoom/whyus-bg.png") no-repeat ;
+    background-size: cover;
+    .whyus-header {
+        color: white;
+    }    
+}
+
+#team {
+    .team-image {
+        display: inline-block;
+    }
+    .slick-prev::before, .slick-next::before {
+      opacity: 0;
+      color: transparent;
+      
+    }
+    .slick-prev {
+        background: url("../../../assets/images/zoom/team-prev.png") no-repeat;
+        background-size: auto 90%;
+        margin-left: -40px;
+        // margin-height: -80px;
+        min-height: 40px;
+        
+    }
+    .slick-next {
+        background: url("../../../assets/images/zoom/team-next.png") no-repeat;
+        background-size: auto 90%;
+        margin-right: -40px;
+        // margin-height: -80px;
+        min-height: 40px;
+    }
+}
+
+#logos {
+    padding-top: 0px;
+}
+
+#footer {
+    background-color: #233442;
+    h2 {
+        color: #eee;        
+    }    
+
+    p{
+        color: #ddd;
+        margin-bottom: 0px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .social-icons {
+        padding-top: 20px;
+        .social-image {
+            margin-top: 10px;
+        }
+    }
+}
+
+
+}

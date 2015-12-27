@@ -1,0 +1,62 @@
+$gray-darkest: #222;
+$brand-primary: #0082c7; //rgb(3, 155, 229);
+$brand-danger: #e74c3c;
+
+$gray: #555;
+$gray-lighter: #f7f7f7;
+$placeholder-text: #bbbbbb;
+
+// @import "latofonts";
+// @import "latostyle";
+/* Webfont: Lato-Italic */@font-face {
+    font-family: 'LatoWeb';
+    src: url('/assets/fonts/Lato-Italic.eot'); /* IE9 Compat Modes */
+    src: url('/assets/fonts/Lato-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/assets/fonts/Lato-Italic.woff2') format('woff2'), /* Modern Browsers */
+         url('/assets/fonts/Lato-Italic.woff') format('woff'), /* Modern Browsers */
+         url('/assets/fonts/Lato-Italic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: Lato-Regular */@font-face {
+    font-family: 'LatoWeb';
+    src: url('/assets/fonts/Lato-Regular.eot'); /* IE9 Compat Modes */
+    src: url('/assets/fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/assets/fonts/Lato-Regular.woff2') format('woff2'), /* Modern Browsers */
+         url('/assets/fonts/Lato-Regular.woff') format('woff'), /* Modern Browsers */
+         url('/assets/fonts/Lato-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+
+
+
+body {
+    font-family: "LatoWeb" !important;
+}
+
+.text-dark {
+    color: #444;
+}
+
+.text-muted {
+    color: $gray !important;
+}
+
+.text-primary {
+    color: $brand-primary !important;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.bg-blue {
+    background-color: $brand-primary !important;
+}
+
+

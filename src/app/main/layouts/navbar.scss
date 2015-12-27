@@ -1,0 +1,117 @@
+@import "ze_layout";
+
+.navbar-default {
+    // position: absolute;
+    background-color: white;
+    border-color: transparent;
+    margin-bottom: 0px;
+    padding: 20px 20px 10px 20px;
+    
+
+    .navbar-brand {
+        color: $brand-primary;
+        
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: darken($brand-primary, 10%);
+        }
+    }
+    .navbar-collapse {
+        border-color: fade(white, 2%);
+    }
+    .navbar-toggle {
+        background-color: $brand-primary;
+        border-color: $brand-primary;
+        .icon-bar {
+            background-color: white;
+        }
+        &:hover,
+        &:focus {
+            background-color: $brand-primary;
+        }
+    }
+    .nav {
+        li {            
+
+            .float-right {
+                float: right;
+            }
+
+            a {
+                text-align: right;
+                font-weight: 400;
+                letter-spacing: 1px;
+                color: $gray;
+                padding-left: 10px;
+                padding-right: 10px;
+                &:hover,
+                &:focus {
+                    color: $brand-primary;
+                    outline: none;
+                }
+                &.text-primary {
+                    color: $brand-primary;
+                }
+                &.cursor-pointer {
+                    cursor: pointer;                    
+                }
+                &.image-padding {
+                    padding-top: 6px;
+                }
+
+            }
+        }
+    }
+    .navbar-nav>.active>a {
+        border-radius: 0;
+        color: white;
+        background-color: $brand-primary;
+    }
+    .navbar-nav>.active>a:hover,
+    .navbar-nav>.active>a:focus {
+        color: white;
+        background-color: darken($brand-primary, 10%);
+    }
+}
+
+.escrow-hours {
+                letter-spacing: 0.2px;
+                border:  1px solid rgba(50,50,50,0.2);
+                border-radius: 4px;
+                padding: 2px 4px;
+                color: $gray;
+                list-style: none;
+                margin-bottom: 4px;                
+                margin-left: 20px;
+}
+
+@media(min-width:768px) {
+    .navbar-default {
+        background-color: white;
+        -webkit-transition: padding 0.3s;
+        -moz-transition: padding 0.3s;
+        transition: padding 0.3s;        
+        .navbar-brand {
+            font-size: 2em;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+        .navbar-nav>.active>a {
+            border-radius: 3px;
+        }
+    }
+    .navbar-default.navbar-shrink {
+        background-color: $gray-darkest;
+        padding: 10px 0;
+        .navbar-brand {
+            font-size: 1.5em;
+        }    
+    }
+    .escrow-hours {        
+        margin-top: -20px;
+    }    
+        
+} 

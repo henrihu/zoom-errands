@@ -1,0 +1,28 @@
+<div id="login" class="scrollable provider-login" ms-scroll>
+    <div id="login-form-wrapper"  class="container">
+        <div class="row">
+            <div id="login-form" class="col-sm-6 col-sm-offset-3">
+                <div class="logo">
+                    <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
+                </div>
+
+                <div class="text-muted title">Service Provider Login</div>  
+
+                <form ng-submit="submitLogin(vm.form, {config: 'provider'})" role="form" ng-init="vm.form = {}">
+                    <input ng-model="vm.form.email" type="email" class="form-control email-input" placeholder="E-mail address">
+                    <input ng-model="vm.form.password" type="password" class="form-control password-input" placeholder="Password">
+                    <md-button class="btn btn-primary btn-login">Login</md-button>
+                </form> 
+
+               <!--  <p class="or-divider">Or login with</p>
+
+                <md-button ng-click="authenticate('facebook', {config: 'provider'})"  class="btn btn-primary btn-facebook">Facebook</md-button> -->
+                
+                <div class="row">
+                    <div class="text-center"><a ui-sref="app.pages_auth_forgot-password_provider">Forgot Password?</a></div>
+                </div>  
+            </div>
+        </div>
+        
+    </div>
+</div>

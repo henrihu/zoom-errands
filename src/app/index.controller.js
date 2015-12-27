@@ -9,7 +9,7 @@
     /** @ngInject */
     function AppController()
     {
-        var vm = this;
+        // var vm = this;
 
         
         //////////
