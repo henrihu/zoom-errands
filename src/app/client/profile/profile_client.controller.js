@@ -8,7 +8,7 @@
 
     /** @ngInject */
     ProfileClientController.$inject = ['Restangular', 
-            '$scope', 'uiGmapGoogleMapApi', '$auth', 'FileUploader','API_URL', '$state' ];
+            '$scope', 'uiGmapGoogleMapApi', '$auth', 'FileUploader','API_URL'];
     function ProfileClientController(Restangular,
             $scope, uiGmapGoogleMapApi, $auth, FileUploader, API_URL, $state)
     {

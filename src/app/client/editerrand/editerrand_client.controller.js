@@ -25,19 +25,19 @@
 
         Restangular.all('client/alltypes').getList()
         .then(function(types) {
-            console.log(types);
+            // console.log(types);
             vm.alltypes = types;
         });
 
         var taskid = $stateParams.id;
-        console.log(taskid);
+        // console.log(taskid);
         Restangular.one('client/tasks', taskid).get()
         .then(function(task) {
             vm.errand = task;
         });
 
         
-        var marker;
+        // var marker;
         // vm.mapInit = initialize;
         // initialize();
 

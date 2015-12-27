@@ -14,7 +14,6 @@
         Restangular.all('client/tasks').getList()
         .then(function(tasks) {
             vm.tasks = tasks;
-            console.log('tasks', tasks);
         });
     }
 })();
