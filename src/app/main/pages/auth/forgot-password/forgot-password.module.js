@@ -59,10 +59,10 @@
         
     }
 
-    handlerPasswordResetConfirm.$inject = ['$rootScope', '$state'];
-    function handlerPasswordResetConfirm($rootScope, $state)
+    handlerPasswordResetConfirm.$inject = ['$rootScope', '$state', 'toastr'];
+    function handlerPasswordResetConfirm($rootScope, $state, toastr)
     {
-        $rootScope.$on('auth:password-reset-confirm-success', function(ev, data) {
+        var deregistrationCallback = $rootScope.$on('auth:password-reset-confirm-success', function(ev, data) {
             if (data.configName === 'default') {
                 $state.go('app.pages_auth_password-change');
             }else if (data.configName === 'provider') {
@@ -71,9 +71,14 @@
             
         });
 
-        $rootScope.$on('auth:password-reset-confirm-error', function(ev, data) {
+        $rootScope.$on('$destroy', deregistrationCallback);
+
+        var deregistrationCallback1 = $rootScope.$on('auth:password-reset-confirm-error', function(ev, data) {
             toastr.error(data.errors.toString());
         });
+
+        $rootScope.$on('$destroy', deregistrationCallback1);
+
     }
 
 })();

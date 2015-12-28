@@ -7,10 +7,10 @@
         .controller('PasswordChangeController', PasswordChangeController);
 
     /** @ngInject */
-    PasswordChangeController.$inject = ['$scope', '$state'];
-    function PasswordChangeController($scope, $state)
+    PasswordChangeController.$inject = ['$scope', '$state', 'toastr'];
+    function PasswordChangeController($scope, $state, toastr)
     {
-        var vm = this;
+        // var vm = this;
 
         //////////  event handlers
         //event 'auth:password-reset-request-success'

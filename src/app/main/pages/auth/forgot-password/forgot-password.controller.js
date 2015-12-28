@@ -7,10 +7,10 @@
         .controller('ForgotPasswordController', ForgotPasswordController);
 
     /** @ngInject */
-    ForgotPasswordController.$inject = ['$scope', '$state', '$rootScope'];
-    function ForgotPasswordController($scope, $state, $rootScope )
+    ForgotPasswordController.$inject = ['$scope', '$state', 'toastr'];
+    function ForgotPasswordController($scope, $state, toastr)
     {
-        var vm = this;
+        // var vm = this;
 
         //////////  event handlers
         //event 'auth:password-reset-request-success'
@@ -22,7 +22,6 @@
         //event 'auth:password-reset-request-success'
         $scope.$on('auth:password-reset-request-error', function(ev, data) 
         {            
-            console.log(data);
             return toastr.error('Error: ' + (data.errors).toString());
         });
         
@@ -33,7 +32,7 @@
         });
 
         //event 'auth:password-reset-request-success'
-        $scope.$on('auth:password-reset-confirm-error', function(ev, reason) 
+        $scope.$on('auth:password-reset-confirm-error', function() 
         {            
             return toastr.error('Unable to verify your account. Please try again.');
         });

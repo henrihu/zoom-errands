@@ -6,7 +6,10 @@
     .config(config);
 
   /** @ngInject */
-  function config($window, RestangularProvider, API_URL, $authProvider, $logProvider, toastrConfig) {
+  config.$inject = ['RestangularProvider', 'API_URL', '$authProvider', '$logProvider', 'toastrConfig', '$windowProvider'];
+  function config(RestangularProvider, API_URL, $authProvider, $logProvider, toastrConfig, $windowProvider) {
+    
+    var $window = $windowProvider.$get();
     // Enable log
     $logProvider.debugEnabled(true);
 

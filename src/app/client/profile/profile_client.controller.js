@@ -7,10 +7,10 @@
         .controller('ProfileClientController', ProfileClientController);
 
     /** @ngInject */
-    ProfileClientController.$inject = ['Restangular', 
+    ProfileClientController.$inject = ['Restangular', 'toastr',
             '$scope', 'uiGmapGoogleMapApi', '$auth', 'FileUploader','API_URL'];
-    function ProfileClientController(Restangular,
-            $scope, uiGmapGoogleMapApi, $auth, FileUploader, API_URL, $state)
+    function ProfileClientController(Restangular, toastr,
+            $scope, uiGmapGoogleMapApi, $auth, FileUploader, API_URL)
     {
         var vm = this;       
 
@@ -40,7 +40,7 @@
             item.upload();  
         };
 
-        vm.uploader.onSuccessItem = function(item, response, status, headers) {
+        vm.uploader.onSuccessItem = function(item, response) {
             toastr.success('Your photo has been updated successfully!');
             // $state.go($state.current, {}, {reload: true}); //second parameter is for $stateParam
             vm.accountSetting.photoUrl = response.data.photoUrl;
@@ -50,7 +50,7 @@
             // console.log(headers);
         };
         
-        vm.uploader.onErrorItem = function(item, response, status, headers) {
+        vm.uploader.onErrorItem = function(item, response) {
             toastr.error(response.errors[0]);
             // console.log(response);
         };
@@ -65,7 +65,7 @@
         {  
             vm.accountSetting = $scope.user;
             vm.phone2 = false;
-            uiGmapGoogleMapApi.then(function (maps)
+            uiGmapGoogleMapApi.then(function ()
             {
                 vm.map = { 
                     center: { latitude: 34.039959, longitude: -118.2693948 }, 
@@ -104,7 +104,7 @@
         function triggerFileInput(selectedInput)
         {
             vm.selectedInput = selectedInput;
-            $('#imageuploader').trigger('click');          
+            angular.element('#imageuploader').trigger('click');          
         }
 
     }

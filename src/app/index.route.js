@@ -8,7 +8,7 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider, $locationProvider)
   {
-      $locationProvider.html5Mode(true);
+      $locationProvider.html5Mode(false);
 
       // $urlRouterProvider.otherwise('/dashboard-project');
       $urlRouterProvider.otherwise('/pages/homepage');

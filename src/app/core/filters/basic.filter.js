@@ -3,11 +3,20 @@
     'use strict';
 
     angular
-        .module('app.core')
+        .module('app.client')
         .filter('toTrusted', toTrustedFilter)
         .filter('htmlToPlaintext', htmlToPlainTextFilter)
         .filter('nospace', nospaceFilter)
+        .filter('capitalize', capitalizeFilter)
         .filter('humanizeDoc', humanizeDocFilter);
+
+    /** @ngInject */
+    function capitalizeFilter()
+    {
+        return function(input) {
+          return (input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+        };
+    }
 
     /** @ngInject */
     function toTrustedFilter($sce)
@@ -27,7 +36,6 @@
         };
     }
 
-    /** @ngInject */
     function nospaceFilter()
     {
         return function (value)

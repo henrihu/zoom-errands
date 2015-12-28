@@ -7,15 +7,13 @@
         .controller('ProfileProviderController', ProfileProviderController);
 
     /** @ngInject */
-    ProfileProviderController.$inject = ['Restangular', '$mdDialog',
-            '$scope', 'uiGmapGoogleMapApi', '$auth', 'FileUploader','API_URL', '$state' ];
-    function ProfileProviderController(Restangular, $mdDialog,
-            $scope, uiGmapGoogleMapApi, $auth, FileUploader, API_URL, $state)
+    ProfileProviderController.$inject = ['Restangular', '$mdDialog', 'toastr',
+            'uiGmapGoogleMapApi', '$auth', 'FileUploader','API_URL', '$document'];
+    function ProfileProviderController(Restangular, $mdDialog, toastr,
+            uiGmapGoogleMapApi, $auth, FileUploader, API_URL, $document)
     {
         var vm = this;    
-
-        // console.log($scope.user.configName);
-        // Data                       
+                      
 
         initAccount();
 
@@ -37,7 +35,6 @@
                 // function define
         function initAccount()
         {   
-            // console.log($scope.user);
             vm.accountSetting = {};
             vm.agreement = {};
             vm.agreement.al099 = vm.agreement.confidentiality = vm.agreement.delivery = vm.agreement.noncompete = '';
@@ -46,7 +43,6 @@
                     queueLimit: 2
             });
 
-            vm.accountSetting = $scope.user;
             
             Restangular.one('provider/setting').get()
             .then(function(resp) {
@@ -59,7 +55,7 @@
                 vm.types = resp.types;
             });
             
-            uiGmapGoogleMapApi.then(function (maps)
+            uiGmapGoogleMapApi.then(function ()
             {
                 vm.map = { 
                     center: { latitude: 34.039959, longitude: -118.2693948 }, 
@@ -97,70 +93,69 @@
               'WA','WI','WV','WY'
             ];
 
-            $scope.itemArray = [
+            vm.itemArray = [
                 {id: 1, name: 'first'},
                 {id: 2, name: 'second'},
                 {id: 3, name: 'third'},
                 {id: 4, name: 'fourth'},
-                {id: 5, name: 'fifth'},
+                {id: 5, name: 'fifth'}
             ];
 
-            $scope.selectedItem= $scope.itemArray[0];
+            vm.selectedItem= vm.itemArray[0];
         }
         
         function showAdvanced(ev, dialogID)
         {
             var templateDialog = 'app/provider/profile/tabs/account/dialog.' + dialogID + '.html';
             $mdDialog.show({
-                controller         : function ($scope, $mdDialog)
+                controller         : function ($mdDialog)
                 {                    
                     if (vm.accountSetting.fname && vm.accountSetting.lname) {
-                        $scope.fullName = vm.accountSetting.fname + ' ' + vm.accountSetting.lname;
+                        vm.fullName = vm.accountSetting.fname + ' ' + vm.accountSetting.lname;
                     }
                     else {
-                        $scope.fullName = '';
+                        vm.fullName = '';
                     }
                     
-                    console.log('vm', vm);
                     if (vm.agreement) {
                         switch ( dialogID )
                         {
                             case '1099':
-                                $scope.signedAt = vm.agreement.a1099;
+                                vm.signedAt = vm.agreement.a1099;
                                 break;
 
                             case 'confidentiality':
-                                $scope.signedAt = vm.agreement.confidentiality;
+                                vm.signedAt = vm.agreement.confidentiality;
                                 break;
 
                             case 'delivery':
-                                $scope.signedAt = vm.agreement.confidentiality;
+                                vm.signedAt = vm.agreement.confidentiality;
                                 break;
 
                             case 'noncompete':
-                                $scope.signedAt = vm.agreement.noncompete;
+                                vm.signedAt = vm.agreement.noncompete;
                                 break;
 
                             default:
-                                $scope.signedAt = '';
+                                vm.signedAt = '';
                         }
                     }
 
-                    $scope.hide = function ()
+                    vm.hide = function ()
                     {
                         $mdDialog.hide();
                     };
 
-                    $scope.cancel = function ()
+                    vm.cancel = function ()
                     {
                         $mdDialog.cancel();
                     };
 
-                    $scope.agree = function ()
+                    vm.agree = function ()
                     {
-                        var payload = {agreement: dialogID, fullname: $scope.fullName};
+                        var payload = {agreement: dialogID, fullname: vm.fullName};
                         Restangular.one('provider/setting').put(payload).then(function(resp) {
-                            $scope.signedAt = resp.time;                            
+                            vm.signedAt = resp.time;                            
                             toastr.success('You signed ' + dialogID + ' agreement at ' + resp.time , 'Thank you!');
                         }, function errorCallback(resp){
                             toastr.error(resp.data.error);
@@ -168,8 +163,8 @@
                     };
                 },
                 templateUrl        : templateDialog,
-                parent             : angular.element(document.body),
-                // scope              : $scope,
+                parent             : $document.body,
+                // scope              : vm,
                 targetEvent        : ev,
                 clickOutsideToClose: true
             })
@@ -186,7 +181,7 @@
         function triggerFileInput(selectedInput)
         {
             vm.selectedInput = selectedInput;
-            $('#imageuploader').trigger('click');          
+            angular.element('#imageuploader').trigger('click');          
         }
 
         vm.uploader.onAfterAddingFile = function(item) {
@@ -200,25 +195,25 @@
             item.upload();
         };
 
-        vm.uploader.onSuccessItem = function(item, response, status, headers) {
+        vm.uploader.onSuccessItem = function(item, response) {
             switch ( vm.selectedInput )
             {
                 case 'photo':
                     toastr.success('Your photo has been updated successfully!');
-                    $scope.user.photoUrl = response.data.photoUrl;
-                    $scope.user.photo_file_name = true;    
+                    vm.accountSetting.photoUrl = response.data.photoUrl;
+                    vm.accountSetting.photo_file_name = true;    
                     break;
 
                 case 'driverlicense':
                     toastr.success('Your Drivers License has been updated successfully!');
-                    $scope.user.driverUrl = response.data.driverUrl;
-                    $scope.user.driverlicense_file_name = true;    
+                    vm.accountSetting.driverUrl = response.data.driverUrl;
+                    vm.accountSetting.driverlicense_file_name = true;    
                     break;
 
                 case 'proofinsurance':
                     toastr.success('Your Proof Insurance has been updated successfully!');
-                    $scope.user.proofUrl = response.data.proofUrl;
-                    $scope.user.proofinsurance_file_name = true;    
+                    vm.accountSetting.proofUrl = response.data.proofUrl;
+                    vm.accountSetting.proofinsurance_file_name = true;    
                     break;
                 
             }
@@ -226,7 +221,7 @@
                   
         };
         
-        vm.uploader.onErrorItem = function(item, response, status, headers) {
+        vm.uploader.onErrorItem = function(item, response) {
             toastr.error(response.errors[0]);
             // console.log(response);
         };        

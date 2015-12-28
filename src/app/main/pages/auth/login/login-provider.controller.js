@@ -7,10 +7,10 @@
         .controller('LoginProviderController', LoginProviderController);
 
     /** @ngInject */
-    LoginProviderController.$inject = ['$state', '$scope'];
-    function LoginProviderController($state, $scope)
+    LoginProviderController.$inject = ['$state', '$scope', 'toastr'];
+    function LoginProviderController($state, $scope, toastr)
     {
-        var vm = this;
+        // var vm = this;
        
         // event handlers
         // event 'auth:login-success'

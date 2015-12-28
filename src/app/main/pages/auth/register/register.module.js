@@ -40,10 +40,10 @@
     }
 
 
-    handlerEmailConfirmation.$inject = ['$state', '$rootScope'];
-    function handlerEmailConfirmation($state, $rootScope)
+    handlerEmailConfirmation.$inject = ['$state', '$rootScope', 'toastr'];
+    function handlerEmailConfirmation($state, $rootScope, toastr)
     {
-        $rootScope.$on('auth:oauth-registration', function(ev, user) {
+        var cleanupfunc1 = $rootScope.$on('auth:oauth-registration', function(ev, user) {
             
             toastr.success('Your account has been successfully created through facebook.', 'Welcome ' + user.email); 
             if (user.configName === 'default') {
@@ -52,6 +52,8 @@
                 $state.go('app.provider.profile');
             }
         });
+
+        $rootScope.$on('$destroy', cleanupfunc1);
 
         // $rootScope.$on('auth:login-success', function(ev, user) {
         //     toastr.success('Welcome ' + user.email); 
@@ -71,7 +73,7 @@
         //     return toastr.error(user.errors[0], 'Authentication failure', {timeOut: 7000});            
         // });
 
-        $rootScope.$on('auth:email-confirmation-success', function(ev, user) {
+        var cleanupfunc2 = $rootScope.$on('auth:email-confirmation-success', function(ev, user) {
             toastr.success('Your account has been successfully created.', 'Welcome ' + user.email);            
             if (user.configName === 'default') {
                 $state.go('app.client.profile');
@@ -80,36 +82,43 @@
             }
             
         });
+        $rootScope.$on('$destroy', cleanupfunc2);
 
-        $rootScope.$on('auth:email-confirmation-error', function(ev, user) {
+        var cleanupfunc3 = $rootScope.$on('auth:email-confirmation-error', function() {
             toastr.error('Request a password reset to verify your identify.', 'Unable to confirm your account.');
         });
+        $rootScope.$on('$destroy', cleanupfunc3);
 
-        $rootScope.$on('auth:validation-success', function(ev, user) {
+        var cleanupfunc4 = $rootScope.$on('auth:validation-success', function() {
             // $state.go('app.pages_profile_client');
             // console.log(ev);
             // console.log(user);
         });
+        $rootScope.$on('$destroy', cleanupfunc4);
 
-        $rootScope.$on('auth:validation-error', function(ev, user) {
+        var cleanupfunc5 = $rootScope.$on('auth:validation-error', function() {
             // toastr.wanning('You should log in.')
             // // $state.go('app.pages_auth_login');
             // console.log(ev);
             // console.log(user);
         });
+        $rootScope.$on('$destroy', cleanupfunc5);
 
-        $rootScope.$on('auth:session-expired', function(ev) {       
+        var cleanupfunc6 = $rootScope.$on('auth:session-expired', function() {       
             toastr.wanning('Session has expired. Please log in.');
             $state.go('app.pages_auth_login');
         });
+        $rootScope.$on('$destroy', cleanupfunc6);
 
-        $rootScope.$on('auth:logout-success', function(ev) {
+        var cleanupfunc7 = $rootScope.$on('auth:logout-success', function() {
             $state.go('app.pages_homepage');
         }); 
+        $rootScope.$on('$destroy', cleanupfunc7);
 
-        $rootScope.$on('auth:logout-error', function(ev, reason) {
+        var cleanupfunc8 = $rootScope.$on('auth:logout-error', function(ev, reason) {
             toastr.error('logout failed because ' + reason.errors[0]);
         });
+        $rootScope.$on('$destroy', cleanupfunc8);
     }
 
 })();

@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.core')
+        .module('app.pages.auth.register')
         .filter('filterByTags', filterByTags)
         .filter('filterSingleByTags', filterSingleByTags);
 

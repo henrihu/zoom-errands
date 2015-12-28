@@ -7,10 +7,10 @@
         .controller('RegisterController', RegisterController);
 
     /** @ngInject */
-    RegisterController.$inject = ['$scope','$state'];
-    function RegisterController($scope, $state)
+    RegisterController.$inject = ['$scope','$state', 'toastr'];
+    function RegisterController($scope, $state, toastr)
     {
-        var vm = this;
+        // var vm = this;
 
         // event handler
         // event: 'auth:registration-email-success'
@@ -24,7 +24,6 @@
         $scope.$on('auth:registration-email-error', function(ev, data) 
         {
             var errors;
-            console.log(data.errors);
             errors = data.errors.full_messages.join('<br/>');
             return toastr.error(errors);            
         });

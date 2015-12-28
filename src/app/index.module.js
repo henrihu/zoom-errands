@@ -20,7 +20,7 @@
 			'ui.bootstrap.datetimepicker',
 
 			// Core
-			'app.core',
+			// 'app.core',
 
 			// Pages
 			'app.pages.auth.login',
