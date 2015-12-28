@@ -18,7 +18,6 @@
     "ng-token-auth": "~0.0.28",
     "angular-file-upload": "~2.2.0",
     "angular-slick": "~0.2.1",
-    "bootstrap-ui-datetime-picker": "~2.0.4",
     "angular-toastr": "~1.6.0",
     "ui-select": "angular-ui-select#~0.13.2"
   },

@@ -1,3 +1,124 @@
+/*----------------------------------------------------------------*/
+/*  Helpers
+/*----------------------------------------------------------------*/
+.no-margin {
+    margin-right: 0;
+}
+
+.no-radius {
+    border-radius: 0;
+}
+
+.divider-vertical {
+    background: rgba(0, 0, 0, 0.12);
+    height: 24px;
+    width: 1px;
+    margin: 0 8px;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.fill-width {
+    min-width: 100%;
+}
+
+.fill-height {
+    min-height: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+// Text format helpers
+.text-italic {
+    font-style: italic;
+}
+
+.text-semibold {
+    font-weight: 600;
+}
+
+.text-bold, strong {
+    font-weight: 700;
+}
+
+.text-strike {
+    text-decoration: line-through;
+}
+
+.text-super {
+    vertical-align: super;
+}
+
+.text-sub {
+    vertical-align: sub;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+// Text align helpers
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+// Boxed text
+.text-boxed {
+    border-radius: 2px;
+    padding: 4px 8px;
+    margin: 0 8px;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.54);
+    background-color: rgba(0, 0, 0, 0.12);
+    white-space: nowrap;
+}
+
+// Boxed text light
+.text-boxed-light {
+    @extend .text-boxed;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+// Truncate
+.text-truncate {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Nowrap
+.text-nowrap {
+    white-space: nowrap;
+}
+
 // Padding helpers
 // Multiples of 5, max:100
 @for $i from 0 through 20 {

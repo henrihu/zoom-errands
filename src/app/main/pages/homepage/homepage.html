@@ -23,7 +23,7 @@
               <div ng-repeat="step in vm.steps" class="col-sm-4">
               	<div class="col-md-10 col-md-offset-1">
                   <img ng-src={{step.image}} class="step-image" alt="image">                  
-                  <h2 class="step-heading text-dark">{{step.title}}</h2>
+                  <h4 class="step-heading text-dark">{{step.title}}</h4>
                   <p class="text-muted large">{{step.content}}</p>
                 </div>
               </div>              
@@ -37,12 +37,14 @@
           <div class="row text-center">
           		<slick infinite=true slides-to-show=3 slides-to-scroll=1 
           		arrows="true" mobile-first="true" responsive="vm.breakpointStep">		
-          			<div ng-repeat="card in vm.carousel" style="padding: 0px 35px;">					  
-		              <md-card style="padding: 3px;">
-									 	<img ng-src={{card.image}} class="md-card-image" alt="image">
-									 	<h2 class="text-primary">{{card.title}}</h2>
-									  <p class="text-muted">{{card.content}}</p>
-									</md-card>
+          			<div ng-repeat="card in vm.carousel" style="padding: 10px 40px;">					  
+		              <div class="panel panel-default">
+                    <div class="panel-body">
+  									 	<img ng-src={{card.image}} class="card-image" alt="image">
+                  	 	<h4 class="text-primary">{{card.title}}</h4>
+  									  <p class="text-muted">{{card.content}}</p>
+                    </div>  
+									</div>
 								</div>
 	            </slick> 
           </div>
@@ -54,11 +56,11 @@
   		<div class="row">
   			<div ng-repeat="item in vm.testimonials" class="col-sm-6">
   				<div class="col-xs-4">
-  					<img ng-src={{item.image}} class="testimonial-image" alt="image">
+  					<img ng-src={{item.image}} class="testimonial-image full-width" alt="image">
   				</div>
   				<div class="col-xs-8">
-  					<h2 class="text-primary">{{item.title}}</h2>
-  					<h4 class="text-muted">{{item.commenter}}</h4>
+  					<h4 class="text-primary">{{item.title}}</h4>
+  					<h5 class="text-muted">{{item.commenter}}</h4>
   					<p class="text-italic text-justify hidden-xs">{{item.content}}</p>
   				</div>
   				<div class="col-xs-12 visible-xs-block">
@@ -73,12 +75,12 @@
   	<div class="container">
   		<div class="row">
   			<div class="col-md-12 text-center whyus-header">
-  				<h1 class="text-white font-size-28">WHY US?</h1>
+  				<h2 class="text-white font-size-28">WHY US?</h2>
   			</div>   			
 				<div ng-repeat="item in vm.whyuses" class="col-md-4 col-sm-6 margin-top-30">
 					<div class="col-md-10 col-md-offset-1 text-center">
   					<img ng-src={{item.image}} class="whyus-image" alt="image">            
-            <h2 class="step-heading text-white">{{item.title}}</h2>
+            <h4 class="step-heading text-white">{{item.title}}</h4>
             <p class="text-white">{{item.content}}</p>
           </div>  
 				</div>  			
@@ -94,7 +96,7 @@
           		arrows="true" responsive="vm.breakpointTeam">		
           			<div ng-repeat="item in vm.team" class="text-center">	          				
 			            <img ng-src={{item.image}} class="team-image" alt="image">			            						 
-								 	<h2 >{{item.title}}</h2>
+								 	<h4 class="margin-top-20 margin-bottom-0">{{item.title}}</h4>
 								  <p class="large">{{item.content}}</p>
 								</div>
 	            </slick> 
@@ -119,7 +121,7 @@
   	<div class="container">
   		<div class="row">
   			<div class="col-md-3 col-sm-6">
-  				<h2>CONTACT US</h2>
+  				<h4>CONTACT US</h4>
   				<p>Zoom Errands, Inc.</p>
   				<p>10850 Wilshire Blvd #350, </p>
   				<p>Los Angeles, CA 90024</p>
@@ -128,14 +130,14 @@
   			</div>
 
   			<div class="col-md-4 col-sm-6">
-  				<h2>ABOUT US</h2>
+  				<h4>ABOUT US</h4>
   				<p>Zoom Errands is a FULLY MANAGED complete errand services provider company.
   					This means you get the security and backing of a company behind everything we do.
   					We started operations in 2010 and serve the country community.</p>  				
   			</div>
 
   			<div class="col-md-2 col-sm-6">
-  				<h2>SERVICES</h2>
+  				<h4>SERVICES</h4>
   				<p>Errand Services</p>
   				<p>Household and Waiting</p>
   				<p>Moving and Relocating</p>
@@ -145,7 +147,7 @@
   			</div>
   			
   			<div class="col-md-2 col-sm-4">
-  				<h2>QUICK LINKS</h2>
+  				<h4>QUICK LINKS</h4>
   				<a ui-sref="app.pages_auth_register_provider"><p>Serivce Provider Sign up</p></a>
   				<a ui-sref="app.pages_auth_login_provider"><p>Service Provider Log in</p></a>
   				<p>Testimonials</p>

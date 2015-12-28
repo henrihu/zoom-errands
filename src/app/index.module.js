@@ -15,9 +15,8 @@
 			'restangular',
 			'ng-token-auth',
 			'angularFileUpload',
-			'ui.bootstrap',
 			'ui.select',
-			'ui.bootstrap.datetimepicker',
+			// 'ui.bootstrap.datetimepicker',
 
 			// Core
 			// 'app.core',

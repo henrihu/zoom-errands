@@ -217,6 +217,12 @@ section {
         margin-right: -40px;
         min-height: 40px;
     }
+    .card-image {
+        width: 100%;
+    }
+    .panel-body {
+        padding: 2px;
+    }
 }
 
 #testimonial {
@@ -265,7 +271,7 @@ section {
 
 #footer {
     background-color: #233442;
-    h2 {
+    h4 {
         color: #eee;        
     }    
 
