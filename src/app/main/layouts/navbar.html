@@ -14,17 +14,11 @@
                 
             
             <ul class="nav navbar-nav navbar-right">
-        		<li ng-if="user.signedIn">
-                    <a class="page-scroll" ui-sref="app.pages_homepage">
+        		<li ng-if="user.signedIn && user.configName=='default'">
+                    <a class="page-scroll" ui-sref="app.client.dashboard">
                     	Home
                     </a>
                 </li>
-
-                <li ng-if="user.signedIn && user.configName=='default'">
-                    <a class="page-scroll" ui-sref="app.client.dashboard">
-                        Dashboard
-                    </a>
-                </li> 
 
                 <li ng-if="user.signedIn && user.configName=='default'">
                     <a class="page-scroll" ui-sref="app.client.myerrand">
@@ -48,13 +42,13 @@
                   <a href="#" class="dropdown-toggle image-padding"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <div layout="row" layout-align="end center" class="float-right">
                         <div class="avatar-wrapper">
-                            <img md-menu-align-target class="avatar" ng-show="!user.signedIn" src="assets/images/avatars/profile.jpg">
-                            <img md-menu-align-target class="avatar" ng-show="user.signedIn" ng-src="{{user.photoUrl}}">
+                            <img class="avatar" ng-show="!user.signedIn" src="assets/images/avatars/profile.jpg">
+                            <img class="avatar" ng-show="user.signedIn" ng-src="{{user.photoUrl}}">
                         </div>
                         <!-- <span>ACCOUNT </span><span class="caret"></span> -->
                         <span class="username" hide-sm>{{user.fname|capitalize}} {{user.lname|capitalize}}</span>
-                        <md-icon md-font-icon="icon-chevron-down"
-                                 class="icon s16" hide-sm></md-icon>
+                        <!-- <md-icon md-font-icon="icon-chevron-down"
+                                 class="icon s16" hide-sm></md-icon> -->
                     </div>
                   </a>
                   <ul class="dropdown-menu">                    
@@ -82,7 +76,7 @@
                 </li>
                 <li ng-if="!user.signedIn">	                		
                     <a class="page-scroll text-primary" href="#contactus">
-                    	<md-icon md-font-icon="icon-phone" class="icon blue-500-fg"></md-icon>
+                    	<!-- <span class="glyphicon glyphicon-earphone"></span> -->
                     	(310) 425-6425
                     </a>
                 </li>	                
