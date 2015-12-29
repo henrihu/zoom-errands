@@ -78,17 +78,15 @@
         color: white;
         background-color: darken($brand-primary, 10%);
     }
+
+
 }
 
 .escrow-hours {
-                letter-spacing: 0.2px;
-                border:  1px solid rgba(50,50,50,0.2);
-                border-radius: 4px;
-                padding: 2px 4px;
-                color: $gray;
-                list-style: none;
-                margin-bottom: 4px;                
-                margin-left: 20px;
+    border: 1px solid rgba(210,210,210,1);
+    border-radius: 4px;
+    padding: 4px;
+    margin-top: 4px;
 }
 
 @media(min-width:768px) {
@@ -114,8 +112,14 @@
             font-size: 1.5em;
         }    
     }
-    .escrow-hours {        
-        margin-top: -20px;
-    }    
-        
+    .escrow-hours {
+        display: inline;
+        margin-right: 10px;
+    }
+    .escrow-div{
+        position: relative;
+        top: -24px;
+        left: -20px;
+    }
+     
 } 
