@@ -6,12 +6,12 @@
                     <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
                 </div>
 
-                <div class="text-muted title">Service Provider Login</div>  
+                <div class="text-muted title  margin-vertical-32">Service Provider Login</div>  
 
                 <form ng-submit="submitLogin(vm.form, {config: 'provider'})" role="form" ng-init="vm.form = {}">
                     <input ng-model="vm.form.email" type="email" class="form-control email-input" placeholder="E-mail address">
                     <input ng-model="vm.form.password" type="password" class="form-control password-input" placeholder="Password">
-                    <md-button class="btn btn-primary btn-login">Login</md-button>
+                    <button class="btn btn-primary btn-login">Login</button>
                 </form> 
 
                <!--  <p class="or-divider">Or login with</p>

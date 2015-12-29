@@ -6,18 +6,18 @@
                     <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
                 </div>
 
-                <div class="text-muted title">Sign Up</div>  
+                <div class="text-muted title  margin-vertical-32 ">Sign Up</div>  
 
                 <form ng-submit="submitRegistration(vm.form, {config: 'default'})" role="form" >
                     <input ng-model="vm.form.email" type="email" class="form-control email-input" placeholder="E-mail address">
                     <input ng-model="vm.form.password" type="password" class="form-control password-input" placeholder="Password">
                     <input ng-model="vm.form.password_confirmation" type="password" class="form-control password-input" placeholder="Confirm Password">
-                    <md-button class="btn btn-login">Sign Up</md-button>
+                    <button class="btn btn-login">Sign Up</button>
                 </form> 
 
                 <p class="or-divider">Or Sign Up with</p>
 
-                <md-button ng-click="authenticate('facebook', {config: 'default'})" class="btn btn-primary btn-facebook">Facebook</md-button>
+                <button ng-click="authenticate('facebook', {config: 'default'})" class="btn btn-primary btn-facebook">Facebook</button>
 
                 <div class="row">
                     <div class="col-xs-6 text-left"><a ui-sref="app.pages_auth_login">Login</a></div>

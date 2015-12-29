@@ -263,6 +263,12 @@ section {
         // margin-height: -80px;
         min-height: 40px;
     }
+
+    @media(max-width:600px) {
+        .team-image {
+            width: 90%;
+        }
+    }
 }
 
 #logos {
