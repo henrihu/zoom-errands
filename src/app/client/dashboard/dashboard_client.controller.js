@@ -7,8 +7,8 @@
         .controller('DashboardClientController', DashboardClientController);
 
     /** @ngInject */
-    DashboardClientController.$inject = ['$log', '$scope', '$timeout', 'Restangular'];
-    function DashboardClientController($log, $scope, $timeout, Restangular)
+    DashboardClientController.$inject = ['$log', '$scope', 'toastr', 'Restangular'];
+    function DashboardClientController($log, $scope, toastr, Restangular)
     {
         var vm = this; 
         vm.submitErrand = submitErrand; 
@@ -28,6 +28,16 @@
             $log.log(types);
             vm.alltypes = types;
         });
+
+        function submitErrand() {
+            Restangular.all('client/tasks').post({task: vm.errand})
+            .then(function(data) {
+                $log.log(data);
+                toastr.success('Your task ' + data.title + ' has been accepted.', 'Accept!');
+            }, function(data) {
+                toastr.wanning(data.alert);
+            });
+        }
 
         // Restangular.one('client/tasks', ).get
 
@@ -73,9 +83,7 @@
         //     }
         // };
 
-        function submitErrand() {
-            Restangular.all('client/tasks').post({task: vm.errand});
-        }
+        
     }
 
 })();

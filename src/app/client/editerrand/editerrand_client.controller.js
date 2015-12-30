@@ -7,11 +7,11 @@
         .controller('EditerrandClientController', EditerrandClientController);
 
     /** @ngInject */
-    EditerrandClientController.$inject = [ '$scope', 'Restangular', '$stateParams'];
-    function EditerrandClientController($scope, Restangular, $stateParams)
+    EditerrandClientController.$inject = [ '$scope', 'Restangular', '$stateParams', 'toastr', '$log'];
+    function EditerrandClientController($scope, Restangular, $stateParams, toastr, $log)
     {
         var vm = this; 
-        vm.submitErrand = submitErrand; 
+        vm.updateErrand = updateErrand; 
         vm.errand = {}; 
         vm.errand.contact = $scope.user.phone1;
 
@@ -35,6 +35,23 @@
         .then(function(task) {
             vm.errand = task;
         });
+
+
+        function updateErrand() {
+            $log.log(vm.errand);
+            var payload = {};
+            payload = {title: vm.errand.title, datetime: vm.errand.datetime, address: vm.errand.address,
+                        contact: vm.errand.contact, type_id: vm.errand.type_id, 
+                        details: vm.errand.details, escrowable: vm.errand.escrowable};
+            Restangular.one('client/tasks', taskid).put(payload)
+            .then(function(data) {
+                $log.log(data);
+                toastr.success('Your task \"' + data.title + '\" has been updated.', 'Errand Updated!');
+            }, function(data) {
+                $log.log(data);
+                toastr.warning(data.data.alert);
+            });
+        }
 
         
         // var marker;
@@ -78,9 +95,6 @@
         //     }
         // };
 
-        function submitErrand() {
-            Restangular.all('client/tasks').post({task: vm.errand});
-        }
     }
 
 })();

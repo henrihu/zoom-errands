@@ -8,7 +8,7 @@
 
                 <div class="text-muted editerrand-title">Editerrand</div>                 
                 
-                <form ng-submit="vm.submitErrand()" role="form" >
+                <form ng-submit="vm.updateErrand()" role="form" >
                     <div id="account-info">
                         <input ng-model="vm.errand.title" type="text" class="form-control email-input" placeholder="Errand Title" required>
                         <!-- <datetimepicker data-ng-model="vm.errand.date"></datetimepicker> -->
@@ -41,22 +41,21 @@
                         
                         <textarea ng-model="vm.errand.details" class="form-control textarea" rows="3" placeholder="Errand Details"></textarea>
 
-                        <div class="" layout="row" layout-align="start"> 
-                            <md-checkbox  ng-model="vm.errand.escrowable" class="gray-font-color">
+                        <div> 
+                            <input type="checkbox"  ng-model="vm.errand.escrowable" class="gray-font-color">
                                 Allow access escrow account
-                            </md-checkbox>                                                      
                         </div>
                     </div> 
                     <div class=" col-md-8 col-md-offset-2">
-                       <md-button class="btn btn-editerrand btn-login">Submit</md-button> 
+                       <button class="btn btn-editerrand btn-login">Update</button> 
                     </div>                    
                 </form>
             </div>
 
-            <div class="col-sm-6  margin-top-80" >                               
+            <!-- <div class="col-sm-6  margin-top-80" >                               
                 <div id="map_canvas" style="width:400px; height:500px;">
                 </div>                  
-            </div>      
+            </div>   -->    
         </div>        
     </div>
 </div>

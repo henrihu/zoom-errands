@@ -16,14 +16,15 @@ $border-color: rgba(200,200,200, 0.7);
         .title {
                 font-size: 32px;
                 // font-weight: 100;
-                margin-bottom: 50px;
-                margin-top: 50px;
+                margin-bottom: 60px;
+                margin-top: 70px;
                 letter-spacing: 2px;
         }
 
         .avatar-div{
             padding-right: 30px;
             padding-top: 20px;
+            text-align: right;
 
             .avatar-image {                
                 border: 1px solid $border-color;
@@ -47,24 +48,34 @@ $border-color: rgba(200,200,200, 0.7);
 
             &.btn-update {
                 margin-top: 60px;
-                background-color: $brand-primary;
+                // background-color: $brand-primary;
                 max-width: 230px;
             }
         }
 
-        label {
-            color: gray;
+        form {
+            label {
+                color: gray;
+                margin: 0px;
+            }
+            input {
+                border: none;
+            }
         }
+
+        
 
         a {
             text-decoration: none;
             cursor: pointer;
-        }
 
-        // a.update-avatar {
-
-        // }
-                    
+            &.update-avatar {                
+                p {
+                    display: inline-block;
+                    padding-right: 25px;
+                }
+            }
+        }                    
     
     }
 
@@ -86,8 +97,16 @@ $border-color: rgba(200,200,200, 0.7);
         #login-form-wrapper {
             .avatar-div{
                 padding-right: 0px;
-            }    
-            
+                text-align: center;
+            } 
+            a {                
+                &.update-avatar {                
+                    p {
+                        padding-right: 0px;
+                    }
+                }
+            }      
+                
         }
     }
 
