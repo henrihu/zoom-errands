@@ -42,7 +42,7 @@
 
         vm.uploader.onSuccessItem = function(item, response) {
             toastr.success('Your photo has been updated successfully!');
-            // $state.go($state.current, {}, {reload: true}); //second parameter is for $stateParam
+            vm.accountSetting.photoThumbUrl = response.data.photoUrl;
             vm.accountSetting.photoUrl = response.data.photoUrl;
             // console.log(item);
             // console.log(response);

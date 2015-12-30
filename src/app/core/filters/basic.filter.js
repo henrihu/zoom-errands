@@ -8,7 +8,16 @@
         .filter('htmlToPlaintext', htmlToPlainTextFilter)
         .filter('nospace', nospaceFilter)
         .filter('capitalize', capitalizeFilter)
-        .filter('humanizeDoc', humanizeDocFilter);
+        .filter('humanizeDoc', humanizeDocFilter)
+        .filter('yesNo', yesNoFilter);
+
+    /** @ngInject */
+    function yesNoFilter()
+    {
+        return function(input) {
+          return (input) ? 'Open' : 'No';
+        };
+    }
 
     /** @ngInject */
     function capitalizeFilter()

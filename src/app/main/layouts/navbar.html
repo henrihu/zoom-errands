@@ -43,7 +43,7 @@
                     <div class="float-right">
                         <div class="avatar-wrapper">
                             <img class="avatar" ng-show="!user.signedIn" src="assets/images/avatars/profile.jpg">
-                            <img class="avatar" ng-show="user.signedIn" ng-src="{{user.photoUrl}}">
+                            <img class="avatar" ng-show="user.signedIn" ng-src="{{user.photoThumbUrl}}">
                         </div>
                         <!-- <span>ACCOUNT </span><span class="caret"></span> -->
                         <span class="username" hide-sm>{{user.fname|capitalize}} {{user.lname|capitalize}}</span>
@@ -85,7 +85,7 @@
     </div>
 </nav>
 
-<div class=" escrow-div" ng-if="user.signedIn && user.configName=='default'">
+<div class="escrow-div" ng-if="user.signedIn && user.configName=='default'">
     <div class="container">
     <div class"row">
         <div class="col-sm-10 col-sm-offset-2 ">    

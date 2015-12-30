@@ -201,6 +201,7 @@
                 case 'photo':
                     toastr.success('Your photo has been updated successfully!');
                     vm.accountSetting.photoUrl = response.data.photoUrl;
+                    vm.accountSetting.photoThumbUrl = response.data.photoUrl;
                     vm.accountSetting.photo_file_name = true;    
                     break;
 

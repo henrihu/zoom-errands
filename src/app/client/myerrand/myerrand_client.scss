@@ -1,0 +1,35 @@
+#myerrand-client {
+	table {
+		thead{
+			th {
+				color: $brand-primary;
+			}
+		}
+		tbody{
+			td {
+				vertical-align: middle;
+
+			}
+			.border-side {
+				border-left: 1px solid $table-border-color;
+				border-right: 1px solid $table-border-color;
+				border-bottom: 1px solid $table-border-color;
+			}
+			.remove-button {
+				width: 20px;
+				height: 20px;
+				padding: 1px;
+			}
+			.gap-tr {
+				height: 30px;
+			}
+			.avatar {
+				width: 30px;
+		    min-width: 30px;
+		    height: 30px;
+		    line-height: 30px;
+			}
+		}
+	}
+	
+}

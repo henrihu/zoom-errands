@@ -7,13 +7,15 @@
         .controller('MyerrandClientController', MyerrandClientController);
 
     /** @ngInject */
-    MyerrandClientController.$inject = [ '$scope', 'Restangular'];
-    function MyerrandClientController($scope, Restangular)
+    MyerrandClientController.$inject = ['$log', '$scope', 'Restangular'];
+    function MyerrandClientController($log, $scope, Restangular)
     {
         var vm = this; 
         Restangular.all('client/tasks').getList()
         .then(function(tasks) {
             vm.tasks = tasks;
+            vm.displayedtasks = [].concat(vm.tasks);
+            $log.log(vm.displayedtasks);
         });
     }
 })();

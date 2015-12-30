@@ -17,7 +17,7 @@
 			'ng-token-auth',
 			'angularFileUpload',
 			'ui.select',
-			// 'ui.bootstrap.datetimepicker',
+			'smart-table',
 
 			// Core
 			// 'app.core',

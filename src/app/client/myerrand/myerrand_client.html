@@ -3,46 +3,52 @@
         <div class="row">
             <div id="login-form" class="col-md-12  table-responsive">
                 <p>Open Errands</p>
-                <table class="table table-bordered ">
+                <table st-table="vm.displayedtasks" st-safe-src="vm.tasks" class="table ">
                     <thead>                    
-                        <th>Date Time</th>
-                        <th>Title</th>                        
-                        <th>Address</th>                        
-                        <th>Type</th>
-                        <th>Escrow Access</th>
-                        <th>Serice Provider</th>                        
+                        <th class="text-center">DATE</th>
+                        <th>ERRAND TITLE</th>                        
+                        <th>SERVICE PROVIDER</th>                      
+                        <th class="text-center">UPLOADS</th>
+                        <th class="text-center">ESCROW USED</th>
+                        <th class="text-center">HOURS USED</th>                       
                     </thead>
                     <tbody>
-                        <tr ng-repeat="task in vm.tasks | filter:{ status: 'open' }">
-                            <td>{{task.datetime | date: 'dd MMM yyyy HH:mm'}}</td>
+                        <tr ng-repeat="task in vm.displayedtasks | filter:{ status: 'open' }" class="border-side">
+                            <td class="text-center">{{task.datetime | date}}</td>
                             <td><a ui-sref='app.client.editerrand({id: {{task.id}}})'>{{task.title}}</a></td>
-                            <td>{{task.address}}</td>                            
-                            <td>{{task.type.name}}</td>   
-                            <td>{{task.escrowable}}</td>
-                            <td>{{task.provider}}</td>                           
+                            <td>
+                                <img class="avatar" ng-src="{{task.provider.photoThumbUrl}}">
+                                {{task.provider.fname}}
+                            </td>  
+                            <td class="text-center"></td>
+                            <td class="text-center">{{task.escrowable | yesNo}}</td>                            
+                            <td class="text-center ">
+                                <button class="btn  btn-danger padding-vertical-2">
+                                Open</button>
+                            </td> 
+                            <td>
+                                <a ui-sref='app.client.editerrand({id: {{task.id}}})'>delete</a>
+                            </td> 
                         </tr>
+                        <tr class="gap-tr">
+                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr ng-repeat="task in vm.displayedtasks | filter:{ status: 'close' }" class="border-side">
+                            <td class="text-center">{{task.datetime | date}}</td>
+                            <td><a ui-sref='app.client.editerrand({id: {{task.id}}})'>{{task.title}}</a></td>
+                            <td>
+                                <img class="avatar" ng-src="{{task.provider.photoThumbUrl}}">
+                                {{task.provider.fname}}
+                            </td>  
+                            <td class="text-center"></td>
+                            <td class="text-center">{{task.usedEscrow}}</td>                            
+                            <td class="text-center">{{task.usedHour}}</td> 
+                            <td></td>                          
+                        </tr>
+
                     </tbody>
                 </table>
-
-                <p>Closed Errands</p>
-                <table class="table table-bordered table-responsive ">   
-                    <thead>                    
-                        <th>Date Time</th>
-                        <th>Title</th>
-                        <th>Serice Provider</th>
-                        <th>Escrow Used</th>                        
-                        <th>Hours Used</th>                        
-                    </thead>                 
-                    <tbody>
-                        <tr ng-repeat="task in vm.tasks | filter:{ status: 'close' }">
-                            <td>{{task.datetime | date: 'dd MMM yyyy HH:mm'}}</td>
-                            <td>{{task.title}}</td>
-                            <td>{{task.provider.fname}} {{task.provider.lname}}</td>                            
-                            <td>{{task.usedEscrow}}</td>                            
-                            <td>{{task.usedHour}}</td>                            
-                        </tr>
-                    </tbody>
-                </table>                                 
+                    
             </div>
         </div>        
     </div>

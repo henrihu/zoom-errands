@@ -7,8 +7,8 @@
         .controller('EditerrandClientController', EditerrandClientController);
 
     /** @ngInject */
-    EditerrandClientController.$inject = [ '$scope', 'Restangular', '$stateParams', 'toastr', '$log'];
-    function EditerrandClientController($scope, Restangular, $stateParams, toastr, $log)
+    EditerrandClientController.$inject = [ '$scope', 'Restangular', '$stateParams', 'toastr'];
+    function EditerrandClientController($scope, Restangular, $stateParams, toastr)
     {
         var vm = this; 
         vm.updateErrand = updateErrand; 
@@ -38,17 +38,14 @@
 
 
         function updateErrand() {
-            $log.log(vm.errand);
             var payload = {};
             payload = {title: vm.errand.title, datetime: vm.errand.datetime, address: vm.errand.address,
                         contact: vm.errand.contact, type_id: vm.errand.type_id, 
                         details: vm.errand.details, escrowable: vm.errand.escrowable};
             Restangular.one('client/tasks', taskid).put(payload)
             .then(function(data) {
-                $log.log(data);
                 toastr.success('Your task \"' + data.title + '\" has been updated.', 'Errand Updated!');
             }, function(data) {
-                $log.log(data);
                 toastr.warning(data.data.alert);
             });
         }
