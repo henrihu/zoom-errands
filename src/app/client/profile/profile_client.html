@@ -3,7 +3,7 @@
         <div class="row">
             <div class="text-muted title text-center ">Profile</div>  
             <div class="col-sm-6 avatar-div">
-                <img class="avatar-image"  ng-if="vm.accountSetting.photo_file_name"  ng-src="{{vm.accountSetting.photoUrl}}" >
+                <img class="avatar-image"   ng-src="{{vm.accountSetting.photoUrl}}" >
                 <input id="imageuploader" ng-show="false" type="file" nv-file-select 
                         uploader="vm.uploader" filter="queueLimit" />                 
                 <a ng-click="vm.triggerFileInput('photo')" class="update-avatar">

@@ -7,8 +7,8 @@
         .controller('DashboardClientController', DashboardClientController);
 
     /** @ngInject */
-    DashboardClientController.$inject = ['$log', '$scope', 'toastr', 'Restangular'];
-    function DashboardClientController($log, $scope, toastr, Restangular)
+    DashboardClientController.$inject = ['$log', '$scope', 'toastr', 'Restangular', 'FileUploader', 'API_URL', '$auth'];
+    function DashboardClientController($log, $scope, toastr, Restangular, FileUploader, API_URL, $auth)
     {
         var vm = this; 
         vm.submitErrand = submitErrand; 
@@ -16,6 +16,20 @@
         vm.errand.contact = $scope.user.phone1;
 
         vm.isOpen = false;
+        vm.uploader = new FileUploader({
+            
+            alias: 'upload',
+            // method: 'PUT',
+            headers: $auth.retrieveData('auth_headers')              
+        });
+
+        vm.uploader.filters.push({
+            name: 'customFilter',
+            fn: function() {
+                return vm.uploader.queue.length < 5;
+            }
+        });
+
         vm.openCalendar = function(e) { 
             e.preventDefault();
             e.stopPropagation();
@@ -25,19 +39,36 @@
 
         Restangular.all('client/alltypes').getList()
         .then(function(types) {
-            $log.log(types);
+            // $log.log(types);
             vm.alltypes = types;
         });
 
         function submitErrand() {
             Restangular.all('client/tasks').post({task: vm.errand})
             .then(function(data) {
-                $log.log(data);
+                // $log.log(data);
                 toastr.success('Your task ' + data.title + ' has been accepted.', 'Accept!');
             }, function(data) {
-                toastr.wanning(data.alert);
+                // $log.log(data)
+                toastr.warning(data.data.alert);
             });
+
+            // vm.uploader.alias = 'photo';
+            // vm.uploader.method = 'POST';
+            // vm.uploader.headers = $auth.retrieveData('auth_headers');
+            vm.uploader.url = API_URL + '/client/tasks/1/upload'
+            vm.uploader.uploadAll();
         }
+
+        vm.uploader.onBeforeUploadItem = function(item) 
+        {
+            item.url = vm.uploader.url;
+        };
+
+        // vm.uploader.onCompleteAll = function() {
+            
+        //     // vm.uploader.clearQueue();
+        // }
 
         // Restangular.one('client/tasks', ).get
 

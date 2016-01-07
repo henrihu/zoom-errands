@@ -15,7 +15,7 @@
     function yesNoFilter()
     {
         return function(input) {
-          return (input) ? 'Open' : 'No';
+          return (input) ? 'In process' : 'No';
         };
     }
 
