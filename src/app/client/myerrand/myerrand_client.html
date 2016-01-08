@@ -25,11 +25,11 @@
                             </td>
                             <td class="text-center">{{task.escrowable | yesNo}}</td>                            
                             <td class="text-center ">
-                                <button class="btn  btn-danger padding-vertical-2">
+                                <button class="btn btn-danger padding-vertical-2">
                                 Open</button>
-                            </td> 
+                            </td>
                             <td>
-                                <a ui-sref='app.client.editerrand({id: {{task.id}}})'>delete</a>
+                                <a ng-click="vm.deleteTask(1)">delete</a>
                             </td> 
                         </tr>
                         <tr class="gap-tr">
