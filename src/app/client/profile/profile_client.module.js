@@ -33,17 +33,17 @@
                 // {
                 //     // return profileClientService.getAccountSetting();
                 // },
-                // TestResolve : function(profileClientService) 
+                // TestResolve : function(profileClientService)
                 // {
                 //     profileClientService.getTest().then(function(test) {
                 //         return test.message;
                 //     });
-                // }  
+                // }
 
             }
         });
 
-        
+
 
     }
 

@@ -12,13 +12,13 @@
     function ProfileProviderController(Restangular, $mdDialog, toastr,
             uiGmapGoogleMapApi, $auth, FileUploader, API_URL, $document)
     {
-        var vm = this;    
-                      
+        var vm = this;
+
 
         initAccount();
 
         // Methods
-        vm.initAccount = initAccount;        
+        vm.initAccount = initAccount;
         vm.showAdvanced = showAdvanced;
         vm.triggerFileInput = triggerFileInput;
         vm.updateAccount = updateAccount;
@@ -34,7 +34,7 @@
 
                 // function define
         function initAccount()
-        {   
+        {
             vm.accountSetting = {};
             vm.agreement = {};
             vm.agreement.al099 = vm.agreement.confidentiality = vm.agreement.delivery = vm.agreement.noncompete = '';
@@ -43,10 +43,10 @@
                     queueLimit: 2
             });
 
-            
+
             Restangular.one('provider/setting').get()
             .then(function(resp) {
-                vm.agreement = resp; 
+                vm.agreement = resp;
             });
 
             // Get provider job types
@@ -54,16 +54,16 @@
             .then(function(resp) {
                 vm.types = resp.types;
             });
-            
+
             uiGmapGoogleMapApi.then(function ()
             {
-                vm.map = { 
-                    center: { latitude: 34.039959, longitude: -118.2693948 }, 
+                vm.map = {
+                    center: { latitude: 34.039959, longitude: -118.2693948 },
                     zoom: 12 ,
                     coords: { latitude: 34.039959, longitude: -118.2693948 },
                     id: 0
                 };
-            });  
+            });
 
             // vm.states = [
             //   {name: 'Alaska', abb: 'AK'}, {name: 'Alabama', abb: 'AL'}, {name: 'Arkansas', abb: 'AR'}, {name: 'Arizona', abb: 'AZ'},
@@ -103,20 +103,20 @@
 
             vm.selectedItem= vm.itemArray[0];
         }
-        
+
         function showAdvanced(ev, dialogID)
         {
             var templateDialog = 'app/provider/profile/tabs/account/dialog.' + dialogID + '.html';
             $mdDialog.show({
                 controller         : function ($mdDialog)
-                {                    
+                {
                     if (vm.accountSetting.fname && vm.accountSetting.lname) {
                         vm.fullName = vm.accountSetting.fname + ' ' + vm.accountSetting.lname;
                     }
                     else {
                         vm.fullName = '';
                     }
-                    
+
                     if (vm.agreement) {
                         switch ( dialogID )
                         {
@@ -155,11 +155,11 @@
                     {
                         var payload = {agreement: dialogID, fullname: vm.fullName};
                         Restangular.one('provider/setting').put(payload).then(function(resp) {
-                            vm.signedAt = resp.time;                            
+                            vm.signedAt = resp.time;
                             toastr.success('You signed ' + dialogID + ' agreement at ' + resp.time , 'Thank you!');
                         }, function errorCallback(resp){
                             toastr.error(resp.data.error);
-                        });                        
+                        });
                     };
                 },
                 templateUrl        : templateDialog,
@@ -181,16 +181,16 @@
         function triggerFileInput(selectedInput)
         {
             vm.selectedInput = selectedInput;
-            angular.element('#imageuploader').trigger('click');          
+            angular.element('#imageuploader').trigger('click');
         }
 
         vm.uploader.onAfterAddingFile = function(item) {
             if (vm.uploader.queue.length !== 1){
                 vm.uploader.removeFromQueue(0); // only one file in the queue
             }
-            
+
             item.method = 'PUT';
-            item.headers = $auth.retrieveData('auth_headers');            
+            item.headers = $auth.retrieveData('auth_headers');
             item.alias = vm.selectedInput;
             item.upload();
         };
@@ -202,31 +202,31 @@
                     toastr.success('Your photo has been updated successfully!');
                     vm.accountSetting.photoUrl = response.data.photoUrl;
                     vm.accountSetting.photoThumbUrl = response.data.photoUrl;
-                    vm.accountSetting.photo_file_name = true;    
+                    vm.accountSetting.photo_file_name = true;
                     break;
 
                 case 'driverlicense':
                     toastr.success('Your Drivers License has been updated successfully!');
                     vm.accountSetting.driverUrl = response.data.driverUrl;
-                    vm.accountSetting.driverlicense_file_name = true;    
+                    vm.accountSetting.driverlicense_file_name = true;
                     break;
 
                 case 'proofinsurance':
                     toastr.success('Your Proof Insurance has been updated successfully!');
                     vm.accountSetting.proofUrl = response.data.proofUrl;
-                    vm.accountSetting.proofinsurance_file_name = true;    
+                    vm.accountSetting.proofinsurance_file_name = true;
                     break;
-                
+
             }
-            
-                  
+
+
         };
-        
+
         vm.uploader.onErrorItem = function(item, response) {
             toastr.error(response.errors[0]);
             // console.log(response);
-        };        
-        
+        };
+
         /**
          * update client account setting.
          */
@@ -234,14 +234,14 @@
         {
             // update main accountSetting
             $auth.updateAccount(vm.accountSetting, {config: 'provider'}).then(success, error);
-            
+
             // update job types
             var payload = [];
             for (var i in vm.types)
             {
                 if (vm.types[i])
                 {
-                    payload.push(vm.types[i].value);                    
+                    payload.push(vm.types[i].value);
                 }
             }
             Restangular.one('provider/types').put(payload);
@@ -251,9 +251,9 @@
             //         console.log(resp);
             //         // toastr.error(resp);
             // });
-            
+
             //update notification setting
-            var payload1 = {sms: vm.agreement.sms, email: vm.agreement.email};            
+            var payload1 = {sms: vm.agreement.sms, email: vm.agreement.email};
 
             Restangular.one('provider/setting').put(payload1);
             // .then(function(resp) {
@@ -261,11 +261,11 @@
             // });
 
 
-            function success(){                 
+            function success(){
                 toastr.success('Account setting updated successfully!');
             }
 
-            function error(data){              
+            function error(data){
 
                     angular.forEach(data.alert, function(alert){
                         toastr.error(alert);

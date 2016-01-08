@@ -1,21 +1,21 @@
 <div id="profile-client" class="border-top">
     <div id="login-form-wrapper"  class="container">
         <div class="row">
-            <div class="text-muted title text-center ">Profile</div>  
+            <div class="text-muted title text-center ">Profile</div>
             <div class="col-sm-6 avatar-div">
                 <img class="avatar-image"   ng-src="{{vm.accountSetting.photoUrl}}" >
-                <input id="imageuploader" ng-show="false" type="file" nv-file-select 
-                        uploader="vm.uploader" filter="queueLimit" />                 
+                <input id="imageuploader" ng-show="false" type="file" nv-file-select
+                        uploader="vm.uploader" filter="queueLimit" />
                 <a ng-click="vm.triggerFileInput('photo')" class="update-avatar">
-                    <div class="font-size-16 margin-top-16">                            
+                    <div class="font-size-16 margin-top-16">
                         <p>
                         <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
                         &nbsp;Change photo</p>
-                    </div>                        
+                    </div>
                 </a>
-            </div>   
-            
-            <form ng-submit="vm.updateAccount()">    
+            </div>
+
+            <form ng-submit="vm.updateAccount()">
                 <div class="col-sm-6 font-size-18 line-height-18">
                     <div class="margin-bottom-20">
                         <label class="text-primary margin-bottom-20">General information</label>
@@ -58,27 +58,31 @@
 
                     <div>
                         <label class="">Telephone:</label>
-                        <input type="text" ng-model="vm.accountSetting.phone1"  required> 
+                        <input type="text" ng-model="vm.accountSetting.phone1"  required>
                     </div>
 
                     <div ng-if="vm.phone2">
                         <label class="">Telephone2:</label>
-                        <input type="text" ng-model="vm.accountSetting.phone2" > 
+                        <input type="text" ng-model="vm.accountSetting.phone2" >
                     </div>
 
-                    <div ng-if="!vm.phone2">                                     
+                    <div ng-if="!vm.phone2">
                         <a ng-click="vm.phone2=true" class="add-number">
                             <i class="glyphicon glyphicon-plus-sign"></i></button>
                             add number
                         </a>
                     </div>
-                </div> 
+                </div>
+                <div class="col-sm-12 font-size-18 line-height-18" style="text-align: center; padding-top: 20px;">
+                  <input id="autocomplete" placeholder="Enter your address" type="text" style="width:300px;  border: 1px solid grey;"></input>
+                </div>
 
                 <div class="col-sm-12 text-center">
-                   <button class="btn btn-primary btn-update">Update Profile</button> 
+                   <button class="btn btn-primary btn-update">Update Profile</button>
                 </div>
-            </form>     
-        </div>      
+            </form>
+
+        </div>
     </div>
 
     <div id="footer">
@@ -87,12 +91,20 @@
                 <div class="col-sm-8 col-sm-offset-1">
                     <p>Zoom Errands, Inc.</p>
                 </div>
-                <div class="col-sm-3">    
+                <div class="col-sm-3">
                     <p><i class="glyphicon glyphicon-earphone"></i> (310) 425-6425</p>
-                </div>    
+                </div>
             </div>
-        </div>        
+        </div>
     </div>
 
 </div>
 
+
+
+<script>
+  function initAutocomplete(){
+    window['initAutocomplete']();
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&language=en&callback=initAutocomplete" async defer></script>
