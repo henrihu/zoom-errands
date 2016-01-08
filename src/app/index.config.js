@@ -19,7 +19,7 @@
     toastrConfig.positionClass = 'toast-top-right';
     // toastrConfig.preventDuplicates = true;
     toastrConfig.preventOpenDuplicates = true;
-    toastrConfig.progressBar = true;
+    toastrConfig.progressBar = false;
     /////////////////////
 
     RestangularProvider.setBaseUrl(API_URL);

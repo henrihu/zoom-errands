@@ -22,7 +22,8 @@
                   },  
 
                   'navbar@app'    : {
-                      templateUrl: 'app/main/layouts/navbar.html'
+                      templateUrl: 'app/main/layouts/navbar.html',
+                      controller : 'AppController as vm'
                   }                 
 
               }

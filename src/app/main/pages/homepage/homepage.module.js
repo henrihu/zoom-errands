@@ -15,6 +15,11 @@
                 'content@app': {
                     templateUrl: 'app/main/pages/homepage/homepage.html',
                     controller : 'HomepageController as vm'
+                },
+
+                'navbar@app': {
+                    templateUrl: 'app/main/layouts/navbar.html',
+                    controller : 'HomepageController as vm'
                 }
             }
         });

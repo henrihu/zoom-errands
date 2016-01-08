@@ -20,7 +20,9 @@
                                 <img class="avatar" ng-src="{{task.provider.photoThumbUrl}}">
                                 {{task.provider.fname}}
                             </td>  
-                            <td class="text-center"></td>
+                            <td class="text-center">
+                                <img class="" ng-repeat="upload in task.task_uploads" ng-src="{{upload.uploadThumbUrl}}">
+                            </td>
                             <td class="text-center">{{task.escrowable | yesNo}}</td>                            
                             <td class="text-center ">
                                 <button class="btn  btn-danger padding-vertical-2">

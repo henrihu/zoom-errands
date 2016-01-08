@@ -5,7 +5,11 @@
     background-color: white;
     border-color: transparent;
     margin-bottom: 0px;
-    padding: 50px 20px 10px 20px;
+    padding: 10px 20px 10px 20px;
+
+    &.navbar-padding {
+        padding-top: 30px;
+    }
     
 
     .navbar-brand {

@@ -11,6 +11,8 @@
     {
         var vm = this;
 
+        // vm.homepage = true;
+        vm.paddingClass = 'navbar-padding'
         // Data
         vm.carousel = [
           {

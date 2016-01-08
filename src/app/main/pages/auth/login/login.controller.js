@@ -14,9 +14,9 @@
         
         // event handlers
         // event 'auth:login-success'
-        $scope.$on('auth:login-success', function(ev, user) 
+        $scope.$on('auth:login-success', function() 
         {
-            toastr.success('Welcome ' + user.email);
+            // toastr.success('Welcome ' + user.email);
             $state.go('app.client.dashboard');            
         });
 

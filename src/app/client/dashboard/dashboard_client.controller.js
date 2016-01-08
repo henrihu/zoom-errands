@@ -7,8 +7,8 @@
         .controller('DashboardClientController', DashboardClientController);
 
     /** @ngInject */
-    DashboardClientController.$inject = ['$log', '$scope', 'toastr', 'Restangular', 'FileUploader', 'API_URL', '$auth'];
-    function DashboardClientController($log, $scope, toastr, Restangular, FileUploader, API_URL, $auth)
+    DashboardClientController.$inject = ['$log', '$scope', 'toastr', 'Restangular', 'FileUploader', 'API_URL', '$auth', '$state'];
+    function DashboardClientController($log, $scope, toastr, Restangular, FileUploader, API_URL, $auth, $state)
     {
         var vm = this; 
         vm.submitErrand = submitErrand; 
@@ -47,7 +47,10 @@
             Restangular.all('client/tasks').post({task: vm.errand})
             .then(function(data) {
                 // $log.log(data);
+                vm.uploader.url = API_URL + '/client/tasks/' + data.id + '/upload'
+                vm.uploader.uploadAll();
                 toastr.success('Your task ' + data.title + ' has been accepted.', 'Accept!');
+                // $state.go('app.client.myerrand');
             }, function(data) {
                 // $log.log(data)
                 toastr.warning(data.data.alert);
@@ -56,8 +59,7 @@
             // vm.uploader.alias = 'photo';
             // vm.uploader.method = 'POST';
             // vm.uploader.headers = $auth.retrieveData('auth_headers');
-            vm.uploader.url = API_URL + '/client/tasks/1/upload'
-            vm.uploader.uploadAll();
+            
         }
 
         vm.uploader.onBeforeUploadItem = function(item) 
@@ -65,10 +67,11 @@
             item.url = vm.uploader.url;
         };
 
-        // vm.uploader.onCompleteAll = function() {
+        vm.uploader.onCompleteAll = function() {
             
-        //     // vm.uploader.clearQueue();
-        // }
+            vm.uploader.clearQueue();
+            $state.go('app.client.myerrand');
+        }
 
         // Restangular.one('client/tasks', ).get
 
