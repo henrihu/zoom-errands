@@ -18,7 +18,9 @@
                                 <button type="button" class="btn btn-default" ng-click="vm.openCalendar($event, prop)"><i class="glyphicon glyphicon-calendar"></i></button>
                             </span>
                         </p>
-                        <input ng-model="vm.errand.address" type="text" class="form-control" placeholder="Address" required> 
+                        <input g-places-autocomplete ng-model="vm.errand.address" type="text" class="form-control" placeholder="Address" required> 
+
+                        <!-- <input type="text" g-places-autocomplete ng-model="vm.errand.address" /> -->
                        
                         <div class="col-xs-8 padding-0">
                             <input ng-model="vm.errand.contact" type="text" class="form-control email-input" placeholder="Contact Number" required>
@@ -64,11 +66,13 @@
                 </form>
             </div>
 
-            <div class="col-sm-6  margin-top-80" >                               
+            <!-- <div class="col-sm-6  margin-top-80" >                               
                 <div id="map_canvas" style="width:400px; height:500px;">
                 </div>                  
-            </div>      
+            </div>  -->     
         </div>        
     </div>
 </div>
+
+
 

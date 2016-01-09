@@ -18,6 +18,7 @@
 			'angularFileUpload',
 			'ui.select',
 			'smart-table',
+			'google.places',
 
 			// Core
 			// 'app.core',
