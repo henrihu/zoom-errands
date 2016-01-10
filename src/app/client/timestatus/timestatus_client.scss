@@ -1,0 +1,75 @@
+#timestatus-client {
+    background: #f9f9f9;
+
+    a {
+        font-size: 16px;
+    }
+
+    .table {
+        background: #fdfdfd;
+        margin-bottom: 15px;
+
+        td {
+            color: #494949;
+            font-size: 24px;
+            padding: 0px 60px;
+            vertical-align: middle;
+        }
+        .num {
+            font-size: 55px;
+            //font-weight: bold;
+            text-align: right;
+        }
+
+        &.hours-table {
+            .num-positive {
+                color: #3e77a9;
+            }
+            .num-negative {
+              color: #df1d39;
+            }
+        }
+        &.money-table {
+            .num-positive {
+              color: #72bc09;
+            }
+            .num-negative {
+              color: #df1d39;
+            }
+        }
+    }
+
+    .timestatus-title {
+        color: #494949;
+        font-size: 36px;
+        font-weight: lighter;
+        margin-bottom: 70px;
+    }
+
+    .icon-add {
+        background: transparent url('/assets/images/icons/icon-add.png') no-repeat center center;
+        display: inline-block;
+        height: 16px;
+        margin-right: 3px;
+        text-indent: -9999px;
+        position: relative;
+        top: 3px;
+        width: 16px;
+    }
+
+    .icon-purchase-more-hours {
+        background: transparent url('/assets/images/icons/icon-purchase-more-hours.png') no-repeat center center;
+        display: inline-block;
+        height: 17px;
+        margin-right: 5px;
+        text-indent: -9999px;
+        position: relative;
+        top: 5px;
+        width: 26px;
+    }
+
+    .h-bottom-30 {
+        margin-bottom: 30px;
+    }
+
+}
