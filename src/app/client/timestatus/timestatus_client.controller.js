@@ -23,7 +23,6 @@
         Restangular.one('client/escrowhours').get()
         .then(function(data) {
             vm.eh = data.eh ? data.eh : vm.eh;
-            $log.log(data);
         });
 
     }
