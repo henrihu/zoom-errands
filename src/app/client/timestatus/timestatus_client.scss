@@ -7,7 +7,7 @@
 
     .table {
         background: #fdfdfd;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
 
         td {
             color: #494949;
@@ -16,7 +16,8 @@
             vertical-align: middle;
         }
         .num {
-            font-size: 55px;
+            font-size: 57px;
+            line-height: 81px;
             //font-weight: bold;
             text-align: right;
         }
@@ -39,11 +40,33 @@
         }
     }
 
+
+    .timestatus-footer {
+        background: #bbb;
+        height: 70px;
+        line-height: 70px;
+        margin-top: 36px;
+        color: #fff;
+
+        .glyphicon-earphone {
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .glyphicon-earphone:before {
+            font-size: 18px;
+            position: relative;
+            left: 8px;
+            top: 3px;
+        }
+    }
+
     .timestatus-title {
         color: #494949;
+        font-family: 'LatoWebLight';
         font-size: 36px;
-        font-weight: lighter;
-        margin-bottom: 70px;
+        //font-weight: lighter;
+        margin-bottom: 67px;
     }
 
     .icon-add {
