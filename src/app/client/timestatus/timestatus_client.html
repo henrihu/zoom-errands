@@ -8,11 +8,11 @@
                     <table class="hours-table table table-bordered table-responsive">
                         <tr>
                             <td class="">Total Hours Available</td>
-                            <td class="num" ng-class="vm.eh.hoursavail < 0 ? 'num-negative' : 'num-positive'">{{ vm.eh.hoursavail }}</td>
+                            <td class="num num-positive">{{ vm.eh.hoursavail }}</td>
                         </tr>
                         <tr>
                             <td class="">Total Hours Used</td>
-                            <td class="num" ng-class="vm.eh.hoursused < 0 ? 'num-negative' : 'num-positive'">{{ vm.eh.hoursused }}</td>
+                            <td class="num num-negative">{{ vm.eh.hoursused | addMinusSign }}</td>
                         </tr>
                     </table>
                   
@@ -24,11 +24,11 @@
                     <table class="money-table table table-bordered table-responsive">
                         <tr>
                             <td class="">Total Escrow Available</td>
-                            <td class="num" ng-class="vm.eh.wscrowavail < 0 ? 'num-negative' : 'num-positive'">{{ vm.eh.escrowavail | currency:"$" }}</td>
+                            <td class="num num-positive">{{ vm.eh.escrowavail | currency:"$" }}</td>
                         </tr>
                         <tr>
                             <td class="">Total Escrow Used</td>
-                            <td class="num" ng-class="vm.eh.escrowavail < 0 ? 'num-negative' : 'num-positive'">{{ vm.eh.escrowused | currency:"$" }}</td>
+                            <td class="num num-negative">{{ vm.eh.escrowused | currency:"$" | addMinusSign }}</td>
                         </tr>
                     </table>
 

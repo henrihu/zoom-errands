@@ -14,10 +14,10 @@
 
         // temp vals
         vm.eh = {
-            hoursavail: 33,
-            hoursused: -56,
-            escrowavail:	265.92,
-            escrowused: -47.89
+            hoursavail: 0,
+            hoursused: 0,
+            escrowavail:	0,
+            escrowused: 0
         };
 
         Restangular.one('client/escrowhours').get()
