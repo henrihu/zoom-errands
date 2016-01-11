@@ -30,6 +30,11 @@
             }
         });
 
+        vm.autocompleteOptions = {
+            componentRestrictions: { country: 'us' },
+            types: ['(cities)']
+        }
+
         vm.openCalendar = function(e) { 
             e.preventDefault();
             e.stopPropagation();
@@ -44,21 +49,25 @@
         });
 
         function submitErrand() {
-            Restangular.all('client/tasks').post({task: vm.errand})
-            .then(function(data) {
-                // $log.log(data);
-                vm.uploader.url = API_URL + '/client/tasks/' + data.id + '/upload'
-                vm.uploader.uploadAll();
-                toastr.success('Your task ' + data.title + ' has been accepted.', 'Accept!');
-                // $state.go('app.client.myerrand');
-            }, function(data) {
-                // $log.log(data)
-                toastr.warning(data.data.alert);
-            });
-
-            // vm.uploader.alias = 'photo';
-            // vm.uploader.method = 'POST';
-            // vm.uploader.headers = $auth.retrieveData('auth_headers');
+            // $log.log(vm.errand.addr.formatted_address, vm.errand.addr.geometry.location.lat(), vm.errand.addr.geometry.location.lng());
+            if (vm.errand.addr.types) {
+                vm.errand.address = vm.errand.addr.formatted_address;
+                vm.errand.addrlat = vm.errand.addr.geometry.location.lat();
+                vm.errand.addrlng = vm.errand.addr.geometry.location.lng();
+                Restangular.all('client/tasks').post({task: vm.errand})
+                .then(function(data) {
+                    // $log.log(data);
+                    vm.uploader.url = API_URL + '/client/tasks/' + data.id + '/upload'
+                    vm.uploader.uploadAll();
+                    toastr.success('Your task ' + data.title + ' has been accepted.', 'Accept!');
+                    // $state.go('app.client.myerrand');
+                }, function(data) {
+                    // $log.log(data)
+                    toastr.warning(data.data.alert);
+                });
+            }else {
+                toastr.warning('Please input address exatly');           
+            }
             
         }
 
@@ -72,52 +81,6 @@
             vm.uploader.clearQueue();
             $state.go('app.client.myerrand');
         }
-
-        // Restangular.one('client/tasks', ).get
-
-        
-        // var marker;
-        // vm.mapInit = initialize;
-        // initialize();
-
-        // function initialize() {
-        //     var latlng = new google.maps.LatLng(34.0592467,-118.4422422);
-
-        //     var myOptions = {
-        //         zoom: 12,
-        //         center: latlng,
-        //         mapTypeId: google.maps.MapTypeId.ROADMAP,
-        //         streetViewControl: false,
-        //         mapTypeControl: false,
-        //         scrollwheel: false
-        //     };
-
-        //     var map = new google.maps.Map(document.getElementById("map_canvas"),
-        //             myOptions);
-
-
-        //     google.maps.event.addListener(map, 'click', function(event) {
-        //         placeMarker(event.latLng);
-        //         vm.errand.address = event.latLng.toString();
-        //     });
-
-        //     function placeMarker(location) {
-        //         if (marker == undefined){
-        //             marker = new google.maps.Marker({
-        //                 position: location,
-        //                 map: map,
-        //                 animation: google.maps.Animation.DROP
-        //             });
-        //         }
-        //         else{
-        //             marker.setPosition(location);
-        //         }
-        //         map.setCenter(location);
-
-        //     }
-        // };
-
-        
     }
 
 })();

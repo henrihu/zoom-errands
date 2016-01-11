@@ -18,7 +18,7 @@
                                 <button type="button" class="btn btn-default" ng-click="vm.openCalendar($event, prop)"><i class="glyphicon glyphicon-calendar"></i></button>
                             </span>
                         </p>
-                        <input g-places-autocomplete ng-model="vm.errand.address" type="text" class="form-control" placeholder="Address" required> 
+                        <input g-places-autocomplete options="vm.autocompleteOptions" ng-model="vm.errand.addr" type="text" class="form-control" placeholder="Address" required> 
 
                         <!-- <input type="text" g-places-autocomplete ng-model="vm.errand.address" /> -->
                        
@@ -73,6 +73,7 @@
         </div>        
     </div>
 </div>
+
 
 
 
