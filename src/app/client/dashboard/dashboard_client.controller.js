@@ -32,7 +32,7 @@
 
         vm.autocompleteOptions = {
             componentRestrictions: { country: 'us' },
-            types: ['(cities)']
+            types: ['geocode']
         }
 
         vm.openCalendar = function(e) { 

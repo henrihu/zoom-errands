@@ -7,8 +7,8 @@
         .controller('MyerrandClientController', MyerrandClientController);
 
     /** @ngInject */
-    MyerrandClientController.$inject = ['$log', '$scope', 'Restangular', 'toastr'];
-    function MyerrandClientController($log, $scope, Restangular, toastr)
+    MyerrandClientController.$inject = ['$scope', 'Restangular', 'toastr'];
+    function MyerrandClientController($scope, Restangular, toastr)
     {
         var vm = this; 
         vm.deleteTask = deleteTask;
@@ -17,15 +17,19 @@
         .then(function(tasks) {
             vm.tasks = tasks;
             vm.displayedtasks = [].concat(vm.tasks);
-            $log.log(vm.displayedtasks);
+            // $log.log(vm.displayedtasks);
         });
 
-        function deleteTask(taskid) 
+        function deleteTask(task) 
         {   
-            Restangular.one('client/tasks', taskid).remove()
+            Restangular.one('client/tasks', task.id).remove()
             .then(function(data) {
-                // vm.tasks.slice(data.id);
-                toastr.success('Your task ' + data.title + 'has been cancelled.');
+                var index = vm.tasks.indexOf(task);
+                if (index !== -1) {
+                    vm.tasks.splice(index, 1);
+                    toastr.success('Your task ' + data.title + 'has been cancelled.');
+                }
+                
             }, function(error) {
                 toastr.error(error);
             });
