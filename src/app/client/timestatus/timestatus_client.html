@@ -12,7 +12,7 @@
                         </tr>
                         <tr>
                             <td class="">Total Hours Used</td>
-                            <td class="num num-negative">{{ vm.eh.hoursused | addMinusSign }}</td>
+                            <td class="num num-negative">{{ vm.eh.hoursused | addMinusSignToZero }}</td>
                         </tr>
                     </table>
                   
@@ -28,7 +28,7 @@
                         </tr>
                         <tr>
                             <td class="">Total Escrow Used</td>
-                            <td class="num num-negative">{{ vm.eh.escrowused | currency:"$" | addMinusSign }}</td>
+                            <td class="num num-negative">{{ vm.eh.escrowused | currency:"$" | addMinusSignToZero }}</td>
                         </tr>
                     </table>
 

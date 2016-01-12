@@ -23,6 +23,9 @@
         Restangular.one('client/escrowhours').get()
         .then(function(data) {
             vm.eh = data.eh ? data.eh : vm.eh;
+        }, function(data){
+            // took from other controller, I believe error will be shown same way.
+            toastr.warning(data.data.alert);
         });
 
     }

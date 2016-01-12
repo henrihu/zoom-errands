@@ -10,7 +10,7 @@
         .filter('capitalize', capitalizeFilter)
         .filter('humanizeDoc', humanizeDocFilter)
         .filter('yesNo', yesNoFilter)
-        .filter('addMinusSign', addMinusSignFilter);
+        .filter('addMinusSignToZero', addMinusSignToZeroFilter);
 
     /** @ngInject */
     function yesNoFilter()
@@ -76,7 +76,7 @@
 
 
     /** @ngInject */
-    function addMinusSignFilter()
+    function addMinusSignToZeroFilter()
     {
         return function(input){
             return parseFloat(input) != 0 ? '-' + input : input;
