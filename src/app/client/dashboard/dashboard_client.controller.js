@@ -48,12 +48,26 @@
             vm.alltypes = types;
         });
 
-        function submitErrand() {
-            // $log.log(vm.errand.addr.formatted_address, vm.errand.addr.geometry.location.lat(), vm.errand.addr.geometry.location.lng());
-            if (vm.errand.addr.types) {
-                vm.errand.address = vm.errand.addr.formatted_address;
-                vm.errand.addrlat = vm.errand.addr.geometry.location.lat();
-                vm.errand.addrlng = vm.errand.addr.geometry.location.lng();
+        function submitErrand() {            
+            
+            
+            if (vm.addr.types) {
+                var p = vm.addr;
+                for (var i = 0; i < p.address_components.length; i++) {
+                  var addressType = p.address_components[i].types[0];
+                  if (addressType=="locality"){
+                    vm.errand.longCity = p.address_components[i]['long_name'];
+                    // vm.shortCity = p.address_components[i]['short_name'];
+                    break;              
+                  }
+                }
+
+                // $log.log(vm.errand.longCity);
+                // $log.log('shortname', vm.shortCity);
+                
+                vm.errand.address = vm.addr.formatted_address;
+                vm.errand.addrlat = vm.addr.geometry.location.lat();
+                vm.errand.addrlng = vm.addr.geometry.location.lng();
                 Restangular.all('client/tasks').post({task: vm.errand})
                 .then(function(data) {
                     // $log.log(data);

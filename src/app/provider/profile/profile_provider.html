@@ -107,9 +107,9 @@
                         
                         <div class="row type-check margin-top-15">                            
                             <div ng-repeat="item in vm.types" class="col-sm-4 col-xs-6">
-                                <md-checkbox ng-model="item.value" class="gray-font-color margin-0">
+                                <checkbox ng-model="item.value" class="gray-font-color margin-0">
                                     {{item.name}}
-                                </md-checkbox>
+                                </checkbox>
                             </div>                            
                         </div>
                     </div>
@@ -118,18 +118,18 @@
                         <div class="subtitle font-size-20">Send job notifications by:</div>
                         
                         <div class="" layout="row" layout-align="center"> 
-                            <md-checkbox  ng-model="vm.agreement.sms" class="gray-font-color">
+                            <checkbox  ng-model="vm.agreement.sms" class="gray-font-color">
                                 SMS
-                            </md-checkbox>
+                            </checkbox>
 
-                            <md-checkbox ng-model="vm.agreement.email" class="gray-font-color">
+                            <checkbox ng-model="vm.agreement.email" class="gray-font-color">
                                 E-Mail
-                            </md-checkbox>                           
+                            </checkbox>                           
                         </div>
                     </div>
 
                     <div class=" col-md-8 col-md-offset-2">
-                       <md-button class="btn btn-login">Update Profile</md-button> 
+                       <button class="btn btn-login">Update Profile</button> 
                     </div>                    
                 </form> 
 
