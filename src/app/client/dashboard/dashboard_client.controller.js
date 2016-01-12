@@ -7,8 +7,8 @@
         .controller('DashboardClientController', DashboardClientController);
 
     /** @ngInject */
-    DashboardClientController.$inject = ['$log', '$scope', 'toastr', 'Restangular', 'FileUploader', 'API_URL', '$auth', '$state'];
-    function DashboardClientController($log, $scope, toastr, Restangular, FileUploader, API_URL, $auth, $state)
+    DashboardClientController.$inject = ['$log', '$scope', 'toastr', 'Restangular', 'FileUploader', 'API_URL', '$auth'];
+    function DashboardClientController($log, $scope, toastr, Restangular, FileUploader, API_URL, $auth)
     {
         var vm = this; 
         vm.submitErrand = submitErrand; 
@@ -50,7 +50,6 @@
 
         function submitErrand() {            
             
-            
             if (vm.addr.types) {
                 var p = vm.addr;
                 for (var i = 0; i < p.address_components.length; i++) {
@@ -61,9 +60,10 @@
                     break;              
                   }
                 }
-
-                // $log.log(vm.errand.longCity);
-                // $log.log('shortname', vm.shortCity);
+                if (null === vm.errand.longCity || angular.isUndefined === vm.errand.longCity) {
+                    toastr.warning('Please input city exatly');   
+                    return; 
+                }
                 
                 vm.errand.address = vm.addr.formatted_address;
                 vm.errand.addrlat = vm.addr.geometry.location.lat();
@@ -76,7 +76,7 @@
                     toastr.success('Your task ' + data.title + ' has been accepted.', 'Accept!');
                     // $state.go('app.client.myerrand');
                 }, function(data) {
-                    // $log.log(data)
+                    $log.log(data);
                     toastr.warning(data.data.alert);
                 });
             }else {
@@ -93,7 +93,7 @@
         vm.uploader.onCompleteAll = function() {
             
             vm.uploader.clearQueue();
-            $state.go('app.client.myerrand');
+            // $state.go('app.client.myerrand');
         }
     }
 

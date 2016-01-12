@@ -12,11 +12,15 @@
     {
         var vm = this; 
         vm.deleteTask = deleteTask;
+        vm.loadMore = loadMore;
+        vm.limit = 7;
+        vm.curPos = 0;
 
-        Restangular.all('client/tasks').getList()
+        Restangular.all('client/tasks').getList({'limit': vm.limit, 'offset': vm.curPos})
         .then(function(tasks) {
             vm.tasks = tasks;
             vm.displayedtasks = [].concat(vm.tasks);
+            vm.curPos = tasks.length;
             // $log.log(vm.displayedtasks);
         });
 
@@ -34,6 +38,17 @@
                 toastr.error(error);
             });
 
+        }
+
+        function loadMore()
+        {
+            Restangular.all('client/tasks').getList({'limit': vm.limit, 'offset': vm.curPos})
+            .then(function(tasks) {
+                vm.tasks = vm.tasks.concat(tasks);
+                vm.displayedtasks = [].concat(vm.tasks);
+                vm.curPos = vm.curPos + tasks.length;
+                // $log.log(vm.displayedtasks);
+            });
         }
 
     }
