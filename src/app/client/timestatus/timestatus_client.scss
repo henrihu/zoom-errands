@@ -1,5 +1,7 @@
 #timestatus-client {
     background: #f9f9f9;
+    height: calc(100% - 70px);
+    //padding-bottom: 70px;
 
     a {
         font-size: 16px;
@@ -41,26 +43,6 @@
     }
 
 
-    .timestatus-footer {
-        background: #bbb;
-        height: 70px;
-        line-height: 70px;
-        margin-top: 36px;
-        color: #fff;
-
-        .glyphicon-earphone {
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .glyphicon-earphone:before {
-            font-size: 18px;
-            position: relative;
-            left: 8px;
-            top: 3px;
-        }
-    }
-
     .timestatus-title {
         color: #494949;
         font-family: 'LatoWebLight';
@@ -96,3 +78,24 @@
     }
 
 }
+
+.timestatus-footer {
+  background: #bbb;
+  color: #fff;
+  height: 70px;
+  line-height: 70px;
+  margin-top: -70px;
+
+  .glyphicon-earphone {
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .glyphicon-earphone:before {
+    font-size: 18px;
+    position: relative;
+    left: 8px;
+    top: 3px;
+  }
+}
+
