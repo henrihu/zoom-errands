@@ -8,7 +8,8 @@
                 'app.client.profile',
                 'app.client.myerrand',
                 'app.client.dashboard',
-                'app.client.editerrand'
+                'app.client.editerrand',
+                'app.client.timestatus'
             ])
         .config(config);
 

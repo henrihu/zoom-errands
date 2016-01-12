@@ -5,3 +5,5 @@ coverage/
 .idea/
 .tmp/
 dist/
+zoom-errands.iml
+.DS_Store

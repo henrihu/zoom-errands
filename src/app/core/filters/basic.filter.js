@@ -9,7 +9,8 @@
         .filter('nospace', nospaceFilter)
         .filter('capitalize', capitalizeFilter)
         .filter('humanizeDoc', humanizeDocFilter)
-        .filter('yesNo', yesNoFilter);
+        .filter('yesNo', yesNoFilter)
+        .filter('addMinusSignToZero', addMinusSignToZeroFilter);
 
     /** @ngInject */
     function yesNoFilter()
@@ -72,5 +73,15 @@
             return doc.label || doc.name;
         };
     }
+
+
+    /** @ngInject */
+    function addMinusSignToZeroFilter()
+    {
+        return function(input){
+            return parseFloat(input) != 0 ? '-' + input : input;
+        }
+    }
+
 
 })();
