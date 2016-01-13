@@ -15,7 +15,13 @@
         <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">  
             
             <ul class="nav navbar-nav navbar-right">
-        		<li ng-if="user.signedIn && user.configName=='default'">
+        		<!-- <li ng-if="user.signedIn && user.configName=='provider'">
+                    <a  ui-sref="app.client.dashboard">
+                        Home
+                    </a>
+                </li> -->
+
+                <li ng-if="user.signedIn && user.configName=='default'">
                     <a  ui-sref="app.client.dashboard">
                     	Home
                     </a>

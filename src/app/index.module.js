@@ -32,6 +32,8 @@
 			//homepage module
 			'app.pages.homepage',
 
+			'app.pages.jobdetails',
+
 			// client module
 			'app.client',
 			// provider module
