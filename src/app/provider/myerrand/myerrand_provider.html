@@ -1,0 +1,77 @@
+<div id="myerrand-provider" class="border-top">
+    <div id="login-form-wrapper"  class="container margin-top-40">
+        <div class="row">
+            <h1 class="myerrand-title text-center">My Jobs</h1>
+            <div id="login-form" class="col-md-12  table-responsive">                
+                <table st-table="vm.displayedtasks" st-safe-src="vm.tasks" class="table ">
+                    <thead>                    
+                        <th class="text-center">DATE</th>
+                        <th>ERRAND TITLE</th>                        
+                        <th>SERVICE PROVIDER</th>                      
+                        <th class="text-center">UPLOADS</th>
+                        <th class="text-center">ESCROW USED</th>
+                        <th class="text-center">HOURS USED</th> 
+                        <th class="text-center"></th>                       
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="task in vm.displayedtasks | filter:{ status: 'open' }" class="border-side">
+                            <td class="text-center">{{task.datetime | date}}</td>
+                            <td><a ui-sref='app.provider.editerrand({id: {{task.id}}})'>{{task.title}}</a></td>
+                            <td>
+                                <img class="avatar" ng-src="{{task.provider.photoThumbUrl}}">
+                                {{task.provider.fname}}
+                            </td>  
+                            <td class="text-center">
+                                <img class="" ng-repeat="upload in task.task_uploads" ng-src="{{upload.uploadThumbUrl}}">
+                            </td>
+                            <td class="text-center">{{task.escrowable | yesNo}}</td>                            
+                            <td class="text-center ">
+                                <button class="btn btn-danger padding-vertical-2">
+                                Open</button>
+                            </td>
+                            <td>
+                                <a ng-click="vm.deleteTask(task)">delete</a>
+                            </td> 
+                        </tr>
+                        <tr class="gap-tr">
+                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr ng-repeat="task in vm.displayedtasks | filter:{ status: 'close' }" class="border-side">
+                            <td class="text-center">{{task.datetime | date}}</td>
+                            <td><a ui-sref='app.provider.editerrand({id: {{task.id}}})'>{{task.title}}</a></td>
+                            <td>
+                                <img class="avatar" ng-src="{{task.provider.photoThumbUrl}}">
+                                {{task.provider.fname}}
+                            </td>  
+                            <td class="text-center"></td>
+                            <td class="text-center">{{task.usedEscrow}}</td>                            
+                            <td class="text-center">{{task.usedHour}}</td> 
+                            <td></td>                          
+                        </tr>
+
+                    </tbody>
+                </table>                   
+            </div>
+
+            <div class="col-md-12 text-center">
+                <button ng-click="vm.loadMore()" class="btn btn-primary btn-loadmore">Load more...</button> 
+            </div>
+
+        </div>        
+    </div>
+
+    <!-- <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-1">
+                    <p>Zoom Errands, Inc.</p>
+                </div>
+                <div class="col-sm-3">
+                    <p><i class="glyphicon glyphicon-earphone"></i> (310) 425-6425</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+</div>
+

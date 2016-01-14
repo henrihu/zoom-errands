@@ -32,7 +32,7 @@
 			//homepage module
 			'app.pages.homepage',
 
-			'app.pages.jobdetails',
+			'app.pages.jobalert',
 
 			// client module
 			'app.client',

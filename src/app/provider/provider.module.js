@@ -5,7 +5,9 @@
     angular
         .module('app.provider',
             [
-                'app.provider.profile'
+                'app.provider.profile',                
+                'app.provider.myerrand',
+                'app.provider.editerrand'
             ])
         .config(config);
 

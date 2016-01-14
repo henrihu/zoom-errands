@@ -1,0 +1,63 @@
+<div id="editerrand-provider" class="border-top">
+    <div id="login-form-wrapper"  class="container">
+        <div class="row">
+            <div id="login-form" class="col-sm-6  text-center">
+                <!-- <div class="logo">
+                    <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
+                </div> -->
+
+                <div class="text-muted editerrand-title">Editerrand</div>                 
+                
+                <form ng-submit="vm.updateErrand()" role="form" >
+                    <div id="account-info">
+                        <input ng-model="vm.errand.title" type="text" class="form-control email-input" placeholder="Errand Title" required>
+                        <!-- <datetimepicker data-ng-model="vm.errand.date"></datetimepicker> -->
+                        <p class="input-group">
+                            <input type="text" class="form-control" datetime-picker="dd MMM yyyy HH:mm" ng-model="vm.errand.datetime" is-open="vm.isOpen" placeholder="dd MMM yyyy HH:mm" required>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="vm.openCalendar($event, prop)"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                        <input ng-model="vm.address" type="text" class="form-control" placeholder="Address" required> 
+                       
+                        <div class="col-xs-8 padding-0">
+                            <input ng-model="vm.errand.contact" type="text" class="form-control email-input" placeholder="Contact Number" required>
+                        </div>
+                        <div class="col-xs-4 padding-0">                            
+                            <select class="form-control" ng-options="type.id as type.name for type in vm.alltypes" ng-model="vm.errand.type_id" required>
+                                <option value="" disabled>Type</option>
+                            </select>                            
+                        </div>
+                        <!-- <ui-select multiple ng-model="vm.errand.types" theme="bootstrap" ng-disabled="disabled">
+                            <ui-select-match placeholder="Select person...">{{$item.name}}</ui-select-match>
+                            <ui-select-choices repeat="type.id as type in vm.alltypes | filter:$select.search">
+                              <div ng-bind-html="type.name | highlight: $select.search"></div>
+                              <small>
+                                <span ng-bind-html="type.comment | highlight: $select.search"></span>
+                              </small>
+                            </ui-select-choices>
+                        </ui-select> -->                       
+                        
+                        
+                        <textarea ng-model="vm.errand.details" class="form-control textarea" 
+                        rows="3" placeholder="Errand Details" required></textarea>
+
+                        <div> 
+                            <input type="checkbox"  ng-model="vm.errand.escrowable" class="gray-font-color">
+                                Allow access escrow account
+                        </div>
+                    </div> 
+                    <div class=" col-md-8 col-md-offset-2">
+                       <button class="btn btn-editerrand btn-login">Update</button> 
+                    </div>                    
+                </form>
+            </div>
+
+            <!-- <div class="col-sm-6  margin-top-80" >                               
+                <div id="map_canvas" style="width:400px; height:500px;">
+                </div>                  
+            </div>   -->    
+        </div>        
+    </div>
+</div>
+

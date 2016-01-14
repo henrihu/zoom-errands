@@ -54,6 +54,7 @@
                 &:focus {
                     color: $brand-primary;
                     outline: none;
+                    background-color: transparent !important;
                 }
                 &.text-primary {
                     color: $brand-primary;

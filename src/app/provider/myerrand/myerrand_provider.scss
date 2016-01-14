@@ -1,0 +1,65 @@
+#myerrand-provider {
+	background: #f9f9f9;
+
+	.myerrand-title {
+      color: #494949;
+      font-family: 'LatoWebLight';
+      font-size: 36px;
+      //font-weight: lighter;
+      margin-bottom: 67px;
+  }
+
+	table {
+		thead{
+			th {
+				color: $brand-primary;
+			}
+		}
+		tbody{
+			background: white;
+			td {
+				vertical-align: middle;
+			}
+			.border-side {
+				border-left: 1px solid $table-border-color;
+				border-right: 1px solid $table-border-color;
+				border-bottom: 1px solid $table-border-color;
+			}
+			.remove-button {
+				width: 20px;
+				height: 20px;
+				padding: 1px;
+			}
+			.gap-tr {
+				height: 30px;
+				background: #f9f9f9;
+				border-left: 0 none;
+				border-right: 0 none;
+			}
+			.avatar {
+				width: 30px;
+		    min-width: 30px;
+		    height: 30px;
+		    line-height: 30px;
+			}
+		}
+	}
+
+	.btn-loadmore {
+		font-size: 20px;
+    font-weight: bold;
+    border: none;
+    color: white;
+    padding: 10px 70px;
+	}
+
+	#footer {        
+    margin-top: 100px;
+    background: rgb(187, 187, 187);
+    color: white;
+    padding: 30px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+	
+}

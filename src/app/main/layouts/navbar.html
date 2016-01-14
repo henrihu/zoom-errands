@@ -15,11 +15,11 @@
         <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">  
             
             <ul class="nav navbar-nav navbar-right">
-        		<!-- <li ng-if="user.signedIn && user.configName=='provider'">
-                    <a  ui-sref="app.client.dashboard">
-                        Home
+        		<li ng-if="user.signedIn && user.configName=='provider'">
+                    <a  ui-sref="app.provider.myerrand">
+                        My Jobs
                     </a>
-                </li> -->
+                </li>
 
                 <li ng-if="user.signedIn && user.configName=='default'">
                     <a  ui-sref="app.client.dashboard">
@@ -43,10 +43,10 @@
 
                 <li ng-if="user.signedIn && user.configName=='default'">
                     <a  ui-sref="app.client.myerrand">
-                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        <span class="glyphicon glyphicon-credit-card"></span>
                         Purchase Hours
                     </a>
-                </li>                
+                </li>              
 
                 <li ng-if="user.signedIn" uib-dropdown>
                   <a href class="image-padding" id="simple-dropdown" uib-dropdown-toggle>
@@ -71,25 +71,25 @@
 
                 <li ng-if="!user.signedIn">
                     <a  ui-sref="app.pages_auth_register">
-                        <span class="glyphicon glyphicon-pencil"></span>
+                        <!-- <span class="glyphicon glyphicon-pencil"></span> -->
                     	Sign Up
                     </a>
                 </li>
                 <li ng-if="!user.signedIn">	                		
                     <a  href="#howitworks">
-                        <span class="glyphicon glyphicon-cog"></span>
+                        <!-- <span class="glyphicon glyphicon-cog"></span> -->
                     	How It Works
                     </a>
                 </li>
                 <li ng-if="!user.signedIn">	                		
                     <a  ui-sref="app.pages_auth_login">
-                        <span class="glyphicon glyphicon-log-in"></span>
+                        <!-- <span class="glyphicon glyphicon-log-in"></span> -->
                     	Log In
                     </a>
                 </li>
                 <li ng-if="!user.signedIn">	                		
                     <a class=" text-primary" href="#contactus">
-                    	<span class="glyphicon glyphicon-earphone"></span>
+                    	<!-- <span class="glyphicon glyphicon-earphone"></span> -->
                     	(310) 425-6425
                     </a>
                 </li>	                
