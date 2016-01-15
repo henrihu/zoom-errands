@@ -1,9 +1,10 @@
 $border-color: rgba(200,200,200, 0.7);
 
 #profile-provider {
+    background: #f9f9f9;
     width: 100%;
-    height: 100%;
-    // background-color: #EEEEEE;
+    min-height: 100%;
+
     &.client-login{
         background: url('/assets/images/zoom/login-bg1.jpg') no-repeat;
         background-size: cover;
@@ -14,22 +15,29 @@ $border-color: rgba(200,200,200, 0.7);
         // min-height: 840px;
 
         #login-form {
+            background: transparent;
             // max-width: 650px;
             padding: 40px 60px;
             // margin-top: 50px;
-            background: rgba(255,255,255,0.9);
             text-align: center;
             // border: 1px solid rgba(200,200,200, 0.7);
             // border-radius: 8px;
-            .avatar-image {                
+            .avatar-image {
+                background: #fff;
                 border: 1px solid $border-color;
                 border-radius: 50%;
-                width: 160px;
-                height: 160px;
+                display: inline-block;
+                min-height: 183px;
+                min-width: 183px;
+                width: 183px;
+                height: 183px;
                 cursor: pointer;
                 text-decoration: none;
                 overflow: hidden;
-            }    
+                .blank-image {
+                    margin-top: 65px;
+                }
+            }
 
             .blank-image {
                 color: $brand-primary;
@@ -40,23 +48,29 @@ $border-color: rgba(200,200,200, 0.7);
             }
 
             .license-image {
+                background: #fff;
                 border: 1px solid $border-color; 
-                border-radius: 5px;               
+                border-radius: 5px;
+                display: inline-block;
                 cursor: pointer;
                 text-decoration: none;
                 overflow: hidden;
-                height: 100px;
+                height: 115px;
+                width: 226px;
 
                 img {
                     max-width: none;
                 }
+                .blank-image {
+                    margin-top: 36px;
+                }
             }
 
             .title {
-                font-size: 28px;
-                // font-weight: 100;
-                margin-bottom: 32px;
-                letter-spacing: 2px;
+                font-family: 'LatoWebLight';
+                font-size: 36px;
+                margin-bottom: 62px;
+                margin-top: 17px;
             }
 
             .btn {

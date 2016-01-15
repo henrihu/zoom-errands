@@ -4,7 +4,8 @@
   angular
 		.module('zeyogen', [
 			'ngCookies', 
-			'ngTouch', 
+			'ngTouch',
+      'ngDialog',
 			'ngSanitize', 
 			'ngMessages', 
 			'ngAria', 

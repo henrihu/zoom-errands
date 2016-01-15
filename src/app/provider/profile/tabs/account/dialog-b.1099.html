@@ -1,0 +1,69 @@
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4>1099 Agreement</h4>
+        </div>
+        <div class="modal-body">
+        <form>
+              <div class="agreement-contents">
+                  <h2> WHEREAS,</h2>
+                  <p>
+                    the clients of Zoom Errands, Inc. could furnish (name of independent contractor)
+                    certain confidential information relating to ideas, purchases, relatives, and otherwise personal
+                    and or business information without expressed knowledge:
+                  </p>
+                  <h2>  WHEREAS,</h2>
+                  <p>
+                    (name of independent contractor) might hear, see, receive, or obtain such
+                    confidential information, and will hold such information confidential pursuant to the terms of
+                    this Agreement, unless there is a danger to any persons.
+                  </p>
+                  <h2>  BE IT KNOWN, </h2>
+                  <p>
+                    that the clients of Zoom Errands, Inc. has or shall, or might furnish to
+                    (independent contractor’s name) certain confidential information and may further allow the right
+                    to discuss on the following conditions:
+                  </p>
+                  <p>
+                    1. (independent contractor’s name) agrees to hold confidential or proprietary information or trade
+                    secrets ("confidential information") in trust and confidence and agrees that it shall be used only
+                    for the contemplated purposes, shall not be used for any other purpose, or disclosed to any third
+                    party.
+                  </p>
+                  <p>
+                    2. No copies will be made or retained of any written information or prototypes supplied without
+                    the permission of Zoom Errands, Inc.
+                  </p>
+                  <p>
+                    3. Confidential information shall not be disclosed to any person, or third party unless they agree
+                    to execute and be bound by the terms of this Agreement, and have been approved by Zoom
+                    Errands, Inc.
+                  </p>
+                  <p>
+                    4. This Agreement and its validity, construction and effect shall be governed by the laws of the
+                    state of California.
+                  </p>
+                  <div ng-show="signedAt">
+                    <h2>AGREED AND ACCEPTED BY:</h2>
+                    <p>Date: {{signedAt}} </p>
+                    <p>By  {{fullName}} </p>
+                    <p></p>
+                  </div>
+              </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <div class="md-actions" layout="row" >
+            <label ng-show="!signedAt">Full Name:&nbsp;&nbsp;</label>
+            <input ng-show="!signedAt" ng-model="fullName" type="text" placeholder="James Smith" >
+            <span flex></span>
+            <md-button ng-if="!signedAt" ng-click="agree()" class="md-accent md-raised">
+              Agree
+            </md-button>
+            <md-button ng-click="cancel()" class="md-primary md-raised">
+              <span ng-if="!signedAt">Don't agree</span>
+              <span ng-if="signedAt">Ok</span>
+            </md-button>
+          </div>
+        </div>
+    </div><!-- /.modal-content -->
