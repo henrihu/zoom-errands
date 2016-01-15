@@ -20,7 +20,6 @@
 			'ui.select',
 			'smart-table',
 			'google.places',
-			'ngDialog',
 
 			// Core
 			// 'app.core',

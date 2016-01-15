@@ -8,9 +8,9 @@
 
     /** @ngInect */
     ProfileProviderController.$inject = ['Restangular', 'toastr',
-            '$auth', 'FileUploader','API_URL'];
+            '$auth', 'FileUploader','API_URL', 'ngDialog'];
     function ProfileProviderController(Restangular, toastr,
-            $auth, FileUploader, API_URL)
+            $auth, FileUploader, API_URL, ngDialog)
     {
         var vm = this;
 

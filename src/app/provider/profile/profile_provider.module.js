@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.provider.profile', ['ngDialog'])
+        .module('app.provider.profile', [])
         .config(config);
 
 
