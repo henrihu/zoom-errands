@@ -20,7 +20,7 @@
                 <input id="imageuploader" ng-show="false" type="file" nv-file-select 
                 uploader="vm.uploader" filter="queueLimit" /> 
                 
-                <div class="row license-insuarance margin-top-25 margin-bottom-15" >
+                <div class="row license-insuarance margin-top-25" >
                     <div class="col-xs-6 padding-right-5">                        
                         <a ng-click="vm.triggerFileInput('driverlicense')" class="license-image" layout="column" layout-align="center center">
                             <div ng-if="!user.driverlicense_file_name" class="blank-image font-size-16">
@@ -77,25 +77,25 @@
                     </div>
 
                     <div id="aggrement" class="margin-top-10 clearfix">
-                        <div class="col-sm-6 fname-input  margin-bottom-10">
-                            <a class="btn btn-agree col-sm-6"  ng-click="vm.showAdvanced($event, '1099', user.fname, user.lname, user.driverlicense_updated_at)">
+                        <div class="col-sm-4 col-padding col-first margin-bottom-10">
+                            <a class="btn btn-agree"  ng-click="vm.showAdvanced($event, '1099', user.fname, user.lname, user.driverlicense_updated_at)">
                                 <span>1099 check</span>                                            
                             </a>
                         </div>  
-                        <div class="col-sm-6 lname-input  margin-bottom-10">
-                            <a class="btn btn-agree col-sm-6" 
+                        <div class="col-sm-4 col-padding margin-bottom-10">
+                            <a class="btn btn-agree"
                                 ng-click="vm.showAdvanced($event, 'confidentiality')">
                                 <span>Confidentiality check</span>                                             
                             </a>  
                         </div>
-                        <div class="col-sm-6 fname-input  margin-bottom-10">
-                            <a class="btn btn-agree col-sm-6" 
+                        <div class="col-sm-4 col-padding margin-bottom-10">
+                            <a class="btn btn-agree"
                                 ng-click="vm.showAdvanced($event, 'noncompete')">
                                 <span>Non-Compete check</span>                                             
                             </a>  
                         </div>  
-                        <div class="col-sm-6 lname-input  margin-bottom-10">
-                             <a class="btn btn-agree col-sm-6" 
+                        <div class="col-sm-5 col-padding col-first margin-bottom-10">
+                             <a class="btn btn-agree"
                                 ng-click="vm.showAdvanced($event, 'delivery')">
                                 <span>Delivery promise</span>                                             
                             </a>

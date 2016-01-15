@@ -7,9 +7,9 @@
         .controller('ProfileProviderController', ProfileProviderController);
 
     /** @ngInect */
-    ProfileProviderController.$inject = ['Restangular', 'toastr',
+    ProfileProviderController.$inject = ['$log', 'Restangular', 'toastr',
             '$auth', 'FileUploader','API_URL', 'ngDialog'];
-    function ProfileProviderController(Restangular, toastr,
+    function ProfileProviderController($log, Restangular, toastr,
             $auth, FileUploader, API_URL, ngDialog)
     {
         var vm = this;
@@ -99,24 +99,11 @@
          {
              var templateDialog = 'app/provider/profile/tabs/account/dialog-b.' + dialogID + '.html';
 
-             ngDialog.open({
-                 templateUrl: templateDialog
-             });
-
-           /*
-             $modal.open({
-                 templateUrl: templateDialog,
-                 //controller: ['$modalInstance'],
-                 //controllerAs: 'vm',
-                 resolve: {
-                 }
-             });
-             */
-
-             /*
-             $mdDialog.show({
-                 controller         : function ($mdDialog)
+             var dlg = ngDialog.open({
+                 controller         : function ()
                  {
+                     vm.agree = agreeFn;
+
                      if (vm.accountSetting.fname && vm.accountSetting.lname) {
                          vm.fullName = vm.accountSetting.fname + ' ' + vm.accountSetting.lname;
                      }
@@ -148,18 +135,10 @@
                          }
                      }
 
-                     vm.hide = function ()
+                     function agreeFn()
                      {
-                         $mdDialog.hide();
-                     };
-
-                     vm.cancel = function ()
-                     {
-                         $mdDialog.cancel();
-                     };
-
-                     vm.agree = function ()
-                     {
+                         $log('ok');
+                       /*
                          var payload = {agreement: dialogID, fullname: vm.fullName};
                          Restangular.one('provider/setting').put(payload).then(function(resp) {
                              vm.signedAt = resp.time;
@@ -167,22 +146,24 @@
                          }, function errorCallback(resp){
                              toastr.error(resp.data.error);
                          });
-                     };
+                         */
+                     }
                  },
-                 templateUrl        : templateDialog,
-                 parent             : $document.body,
+                 templateUrl        : templateDialog
+                 //parent             : $document.body,
                  // scope              : vm,
-                 targetEvent        : ev,
-                 clickOutsideToClose: true
-             })
-                 .then(function (answer)
+                 //targetEvent        : ev,
+                 //clickOutsideToClose: true
+             });
+
+             dlg.closePromise.then(function (answer)
                  {
                      vm.alert = 'You said the information was "' + answer + '".';
                  }, function ()
                  {
                      vm.alert = 'You cancelled the dialog.';
                  });
-             */
+             //*/
          }
 
         //////////
