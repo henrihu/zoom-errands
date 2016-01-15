@@ -3,8 +3,9 @@
     'use strict';
 
     angular
-        .module('app.provider.profile', [])
+        .module('app.provider.profile', ['ngDialog'])
         .config(config);
+
 
     /** @ngInject */
     function config($stateProvider)

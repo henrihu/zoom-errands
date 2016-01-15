@@ -6,7 +6,7 @@
         .module('app.provider.profile')
         .controller('ProfileProviderController', ProfileProviderController);
 
-    /** @ngInject */
+    /** @ngInect */
     ProfileProviderController.$inject = ['Restangular', 'toastr',
             '$auth', 'FileUploader','API_URL'];
     function ProfileProviderController(Restangular, toastr,
@@ -19,7 +19,7 @@
 
         // Methods
         vm.initAccount = initAccount;
-        // vm.showAdvanced = showAdvanced;
+        vm.showAdvanced = showAdvanced;
         vm.triggerFileInput = triggerFileInput;
         vm.updateAccount = updateAccount;
         vm.itemArray = [
@@ -95,78 +95,95 @@
             vm.selectedItem= vm.itemArray[0];
         }
 
-        // function showAdvanced(ev, dialogID)
-        // {
-        //     var templateDialog = 'app/provider/profile/tabs/account/dialog.' + dialogID + '.html';
-        //     $mdDialog.show({
-        //         controller         : function ($mdDialog)
-        //         {
-        //             if (vm.accountSetting.fname && vm.accountSetting.lname) {
-        //                 vm.fullName = vm.accountSetting.fname + ' ' + vm.accountSetting.lname;
-        //             }
-        //             else {
-        //                 vm.fullName = '';
-        //             }
+         function showAdvanced(ev, dialogID)
+         {
+             var templateDialog = 'app/provider/profile/tabs/account/dialog-b.' + dialogID + '.html';
 
-        //             if (vm.agreement) {
-        //                 switch ( dialogID )
-        //                 {
-        //                     case '1099':
-        //                         vm.signedAt = vm.agreement.a1099;
-        //                         break;
+             ngDialog.open({
+                 templateUrl: templateDialog
+             });
 
-        //                     case 'confidentiality':
-        //                         vm.signedAt = vm.agreement.confidentiality;
-        //                         break;
+           /*
+             $modal.open({
+                 templateUrl: templateDialog,
+                 //controller: ['$modalInstance'],
+                 //controllerAs: 'vm',
+                 resolve: {
+                 }
+             });
+             */
 
-        //                     case 'delivery':
-        //                         vm.signedAt = vm.agreement.confidentiality;
-        //                         break;
+             /*
+             $mdDialog.show({
+                 controller         : function ($mdDialog)
+                 {
+                     if (vm.accountSetting.fname && vm.accountSetting.lname) {
+                         vm.fullName = vm.accountSetting.fname + ' ' + vm.accountSetting.lname;
+                     }
+                     else {
+                         vm.fullName = '';
+                     }
 
-        //                     case 'noncompete':
-        //                         vm.signedAt = vm.agreement.noncompete;
-        //                         break;
+                     if (vm.agreement) {
+                         switch ( dialogID )
+                         {
+                             case '1099':
+                                 vm.signedAt = vm.agreement.a1099;
+                                 break;
 
-        //                     default:
-        //                         vm.signedAt = '';
-        //                 }
-        //             }
+                             case 'confidentiality':
+                                 vm.signedAt = vm.agreement.confidentiality;
+                                 break;
 
-        //             vm.hide = function ()
-        //             {
-        //                 $mdDialog.hide();
-        //             };
+                             case 'delivery':
+                                 vm.signedAt = vm.agreement.confidentiality;
+                                 break;
 
-        //             vm.cancel = function ()
-        //             {
-        //                 $mdDialog.cancel();
-        //             };
+                             case 'noncompete':
+                                 vm.signedAt = vm.agreement.noncompete;
+                                 break;
 
-        //             vm.agree = function ()
-        //             {
-        //                 var payload = {agreement: dialogID, fullname: vm.fullName};
-        //                 Restangular.one('provider/setting').put(payload).then(function(resp) {
-        //                     vm.signedAt = resp.time;
-        //                     toastr.success('You signed ' + dialogID + ' agreement at ' + resp.time , 'Thank you!');
-        //                 }, function errorCallback(resp){
-        //                     toastr.error(resp.data.error);
-        //                 });
-        //             };
-        //         },
-        //         templateUrl        : templateDialog,
-        //         parent             : $document.body,
-        //         // scope              : vm,
-        //         targetEvent        : ev,
-        //         clickOutsideToClose: true
-        //     })
-        //         .then(function (answer)
-        //         {
-        //             vm.alert = 'You said the information was "' + answer + '".';
-        //         }, function ()
-        //         {
-        //             vm.alert = 'You cancelled the dialog.';
-        //         });
-        // }
+                             default:
+                                 vm.signedAt = '';
+                         }
+                     }
+
+                     vm.hide = function ()
+                     {
+                         $mdDialog.hide();
+                     };
+
+                     vm.cancel = function ()
+                     {
+                         $mdDialog.cancel();
+                     };
+
+                     vm.agree = function ()
+                     {
+                         var payload = {agreement: dialogID, fullname: vm.fullName};
+                         Restangular.one('provider/setting').put(payload).then(function(resp) {
+                             vm.signedAt = resp.time;
+                             toastr.success('You signed ' + dialogID + ' agreement at ' + resp.time , 'Thank you!');
+                         }, function errorCallback(resp){
+                             toastr.error(resp.data.error);
+                         });
+                     };
+                 },
+                 templateUrl        : templateDialog,
+                 parent             : $document.body,
+                 // scope              : vm,
+                 targetEvent        : ev,
+                 clickOutsideToClose: true
+             })
+                 .then(function (answer)
+                 {
+                     vm.alert = 'You said the information was "' + answer + '".';
+                 }, function ()
+                 {
+                     vm.alert = 'You cancelled the dialog.';
+                 });
+             */
+         }
 
         //////////
         function triggerFileInput(selectedInput)
