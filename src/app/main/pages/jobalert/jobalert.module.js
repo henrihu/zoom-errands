@@ -10,7 +10,7 @@
     function config($stateProvider)
     {
         $stateProvider.state('app.pages_jobalert', {
-            url  : '/pages/job_alert',
+            url  : '/pages/job_alert?id',
             views: { 
                 'content@app': {
                     templateUrl: 'app/main/pages/jobalert/jobalert.html',

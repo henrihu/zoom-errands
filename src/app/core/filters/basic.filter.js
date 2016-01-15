@@ -10,13 +10,22 @@
         .filter('capitalize', capitalizeFilter)
         .filter('humanizeDoc', humanizeDocFilter)
         .filter('yesNo', yesNoFilter)
+        .filter('yesInprogress', yesInprogressFilter)
         .filter('addMinusSignToZero', addMinusSignToZeroFilter);
+
+    /** @ngInject */
+    function yesInprogressFilter()
+    {
+        return function(input) {
+          return (input) ? 'In process' : 'No';
+        };
+    }
 
     /** @ngInject */
     function yesNoFilter()
     {
         return function(input) {
-          return (input) ? 'In process' : 'No';
+          return (input) ? 'Yes' : 'No';
         };
     }
 

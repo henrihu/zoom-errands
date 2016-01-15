@@ -1,5 +1,41 @@
-#jobalert {
-    background: #f9f9f9;
+$alert-color: darkorange;
 
-    
+#jobalert {
+  background: #f9f9f9;
+
+  .alert-header{
+    background-color: rgba(240, 240, 240, 1);
+    .alert-header-title{
+      font-weight: bold; 
+      color: $alert-color;    
+    }
+  }
+
+  .alert-body {
+    background-color: rgba(240, 240, 255, 0.3);
+    .alert-value {
+      // color: $alert-color;
+    }
+    .alert-label {
+      color: $alert-color;
+    }
+    .alert-subtitle {
+      color: $brand-primary;
+      padding-left: 6px;
+    }
+    .alert-notes {
+      background-color: #fafafa;
+    }
+  }
+
+
 }
+
+.dialog-title {
+  color: $brand-primary;
+  text-align: center;
+  font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+

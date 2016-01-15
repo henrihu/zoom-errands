@@ -1,0 +1,21 @@
+<div> 
+	<div class="dialog-title">Service Provider Login</div>  
+
+	<form ng-submit="submitLogin(vm.form, {config: 'provider'}) && closeThisDialog('Some value')" role="form" ng-init="vm.form = {}">
+		<div>
+			<input ng-model="vm.form.email" type="email" class="form-control margin-bottom-20" placeholder="E-mail address">
+	    <input ng-model="vm.form.password" type="password" class="form-control margin-bottom-30" placeholder="Password">
+		</div>
+	    
+    <div class="margin-bottom-30 text-center">
+    	<button class="btn btn-primary padding-horizontal-40 ">Login</button>
+    </div>
+    <!-- <div class="col-xs-6 margin-bottom-40">
+    	<button class="btn btn-primary btn-login">Login</button>
+    </div> -->	
+	</form> 
+
+	<!-- <div class="row">
+	    <div class="text-center"><a ui-sref="app.pages_auth_forgot-password_provider">Forgot Password?</a></div>
+	</div>   -->
+</div>
