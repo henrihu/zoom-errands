@@ -47,10 +47,10 @@
         </div>
         <div class="md-actions" layout="row" >
             <label ng-show="!signedAt">Full Name:&nbsp;&nbsp;</label>
-            <input ng-show="!signedAt" ng-model="fullName" type="text" placeholder="James Smith" >
+            <input ng-show="!signedAt" ng-model="vm.fullName" type="text" placeholder="James Smith" >
             <span flex></span>
             <!-- vm.agree, agree - nothing works here -->
-            <button class="btn" ng-if="!signedAt" ng-click="vm.agree()">Agree</button>
+            <button class="btn" ng-if="!signedAt" ng-click="vm.agree1099()">Agree</button>
             <button class="btn"  ng-click="closeThisDialog()">
               <span ng-if="!signedAt" >Don't agree</span>
               <span ng-if="signedAt" >Ok</span>

@@ -8,9 +8,9 @@
 
     /** @ngInect */
     ProfileProviderController.$inject = ['$log', 'Restangular', 'toastr',
-            '$auth', 'FileUploader','API_URL', 'ngDialog'];
+            '$auth', 'FileUploader','API_URL', 'ngDialog', '$scope'];
     function ProfileProviderController($log, Restangular, toastr,
-            $auth, FileUploader, API_URL, ngDialog)
+            $auth, FileUploader, API_URL, ngDialog, $scope)
     {
         var vm = this;
 
@@ -19,7 +19,8 @@
 
         // Methods
         vm.initAccount = initAccount;
-        vm.showAdvanced = showAdvanced;
+        vm.show1099 = show1099;
+        vm.agree1099 = agree1099;
         vm.triggerFileInput = triggerFileInput;
         vm.updateAccount = updateAccount;
         vm.itemArray = [
@@ -35,7 +36,8 @@
                 // function define
         function initAccount()
         {
-            vm.accountSetting = {};
+            // vm.accountSetting = {};
+            vm.accountSetting = $scope.user;
             vm.agreement = {};
             vm.agreement.al099 = vm.agreement.confidentiality = vm.agreement.delivery = vm.agreement.noncompete = '';
             vm.uploader = new FileUploader({
@@ -95,76 +97,97 @@
             vm.selectedItem= vm.itemArray[0];
         }
 
-         function showAdvanced(ev, dialogID)
-         {
-             var templateDialog = 'app/provider/profile/tabs/account/dialog-b.' + dialogID + '.html';
+        // function showAdvanced(ev, dialogID)
+        // {
+        //     var templateDialog = 'app/provider/profile/tabs/account/dialog-b.' + dialogID + '.html';
 
-             var dlg = ngDialog.open({
-                 controller         : function ()
-                 {
-                     vm.agree = agreeFn;
+        //     var dlg = ngDialog.open({
+        //      // controller         : function ()
+        //      // {
+        //      //     vm.agree = agreeFn;
 
-                     if (vm.accountSetting.fname && vm.accountSetting.lname) {
-                         vm.fullName = vm.accountSetting.fname + ' ' + vm.accountSetting.lname;
-                     }
-                     else {
-                         vm.fullName = '';
-                     }
+        //      //     if (vm.accountSetting.fname && vm.accountSetting.lname) {
+        //      //         vm.fullName = vm.accountSetting.fname + ' ' + vm.accountSetting.lname;
+        //      //     }
+        //      //     else {
+        //      //         vm.fullName = '';
+        //      //     }
 
-                     if (vm.agreement) {
-                         switch ( dialogID )
-                         {
-                             case '1099':
-                                 vm.signedAt = vm.agreement.a1099;
-                                 break;
+        //      //     if (vm.agreement) {
+        //      //         switch ( dialogID )
+        //      //         {
+        //      //             case '1099':
+        //      //                 vm.signedAt = vm.agreement.a1099;
+        //      //                 break;
 
-                             case 'confidentiality':
-                                 vm.signedAt = vm.agreement.confidentiality;
-                                 break;
+        //      //             case 'confidentiality':
+        //      //                 vm.signedAt = vm.agreement.confidentiality;
+        //      //                 break;
 
-                             case 'delivery':
-                                 vm.signedAt = vm.agreement.confidentiality;
-                                 break;
+        //      //             case 'delivery':
+        //      //                 vm.signedAt = vm.agreement.confidentiality;
+        //      //                 break;
 
-                             case 'noncompete':
-                                 vm.signedAt = vm.agreement.noncompete;
-                                 break;
+        //      //             case 'noncompete':
+        //      //                 vm.signedAt = vm.agreement.noncompete;
+        //      //                 break;
 
-                             default:
-                                 vm.signedAt = '';
-                         }
-                     }
+        //      //             default:
+        //      //                 vm.signedAt = '';
+        //      //         }
+        //      //     }
 
-                     function agreeFn()
-                     {
-                         $log('ok');
-                       /*
-                         var payload = {agreement: dialogID, fullname: vm.fullName};
-                         Restangular.one('provider/setting').put(payload).then(function(resp) {
-                             vm.signedAt = resp.time;
-                             toastr.success('You signed ' + dialogID + ' agreement at ' + resp.time , 'Thank you!');
-                         }, function errorCallback(resp){
-                             toastr.error(resp.data.error);
-                         });
-                         */
-                     }
-                 },
-                 templateUrl        : templateDialog
-                 //parent             : $document.body,
-                 // scope              : vm,
-                 //targetEvent        : ev,
-                 //clickOutsideToClose: true
-             });
+        //      //     function agreeFn()
+        //      //     {
+        //      //         $log('ok');
+        //      //       /*
+        //      //         var payload = {agreement: dialogID, fullname: vm.fullName};
+        //      //         Restangular.one('provider/setting').put(payload).then(function(resp) {
+        //      //             vm.signedAt = resp.time;
+        //      //             toastr.success('You signed ' + dialogID + ' agreement at ' + resp.time , 'Thank you!');
+        //      //         }, function errorCallback(resp){
+        //      //             toastr.error(resp.data.error);
+        //      //         });
+        //      //         */
+        //      //     }
+        //      // },
+        //         templateUrl        : templateDialog
+        //      //parent             : $document.body,
+        //      // scope              : vm,
+        //      //targetEvent        : ev,
+        //      //clickOutsideToClose: true
+        //     });
 
-             dlg.closePromise.then(function (answer)
-                 {
-                     vm.alert = 'You said the information was "' + answer + '".';
-                 }, function ()
-                 {
-                     vm.alert = 'You cancelled the dialog.';
-                 });
-             //*/
-         }
+        //     dlg.closePromise.then(function (answer)
+        //     {
+        //         vm.alert = 'You said the information was "' + answer + '".';
+        //     }, function ()
+        //     {
+        //         vm.alert = 'You cancelled the dialog.';
+        //     });
+        // }
+
+        function show1099()
+        {
+            ngDialog.open({
+                // className: 'ngdialog-theme-plain custom-width',
+                controller: 'ProfileProviderController as vm',
+                template: 'app/provider/profile/tabs/account/dialog-b.1099.html'                
+            });
+        }
+
+        function agree1099 () {
+            var dialogID = '1099';
+            // vm.fullName = vm.accountSetting.fname + ' ' + vm.accountSetting.lname;
+            $log.log(vm.accountSetting);
+            var payload = {'agreement': dialogID, 'fullname': vm.fullName};
+            Restangular.one('provider/setting').put(payload).then(function(resp) {
+                vm.signedAt = resp.time;
+                toastr.success('You signed ' + dialogID + ' agreement at ' + resp.time , 'Thank you!');
+            }, function errorCallback(resp){
+                toastr.error(resp.data.error);
+            });
+        }
 
         //////////
         function triggerFileInput(selectedInput)
@@ -205,10 +228,7 @@
                     vm.accountSetting.proofUrl = response.data.proofUrl;
                     vm.accountSetting.proofinsurance_file_name = true;
                     break;
-
             }
-
-
         };
 
         vm.uploader.onErrorItem = function(item, response) {

@@ -4,11 +4,7 @@ $border-color: rgba(200,200,200, 0.7);
     background: #f9f9f9;
     width: 100%;
     min-height: 100%;
-
-    &.client-login{
-        background: url('/assets/images/zoom/login-bg1.jpg') no-repeat;
-        background-size: cover;
-    }
+    
     
     #login-form-wrapper {
         // height: 100%;
@@ -110,7 +106,7 @@ $border-color: rgba(200,200,200, 0.7);
                     border: 1px solid $border-color;
                     border-radius: 5px;
                     font-size: 18px;
-                    padding: 29px;
+                    // padding: 29px;
                     // width: initial;
                 }
 
@@ -147,6 +143,11 @@ $border-color: rgba(200,200,200, 0.7);
     }
 }
 
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    width :50% ;
+    margin-bottom: 100px;
+}
+
 // RESPONSIVE
 @media screen and (max-width: $layout-breakpoint-sm) {
 
@@ -159,6 +160,11 @@ $border-color: rgba(200,200,200, 0.7);
                 margin: 20px 10px ;
             }
         }
+    }
+
+    .ngdialog.ngdialog-theme-default .ngdialog-content {
+        width :90% ;
+        margin-bottom: 100px;
     }
 
 }
