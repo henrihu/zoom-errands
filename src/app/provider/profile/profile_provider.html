@@ -106,12 +106,10 @@
                     <div class="jobtype margin-top-25 ">
                         <div class="subtitle font-size-20">Type of Service Provider</div>
                         
-                        <div class="row type-check margin-top-15">                            
+                        <div class="row type-check cb-wrap margin-top-15">
                             <div ng-repeat="item in vm.types" class="col-sm-4 col-xs-6 text-left">
-                                <label>
-                                    <input type="checkbox" ng-model="item.value" class="gray-font-color margin-0">
-                                    {{item.name}}
-                                </label>
+                                <input type="checkbox" id="cb-{{$index}}" ng-model="item.value" class="gray-font-color margin-0">
+                                <label for="cb-{{$index}}"></label> {{item.name}}
                               <!--
                                 <checkbox ng-model="item.value" class="gray-font-color margin-0">
                                     {{item.name}}
@@ -124,15 +122,11 @@
                     <div class="jobtype margin-top-25 ">
                         <div class="subtitle font-size-20">Send job notifications by:</div>
                         
-                        <div class="" layout="row" layout-align="center">
-                            <label>
-                                <input type="checkbox" ng-model="vm.agreement.sms" class="gray-font-color">
-                                SMS
-                            </label>
-                            <label>
-                                <input type="checkbox" ng-model="vm.agreement.email" class="gray-font-color">
-                                E-Mail
-                            </label>
+                        <div class="cb-wrap col-md-7 col-md-offset-3">
+                            <input type="checkbox" id="jt-sms" ng-model="vm.agreement.sms" class="gray-font-color">
+                            <label for="jt-sms"> </label> SMS
+                            <input type="checkbox" id="jt-email" ng-model="vm.agreement.email" class="gray-font-color">
+                            <label for="jt-email" class="margin-left-75"></label> E-Mail
                           <!--
                             <checkbox  ng-model="vm.agreement.sms" class="gray-font-color">
                                 SMS

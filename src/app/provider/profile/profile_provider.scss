@@ -116,6 +116,55 @@ $border-color: rgba(200,200,200, 0.7);
                     font-weight: bold;
                     background-color: $brand-primary;                    
                 }
+
+                .cb-wrap {
+                  text-align: left;
+                  input[type=checkbox] {
+                      display: none;
+                  }
+
+                  /*
+                  - Style each label that is directly after the input
+                  - position: relative; will ensure that any position: absolute children will position themselves in relation to it
+                  */
+                  input[type=checkbox] + label {
+                      //background: url(http://lorempixel.com/output/people-q-c-50-50-1.jpg) no-repeat;
+                      background: #fff;
+                      height: 23px;
+                      width: 23px;
+                      display: inline-block;
+                      border-radius: 4px;
+                      position: relative;
+                      top: 10px;
+                      transition: all 0.4s;
+                      border: solid 2px #e9e9e9;
+                  }
+
+                  /* Provide a border when hovered and when the checkbox before it is checked */
+                  input[type=checkbox] + label:hover,
+                  input[type=checkbox]:checked + label {
+                      border: solid 2px #108acb;
+                  }
+
+                  /*
+                  - Create a pseudo element :after when checked and provide a tick
+                  - Center the content
+                  */
+                  input[type=checkbox]:checked + label:after {
+                      //content: '\2714'; /*content is required, though it can be empty - content: '';*/
+                      content: url('/assets/images/icons/icon-checkbox-checkmark.png');
+                      display: block;
+                      height: 23px;
+                      width: 23px;
+                      position: absolute;
+                      top: 5px;
+                      left: 2px;
+                      bottom: 0;
+                      right: 0;
+                      margin: auto;
+                      color: #108acb;
+                  }
+                }
             } 
 
             #aggrement {
