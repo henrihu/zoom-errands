@@ -21,6 +21,12 @@
         vm.initAccount = initAccount;
         vm.show1099 = show1099;
         vm.agree1099 = agree1099;
+        vm.showConfidentiality = showConfidentiality;
+        vm.agreeConfidentiality = agreeConfidentiality;
+        vm.showNoncompete = showNoncompete;
+        vm.agreeNoncompete = agreeNoncompete;
+        vm.showDelivery = showDelivery;
+        vm.agreeDelivery = agreeDelivery;
         vm.triggerFileInput = triggerFileInput;
         vm.updateAccount = updateAccount;
         vm.itemArray = [
@@ -38,6 +44,12 @@
         {
             // vm.accountSetting = {};
             vm.accountSetting = $scope.user;
+            if (vm.accountSetting.fname && vm.accountSetting.lname) {
+                vm.fullName = vm.accountSetting.fname + ' ' + vm.accountSetting.lname;
+            }
+            else {
+                vm.fullName = '';
+            }
             vm.agreement = {};
             vm.agreement.al099 = vm.agreement.confidentiality = vm.agreement.delivery = vm.agreement.noncompete = '';
             vm.uploader = new FileUploader({
@@ -167,6 +179,9 @@
         //     });
         // }
 
+        /*
+          **** 1099 Check
+         */
         function show1099()
         {
             ngDialog.open({
@@ -178,15 +193,89 @@
 
         function agree1099 () {
             var dialogID = '1099';
-            // vm.fullName = vm.accountSetting.fname + ' ' + vm.accountSetting.lname;
-            $log.log(vm.accountSetting);
             var payload = {'agreement': dialogID, 'fullname': vm.fullName};
             Restangular.one('provider/setting').put(payload).then(function(resp) {
-                vm.signedAt = resp.time;
+                //vm.signedAt = resp.time;
+                vm.agreement.a1099 = resp.time;
                 toastr.success('You signed ' + dialogID + ' agreement at ' + resp.time , 'Thank you!');
             }, function errorCallback(resp){
                 toastr.error(resp.data.error);
             });
+        }
+
+
+        /*
+         **** Confidentiality
+         */
+        function showConfidentiality()
+        {
+            ngDialog.open({
+                // className: 'ngdialog-theme-plain custom-width',
+                controller: 'ProfileProviderController as vm',
+                template: 'app/provider/profile/tabs/account/dialog-b.confidentiality.html'
+            });
+        }
+
+        function agreeConfidentiality() {
+            var dialogID = 'confidentiality';
+            var payload = {'agreement': dialogID, 'fullname': vm.fullName};
+            Restangular.one('provider/setting').put(payload).then(function(resp) {
+                //vm.signedAt = resp.time;
+                vm.agreement.confidentiality = resp.time;
+                toastr.success('You signed ' + dialogID + ' agreement at ' + resp.time , 'Thank you!');
+            }, function errorCallback(resp){
+                toastr.error(resp.data.error);
+            });
+        }
+
+        /*
+           **** Noncompete
+         */
+        function showNoncompete()
+        {
+            ngDialog.open({
+                // className: 'ngdialog-theme-plain custom-width',
+                controller: 'ProfileProviderController as vm',
+                template: 'app/provider/profile/tabs/account/dialog-b.noncompete.html'
+            });
+        }
+
+        function agreeNoncompete() {
+            var dialogID = 'noncompete';
+            var payload = {'agreement': dialogID, 'fullname': vm.fullName};
+            Restangular.one('provider/setting').put(payload).then(function(resp) {
+                //vm.signedAt = resp.time;
+                vm.agreement.noncompete = resp.time;
+                toastr.success('You signed ' + dialogID + ' agreement at ' + resp.time , 'Thank you!');
+            }, function errorCallback(resp){
+                toastr.error(resp.data.error);
+            });
+        }
+
+        /*
+           **** Delivery
+         */
+        function showDelivery()
+        {
+          ngDialog.open({
+            // className: 'ngdialog-theme-plain custom-width',
+            controller: 'ProfileProviderController as vm',
+            template: 'app/provider/profile/tabs/account/dialog-b.delivery.html'
+          });
+        }
+
+        function agreeDelivery() {
+          var dialogID = 'delivery';
+          var payload = {'agreement': dialogID, 'fullname': vm.fullName};
+          var po = 'OK';
+          Restangular.one('provider/setting').put(payload).then(function(resp) {
+            //vm.signedAt = resp.time;
+            vm.agreement.delivery = resp.time;
+            $log.log(po);
+            toastr.success('You signed ' + dialogID + ' agreement at ' + resp.time , 'Thank you!');
+          }, function errorCallback(resp){
+            toastr.error(resp.data.error);
+          });
         }
 
         //////////

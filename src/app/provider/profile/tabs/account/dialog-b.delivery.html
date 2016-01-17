@@ -1,5 +1,5 @@
-  <form>
-    <h4>1099 Agreement</h4>
+    <form>
+        <h4>Delivery Promise Agreement</h4>
         <div class="agreement-contents">
             <h2> WHEREAS,</h2>
             <p>
@@ -38,30 +38,22 @@
               4. This Agreement and its validity, construction and effect shall be governed by the laws of the
               state of California.
             </p>
-            <div ng-show="!!vm.agreement.a1099">
+            <div ng-show="!!vm.agreement.delivery">
               <h2>AGREED AND ACCEPTED BY:</h2>
-              <p>Date: {{ vm.agreement.a1099 }} </p>
-              <p>By  {{ vm.fullName }} </p>
+              <p>Date: {{vm.agreement.delivery}} </p>
+              <p>By  {{vm.fullName}} </p>
               <p></p>
             </div>
         </div>
         <div class="md-actions" layout="row" >
-            <label ng-show="!vm.agreement.a1099">Full Name:&nbsp;&nbsp;</label>
-            <input ng-show="!vm.agreement.a1099" ng-model="vm.fullName" type="text" placeholder="James Smith" >
+           <label ng-show="!vm.agreement.delivery">Full Name:&nbsp;&nbsp;</label>
+            <input ng-show="!vm.agreement.delivery" ng-model="vm.fullName" type="text" placeholder="James Smith" >
             <span flex></span>
-            <button class="btn" ng-if="!vm.agreement.a1099" ng-click="vm.agree1099()">Agree</button>
+            <button class="btn" ng-if="!vm.agreement.delivery" ng-click="vm.agreeDelivery()">Agree</button>
             <button class="btn" ng-click="closeThisDialog()">
-              <span ng-if="!vm.agreement.a1099" >Don't agree</span>
-              <span ng-if="!!vm.agreement.a1099" ng-click="closeThisDialog()">Ok</span>
+              <span ng-if="!vm.agreement.delivery" >Don't agree</span>
+              <span ng-if="!!vm.agreement.delivery" ng-click="closeThisDialog()">Ok</span>
             </button>
-         <!--
-            <md-button ng-if="!signedAt" ng-click="vm.agree()" class="md-accent md-raised">
-              Agree
-            </md-button>
-            <md-button ng-click="closeThisDialog()" class="md-primary md-raised">
-              <span ng-if="!signedAt">Don't agree</span>
-              <span ng-if="signedAt">Ok</span>
-            </md-button>
-          -->
         </div>
-  </form>
+    </form>
+</md-dialog>
