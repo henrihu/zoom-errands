@@ -107,25 +107,41 @@
                         <div class="subtitle font-size-20">Type of Service Provider</div>
                         
                         <div class="row type-check margin-top-15">                            
-                            <div ng-repeat="item in vm.types" class="col-sm-4 col-xs-6">
+                            <div ng-repeat="item in vm.types" class="col-sm-4 col-xs-6 text-left">
+                                <label>
+                                    <input type="checkbox" ng-model="item.value" class="gray-font-color margin-0">
+                                    {{item.name}}
+                                </label>
+                              <!--
                                 <checkbox ng-model="item.value" class="gray-font-color margin-0">
                                     {{item.name}}
                                 </checkbox>
-                            </div>                            
+                                -->
+                            </div>
                         </div>
                     </div>
 
                     <div class="jobtype margin-top-25 ">
                         <div class="subtitle font-size-20">Send job notifications by:</div>
                         
-                        <div class="" layout="row" layout-align="center"> 
+                        <div class="" layout="row" layout-align="center">
+                            <label>
+                                <input type="checkbox" ng-model="vm.agreement.sms" class="gray-font-color">
+                                SMS
+                            </label>
+                            <label>
+                                <input type="checkbox" ng-model="vm.agreement.email" class="gray-font-color">
+                                E-Mail
+                            </label>
+                          <!--
                             <checkbox  ng-model="vm.agreement.sms" class="gray-font-color">
                                 SMS
                             </checkbox>
 
                             <checkbox ng-model="vm.agreement.email" class="gray-font-color">
                                 E-Mail
-                            </checkbox>                           
+                            </checkbox>
+                            -->
                         </div>
                     </div>
 
