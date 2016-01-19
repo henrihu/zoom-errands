@@ -7,8 +7,10 @@
         .controller('HomepageController', HomepageController);
 
     /** @ngInject */
+    HomepageController.$inject = [];
     function HomepageController()
     {
+        
         var vm = this;
 
         // vm.homepage = true;
@@ -233,5 +235,6 @@
         // };
 
         //////////
+
     }
 })();

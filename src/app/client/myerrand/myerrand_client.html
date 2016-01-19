@@ -19,7 +19,7 @@
                             <td><a ui-sref='app.client.editerrand({id: {{task.id}}})'>{{task.title}}</a></td>
                             <td>
                                 <img class="avatar" ng-src="{{task.provider.photoThumbUrl}}">
-                                {{task.provider.fname}}
+                                {{task.provider.fname}} {{task.provider.lname}}
                             </td>  
                             <td class="text-center">
                                 <img class="" ng-repeat="upload in task.task_uploads" ng-src="{{upload.uploadThumbUrl}}">

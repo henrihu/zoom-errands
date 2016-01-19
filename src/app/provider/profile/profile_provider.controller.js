@@ -38,12 +38,18 @@
         ];
         vm.availableColors = ['red','blue', 'ced','asdf'];
 
+        vm.autocompleteOptions = {
+            componentRestrictions: { country: 'us' },
+            types: ['geocode']
+        }
 
                 // function define
         function initAccount()
         {
             // vm.accountSetting = {};
             vm.accountSetting = $scope.user;
+            vm.addr = vm.accountSetting.address1;
+                 
             if (vm.accountSetting.fname && vm.accountSetting.lname) {
                 vm.fullName = vm.accountSetting.fname + ' ' + vm.accountSetting.lname;
             }
@@ -69,6 +75,11 @@
                 vm.types = resp.types;
             });
 
+            Restangular.all('client/zoomoffices').getList()
+            .then(function(offices) {
+                // $log.log(types);
+                vm.zoomoffices = offices;
+            });
             
             // vm.states = [
             //   {name: 'Alaska', abb: 'AK'}, {name: 'Alabama', abb: 'AL'}, {name: 'Arkansas', abb: 'AR'}, {name: 'Arizona', abb: 'AZ'},
@@ -108,76 +119,6 @@
 
             vm.selectedItem= vm.itemArray[0];
         }
-
-        // function showAdvanced(ev, dialogID)
-        // {
-        //     var templateDialog = 'app/provider/profile/tabs/account/dialog-b.' + dialogID + '.html';
-
-        //     var dlg = ngDialog.open({
-        //      // controller         : function ()
-        //      // {
-        //      //     vm.agree = agreeFn;
-
-        //      //     if (vm.accountSetting.fname && vm.accountSetting.lname) {
-        //      //         vm.fullName = vm.accountSetting.fname + ' ' + vm.accountSetting.lname;
-        //      //     }
-        //      //     else {
-        //      //         vm.fullName = '';
-        //      //     }
-
-        //      //     if (vm.agreement) {
-        //      //         switch ( dialogID )
-        //      //         {
-        //      //             case '1099':
-        //      //                 vm.signedAt = vm.agreement.a1099;
-        //      //                 break;
-
-        //      //             case 'confidentiality':
-        //      //                 vm.signedAt = vm.agreement.confidentiality;
-        //      //                 break;
-
-        //      //             case 'delivery':
-        //      //                 vm.signedAt = vm.agreement.confidentiality;
-        //      //                 break;
-
-        //      //             case 'noncompete':
-        //      //                 vm.signedAt = vm.agreement.noncompete;
-        //      //                 break;
-
-        //      //             default:
-        //      //                 vm.signedAt = '';
-        //      //         }
-        //      //     }
-
-        //      //     function agreeFn()
-        //      //     {
-        //      //         $log('ok');
-        //      //       /*
-        //      //         var payload = {agreement: dialogID, fullname: vm.fullName};
-        //      //         Restangular.one('provider/setting').put(payload).then(function(resp) {
-        //      //             vm.signedAt = resp.time;
-        //      //             toastr.success('You signed ' + dialogID + ' agreement at ' + resp.time , 'Thank you!');
-        //      //         }, function errorCallback(resp){
-        //      //             toastr.error(resp.data.error);
-        //      //         });
-        //      //         */
-        //      //     }
-        //      // },
-        //         templateUrl        : templateDialog
-        //      //parent             : $document.body,
-        //      // scope              : vm,
-        //      //targetEvent        : ev,
-        //      //clickOutsideToClose: true
-        //     });
-
-        //     dlg.closePromise.then(function (answer)
-        //     {
-        //         vm.alert = 'You said the information was "' + answer + '".';
-        //     }, function ()
-        //     {
-        //         vm.alert = 'You cancelled the dialog.';
-        //     });
-        // }
 
         /*
           **** 1099 Check
@@ -331,7 +272,24 @@
         function updateAccount()
         {
             // update main accountSetting
-            $auth.updateAccount(vm.accountSetting, {config: 'provider'}).then(success, error);
+            if (vm.addr.types) {                                
+                vm.accountSetting.address1 = vm.addr.formatted_address;
+                vm.accountSetting.addrlat = vm.addr.geometry.location.lat();
+                vm.accountSetting.addrlng = vm.addr.geometry.location.lng();    
+            } else {
+                if (!vm.accountSetting.address1) {
+                    toastr.warning('Please input address exatly'); 
+                    return;
+                }
+            }             
+                
+            $auth.updateAccount(vm.accountSetting, {config: 'provider'}).then(function() {
+                toastr.success('Account setting updated successfully!');
+            }, function (data) {
+                angular.forEach(data.alert, function(alert){
+                    toastr.error(alert);
+                });
+            });
 
             // update job types
             var payload = [];
@@ -343,32 +301,12 @@
                 }
             }
             Restangular.one('provider/types').put(payload);
-            // .then(function(resp) {
-            //     toastr.success(resp.message);
-            // }, function errorCallback(resp){
-            //         console.log(resp);
-            //         // toastr.error(resp);
-            // });
-
+            
             //update notification setting
             var payload1 = {sms: vm.agreement.sms, email: vm.agreement.email};
 
-            Restangular.one('provider/setting').put(payload1);
-            // .then(function(resp) {
-            //     toastr.success(resp.message);
-            // });
-
-
-            function success(){
-                toastr.success('Account setting updated successfully!');
-            }
-
-            function error(data){
-
-                    angular.forEach(data.alert, function(alert){
-                        toastr.error(alert);
-                    });
-            }
+            Restangular.one('provider/setting').put(payload1);                
+             
         }
 
     }

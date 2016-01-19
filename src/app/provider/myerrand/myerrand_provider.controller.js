@@ -7,16 +7,15 @@
         .controller('MyerrandProviderController', MyerrandProviderController);
 
     /** @ngInject */
-    MyerrandProviderController.$inject = ['$scope', 'Restangular', 'toastr'];
-    function MyerrandProviderController($scope, Restangular, toastr)
+    MyerrandProviderController.$inject = ['$scope', 'Restangular'];
+    function MyerrandProviderController($scope, Restangular)
     {
         var vm = this; 
-        vm.deleteTask = deleteTask;
         vm.loadMore = loadMore;
         vm.limit = 7;
         vm.curPos = 0;
 
-        Restangular.all('provider/tasks').getList({'limit': vm.limit, 'offset': vm.curPos})
+        Restangular.all('provider/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})
         .then(function(tasks) {
             vm.tasks = tasks;
             vm.displayedtasks = [].concat(vm.tasks);
@@ -24,21 +23,6 @@
             // $log.log(vm.displayedtasks);
         });
 
-        function deleteTask(task) 
-        {   
-            Restangular.one('provider/tasks', task.id).remove()
-            .then(function(data) {
-                var index = vm.tasks.indexOf(task);
-                if (index !== -1) {
-                    vm.tasks.splice(index, 1);
-                    toastr.success('Your task ' + data.title + 'has been cancelled.');
-                }
-                
-            }, function(error) {
-                toastr.error(error);
-            });
-
-        }
 
         function loadMore()
         {

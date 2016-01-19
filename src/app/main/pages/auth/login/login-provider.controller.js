@@ -17,7 +17,7 @@
         $scope.$on('auth:login-success', function() 
         {
             // toastr.success('Welcome ' + user.email);
-            $state.go('app.provider.profile');            
+            $state.go('app.provider.myerrand');            
         });
 
         // event 'auth:login-error'

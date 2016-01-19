@@ -1,63 +1,102 @@
-<div id="editerrand-provider" class="border-top">
-    <div id="login-form-wrapper"  class="container">
-        <div class="row">
-            <div id="login-form" class="col-sm-6  text-center">
-                <!-- <div class="logo">
-                    <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
-                </div> -->
+<div id="jobalert" >
+  <!-- <div class="alert-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4 padding-top-20">
+          <img  src="assets/images/logos/ze_logo_header.png" width="100" height="45" />
+        </div>
 
-                <div class="text-muted editerrand-title">Editerrand</div>                 
+        <div class="col-xs-8 padding-right-0 ">
+          <h3 class="alert-header-title">NEW JOB ALERT</h3>
+          <p class="alert-sent">sent on: {{vm.job.created_at|date : 'MM/dd/yyyy h:mma'}}</p>
+        </div>
                 
-                <form ng-submit="vm.updateErrand()" role="form" >
-                    <div id="account-info">
-                        <input ng-model="vm.errand.title" type="text" class="form-control email-input" placeholder="Errand Title" required>
-                        <!-- <datetimepicker data-ng-model="vm.errand.date"></datetimepicker> -->
-                        <p class="input-group">
-                            <input type="text" class="form-control" datetime-picker="dd MMM yyyy HH:mm" ng-model="vm.errand.datetime" is-open="vm.isOpen" placeholder="dd MMM yyyy HH:mm" required>
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-default" ng-click="vm.openCalendar($event, prop)"><i class="glyphicon glyphicon-calendar"></i></button>
-                            </span>
-                        </p>
-                        <input ng-model="vm.address" type="text" class="form-control" placeholder="Address" required> 
-                       
-                        <div class="col-xs-8 padding-0">
-                            <input ng-model="vm.errand.contact" type="text" class="form-control email-input" placeholder="Contact Number" required>
-                        </div>
-                        <div class="col-xs-4 padding-0">                            
-                            <select class="form-control" ng-options="type.id as type.name for type in vm.alltypes" ng-model="vm.errand.type_id" required>
-                                <option value="" disabled>Type</option>
-                            </select>                            
-                        </div>
-                        <!-- <ui-select multiple ng-model="vm.errand.types" theme="bootstrap" ng-disabled="disabled">
-                            <ui-select-match placeholder="Select person...">{{$item.name}}</ui-select-match>
-                            <ui-select-choices repeat="type.id as type in vm.alltypes | filter:$select.search">
-                              <div ng-bind-html="type.name | highlight: $select.search"></div>
-                              <small>
-                                <span ng-bind-html="type.comment | highlight: $select.search"></span>
-                              </small>
-                            </ui-select-choices>
-                        </ui-select> -->                       
-                        
-                        
-                        <textarea ng-model="vm.errand.details" class="form-control textarea" 
-                        rows="3" placeholder="Errand Details" required></textarea>
-
-                        <div> 
-                            <input type="checkbox"  ng-model="vm.errand.escrowable" class="gray-font-color">
-                                Allow access escrow account
-                        </div>
-                    </div> 
-                    <div class=" col-md-8 col-md-offset-2">
-                       <button class="btn btn-editerrand btn-login">Update</button> 
-                    </div>                    
-                </form>
-            </div>
-
-            <!-- <div class="col-sm-6  margin-top-80" >                               
-                <div id="map_canvas" style="width:400px; height:500px;">
-                </div>                  
-            </div>   -->    
-        </div>        
+      </div>      
     </div>
+  </div> -->
+  
+  <div class="alert-body">
+    <div class="container">      
+      <div class="row margin-top-10">
+        <div class="col-sm-6 col-sm-offset-3">
+          <p>
+            <h4 class="alert-subtitle text-bold margin-bottom-20">{{vm.job.title}}</h4>
+          </p> 
+          <p>
+            <span class="alert-label">Service Category: </span>
+            <span class="alert-value">{{vm.job.type.name}}</span>
+          </p>
+          <p>
+            <span class="alert-label">Date/s: </span>
+            <span class="alert-value">{{vm.job.datetime | date : 'MM/dd/yyyy, EEE'}}</span>
+          </p> 
+          <p>
+            <span class="alert-label">Time: </span>
+            <span class="alert-value">{{vm.job.datetime | date : 'shortTime'}}</span>
+          </p> 
+          <p>
+            <span class="alert-label">Starting Address: </span>
+            <span class="alert-value">{{vm.job.address}}</span>
+          </p>
+          <p>
+            <span class="alert-label">Require Purchase: </span>
+            <span class="alert-value">{{escrowable | yesNo}}</span>
+          </p> 
+          <p class="alert-label">Job Notes</p>
+          <div class="alert-notes b padding-15">
+            {{vm.job.details}}
+          </div>            
+        </div>        
+      </div>
+
+      <div class="row margin-top-30">
+        <div class="col-sm-6 col-sm-offset-3">          
+          <h4 class="alert-subtitle">Client Info</h4>
+          <p>
+            <span class="alert-label">Name: </span>
+            <span>{{vm.job.client.fname}} {{vm.job.client.lname}}</span> 
+          </p>  
+          <p>
+            <span class="alert-label">Phone: </span>
+            <span>{{vm.job.client.phone1}}</span>            
+          </p>
+          <p>
+            <span class="alert-label">Email: </span>
+            <span>{{vm.job.client.email}}</span>
+          </p>
+        </div>        
+      </div> 
+
+      <div class="row margin-top-30">
+        <div class="col-sm-6 col-sm-offset-3">          
+          <h4 class="alert-subtitle">Complete Job</h4>
+          <p>
+            <span class="alert-label">Hours Used: </span>
+            <input ng-model="vm.errand.contact" type="Number" class="form-control email-input"  required>
+          </p>  
+          <p>
+            <span class="alert-label">Escrow Used: </span>
+            <input ng-model="vm.errand.contact" type="Number" class="form-control email-input" required>  
+          </p>
+          <p>
+            <span class="alert-label">Reception: </span>
+            <input id="file-uploader" type="file" nv-file-select uploader="vm.uploader" multiple/> 
+            <span ng-bind="vm.uploader.queue.length"></span>            
+          </p>
+        </div>        
+      </div> 
+
+      <div id="footer" class="row margin-bottom-40 margin-top-15">
+        <div class="col-sm-6 col-sm-offset-3">      
+            <div class="col-xs-6 text-center">
+              <button class="btn btn-success padding-horizontal-20" ng-click="vm.acceptJob()">Complete Task</button>
+            </div>
+            <div class="col-xs-6 ">
+              <button class="btn btn-danger padding-horizontal-15" ng-click="vm.declineJob()"> Not Now</button>
+            </div>
+        </div>
+      </div>  
+    </div>
+  </div>
 </div>
 

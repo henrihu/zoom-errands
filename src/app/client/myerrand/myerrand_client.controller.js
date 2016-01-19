@@ -16,7 +16,7 @@
         vm.limit = 7;
         vm.curPos = 0;
 
-        Restangular.all('client/tasks').getList({'limit': vm.limit, 'offset': vm.curPos})
+        Restangular.all('client/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})
         .then(function(tasks) {
             vm.tasks = tasks;
             vm.displayedtasks = [].concat(vm.tasks);

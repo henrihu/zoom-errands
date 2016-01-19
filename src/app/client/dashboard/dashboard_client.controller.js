@@ -16,8 +16,7 @@
         vm.errand.contact = $scope.user.phone1;
 
         vm.isOpen = false;
-        vm.uploader = new FileUploader({
-            
+        vm.uploader = new FileUploader({            
             alias: 'upload',
             // method: 'PUT',
             headers: $auth.retrieveData('auth_headers')              

@@ -10,7 +10,7 @@
   {
       $locationProvider.html5Mode(true);
 
-      // $urlRouterProvider.otherwise('/dashboard-project');
+      // $urlRouterProvider.otherwise('/client/myerrand');
       $urlRouterProvider.otherwise('/pages/homepage');
 
       $stateProvider

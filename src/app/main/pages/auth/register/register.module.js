@@ -89,12 +89,12 @@
         });
         $rootScope.$on('$destroy', cleanupfunc3);
 
-        var cleanupfunc4 = $rootScope.$on('auth:validation-success', function() {
-            // $state.go('app.pages_profile_client');
-            // console.log(ev);
-            // console.log(user);
-        });
-        $rootScope.$on('$destroy', cleanupfunc4);
+        // var cleanupfunc4 = $rootScope.$on('auth:validation-success', function() {
+        //     $state.go('app.client.dashboard');
+        //     // console.log(ev);
+        //     // console.log(user);
+        // });
+        // $rootScope.$on('$destroy', cleanupfunc4);
 
         var cleanupfunc5 = $rootScope.$on('auth:validation-error', function() {
             // toastr.wanning('You should log in.')

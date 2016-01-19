@@ -21,6 +21,19 @@
                     templateUrl: 'app/main/layouts/navbar.html',
                     controller : 'HomepageController as vm'
                 }
+            },
+            resolve: {
+                checkloggedin: function($auth, $state) {
+                    $auth.validateUser()
+                    .then(function(user) {
+                        if (user.configName == 'default'){
+                          $state.go('app.client.dashboard');
+                        } else if (user.configName == 'provider') {
+                          $state.go('app.provider.myerrand');
+                        }
+                    });
+                    
+                }
             }
         });
 
