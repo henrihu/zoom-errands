@@ -24,7 +24,7 @@
    bower install
 ```
 * Configuration
- ```  
+```  
    edit src/app/index.constant.js  to select api server.
 ```
 * Dependencies
