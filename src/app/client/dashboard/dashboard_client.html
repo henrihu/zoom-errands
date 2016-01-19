@@ -28,6 +28,11 @@
                                 <option value="" disabled>Type</option>
                             </select>                            
                         </div>
+                        <div class="col-xs-12 padding-0">                            
+                            <select class="form-control" ng-options="office.id as office.longName for office in vm.zoomoffices" ng-model="vm.errand.zoom_office_id" required>
+                                <option value="" disabled>Zoom Location</option>
+                            </select>                            
+                        </div>
                         <!-- <ui-select multiple ng-model="vm.errand.types" theme="bootstrap" ng-disabled="disabled">
                             <ui-select-match placeholder="Select person...">{{$item.name}}</ui-select-match>
                             <ui-select-choices repeat="type.id as type in vm.alltypes | filter:$select.search">
