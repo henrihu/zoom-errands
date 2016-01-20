@@ -20,6 +20,7 @@
 			'ui.select',
 			'smart-table',
 			'google.places',
+			'focus-if', 
 
 			// Core
 			// 'app.core',

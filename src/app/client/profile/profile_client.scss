@@ -58,7 +58,7 @@ $border-color: rgba(200,200,200, 0.7);
                 color: gray;
                 margin: 0px;
             }
-            input {
+            input, input:focus {
                 border: none;
             }
         }
@@ -83,9 +83,12 @@ $border-color: rgba(200,200,200, 0.7);
         margin-top: 100px;
         background: rgb(187, 187, 187);
         color: white;
-        padding: 30px;
+        padding: 20px;
         font-size: 16px;
         font-weight: bold;
+        p {
+            margin-bottom: 0px;
+        }
 
     }
 }
