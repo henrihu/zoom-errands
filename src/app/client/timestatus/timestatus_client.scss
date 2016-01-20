@@ -81,12 +81,17 @@
 .timestatus-footer {
   background: #bbb;
   color: #fff;
+  font-weight: bold;
   height: 70px;
   line-height: 70px;
   margin-top: -70px;
 
+  .phone-text {
+      padding-right: 28px;
+  }
+
   .glyphicon-earphone {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
   }
 
