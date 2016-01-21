@@ -1,7 +1,7 @@
 <div id="profile-client" class="border-top">
     <div id="login-form-wrapper"  class="container">
         <div class="row">
-            <div class="text-muted title text-center ">Profile</div>
+            <div class="text-muted title text-center">Profile</div>
             <div class="col-sm-6 avatar-div">
                 <img class="avatar-image"   ng-src="{{vm.accountSetting.photoUrl}}" >
                 <input id="imageuploader" ng-show="false" type="file" nv-file-select
@@ -79,26 +79,29 @@
 
 
 
-                <div class="col-sm-12 text-center">
+                <div class="col-sm-12 text-center margin-bottom-60 ">
                    <button class="btn btn-primary btn-update">Update Profile</button>
                 </div>
             </form>
 
         </div>
-    </div>
+    </div>   
 
-    <div id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-1">
-                    <p>Zoom Errands, Inc.</p>
-                </div>
-                <div class="col-sm-3 font-size-14">
-                    <p><i class="glyphicon glyphicon-earphone"></i> (310) 425-6425</p>
-                </div>
+</div>
+
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-1">
+                <p>Zoom Errands, Inc.</p>
+            </div>
+            <div class="col-sm-3 font-size-14">
+                <p>
+                    <i class="glyphicon glyphicon-earphone text-bold"></i>
+                    &nbsp;(310) 425-6425
+                </p>
             </div>
         </div>
     </div>
-
 </div>
 

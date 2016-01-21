@@ -1,6 +1,6 @@
 #timestatus-client {
     background: #f9f9f9;
-    height: calc(100% - 70px);
+    min-height: calc(100vh - 83px - 66px);
     //padding-bottom: 70px;
 
     a {
@@ -18,8 +18,8 @@
             vertical-align: middle;
         }
         .num {
-            font-size: 57px;
-            line-height: 81px;
+            font-size: 50px;
+            line-height: 70px;
             //font-weight: bold;
             text-align: right;
         }
@@ -47,7 +47,8 @@
         color: #494949;
         font-family: 'LatoWebLight';
         font-size: 36px;
-        margin-bottom: 67px;
+        margin-bottom: 50px;
+        margin-top: 50px;
     }
 
     .icon-add {

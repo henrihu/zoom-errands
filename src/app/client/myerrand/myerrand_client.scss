@@ -1,12 +1,14 @@
 #myerrand-client {
 	background: #f9f9f9;
+	min-height: calc(100vh - 83px - 66px);
 
 	.myerrand-title {
       color: #494949;
       font-family: 'LatoWebLight';
       font-size: 36px;
       //font-weight: lighter;
-      margin-bottom: 67px;
+      margin-bottom: 50px;
+      margin-top: 50px;
   }
 
 	table {
@@ -19,6 +21,10 @@
 			background: white;
 			td {
 				vertical-align: middle;
+				a, a:hover, a:focus {
+					// text-decoration: none;
+					cursor: pointer;
+				}
 			}
 			.border-side {
 				border-left: 1px solid $table-border-color;
@@ -54,12 +60,16 @@
 	}
 
 	#footer {        
-    margin-top: 100px;
-    background: rgb(187, 187, 187);
-    color: white;
-    padding: 30px;
-    font-size: 16px;
-    font-weight: bold;
+      // margin-top: 100px;
+      background: rgb(187, 187, 187);
+      color: white;
+      padding: 22px;
+      font-size: 16px;
+      font-weight: bold;
+      p {
+          margin-bottom: 0px;
+      }
+
   }
 	
 }
