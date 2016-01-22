@@ -15,6 +15,14 @@
         <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">  
             
             <ul class="nav navbar-nav navbar-right">
+                <li ng-if="user.signedIn && user.configName=='provider'">                         
+                    <a class=" text-primary padding-bottom-5-i" href="tel:(310) 425-6425">
+                        <span class="glyphicon glyphicon-earphone"></span>
+                        (310) 425-6425
+                    </a>
+                    <p class="phone-line text-right">service provider help line</p>
+                </li>  
+
         		<li ng-if="user.signedIn && user.configName=='provider'">
                     <a  ui-sref="app.provider.myerrand">
                         My Jobs
@@ -64,7 +72,7 @@
                   <ul class="uib-dropdown-menu" aria-labelledby="simple-dropdown">                    
                     <li><a ng-if="user.configName == 'default'" ui-sref="app.client.profile">My Profile</a></li>
                     <li><a ng-if="user.configName == 'provider'" ui-sref="app.provider.profile">My Profile</a></li>
-                    <li role="separator" class="divider"></li>
+                    <!-- <li role="separator" class="divider"></li> -->
                     <li><a class="cursor-pointer" ng-click="signOut()">Log out</a></li>
                   </ul>
                 </li>
@@ -93,13 +101,7 @@
                     	(310) 425-6425
                     </a>
                 </li>
-                 <li ng-if="user.signedIn && user.configName=='provider'">                         
-                    <a class=" text-primary padding-bottom-5-i" href="tel:(310) 425-6425">
-                        <span class="glyphicon glyphicon-earphone"></span>
-                        (310) 425-6425
-                    </a>
-                    <span class="phone-line">service provider help line</span>
-                </li>  	                
+                	                
             </ul>            
         </div>
     </div>
