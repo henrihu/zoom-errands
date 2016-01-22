@@ -53,6 +53,10 @@
             vm.isOpen = true;
         };
 
+        vm.reset = function() {
+            vm.errand = {};
+            vm.uploader.clearQueue();
+        }
         
 
         function submitErrand() {            
@@ -91,6 +95,7 @@
             }
             
         }
+        
 
         vm.uploader.onBeforeUploadItem = function(item) 
         {

@@ -1,4 +1,4 @@
-<div id="jobalert" >
+<div id="editerrand-provider" class="border-top">
   <!-- <div class="alert-header">
     <div class="container">
       <div class="row">
@@ -40,7 +40,7 @@
           </p>
           <p>
             <span class="alert-label">Require Purchase: </span>
-            <span class="alert-value">{{escrowable | yesNo}}</span>
+            <span class="alert-value">{{vm.job.escrowable | yesNo}}</span>
           </p> 
           <p class="alert-label">Job Notes</p>
           <div class="alert-notes b padding-15">
@@ -67,35 +67,47 @@
         </div>        
       </div> 
 
+    <form ng-submit="vm.completeTask()">  
       <div class="row margin-top-30">
         <div class="col-sm-6 col-sm-offset-3">          
           <h4 class="alert-subtitle">Complete Job</h4>
           <p>
-            <span class="alert-label">Hours Used: </span>
-            <input ng-model="vm.errand.contact" type="Number" class="form-control email-input"  required>
+            <span class="alert-label">Hours Used(hrs): </span>
+            <input ng-model="vm.job.usedHour" type="Number" step="0.1" min="0" max="200" class="form-control email-input"  required>
           </p>  
-          <p>
-            <span class="alert-label">Escrow Used: </span>
-            <input ng-model="vm.errand.contact" type="Number" class="form-control email-input" required>  
+          <p ng-if="vm.job.escrowable ">
+            <span class="alert-label">Escrow Used($): </span>
+            <input ng-model="vm.job.usedEscrow" type="Number" step="0.01" min="0" max="5000" class="form-control email-input" required>  
           </p>
           <p>
-            <span class="alert-label">Reception: </span>
-            <input id="file-uploader" type="file" nv-file-select uploader="vm.uploader" multiple/> 
-            <span ng-bind="vm.uploader.queue.length"></span>            
+            <span class="alert-label">Reception: </span>            
+            <input id="file-uploader" class="margin-bottom-10" type="file" nv-file-select uploader="vm.uploader" multiple/> 
+            <!-- <span ng-bind="vm.uploader.queue.length"></span>   -->
+            <a ng-repeat="upload in vm.job.task_uploads" href="{{upload.uploadUrl}}" class="no-decoration" target="_blank">
+              <img class="upload-img" ng-src="{{upload.uploadThumbUrl}}">
+            </a>
+            <a ng-repeat="img in vm.imgFiles" href="{{img.uploadUrl}}" class="no-decoration" target="_blank">
+              <img class="upload-img" ng-src="{{img.thumbUrl}}">
+            </a>  
           </p>
         </div>        
       </div> 
 
-      <div id="footer" class="row margin-bottom-40 margin-top-15">
+      <div id="job-footer" class="row margin-bottom-40 margin-top-15">
         <div class="col-sm-6 col-sm-offset-3">      
-            <div class="col-xs-6 text-center">
-              <button class="btn btn-success padding-horizontal-20" ng-click="vm.acceptJob()">Complete Task</button>
+            <div ng-if="vm.job.status !== 'close'" class="col-xs-6 text-center">
+              <button class="btn btn-success padding-horizontal-20" >Complete Task</button>
             </div>
-            <div class="col-xs-6 ">
-              <button class="btn btn-danger padding-horizontal-15" ng-click="vm.declineJob()"> Not Now</button>
+            <div ng-if="vm.job.status !== 'close'" class="col-xs-6 ">
+              <a class="btn btn-danger padding-horizontal-15" ui-sref='app.provider.myerrand'> Not Now</a>
             </div>
+            <div ng-if="vm.job.status === 'close'" class="col-xs-12 ">
+              <button class="btn btn-primary padding-horizontal-20" ui-sref='app.provider.myerrand'>Go back to My Jobs</button>
+            </div>
+
         </div>
       </div>  
+    </form>  
     </div>
   </div>
 </div>

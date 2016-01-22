@@ -7,13 +7,15 @@
         .controller('EditerrandProviderController', EditerrandProviderController);
 
     /** @ngInject */
-    EditerrandProviderController.$inject = [ '$scope', 'Restangular', '$stateParams', 'toastr', 'FileUploader', '$auth'];
-    function EditerrandProviderController($scope, Restangular, $stateParams, toastr, FileUploader, $auth)
+    EditerrandProviderController.$inject = ['$log', 'API_URL', '$scope', 'Restangular', '$stateParams', 'toastr', 'FileUploader', '$auth'];
+    function EditerrandProviderController($log, API_URL, $scope, Restangular, $stateParams, toastr, FileUploader, $auth)
     {
         var vm = this; 
-        vm.updateErrand = updateErrand; 
-
         var taskid = $stateParams.id;
+        vm.imgFiles = [];
+        vm.completeTask = completeTask; 
+
+        
         // console.log(taskid);
         Restangular.one('provider/tasks', taskid).get()
         .then(function(task) {
@@ -33,17 +35,40 @@
             }
         });
 
+        vm.uploader.onAfterAddingFile = function(item) {
+            if (vm.uploader.queue.length !== 1){
+                vm.uploader.removeFromQueue(0); // only one file in the queue
+            }
 
-        function updateErrand() {
-            var payload = {};
-            payload = {title: vm.errand.title, datetime: vm.errand.datetime, address: vm.errand.address,
-                        contact: vm.errand.contact, type_id: vm.errand.type_id, 
-                        details: vm.errand.details, escrowable: vm.errand.escrowable};
-            Restangular.one('provider/tasks', taskid).put(payload)
+            // item.method = 'PUT';
+            item.url = API_URL + '/provider/tasks/' + taskid + '/upload'
+            item.upload();
+        };
+
+        vm.uploader.onSuccessItem = function(item, response) {
+            toastr.success('File has been uploaded successfully!');
+            $log.log('item', item);
+            $log.log('response', response);
+            var img = {};
+            img
+            vm.imgFiles.push({thumbUrl: response.thumbUrl, uploadUrl: response.uploadUrl});
+        };
+
+        vm.uploader.onErrorItem = function(item, response) {
+            toastr.error(response.errors[0]);
+            // console.log(response);
+        };
+
+
+        function completeTask() {            
+            var task = Restangular.one('provider/tasks', taskid).one('complete')
+            task.usedEscrow = vm.job.usedEscrow
+            task.usedHour = vm.job.usedHour
+            task.put()
             .then(function(data) {
-                toastr.success('Your task \"' + data.title + '\" has been updated.', 'Errand Updated!');
+                toastr.success('Your task \"' + data.title + '\" has been completed.', 'Job Completed!');
             }, function(data) {
-                toastr.warning(data.data.alert);
+                toastr.error(data.data.errors);
             });
         }
 

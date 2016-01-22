@@ -68,8 +68,12 @@
                 .avatar-wrapper {
                     display: inline;
                 }
-
-
+                &.padding-bottom-5-i {
+                    padding-bottom: 5px !important;
+                }
+            }
+            .phone-line {
+                color: rgba(100,100,100,0.8)
             }
         }
     }

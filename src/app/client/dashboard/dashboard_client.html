@@ -51,14 +51,20 @@
 
                         <input id="file-uploader" type="file" nv-file-select uploader="vm.uploader" multiple/> 
                         <span ng-bind="vm.uploader.queue.length"></span>
-                       
+                        <a ng-repeat="img in vm.uploader.queue" href="{{img.uploadUrl}}" class="no-decoration" target="_blank">
+                          <img class="upload-img" ng-src="{{img.thumbUrl}}">
+                        </a>
+
                         <div> 
                             <input type="checkbox"  ng-model="vm.errand.escrowable" class="gray-font-color">
                             Allow access escrow account                                                     
                         </div>
                     </div> 
-                    <div class=" col-md-8 col-md-offset-2">
+                    <div class="col-md-6 text-center">
                        <button class="btn btn-dashboard btn-login">Submit</button> 
+                    </div>  
+                    <div class=" col-md-6 text-center">
+                       <a class="btn btn-dashboard btn-cancel" ng-click="vm.reset()">Reset</a> 
                     </div>                    
                 </form>
             </div>

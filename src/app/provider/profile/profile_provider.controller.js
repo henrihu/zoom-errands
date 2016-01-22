@@ -29,14 +29,7 @@
         vm.agreeDelivery = agreeDelivery;
         vm.triggerFileInput = triggerFileInput;
         vm.updateAccount = updateAccount;
-        vm.itemArray = [
-            {id: 1, name: 'asd'},
-            {id: 2, name: 'fdasd'},
-            {id: 3, name: 'asasd'},
-            {id: 4, name: 'asasd'},
-            {id: 5, name: 'assd'}
-        ];
-        vm.availableColors = ['red','blue', 'ced','asdf'];
+        
 
         vm.autocompleteOptions = {
             componentRestrictions: { country: 'us' },

@@ -2,7 +2,7 @@
     <div id="login-form-wrapper"  class="container margin-top-40">
         <div class="row">
             <h1 class="myerrand-title text-center">My Jobs</h1>
-            <div id="login-form" class="col-md-12  table-responsive">                
+            <div id="login-form" class="col-md-12  table-responsive margin-bottom-40">                
                 <table st-table="vm.displayedtasks" st-safe-src="vm.tasks" class="table ">
                     <thead>                    
                         <th class="text-center">DATE</th>
@@ -22,7 +22,9 @@
                                 {{task.client.fname}} {{task.client.lname}}
                             </td>  
                             <td class="text-center">
-                                <img class="" ng-repeat="upload in task.task_uploads" ng-src="{{upload.uploadThumbUrl}}">
+                                <a ng-repeat="upload in task.task_uploads" href="{{upload.uploadUrl}}" target="_blank">
+                                    <img class="upload-img"  ng-src="{{upload.uploadThumbUrl}}">
+                                </a>
                             </td>
                             <td class="text-center">{{task.escrowable | yesInprogress}}</td>                            
                             <td class="text-center ">
@@ -38,11 +40,15 @@
                             <td class="text-center">{{task.datetime | date}}</td>
                             <td><a ui-sref='app.provider.editerrand({id: {{task.id}}})'>{{task.title}}</a></td>
                             <td>
-                                <img class="avatar" ng-src="{{task.provider.photoThumbUrl}}">
-                                {{task.provider.fname}}
+                                <img class="avatar" ng-src="{{task.client.photoThumbUrl}}">
+                                {{task.client.fname}} {{task.client.lname}}
                             </td>  
-                            <td class="text-center"></td>
-                            <td class="text-center">{{task.usedEscrow}}</td>                            
+                            <td class="text-center">
+                                <a ng-repeat="upload in task.task_uploads" href="{{upload.uploadUrl}}" target="_blank">
+                                    <img class="upload-img" ng-src="{{upload.uploadThumbUrl}}">
+                                </a>
+                            </td>
+                            <td class="text-center">{{task.usedEscrow | currency}}</td>                            
                             <td class="text-center">{{task.usedHour}}</td> 
                                                     
                         </tr>
