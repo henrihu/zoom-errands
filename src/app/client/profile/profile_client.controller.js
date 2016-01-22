@@ -28,6 +28,12 @@
         vm.updateAccount = updateAccount;
         // vm.updatePhoto = updatePhoto;
         vm.triggerFileInput = triggerFileInput;
+        
+        Restangular.all('client/zoomoffices').getList()
+        .then(function(offices) {
+            // $log.log(types);
+            vm.zoomoffices = offices;
+        });
 
         vm.uploader.onAfterAddingFile = function(item) {
             if (vm.uploader.queue.length !== 1){

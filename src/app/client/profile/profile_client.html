@@ -22,47 +22,54 @@
                     </div>
 
                     <div>
-                        <label class="">First Name:</label>
+                        <label class="">First Name: </label>
                         <input type="text" ng-model="vm.accountSetting.fname" focus-if="true" required>
                     </div>
 
                     <div>
-                        <label class="">Last Name:</label>
+                        <label class="">Last Name: </label>
                         <input type="text" ng-model="vm.accountSetting.lname"  required>
                     </div>
 
                     <div>
-                        <label class="">Address:</label>
+                        <label class="">Address: </label>
                         <input type="text" ng-model="vm.accountSetting.address1"  required>
                     </div>
 
                     <div>
-                        <label class="">City:</label>
+                        <label class="">City: </label>
                         <input type="text" ng-model="vm.accountSetting.city"  required>
                     </div>
 
                     <div>
-                        <label class="">State:</label>
+                        <label class="">State: </label>
                         <input type="text" ng-model="vm.accountSetting.state"  required>
                     </div>
 
                     <div>
-                        <label class="">Zip:</label>
+                        <label class="">Zip: </label>
                         <input type="text" ng-model="vm.accountSetting.zip"  required>
                     </div>
 
                     <div>
-                        <label class="">Email:</label>
+                        <label class="">Home Location: </label>
+                        <select class="" ng-options="office.id as office.longName for office in vm.zoomoffices" ng-model="vm.accountSetting.zoom_office_id" required>
+                            <option value="" disabled>Zoom Location</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="">Email: </label>
                         <input type="email" ng-model="vm.accountSetting.email"  required>
                     </div>
 
                     <div>
-                        <label class="">Telephone:</label>
+                        <label class="">Telephone: </label>
                         <input type="text" ng-model="vm.accountSetting.phone1"  required>
                     </div>
 
                     <div ng-if="vm.phone2">
-                        <label class="">Telephone2:</label>
+                        <label class="">Telephone2: </label>
                         <input type="text" ng-model="vm.accountSetting.phone2" >
                     </div>
 
