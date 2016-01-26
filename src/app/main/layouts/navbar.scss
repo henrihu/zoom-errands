@@ -24,6 +24,7 @@
     }
     .navbar-collapse {
         border-color: fade(white, 2%);
+        outline: none;
     }
     .navbar-toggle {
         background-color: $brand-primary;
@@ -36,8 +37,13 @@
             background-color: $brand-primary;
         }
     }
+    .navbar-nav > .open > a,
+    .navbar-nav > .open > a:hover,
+    .navbar-nav > .open > a:focus {
+        background: #fff;
+    }
     .nav {
-        li {            
+        li {
 
             .float-right {
                 float: right;
@@ -120,6 +126,7 @@
             }
         }
     }
+
 
     .navbar-nav>.active>a {
         border-radius: 0;
