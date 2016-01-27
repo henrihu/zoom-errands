@@ -37,26 +37,41 @@
 
                 <li ng-if="user.signedIn && user.configName=='default'">
                     <a  ui-sref="app.client.myerrand" ng-click="navCollapsed=true">
-                        <span class="glyphicon glyphicon-list-alt"></span>
+                        <i class="icon-list"></i>
                         My Errands
                     </a>
                 </li>  
 
                 <li ng-if="user.signedIn && user.configName=='default'">
                     <a  ui-sref="app.client.timestatus" ng-click="navCollapsed=true">
-                        <span class="glyphicon glyphicon-time"></span>
+                        <i class="icon-timer"></i>
                         Time Status
                     </a>
                 </li>  
 
                 <li ng-if="user.signedIn && user.configName=='default'">
                     <a  ui-sref="app.client.myerrand" ng-click="navCollapsed=true">
-                        <span class="glyphicon glyphicon-credit-card"></span>
+                        <i class="icon-cc"></i>
                         Purchase Hours
                     </a>
-                </li>              
+                </li>
 
-                <li ng-if="user.signedIn" uib-dropdown>
+                <li ng-if="user.signedIn" class="visible-xs">
+                    <a ng-if="user.configName == 'default'" ui-sref="app.client.profile" ng-click="navCollapsed=true">
+                        My Profile
+                    </a>
+                    <a ng-if="user.configName == 'provider'" ui-sref="app.provider.profile" ng-click="navCollapsed=true">
+                        My Profile
+                    </a>
+                </li>
+
+                <li ng-if="user.signedIn" class="visible-xs">
+                    <a class="cursor-pointer" ng-click="signOut()">
+                        Log out
+                    </a>
+                </li>
+
+              <li ng-if="user.signedIn" class="hidden-xs" uib-dropdown>
                   <a href class="image-padding" id="simple-dropdown" uib-dropdown-toggle>
                     <div class="float-right">
                         <div class="avatar-wrapper">

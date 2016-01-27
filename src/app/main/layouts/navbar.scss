@@ -24,6 +24,7 @@
     }
     .navbar-collapse {
         border-color: fade(white, 2%);
+        outline: none;
     }
     .navbar-toggle {
         background-color: $brand-primary;
@@ -36,11 +37,49 @@
             background-color: $brand-primary;
         }
     }
+    .navbar-nav > .open > a,
+    .navbar-nav > .open > a:hover,
+    .navbar-nav > .open > a:focus {
+        background: #fff;
+    }
     .nav {
-        li {            
+        li {
 
             .float-right {
                 float: right;
+            }
+
+            .icon-list {
+                background: transparent url("/assets/images/icons/icon-list.png") no-repeat center center;
+                display: inline-block;
+                height: 18px;
+                margin-right: 8px;
+                text-indent: -9999px;
+                position: relative;
+                top: 3px;
+                width: 15px;
+            }
+
+            .icon-timer {
+                background: transparent url("/assets/images/icons/icon-timer.png") no-repeat center center;
+                display: inline-block;
+                height: 18px;
+                margin-right: 8px;
+                text-indent: -9999px;
+                position: relative;
+                top: 3px;
+                width: 18px;
+            }
+
+            .icon-cc {
+                background: transparent url("/assets/images/icons/icon-cc.png") no-repeat center center;
+                display: inline-block;
+                height: 17px;
+                margin-right: 8px;
+                text-indent: -9999px;
+                position: relative;
+                top: 5px;
+                width: 26px;
             }
 
             a {
@@ -48,13 +87,23 @@
                 font-weight: 400;
                 letter-spacing: 1px;
                 color: $gray;
-                padding-left: 10px;
-                padding-right: 10px;
+                padding-left: 14px;
+                padding-right: 14px;
+                line-height: 25px;
                 &:hover,
                 &:focus {
                     color: $brand-primary;
                     outline: none;
                     background-color: transparent !important;
+                    .icon-cc {
+                        background: transparent url("/assets/images/icons/icon-cc-hover.png") no-repeat center center;
+                    }
+                    .icon-timer {
+                        background: transparent url("/assets/images/icons/icon-timer-hover.png") no-repeat center center;
+                    }
+                    .icon-list {
+                        background: transparent url("/assets/images/icons/icon-list-hover.png") no-repeat center center;
+                    }
                 }
                 &.text-primary {
                     color: $brand-primary;
@@ -77,6 +126,8 @@
             }
         }
     }
+
+
     .navbar-nav>.active>a {
         border-radius: 0;
         color: white;
