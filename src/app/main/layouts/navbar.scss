@@ -1,6 +1,7 @@
 @import "ze_layout";
 
 .navbar-default {
+    
     // position: absolute;
     background-color: white;
     border-color: transparent;
@@ -85,7 +86,7 @@
             a {
                 text-align: right;
                 font-weight: 400;
-                letter-spacing: 1px;
+                // letter-spacing: 1px;
                 color: $gray;
                 padding-left: 14px;
                 padding-right: 14px;
@@ -150,6 +151,9 @@
 }
 
 @media(min-width:768px) {
+    #header-nav {
+        font-size: 12px; 
+    }
     .navbar-default {
         background-color: white;
         -webkit-transition: padding 0.3s;
