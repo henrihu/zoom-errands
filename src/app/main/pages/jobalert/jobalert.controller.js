@@ -7,18 +7,16 @@
         .controller('JobalertController', JobalertController);
 
     /** @ngInject */
-    JobalertController.$inject = ['$scope', '$state', 'Restangular', '$location', 'toastr', '$log', 'ngDialog'];
-    function JobalertController($scope, $state, Restangular, $location, toastr, $log, ngDialog)
+    JobalertController.$inject = ['$scope', '$auth', '$state', 'Restangular', '$location', 'toastr',  'ngDialog'];
+    function JobalertController($scope, $auth, $state, Restangular, $location, toastr,  ngDialog)
     {
         var vm = this;    
 
         var taskid = $location.search().id;
-        $log.log(taskid);
         if (taskid) {
             Restangular.one('provider/tasks', taskid).get()
             .then(function(task) {
                 vm.job = task;
-                $log.log(vm.job);
             }, function(data) {
                 toastr.error(data.data.errors, 'Error');    
             }); 
@@ -27,15 +25,18 @@
         }        
 
         vm.acceptJob = function() {
-            if (!$scope.user.id) {
+            if (!$scope.user.configName) {
                 ngDialog.open({template: 'app/main/pages/jobalert/popupTmpl.html'});
-            } else {
+            }else if ($scope.user.configName == 'default'){
+                $auth.signOut().then(function() {
+                    ngDialog.open({template: 'app/main/pages/jobalert/popupTmpl.html'});
+                });
+            }else {
                 Restangular.one('provider/tasks', taskid).one('accept').put()
                 .then(function() {
                     toastr.success("You are awarded this task.", "Congratulations!");
-                    $state.go('app.provider.editerrand', {id: taskid});
+                    $state.go('app.provider.myerrand');
                 }, function(data) {
-                    $log.log(data);
                     toastr.error(data.data.errors.toString());
                 });
             }
@@ -53,7 +54,6 @@
                 toastr.success("You are awarded this task.", "Congratulations!");
                 $state.go('app.provider.editerrand', {id: taskid});
             }, function(data) {
-                $log.log(data);
                 toastr.error(data.data.errors.toString());
             });       
         });
