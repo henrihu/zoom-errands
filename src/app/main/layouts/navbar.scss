@@ -11,6 +11,12 @@
     &.navbar-padding {
         padding-top: 30px;
     }
+
+    .logo-image{
+        width:120px; 
+        height: auto;
+
+    }
     
 
     .navbar-brand {
@@ -54,7 +60,7 @@
                 background: transparent url("/assets/images/icons/icon-list.png") no-repeat center center;
                 display: inline-block;
                 height: 18px;
-                margin-right: 8px;
+                margin-right: 4px;
                 text-indent: -9999px;
                 position: relative;
                 top: 3px;
@@ -65,7 +71,7 @@
                 background: transparent url("/assets/images/icons/icon-timer.png") no-repeat center center;
                 display: inline-block;
                 height: 18px;
-                margin-right: 8px;
+                margin-right: 4px;
                 text-indent: -9999px;
                 position: relative;
                 top: 3px;
@@ -76,7 +82,7 @@
                 background: transparent url("/assets/images/icons/icon-cc.png") no-repeat center center;
                 display: inline-block;
                 height: 17px;
-                margin-right: 8px;
+                margin-right: 4px;
                 text-indent: -9999px;
                 position: relative;
                 top: 5px;
@@ -88,8 +94,8 @@
                 font-weight: 400;
                 // letter-spacing: 1px;
                 color: $gray;
-                padding-left: 14px;
-                padding-right: 14px;
+                padding-left: 8px;
+                padding-right: 8px;
                 line-height: 25px;
                 &:hover,
                 &:focus {
@@ -151,8 +157,12 @@
 }
 
 @media(min-width:768px) {
-    #header-nav {
-        font-size: 12px; 
+    // #header-nav {
+    //     // font-size: 14px; 
+    // }
+    
+    .navbar-header {
+        vertical-align: middle;
     }
     .navbar-default {
         background-color: white;
@@ -178,7 +188,11 @@
     }
     .escrow-hours {
         display: inline;
-        margin-right: 10px;
+        font-size: 12px; 
+        &.escrow-hours-left {
+            margin-right: 8px;
+            // margin-left: -6px;
+        }
     }
     .escrow-div{
         position: relative;
