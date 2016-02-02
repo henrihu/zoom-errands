@@ -35,9 +35,11 @@
 
             scope.dt = new Date();
 
-            //scope.build = build;
+            scope.build = build;
 
-            build(scope);
+            scope.$watch('events', function(){
+                build(scope);
+            });
             //angular.element('#e-cal').on('click', function(){alert('ok'); });
         }
 
@@ -123,7 +125,7 @@
             var i;
 
             this.isToday = false;
-            this.dateStr = _d.getDate()+'-'+(_d.getMonth()+1)+'-'+_d.getFullYear();
+            this.dateStr = _d.getFullYear()+'-'+pad(_d.getMonth()+1, 2)+'-'+pad(_d.getDate(), 2);
             this.dt = _d;
             this.el = null;
             this._selected = false;
@@ -134,7 +136,7 @@
 
             var d = new Date();
 
-            if (_cell.dateStr == (d.getDate()+'-'+(d.getMonth()+1)+'-'+d.getFullYear())) {
+            if (_cell.dateStr == (d.getFullYear()+'-'+pad(_d.getMonth()+1, 2)+'-'+pad(d.getDate(), 2)) ) {
                 td.addClass('today');
                 _cell.isToday = true;
                 div.addClass("today");
@@ -157,13 +159,7 @@
 
                 for (i=0; i<events.length; i++){
                     var _e = events[i];
-                    var tr = angular.element('<tr></tr>');
-                    tr.append('<td class="event-avatar"><img src="' + _e.avatar + '"></td>');
-                    tr.append('<td class="event-name">' + _e.name + '</td>');
-                    tr.append('<td class="event-message">' +
-                                    '<span class="event-time">' + _e.time + '</span> ' +
-                                    _e.message +
-                               '</td>');
+                    var tr = getCell(_e);
                     event.find('.events-table:last-child').append(tr);
                 }
                 wrap.append(event);
@@ -174,6 +170,28 @@
             }
 
             td.attr('data-date-str', _cell.dateStr);
+        }
+
+        function getCell(event){
+            var tr = angular.element('<tr></tr>');
+            var photo = event.client.photoThumbUrl;
+            var name = event.client.fname;
+            var _d = new Date(event.datetime);
+            var time = pad(_d.getHours(), 2) + ':' + pad(_d.getMinutes(), 2);
+            var message = event.details;
+
+            tr.append('<td class="event-avatar"><img src="' + photo + '"></td>');
+            tr.append('<td class="event-name">' + name + '</td>');
+            tr.append('<td class="event-message">' +
+                '<span class="event-time">' + time + '</span> ' +
+                message +
+                '</td>');
+            return tr;
+        }
+
+        function pad(num, pad){
+            var s = "000" + num;
+            return s.substr(s.length-pad);
         }
 
         // dt's month's first day of week

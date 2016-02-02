@@ -16,8 +16,8 @@
         vm.errand = {}; 
         vm.errand.contact = $scope.user.phone1;
 
-        vm.events = {
-            '12-2-2016' : [
+        vm.events = {} /*{
+            '12-02-2016' : [
                 {
                     name: 'Yoshita',
                     avatar: '/assets/images/ava-1.png',
@@ -31,7 +31,7 @@
                     message: 'Take dog on a long walk in the nearest park'
                 }
             ],
-            '18-2-2016' : [
+            '18-02-2016' : [
                 {
                     name: 'Yoshita',
                     avatar: '/assets/images/ava-1.png',
@@ -58,6 +58,7 @@
                 }
             ]
         };
+        */
 
         vm.isOpen = false;
         vm.uploader = new FileUploader({            
@@ -79,8 +80,8 @@
         }
 
         Restangular.one('client/tasks/mytaskscalendar').get()
-        .then(function(d){
-            $log.log(d);
+        .then(function(data){
+            vm.events = data.events;
         }, function(data){
             // took from other controller, I believe error will be shown same way.
             toastr.warning(data.data.alert);
