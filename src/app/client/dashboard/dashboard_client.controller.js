@@ -5,6 +5,7 @@
     angular
         .module('app.client.dashboard')
         .controller('DashboardClientController', DashboardClientController);
+        //.directive('eventCalendar', eventCalendarDirective);
 
     /** @ngInject */
     DashboardClientController.$inject = ['$log', '$scope', 'toastr', 'Restangular', 'FileUploader', 'API_URL', '$auth'];
@@ -14,6 +15,49 @@
         vm.submitErrand = submitErrand; 
         vm.errand = {}; 
         vm.errand.contact = $scope.user.phone1;
+
+        vm.events = {
+            '12-2-2016' : [
+                {
+                    name: 'Yoshita',
+                    avatar: '/assets/images/ava-1.png',
+                    time: '10:00',
+                    message: 'Take dog on a long walk in the nearest park'
+                },
+                {
+                    name: 'Yoshita',
+                    avatar: '/assets/images/ava-1.png',
+                    time: '12:00',
+                    message: 'Take dog on a long walk in the nearest park'
+                }
+            ],
+            '18-2-2016' : [
+                {
+                    name: 'Yoshita',
+                    avatar: '/assets/images/ava-1.png',
+                    time: '09:00',
+                    message: 'Take dog on a long walk in the nearest park'
+                },
+                {
+                    name: 'Yoshita',
+                    avatar: '/assets/images/ava-1.png',
+                    time: '10:00',
+                    message: 'Take dog on a long walk in the nearest park'
+                },
+                {
+                    name: 'Yoshita',
+                    avatar: '/assets/images/ava-1.png',
+                    time: '11:00',
+                    message: 'Take dog on a long walk in the nearest park'
+                },
+                {
+                    name: 'Yoshita',
+                    avatar: '/assets/images/ava-1.png',
+                    time: '18:00',
+                    message: 'Take dog on a long walk in the nearest park'
+                }
+            ]
+        };
 
         vm.isOpen = false;
         vm.uploader = new FileUploader({            
@@ -33,6 +77,14 @@
             componentRestrictions: { country: 'us' },
             types: ['geocode']
         }
+
+        Restangular.one('client/tasks/mytaskscalendar').get()
+        .then(function(d){
+            $log.log(d);
+        }, function(data){
+            // took from other controller, I believe error will be shown same way.
+            toastr.warning(data.data.alert);
+        });
 
         Restangular.all('client/alltypes').getList()
         .then(function(types) {
@@ -108,5 +160,6 @@
             // $state.go('app.client.myerrand');
         }
     }
+
 
 })();

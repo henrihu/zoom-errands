@@ -1,0 +1,176 @@
+$border-color: rgba(200,200,200, 0.7);
+
+
+.event-calendar{
+    -webkit-box-shadow: 0px 0px 5px -2px rgba(69,69,69,1);
+    -moz-box-shadow: 0px 0px 5px -2px rgba(69,69,69,1);
+    box-shadow: 0px 0px 5px -2px rgba(69,69,69,1);
+
+    background: #fff;
+
+    .cal-toolbar {
+        color: #3d77a9;
+        font-family: 'LatoWeb';
+        font-size: 22px;
+
+        .month-name {
+            padding: 45px 20px 35px 20px;
+            display: inline-block;
+        }
+
+        a:hover,
+        a:active,
+        a:focus {
+            text-decoration: none;
+        }
+    }
+
+    th {
+        color: #3d77a9;
+        font-family: 'LatoWeb';
+        font-size: 16px;
+        font-weight: bold;
+        padding: 20px 0 !important;
+        text-transform: uppercase;
+    }
+
+    td, th {
+        text-align: center;
+        vertical-align: middle !important;
+    }
+
+    .cal-data td:first-child {
+        padding-left: 50px;
+    }
+    .cal-data td:last-child {
+        padding-right: 50px;
+    }
+
+
+    tbody.cal-body {
+        background: #d7d7d7;
+
+        tr:first-child td {
+            padding-top: 40px;
+        }
+        tr:last-child td {
+            padding-bottom: 40px;
+        }
+
+        td {
+            border: none !important;
+            font-family: 'LatoWebLight';
+            font-size: 26px;
+            padding: 5px;
+
+            div {
+                min-width: 100%;
+                min-height: 100%;
+                //line-height: 230%;
+            }
+            color: #fff;
+            &.prev-month,
+            &.next-month {
+                color: #a9a9a9;
+            }
+            &.has-event {
+                color: #3d77a9;
+                font-family: 'LatoWeb';
+
+                .inner {
+                    position: relative;
+                    cursor: pointer;
+                    height: 45px;
+                    line-height: 45px;
+
+                    .cal-tooltip {
+                        background: #3d77a9;
+                        border-radius: 6px;
+                        color: #fff;
+                        display: none;
+                        font-size: 16px;
+                        width: 380px;
+                        position: absolute;
+                        top: 0;
+                        left: 150%;
+                        z-index: 9999;
+                        
+                        .tooltip-arrow {
+                            background: transparent url('/assets/images/cal-tooltip-arrow.png') no-repeat center center;
+                            height: 31px;
+                            min-width: 0;
+                            min-height: 0;
+                            position: absolute;
+                            left: -15px;
+                            top: calc(50% - 15px);
+                            width: 28px;
+                        }
+
+                        .wrap {
+                            padding: 0 35px;
+                        }
+                        .event {
+                            font-size: 16px;
+                            line-height: 18px;
+                            margin: 0;
+                        }
+                        .events-table {
+                            tbody {
+                                background: transparent;
+                            }
+                            tr {
+                                border-bottom: 1px solid #78a0c3;
+                                &:last-child {
+                                    border-bottom: none;
+                                }
+                            }
+                            td {
+                                font-size: 16px;
+                                line-height: 18px;
+                                height: auto;
+                                padding: 35px 0;
+                                text-align: center;
+                                vertical-align: middle;
+                                width: auto;
+
+                                &.event-avatar {
+                                    img {
+                                        height: 30px;
+                                        width: 29px;
+                                    }
+                                }
+                                &.event-name {
+                                    padding: 0 20px 0 10px;
+                                }
+                                &.event-message {
+                                    text-align: left;
+                                    .event-time {
+                                        font-family: LatoWeb;
+                                        font-weight: bold;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .cal-tooltip {
+                            display: block;
+                        }
+                    }
+                }
+
+                .inner:hover {
+                    background: #ddd;
+                    border-radius: 50%;
+
+                    -webkit-box-shadow: -1px -1px 4px -2px rgba(69,69,69,1);
+                    -moz-box-shadow: -1px -1px 4px -2px rgba(69,69,69,1);
+                    box-shadow: -1px -1px 4px -2px rgba(69,69,69,1);
+                }
+            }
+        }
+    }
+
+}
