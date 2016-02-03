@@ -42,8 +42,6 @@ $border-color: rgba(200,200,200, 0.7);
     .cal-data  {
         td:first-child { padding-left: 50px; }
         th:first-child { padding-left: 50px !important; }
-    }
-    .cal-data  {
         td:last-child { padding-right: 50px; }
         th:last-child{ padding-right: 50px !important; }
     }
@@ -178,4 +176,18 @@ $border-color: rgba(200,200,200, 0.7);
         }
     }
 
+}
+
+
+@media screen and (max-width: $layout-breakpoint-lg) {
+    .event-calendar{
+        .cal-data  {
+            table-layout: fixed;
+
+            td:first-child { padding-left: 5px; }
+            th:first-child { padding-left: 5px !important; }
+            td:last-child { padding-right: 5px; }
+            th:last-child{ padding-right: 5px !important; }
+        }
+    }
 }
