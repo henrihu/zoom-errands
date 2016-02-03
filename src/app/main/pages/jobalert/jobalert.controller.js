@@ -28,9 +28,9 @@
             if (!$scope.user.configName) {
                 ngDialog.open({template: 'app/main/pages/jobalert/popupTmpl.html'});
             }else if ($scope.user.configName == 'default'){
-                $auth.signOut().then(function() {
+                // $auth.signOut().then(function() {
                     ngDialog.open({template: 'app/main/pages/jobalert/popupTmpl.html'});
-                });
+                // });
             }else {
                 Restangular.one('provider/tasks', taskid).one('accept').put()
                 .then(function() {

@@ -7,8 +7,8 @@
         .controller('EditerrandProviderController', EditerrandProviderController);
 
     /** @ngInject */
-    EditerrandProviderController.$inject = ['$log', 'API_URL', '$scope', 'Restangular', '$stateParams', 'toastr', 'FileUploader', '$auth'];
-    function EditerrandProviderController($log, API_URL, $scope, Restangular, $stateParams, toastr, FileUploader, $auth)
+    EditerrandProviderController.$inject = ['$state', '$log', 'API_URL', '$scope', 'Restangular', '$stateParams', 'toastr', 'FileUploader', '$auth'];
+    function EditerrandProviderController($state, $log, API_URL, $scope, Restangular, $stateParams, toastr, FileUploader, $auth)
     {
         var vm = this; 
         var taskid = $stateParams.id;
@@ -67,6 +67,7 @@
             task.put()
             .then(function(data) {
                 toastr.success('Your task \"' + data.title + '\" has been completed.', 'Job Completed!');
+                $state.go('app.provider.myerrand');
             }, function(data) {
                 toastr.error(data.data.errors);
             });
