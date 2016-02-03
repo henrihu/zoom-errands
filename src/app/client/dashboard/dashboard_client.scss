@@ -1,31 +1,83 @@
 $border-color: rgba(200,200,200, 0.7);
- 
+
 
 #dashboard-client {
+    background: #f9f9f9;
     width: 100%;
     height: 100%;   
 
     .datetime-picker-dropdown > li.date-picker-menu div > table .btn-default {
         border: 0;
-    } 
-    
+    }
+    .datetime-picker-dropdown * {
+      ouline: none;
+    }
+
+    .dashboard-title {
+        color: #494949;
+        font-family: 'LatoWebLight';
+        font-size: 36px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        text-align: center;
+        span {
+            font-weight: bolder;
+        }
+    }
+
+    .panel-card {
+        -webkit-box-shadow: 0px 0px 5px 1px rgba(173,173,173,.3);
+        -moz-box-shadow: 0px 0px 5px 1px rgba(173,173,173,.3);
+        box-shadow: 0px 0px 5px 1px rgba(173,173,173,.3);
+        border: none;
+        padding-bottom: 8px;
+        padding-top: 10px;
+        margin-bottom: 33px;
+
+        .card-image {
+            border-radius: 50%;
+            margin-bottom: 25px;
+            height: 200px;
+            width: 200px;
+            overflow: hidden;
+        }
+        .panel-link {
+            color: #3d77a9;
+            font-size: 20px;
+        }
+    }
+
+
     #login-form-wrapper {
         // height: 100%;
         // min-height: 840px;
 
         #login-form {
-            // max-width: 650px;
-            padding: 40px 60px;
+            -webkit-box-shadow: 0px 0px 5px -2px rgba(69,69,69,1);
+            -moz-box-shadow: 0px 0px 5px -2px rgba(69,69,69,1);
+            box-shadow: 0px 0px 5px -2px rgba(69,69,69,1);
+
+            max-width: 540px;
+            margin-left: 40px;
+            padding: 5em 1.5em 0.8em;
             // margin-top: 50px;
             background: rgba(255,255,255,0.9);
-            text-align: center;           
+            text-align: center;
+            position: relative;
 
-
-            .dashboard-title {
-                font-size: 28px;
-                // font-weight: 100;
-                margin-bottom: 32px;
-                letter-spacing: 2px;
+            .errand-details {
+                background: #ea6539;
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+                color: #fff;
+                font-size: 22px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                margin: 0;
+                height: 3em;
+                line-height: 3em;
             }
 
             .btn.btn-dashboard {
@@ -36,6 +88,32 @@ $border-color: rgba(200,200,200, 0.7);
                 // border: none;
                 color: white;
                 text-transform: none;
+            }
+            .pos-rel {
+                position: relative;
+            }
+            .cal-btn {
+                float: right;
+                border: none;
+                margin-top: -2px;
+                &:focus {
+                    outline: none;
+                    background: transparent;
+                    -webkit-box-shadow: none;
+                    -moz-box-shadow: none;
+                    box-shadow: none;
+                }
+                &:hover {
+                    background: transparent;
+                }
+
+            }
+            .date-input {
+                width: calc(100% - 70px);
+            }
+            .type-select {
+                margin-left: 10px;
+                width: calc(100% - 10px);
             }
 
             form {
@@ -53,7 +131,7 @@ $border-color: rgba(200,200,200, 0.7);
                 .form-control {
                     text-align: center;
                     margin-top: 10px;
-                    height: 50px;
+                    height: 58px;
                     border: 1px solid $border-color;
                     border-radius: 5px;
                     font-size: 18px;
@@ -62,6 +140,42 @@ $border-color: rgba(200,200,200, 0.7);
                         height: auto;
                         // text-align: left;
                     }
+                    &:focus {
+                        -webkit-box-shadow: none;
+                        -moz-box-shadow: none;
+                        box-shadow: none;
+                        border-color: #3d77a9;
+                        &::placeholder {
+                            color: #3d77a9;
+                        }
+                    }
+                    &::placeholder {
+                        color: #cacaca;
+                    }
+                }
+
+                .upload-errand {
+                    display: inline-block;
+                    position: relative;
+                    top: -40px;
+                    left: 5px;
+                    float: left;
+                    &:hover {
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                }
+
+                .allow-cb-wrap {
+                    color: #abaaaa;
+                    font-size: 18px;
+                }
+
+                .icon-calendar {
+                    background: transparent url('/assets/images/icons/icon-cal.png') no-repeat center center;
+                    display: inline-block;
+                    height: 48px;
+                    width: 46px;
                 }
 
                 .btn-login {                    
@@ -100,7 +214,145 @@ $border-color: rgba(200,200,200, 0.7);
             }
                         
         }
+
+        .col-modified {
+            margin-left: 30px;
+            width: 46.2%;
+        }
+        
+        .notifications {
+            -webkit-box-shadow: 0px 0px 5px -2px rgba(69,69,69,1);
+            -moz-box-shadow: 0px 0px 5px -2px rgba(69,69,69,1);
+            box-shadow: 0px 0px 5px -2px rgba(69,69,69,1);
+
+            background: #d7d7d7;
+            margin-left: 40px;
+            min-width: 540px;
+            padding-bottom: 29px;
+
+            .notifications-title {
+                background: #fff;
+                color: #3d77a9;
+                height: 80px;
+                font-family: LatoWeb;
+                font-weight: bold;
+                font-size: 22px;
+                line-height: 80px;
+                margin: 0;
+                text-align: center;
+                width: 100%;
+            }
+
+            .notification:first-of-type {
+                margin-top: 35px;
+            }
+
+            .notification {
+                margin: 14px 19px;
+                background: #fff;
+                border-radius: 5px;
+                padding: 10px;
+                position: relative;
+
+                .n-avatar {
+                    float: left;
+                    margin: 0 10px;
+                }
+
+                .n-time {
+                    color: #ababab;
+                    font-size: 16px;
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                }
+
+                .n-inner {
+                    display: inline-block;
+
+                    .n-title {
+                        color: #3d77a9;
+                        display: inline-block;
+                        //float: left;
+                        font-size: 18px;
+                        font-family: LatoWeb;
+                        font-weight: bold;
+                        margin: 5px 0 0px 0;
+                        vertical-align: top;
+                    }
+
+                    .n-text {
+                        color: #494949;
+                        //float: left;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
     }
+
+    .errands-wrapper {
+
+        table {
+            thead{
+                th {
+                    color: $brand-primary;
+                }
+            }
+            tbody{
+                background: white;
+                td {
+                    vertical-align: middle;
+                    a, a:hover, a:focus {
+                        // text-decoration: none;
+                        cursor: pointer;
+                    }
+                }
+                .border-side {
+                    border-left: 1px solid $table-border-color;
+                    border-right: 1px solid $table-border-color;
+                    border-bottom: 1px solid $table-border-color;
+                }
+                .remove-button {
+                    width: 20px;
+                    height: 20px;
+                    padding: 1px;
+                }
+                .gap-tr {
+                    height: 30px;
+                    background: #f9f9f9;
+                    border-left: 0 none;
+                    border-right: 0 none;
+                }
+                .avatar {
+                    width: 30px;
+                    min-width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                }
+                .upload-img {
+                    border-radius: 4px;
+                    width: 26px;
+                    height: 40px;
+                    margin-left: 4px;
+                }
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .btn-loadmore {
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            color: white;
+            padding: 10px 70px;
+        }
+
+
+    }
+
 }
 
 // RESPONSIVE

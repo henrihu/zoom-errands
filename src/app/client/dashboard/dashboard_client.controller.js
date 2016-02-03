@@ -5,6 +5,7 @@
     angular
         .module('app.client.dashboard')
         .controller('DashboardClientController', DashboardClientController);
+        //.directive('eventCalendar', eventCalendarDirective);
 
     /** @ngInject */
     DashboardClientController.$inject = ['$log', '$scope', 'toastr', 'Restangular', 'FileUploader', 'API_URL', '$auth'];
@@ -14,6 +15,17 @@
         vm.submitErrand = submitErrand; 
         vm.errand = {}; 
         vm.errand.contact = $scope.user.phone1;
+
+        // errands var
+        vm.deleteTask = deleteTask;
+        //vm.loadMore = loadMore;
+        vm.limit = 7;
+        vm.curPos = 0;
+        // -----------
+
+        vm.events = {};
+
+        vm.triggerFileInput = triggerFileInput;
 
         vm.isOpen = false;
         vm.uploader = new FileUploader({            
@@ -34,6 +46,15 @@
             types: ['geocode']
         }
 
+
+        Restangular.one('client/tasks/mytaskscalendar').get()
+        .then(function(data){
+            vm.events = data.events;
+        }, function(data){
+            // took from other controller, I believe error will be shown same way.
+            toastr.warning(data.data.alert);
+        });
+
         Restangular.all('client/alltypes').getList()
         .then(function(types) {
             // $log.log(types);
@@ -44,6 +65,14 @@
         .then(function(offices) {
             // $log.log(types);
             vm.zoomoffices = offices;
+        });
+
+        Restangular.all('client/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})
+        .then(function(tasks) {
+            vm.tasks = tasks;
+            vm.displayedtasks = [].concat(vm.tasks);
+            vm.curPos = tasks.length;
+            // $log.log(vm.displayedtasks);
         });
 
         vm.openCalendar = function(e) { 
@@ -107,6 +136,43 @@
             vm.uploader.clearQueue();
             // $state.go('app.client.myerrand');
         }
+
+        function triggerFileInput(selectedInput)
+        {
+            vm.selectedInput = selectedInput;
+            angular.element('#errand-uploader').trigger('click');
+        }
+
+        function deleteTask(task)
+        {
+            Restangular.one('client/tasks', task.id).remove()
+                .then(function(data) {
+                    var index = vm.tasks.indexOf(task);
+                    if (index !== -1) {
+                        vm.tasks.splice(index, 1);
+                        toastr.success('Your task ' + data.title + 'has been cancelled.');
+                    }
+
+                }, function(error) {
+                    toastr.error(error);
+                });
+
+        }
+
+        /*
+        function loadMore()
+        {
+            Restangular.all('client/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})
+                .then(function(tasks) {
+                    vm.tasks = vm.tasks.concat(tasks);
+                    vm.displayedtasks = [].concat(vm.tasks);
+                    vm.curPos = vm.curPos + tasks.length;
+                    // $log.log(vm.displayedtasks);
+                });
+        }
+        */
+
     }
+
 
 })();
