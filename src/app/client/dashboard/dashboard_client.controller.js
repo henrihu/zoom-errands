@@ -18,7 +18,7 @@
 
         // errands var
         vm.deleteTask = deleteTask;
-        vm.loadMore = loadMore;
+        //vm.loadMore = loadMore;
         vm.limit = 7;
         vm.curPos = 0;
         // -----------
@@ -159,6 +159,7 @@
 
         }
 
+        /*
         function loadMore()
         {
             Restangular.all('client/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})
@@ -169,6 +170,7 @@
                     // $log.log(vm.displayedtasks);
                 });
         }
+        */
 
     }
 
