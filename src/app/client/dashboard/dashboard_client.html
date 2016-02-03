@@ -90,24 +90,27 @@
                         <input id="errand-uploader" type="file" ng-show="false" nv-file-select
                                uploader="vm.uploader" multiple/>
                         <a ng-click="vm.triggerFileInput('errandFile')" class="upload-errand">
-                            <div class="font-size-16 margin-top-16">
+                            <div class="font-size-16 ">
                                 <p>
                                     <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
-                                    &nbsp;Upload</p>
+                                    &nbsp;Upload&nbsp;&nbsp; 
+                                    <span ng-bind="vm.uploader.queue.length"></span>
+                                    </p>
                             </div>
-                        </a>
-                        <span ng-bind="vm.uploader.queue.length"></span>
-                        <a ng-repeat="img in vm.uploader.queue" href="{{img.uploadUrl}}" class="no-decoration" target="_blank">
-                          <img class="upload-img" ng-src="{{img.thumbUrl}}">
-                        </a>
 
-                        <div class="text-left allow-cb-wrap">
+                        </a>
+                        
+                        <!-- <a ng-repeat="img in vm.uploader.queue" href="{{img.uploadUrl}}" class="no-decoration" target="_blank">
+                          <img class="upload-img" ng-src="{{img.thumbUrl}}">
+                        </a> -->
+
+                        <div class="text-right allow-cb-wrap">
                             <input type="checkbox"  ng-model="vm.errand.escrowable" class="gray-font-color">
                             Allow access escrow account
                         </div>
-                    </div>
+                    </div><br/>
                     <div class="col-md-8 col-md-push-2 text-center">
-                       <button class="btn btn-dashboard btn-login">Submit</button>
+                       <button class="btn btn-dashboard ">Submit</button>
                     </div>
                   <!--
                     <div class=" col-md-6 text-center">
@@ -241,6 +244,22 @@
                 <div id="map_canvas" style="width:400px; height:500px;">
                 </div>                  
             </div>  -->
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-1">
+                <p>Zoom Errands, Inc.</p>
+            </div>
+            <div class="col-sm-3 font-size-14">
+                <p>
+                    <i class="glyphicon glyphicon-earphone text-bold"></i>
+                    &nbsp;(310) 425-6425
+                </p>
+            </div>
         </div>
     </div>
 </div>
