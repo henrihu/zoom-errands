@@ -16,6 +16,13 @@
         vm.errand = {}; 
         vm.errand.contact = $scope.user.phone1;
 
+        // errands var
+        vm.deleteTask = deleteTask;
+        vm.loadMore = loadMore;
+        vm.limit = 7;
+        vm.curPos = 0;
+        // -----------
+
         vm.events = {};
 
         vm.triggerFileInput = triggerFileInput;
@@ -58,6 +65,14 @@
         .then(function(offices) {
             // $log.log(types);
             vm.zoomoffices = offices;
+        });
+
+        Restangular.all('client/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})
+        .then(function(tasks) {
+            vm.tasks = tasks;
+            vm.displayedtasks = [].concat(vm.tasks);
+            vm.curPos = tasks.length;
+            // $log.log(vm.displayedtasks);
         });
 
         vm.openCalendar = function(e) { 
@@ -127,6 +142,34 @@
             vm.selectedInput = selectedInput;
             angular.element('#errand-uploader').trigger('click');
         }
+
+        function deleteTask(task)
+        {
+            Restangular.one('client/tasks', task.id).remove()
+                .then(function(data) {
+                    var index = vm.tasks.indexOf(task);
+                    if (index !== -1) {
+                        vm.tasks.splice(index, 1);
+                        toastr.success('Your task ' + data.title + 'has been cancelled.');
+                    }
+
+                }, function(error) {
+                    toastr.error(error);
+                });
+
+        }
+
+        function loadMore()
+        {
+            Restangular.all('client/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})
+                .then(function(tasks) {
+                    vm.tasks = vm.tasks.concat(tasks);
+                    vm.displayedtasks = [].concat(vm.tasks);
+                    vm.curPos = vm.curPos + tasks.length;
+                    // $log.log(vm.displayedtasks);
+                });
+        }
+
     }
 
 

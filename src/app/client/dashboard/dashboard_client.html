@@ -168,6 +168,73 @@
                 </div>
             </div>
 
+            <div class="row errands-wrapper">
+                <h1 class="dashboard-title">Open Errands</h1>
+
+                <div id="login-form-errands" class="col-md-12  table-responsive margin-bottom-40">
+                    <table st-table="vm.displayedtasks" st-safe-src="vm.tasks" class="table ">
+                        <thead>
+                        <th class="text-center">DATE</th>
+                        <th>ERRAND TITLE</th>
+                        <th>SERVICE PROVIDER</th>
+                        <th class="text-center">UPLOADS</th>
+                        <th class="text-center">ESCROW USED</th>
+                        <th class="text-center">HOURS USED</th>
+                        <th class="text-center"></th>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="task in vm.displayedtasks | filter:{ status: 'open' }" class="border-side">
+                            <td class="text-center">{{task.datetime | date}}</td>
+                            <td><a ui-sref='app.client.editerrand({id: {{task.id}}})'>{{task.title}}</a></td>
+                            <td>
+                                <img class="avatar" ng-src="{{task.provider.photoThumbUrl}}">
+                                {{task.provider.fname}} {{task.provider.lname}}
+                            </td>
+                            <td class="text-center">
+                                <a ng-repeat="upload in task.task_uploads" href="{{upload.uploadUrl}}" target="_blank">
+                                    <img class="upload-img"  ng-src="{{upload.uploadThumbUrl}}">
+                                </a>
+                            </td>
+                            <td class="text-center">{{task.escrowable | yesInprogress}}</td>
+                            <td class="text-center ">
+                                <button class="btn btn-danger padding-vertical-2">
+                                    Open</button>
+                            </td>
+                            <td>
+                                <a ng-click="vm.deleteTask(task)">delete</a>
+                            </td>
+                        </tr>
+                        <tr class="gap-tr">
+                            <td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr ng-repeat="task in vm.displayedtasks | filter:{ status: 'close' }" class="border-side">
+                            <td class="text-center">{{task.datetime | date}}</td>
+                            <td><a ui-sref='app.client.editerrand({id: {{task.id}}})'>{{task.title}}</a></td>
+                            <td>
+                                <img class="avatar" ng-src="{{task.provider.photoThumbUrl}}">
+                                {{task.provider.fname}}
+                            </td>
+                            <td class="text-center">
+                                <a ng-repeat="upload in task.task_uploads" href="{{upload.uploadUrl}}" target="_blank">
+                                    <img class="upload-img"  ng-src="{{upload.uploadThumbUrl}}">
+                                </a>
+                            </td>
+                            <td class="text-center">{{task.usedEscrow | currency}}</td>
+                            <td class="text-center">{{task.usedHour}}</td>
+                            <td></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-md-12 text-center">
+                    <button ng-click="vm.loadMore()" class="btn btn-primary btn-loadmore margin-bottom-60">Load more...</button>
+                </div>
+
+
+            </div>
+
             <!-- <div class="col-sm-6  margin-top-80" >                               
                 <div id="map_canvas" style="width:400px; height:500px;">
                 </div>                  
