@@ -158,24 +158,28 @@
                 event.append('<table class="events-table"></table>')
 
                 for (i=0; i<events.length; i++){
-                    var _e = events[i];
-                    var tr = getCell(_e);
+                    var tr = getCell(events[i]);
                     event.find('.events-table:last-child').append(tr);
                 }
                 wrap.append(event);
                 div.append(tooltip);
 
                 // center tooltip
-                tooltip.css('top', tooltip.height()/2*-1 + 30);
+                tooltip.css('top', tooltip.height()/2*-1 + 22);
             }
 
             td.attr('data-date-str', _cell.dateStr);
         }
 
         function getCell(event){
+            //$log.log(event);
             var tr = angular.element('<tr></tr>');
-            var photo = event.client.photoThumbUrl;
-            var name = event.client.fname;
+            var photo = '';
+            var name = '';
+            if (event.provider) {
+                photo = event.provider.photoThumbUrl || '';
+                name = event.provider.fname || '';
+            }
             var _d = new Date(event.datetime);
             var time = pad(_d.getHours(), 2) + ':' + pad(_d.getMinutes(), 2);
             var message = event.details;

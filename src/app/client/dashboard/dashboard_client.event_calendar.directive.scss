@@ -39,11 +39,13 @@ $border-color: rgba(200,200,200, 0.7);
         vertical-align: middle !important;
     }
 
-    .cal-data td:first-child {
-        padding-left: 50px;
+    .cal-data  {
+        td:first-child { padding-left: 50px; }
+        th:first-child { padding-left: 50px !important; }
     }
-    .cal-data td:last-child {
-        padding-right: 50px;
+    .cal-data  {
+        td:last-child { padding-right: 50px; }
+        th:last-child{ padding-right: 50px !important; }
     }
 
 
@@ -115,6 +117,8 @@ $border-color: rgba(200,200,200, 0.7);
                             margin: 0;
                         }
                         .events-table {
+                            //width: 100%;
+
                             tbody {
                                 background: transparent;
                             }

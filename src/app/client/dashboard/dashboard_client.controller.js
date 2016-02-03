@@ -16,49 +16,9 @@
         vm.errand = {}; 
         vm.errand.contact = $scope.user.phone1;
 
-        vm.events = {} /*{
-            '12-02-2016' : [
-                {
-                    name: 'Yoshita',
-                    avatar: '/assets/images/ava-1.png',
-                    time: '10:00',
-                    message: 'Take dog on a long walk in the nearest park'
-                },
-                {
-                    name: 'Yoshita',
-                    avatar: '/assets/images/ava-1.png',
-                    time: '12:00',
-                    message: 'Take dog on a long walk in the nearest park'
-                }
-            ],
-            '18-02-2016' : [
-                {
-                    name: 'Yoshita',
-                    avatar: '/assets/images/ava-1.png',
-                    time: '09:00',
-                    message: 'Take dog on a long walk in the nearest park'
-                },
-                {
-                    name: 'Yoshita',
-                    avatar: '/assets/images/ava-1.png',
-                    time: '10:00',
-                    message: 'Take dog on a long walk in the nearest park'
-                },
-                {
-                    name: 'Yoshita',
-                    avatar: '/assets/images/ava-1.png',
-                    time: '11:00',
-                    message: 'Take dog on a long walk in the nearest park'
-                },
-                {
-                    name: 'Yoshita',
-                    avatar: '/assets/images/ava-1.png',
-                    time: '18:00',
-                    message: 'Take dog on a long walk in the nearest park'
-                }
-            ]
-        };
-        */
+        vm.events = {};
+
+        vm.triggerFileInput = triggerFileInput;
 
         vm.isOpen = false;
         vm.uploader = new FileUploader({            
@@ -78,6 +38,7 @@
             componentRestrictions: { country: 'us' },
             types: ['geocode']
         }
+
 
         Restangular.one('client/tasks/mytaskscalendar').get()
         .then(function(data){
@@ -159,6 +120,12 @@
             
             vm.uploader.clearQueue();
             // $state.go('app.client.myerrand');
+        }
+
+        function triggerFileInput(selectedInput)
+        {
+            vm.selectedInput = selectedInput;
+            angular.element('#errand-uploader').trigger('click');
         }
     }
 

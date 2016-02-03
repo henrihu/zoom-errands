@@ -154,6 +154,18 @@ $border-color: rgba(200,200,200, 0.7);
                     }
                 }
 
+                .upload-errand {
+                    display: inline-block;
+                    position: relative;
+                    top: -40px;
+                    left: 5px;
+                    float: left;
+                    &:hover {
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                }
+
                 .allow-cb-wrap {
                     color: #abaaaa;
                     font-size: 18px;

@@ -7,42 +7,39 @@
                   <div class="panel panel-default panel-card">
                       <div class="panel-body text-center">
                           <div class="center-block card-image">
-                            <img src="/assets/images/dashboard-delivery.png" alt=""/>
+                              <a href="#"><img src="/assets/images/dashboard-delivery.png" alt=""/></a>
                           </div>
                           <a href="#" class="panel-link">Delivery</a>
                       </div>
                   </div>
               </div>
-              <div class="col-md-12 col-lg-6">
-                <div class="panel panel-default panel-card">
-                  <div class="panel-body text-center">
-                    <div class="center-block card-image">
-                      <img src="/assets/images/dashboard-cleaning.png" alt=""/>
+                <div class="col-md-12 col-lg-6">
+                    <div class="panel panel-default panel-card">
+                        <div class="panel-body text-center">
+                            <div class="center-block card-image">
+                                <a href="#"><img src="/assets/images/dashboard-cleaning.png" alt=""/></a>                            </div>
+                            <a href="#" class="panel-link">Cleaning</a>
+                        </div>
                     </div>
-                    <a href="#" class="panel-link">Cleaning</a>
-                  </div>
                 </div>
-              </div>
-              <div class="col-md-12 col-lg-6">
-                <div class="panel panel-default panel-card">
-                  <div class="panel-body text-center">
-                    <div class="center-block card-image">
-                      <img src="/assets/images/dashboard-shopping.png" alt=""/>
+                <div class="col-md-12 col-lg-6">
+                    <div class="panel panel-default panel-card">
+                        <div class="panel-body text-center">
+                            <div class="center-block card-image">
+                                <a href="#"><img src="/assets/images/dashboard-shopping.png" alt=""/></a>                            </div>
+                            <a href="#" class="panel-link">Shopping</a>
+                        </div>
                     </div>
-                    <a href="#" class="panel-link">Shopping</a>
-                  </div>
                 </div>
-              </div>
-              <div class="col-md-12 col-lg-6">
-                <div class="panel panel-default panel-card">
-                  <div class="panel-body text-center">
-                    <div class="center-block card-image">
-                      <img src="/assets/images/dashboard-other.png" alt=""/>
+                <div class="col-md-12 col-lg-6">
+                    <div class="panel panel-default panel-card">
+                        <div class="panel-body text-center">
+                            <div class="center-block card-image">
+                                <a href="#"><img src="/assets/images/dashboard-other.png" alt=""/></a>                            </div>
+                            <a href="#" class="panel-link">Other</a>
+                        </div>
                     </div>
-                    <a href="#" class="panel-link">Other</a>
-                  </div>
                 </div>
-              </div>
             </div>
             <div id="login-form" class="col-sm-6  text-center">
                 <!-- <div class="logo">
@@ -60,19 +57,19 @@
                           <input type="text" class="form-control date-input" datetime-picker="dd MMM yyyy HH:mm" ng-model="vm.errand.datetime" is-open="vm.isOpen" placeholder="dd MMM yyyy HH:mm" required>
                         </div>
                         <input g-places-autocomplete options="vm.autocompleteOptions" ng-model="vm.addr" type="text" class="form-control" placeholder="Address" required>
-                      
+
                         <div class="col-xs-8 padding-0">
                             <input ng-model="vm.errand.contact" type="text" class="form-control email-input" placeholder="Contact Number" required>
                         </div>
-                        <div class="col-xs-4 padding-0">                            
+                        <div class="col-xs-4 padding-0">
                             <select class="form-control type-select" ng-options="type.id as type.name for type in vm.alltypes" ng-model="vm.errand.type_id" required>
                                 <option value="" disabled>Type</option>
-                            </select>                            
+                            </select>
                         </div>
-                        <div class="col-xs-12 padding-0">                            
+                        <div class="col-xs-12 padding-0">
                             <select class="form-control margin-bottom-10" ng-options="office.id as office.longName for office in vm.zoomoffices" ng-model="vm.errand.zoom_office_id" required>
                                 <option value="" disabled>Zoom Location</option>
-                            </select>                            
+                            </select>
                         </div>
                         <!-- <ui-select multiple ng-model="vm.errand.types" theme="bootstrap" ng-disabled="disabled">
                             <ui-select-match placeholder="Select person...">{{$item.name}}</ui-select-match>
@@ -82,33 +79,39 @@
                                 <span ng-bind-html="type.comment | highlight: $select.search"></span>
                               </small>
                             </ui-select-choices>
-                        </ui-select> -->                       
-                        
-                        
-                        <textarea ng-model="vm.errand.details" class="form-control textarea" 
+                        </ui-select> -->
+
+
+                        <textarea ng-model="vm.errand.details" class="form-control textarea"
                         rows="3" placeholder="Errand Details" required>
                             <span class="glyphicon glyphicon-list-alt"></span>
                         </textarea>
 
-                        <!--
-                        <input id="file-uploader" type="file" nv-file-select uploader="vm.uploader" multiple/> 
+                        <input id="errand-uploader" type="file" ng-show="false" nv-file-select
+                               uploader="vm.uploader" multiple/>
+                        <a ng-click="vm.triggerFileInput('errandFile')" class="upload-errand">
+                            <div class="font-size-16 margin-top-16">
+                                <p>
+                                    <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+                                    &nbsp;Upload</p>
+                            </div>
+                        </a>
                         <span ng-bind="vm.uploader.queue.length"></span>
                         <a ng-repeat="img in vm.uploader.queue" href="{{img.uploadUrl}}" class="no-decoration" target="_blank">
                           <img class="upload-img" ng-src="{{img.thumbUrl}}">
                         </a>
-                        -->
 
                         <div class="text-left allow-cb-wrap">
                             <input type="checkbox"  ng-model="vm.errand.escrowable" class="gray-font-color">
-                            Allow access escrow account                                                     
+                            Allow access escrow account
                         </div>
-                    </div> 
+                    </div>
                     <div class="col-md-8 col-md-push-2 text-center">
-                       <button class="btn btn-dashboard btn-login">Submit</button> 
+                       <button class="btn btn-dashboard btn-login">Submit</button>
                     </div>
                   <!--
                     <div class=" col-md-6 text-center">
-                       <a class="btn btn-dashboard btn-cancel" ng-click="vm.reset()">Reset</a> 
+                       <a class="btn btn-dashboard btn-cancel" ng-click="vm.reset()">Reset</a>
                     </div>
                     -->
                 </form>
@@ -168,8 +171,8 @@
             <!-- <div class="col-sm-6  margin-top-80" >                               
                 <div id="map_canvas" style="width:400px; height:500px;">
                 </div>                  
-            </div>  -->     
-        </div>        
+            </div>  -->
+        </div>
     </div>
 </div>
 
