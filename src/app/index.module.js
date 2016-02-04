@@ -21,6 +21,7 @@
 			'smart-table',
 			'google.places',
 			'focus-if', 
+			'angularPayments',
 
 			// Core
 			// 'app.core',

@@ -9,7 +9,8 @@
                 'app.client.myerrand',
                 'app.client.dashboard',
                 'app.client.editerrand',
-                'app.client.timestatus'
+                'app.client.timestatus',
+                'app.client.purchase'
             ])
         .config(config);
 

@@ -1,0 +1,54 @@
+<div id="purchase-client" class="border-top">
+    <div id="login-form-wrapper"  class="container">
+        <div class="row">
+            <div id="login-form" class="col-md-12">
+                <h1 class="purchase-title text-center">Purchase Hours and Escrow</h1>
+
+                <div class="col-sm-6">
+                    <h3>1. Choose your level of service.</h3>
+                </div>
+                
+                <div class="col-sm-6">
+                    <h3>2. Add funds for purchases.</h3> 
+                    <div class="">
+                        $<input ng-model="vm.escrow">Add Escrow Amount
+                        <p>Add funds here if we will be purchasing items on 
+                        Add funds here if we will be purchasing items on 
+                        Add funds here if we will be purchasing items on 
+                        </p>
+                    </div>
+                    <h3>3. Checkout</h3>
+                    <div class="checkout-form">
+                        <form stripe-form="stripeCallback" name="checkoutForm">
+                            <input ng-model="number" placeholder="Card Number" 
+                                     payments-format="card"  name="card" />
+                            <br/>         
+                            <input ng-model="expiry" placeholder="Expiration" 
+                                     payments-format="expiry" name="expiry" />                                      
+                            <input ng-model="cvc" placeholder="CVC" payments-format="cvc" name="cvc" />  
+                            <br/> 
+                            <button type="submit">Submit</button>
+                        </form>    
+                    </div>     
+                </div>    
+            </div>
+        </div>        
+    </div>
+</div>
+
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-1">
+                <p>Zoom Errands, Inc.</p>
+            </div>
+            <div class="col-sm-3 font-size-14">
+                <p>
+                    <i class="glyphicon glyphicon-earphone text-bold"></i>
+                    &nbsp;(310) 425-6425
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
