@@ -39,7 +39,7 @@
                 </div>
             </div>
         <div class="col-sm-6 col-md-6">
-            <div id="login-form" class="col-sm-12 col-md-12 text-center">
+            <div id="login-form" class="col-sm-12 col-md-12 margin-bottom-15 text-center">
                 <!-- <div class="logo">
                     <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
                 </div> -->
@@ -49,18 +49,18 @@
                 <form ng-submit="vm.submitErrand()" role="form" >
                     <div id="account-info">
                         <input ng-model="vm.errand.title" type="text" class="form-control email-input" placeholder="Errand Title" required>
+
+                        <div class="col-xs-12 padding-0 margin-bottom-10">
+                            <select class="form-control" ng-options="office.id as office.longName for office in vm.zoomoffices" ng-model="vm.errand.zoom_office_id" required>
+                                <option value="" disabled>Zoom Location</option>
+                            </select>
+                        </div>
                         <!-- <datetimepicker data-ng-model="vm.errand.date"></datetimepicker> -->
                         <div class="pos-rel">
                           <button type="button" class="btn btn-default cal-btn" ng-click="vm.openCalendar($event, prop)"><i class="icon-calendar"></i></button>
                           <input type="text" class="form-control date-input" datetime-picker="dd MMM yyyy HH:mm" ng-model="vm.errand.datetime" is-open="vm.isOpen" placeholder="dd MMM yyyy HH:mm" required>
                         </div>
                         <input g-places-autocomplete options="vm.autocompleteOptions" ng-model="vm.addr" type="text" class="form-control" placeholder="Address" required>
-
-                        <div class="col-xs-12 padding-0">
-                            <select class="form-control" ng-options="office.id as office.longName for office in vm.zoomoffices" ng-model="vm.errand.zoom_office_id" required>
-                                <option value="" disabled>Zoom Location</option>
-                            </select>
-                        </div>
 
                         <div class="col-xs-8 padding-0 margin-bottom-10">
                             <input ng-model="vm.errand.contact" type="text" class="form-control email-input" placeholder="Contact Number" required>
@@ -92,7 +92,7 @@
                             <div class="font-size-16 ">
                                 <p>
                                     <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
-                                    &nbsp;Upload&nbsp;&nbsp; 
+                                    &nbsp;Upload&nbsp;File&nbsp;&nbsp;
                                     <span ng-bind="vm.uploader.queue.length"></span>
                                     </p>
                             </div>
@@ -123,7 +123,7 @@
             <div class="clearfix"></div>
 
             <div class="row margin-left-0 margin-right-0">
-                <div class="col-sm-6">
+                <div class="col-sm-6 hidden-xs">
                     <event-calendar data-cal-id="evtCal" data-events="vm.events"></event-calendar>
                 </div>
 
