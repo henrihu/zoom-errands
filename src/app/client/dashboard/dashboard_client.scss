@@ -224,6 +224,17 @@ $border-color: rgba(200,200,200, 0.7);
             padding-bottom: 21px;
             margin-bottom: 15px;
 
+            .n-scrollbars {
+                height: 395px;
+
+                #mCSB_1_container_wrapper {
+                    margin-right: 0;
+                    #mCSB_1_container {
+                        padding-right: 0;
+                    }
+                }
+            }
+
             .notifications-title {
                 background: #fff;
                 color: #3d77a9;
@@ -444,6 +455,33 @@ $border-color: rgba(200,200,200, 0.7);
             }
 
 
+        }
+    }
+}
+@media screen and (max-width: 770px) {
+
+    #dashboard-client {
+
+        #login-form-wrapper {
+
+            .type-select {
+                margin-top: 0 !important;
+                margin-left: 0 !important;
+                width: 100% !important;
+            }
+
+            .notifications {
+                margin-left: 0px !important;
+
+                .notification {
+                    .n-avatar {
+                        width: 10%;
+                    }
+                    .n-inner {
+                        width: 82%;
+                    }
+                }
+            }
         }
     }
 }

@@ -15,6 +15,13 @@
         vm.submitErrand = submitErrand; 
         vm.errand = {}; 
         vm.errand.contact = $scope.user.phone1;
+        vm.sbConfig = {
+            autoHideScrollbar: false,
+            advanced:{
+                updateOnContentResize: true
+            },
+            scrollInertia: 0
+        }
 
         // errands var
         vm.deleteTask = deleteTask;
