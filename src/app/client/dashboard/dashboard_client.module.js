@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.client.dashboard', ['slick'])
+        .module('app.client.dashboard', ['slick', 'ngScrollbars'])
         .config(config);
 
     /** @ngInject */
