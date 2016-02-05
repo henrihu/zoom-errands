@@ -2,43 +2,45 @@
     <div id="login-form-wrapper"  class="container">
         <div class="row">
             <div class="dashboard-title">What can we do for you today <span>{{user.fname|capitalize}}</span></div>
-            <div class="col-sm-6">
+            <div class="col-sm-12 margin-bottom-50">
                 <div class="row">
-                    <div class="col-xs-3 col-sm-6">
-                        <div class="panel panel-default panel-card">
-                            <div class="panel-body text-center">
-                                <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-delivery.png" alt=""/></a>
-                                <a href="#" class="panel-link">Delivery</a>
+                    <slick dots=true infinite=true slides-to-show=3>
+                        <div class="col-xs-3 col-sm-6">
+                            <div class="panel panel-default panel-card">
+                                <div class="panel-body text-center">
+                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-delivery.png" alt=""/></a>
+                                    <a href="#" class="panel-link">Delivery</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xs-3 col-sm-6">
-                        <div class="panel panel-default panel-card">
-                            <div class="panel-body text-center">
-                                <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-cleaning.png" alt=""/></a>
-                                <a href="#" class="panel-link">Cleaning</a>
+                        <div class="col-xs-3 col-sm-6">
+                            <div class="panel panel-default panel-card">
+                                <div class="panel-body text-center">
+                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-cleaning.png" alt=""/></a>
+                                    <a href="#" class="panel-link">Cleaning</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xs-3 col-sm-6">
-                        <div class="panel panel-default panel-card">
-                            <div class="panel-body text-center">
-                                <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-shopping.png" alt=""/></a>
-                                <a href="#" class="panel-link">Shopping</a>
+                        <div class="col-xs-3 col-sm-6">
+                            <div class="panel panel-default panel-card">
+                                <div class="panel-body text-center">
+                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-shopping.png" alt=""/></a>
+                                    <a href="#" class="panel-link">Shopping</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xs-3 col-sm-6">
-                        <div class="panel panel-default panel-card">
-                            <div class="panel-body text-center">
-                                <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/></a>
-                                <a href="#" class="panel-link">Other</a>
+                        <div class="col-xs-3 col-sm-6">
+                            <div class="panel panel-default panel-card">
+                                <div class="panel-body text-center">
+                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/></a>
+                                    <a href="#" class="panel-link">Other</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </slick>
                 </div>
             </div>
-        <div class="col-sm-6 col-md-6">
+        <div class="col-sm-12 col-md-12">
             <div id="login-form" class="col-sm-12 col-md-12 margin-bottom-15 text-center">
                 <!-- <div class="logo">
                     <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>

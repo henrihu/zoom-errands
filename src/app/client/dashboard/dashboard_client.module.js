@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.client.dashboard', [])
+        .module('app.client.dashboard', ['slick'])
         .config(config);
 
     /** @ngInject */
