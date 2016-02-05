@@ -11,14 +11,26 @@
                 <div class="col-sm-6">
                     <h3>2. Add funds for purchases.</h3> 
                     <div class="">
-                        $<input ng-model="vm.escrow">Add Escrow Amount
+                        $<input ng-model="vm.escrow" type="Number" step="0.01" min="0" max="50000">
+                        Add Escrow Amount
                         <p>Add funds here if we will be purchasing items on 
                         Add funds here if we will be purchasing items on 
                         Add funds here if we will be purchasing items on 
                         </p>
                     </div>
                     <h3>3. Checkout</h3>
-                    <div class="checkout-form">
+                    <div class="checkout-amount">
+                        <div class="xs-6">Subtotal</div>
+                        <div class="xs-6" ng-bind="vm.subtotal | currency"></div>
+                        <div class="xs-6">Processing Fee</div>                        
+                        <div class="xs-6" ng-bind="vm.proFee | currency"></div>
+
+                        <input ng-model="vm.tmpcoupon" placeholder="coupon code"  />  
+                        
+                        <button ng-click="vm.couponApply()">Apply</button>
+                    </div>  
+
+                    <div class="checkout-form margin-top-20">
                         <form stripe-form="stripeCallback" name="checkoutForm">
                             <input ng-model="number" placeholder="Card Number" 
                                      payments-format="card"  name="card" />
@@ -27,7 +39,8 @@
                                      payments-format="expiry" name="expiry" />                                      
                             <input ng-model="cvc" placeholder="CVC" payments-format="cvc" name="cvc" />  
                             <br/> 
-                            <button type="submit">Submit</button>
+                            <button type="submit" ng-bind="'Pay ' + ((vm.total)|currency) "></button>
+                            
                         </form>    
                     </div>     
                 </div>    
