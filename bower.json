@@ -25,7 +25,7 @@
     "angular-google-places-autocomplete": "~0.2.7",
     "ng-dialog": "~0.5.6",
     "ng-focus-if": "~1.0.2",
-    "angular-payments": "9643191f23"
+    "angular-payments": "9643191f23",
     "ng-scrollbars": "~0.0.7"
   },
   "devDependencies": {
