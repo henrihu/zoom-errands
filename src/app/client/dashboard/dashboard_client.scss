@@ -350,6 +350,30 @@ $border-color: rgba(200,200,200, 0.7);
 
     }
 
+    #carousel {
+        .slick-prev::before, .slick-next::before {
+            opacity: 0;
+            color: transparent;
+
+        }
+        .slick-prev {
+            background: url("../../../assets/images/zoom/team-prev.png") no-repeat;
+            background-size: auto 90%;
+            margin-left: -40px;
+            margin-top: -35px;
+            min-height: 40px;
+
+        }
+        .slick-next {
+            background: url("../../../assets/images/zoom/team-next.png") no-repeat;
+            background-size: auto 90%;
+            margin-right: -40px;
+            margin-top: -35px;
+            min-height: 40px;
+        }
+    }
+
+
 }
 
 // RESPONSIVE
