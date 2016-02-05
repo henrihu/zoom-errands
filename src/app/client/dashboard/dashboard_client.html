@@ -2,44 +2,78 @@
     <div id="login-form-wrapper"  class="container">
         <div class="row">
             <div class="dashboard-title">What can we do for you today <span>{{user.fname|capitalize}}</span></div>
-            <div class="col-sm-6">
-                <div class="row">
-                    <div class="col-xs-3 col-sm-6">
-                        <div class="panel panel-default panel-card">
-                            <div class="panel-body text-center">
-                                <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-delivery.png" alt=""/></a>
-                                <a href="#" class="panel-link">Delivery</a>
+            <div class="col-sm-12 margin-bottom-50">
+                <div class="row" id="carousel">
+                    <slick dots=true infinite=true slides-to-show=4 slides-to-scroll=4 responsive="vm.breakpointCards">
+                        <div class="col-xs-3 col-sm-6">
+                            <div class="panel panel-default panel-card">
+                                <div class="panel-body text-center">
+                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-delivery.png" alt=""/></a>
+                                    <a href="#" class="panel-link">Delivery</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xs-3 col-sm-6">
-                        <div class="panel panel-default panel-card">
-                            <div class="panel-body text-center">
-                                <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-cleaning.png" alt=""/></a>
-                                <a href="#" class="panel-link">Cleaning</a>
+                        <div class="col-xs-3 col-sm-6">
+                            <div class="panel panel-default panel-card">
+                                <div class="panel-body text-center">
+                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-cleaning.png" alt=""/></a>
+                                    <a href="#" class="panel-link">Cleaning</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xs-3 col-sm-6">
-                        <div class="panel panel-default panel-card">
-                            <div class="panel-body text-center">
-                                <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-shopping.png" alt=""/></a>
-                                <a href="#" class="panel-link">Shopping</a>
+                        <div class="col-xs-3 col-sm-6">
+                            <div class="panel panel-default panel-card">
+                                <div class="panel-body text-center">
+                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-shopping.png" alt=""/></a>
+                                    <a href="#" class="panel-link">Shopping</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xs-3 col-sm-6">
-                        <div class="panel panel-default panel-card">
-                            <div class="panel-body text-center">
-                                <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/></a>
-                                <a href="#" class="panel-link">Other</a>
+                        <div class="col-xs-3 col-sm-6">
+                            <div class="panel panel-default panel-card">
+                                <div class="panel-body text-center">
+                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/></a>
+                                    <a href="#" class="panel-link">Dog walker</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="col-xs-3 col-sm-6">
+                            <div class="panel panel-default panel-card">
+                                <div class="panel-body text-center">
+                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/></a>
+                                    <a href="#" class="panel-link">Decorating</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-sm-6">
+                            <div class="panel panel-default panel-card">
+                                <div class="panel-body text-center">
+                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/></a>
+                                    <a href="#" class="panel-link">Clerical</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-sm-6">
+                            <div class="panel panel-default panel-card">
+                                <div class="panel-body text-center">
+                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/></a>
+                                    <a href="#" class="panel-link">Grocery</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-sm-6">
+                            <div class="panel panel-default panel-card">
+                                <div class="panel-body text-center">
+                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/></a>
+                                    <a href="#" class="panel-link">Pets</a>
+                                </div>
+                            </div>
+                        </div>
+                    </slick>
                 </div>
             </div>
-        <div class="col-sm-6 col-md-6">
-            <div id="login-form" class="col-sm-12 col-md-12 text-center">
+        <div class="col-sm-12 col-md-12">
+            <div id="login-form" class="col-sm-12 col-md-12 margin-bottom-15 text-center">
                 <!-- <div class="logo">
                     <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
                 </div> -->
@@ -49,18 +83,18 @@
                 <form ng-submit="vm.submitErrand()" role="form" >
                     <div id="account-info">
                         <input ng-model="vm.errand.title" type="text" class="form-control email-input" placeholder="Errand Title" required>
+
+                        <div class="col-xs-12 padding-0 margin-bottom-10">
+                            <select class="form-control" ng-options="office.id as office.longName for office in vm.zoomoffices" ng-model="vm.errand.zoom_office_id" required>
+                                <option value="" disabled>Zoom Location</option>
+                            </select>
+                        </div>
                         <!-- <datetimepicker data-ng-model="vm.errand.date"></datetimepicker> -->
                         <div class="pos-rel">
                           <button type="button" class="btn btn-default cal-btn" ng-click="vm.openCalendar($event, prop)"><i class="icon-calendar"></i></button>
                           <input type="text" class="form-control date-input" datetime-picker="dd MMM yyyy HH:mm" ng-model="vm.errand.datetime" is-open="vm.isOpen" placeholder="dd MMM yyyy HH:mm" required>
                         </div>
                         <input g-places-autocomplete options="vm.autocompleteOptions" ng-model="vm.addr" type="text" class="form-control" placeholder="Address" required>
-
-                        <div class="col-xs-12 padding-0">
-                            <select class="form-control" ng-options="office.id as office.longName for office in vm.zoomoffices" ng-model="vm.errand.zoom_office_id" required>
-                                <option value="" disabled>Zoom Location</option>
-                            </select>
-                        </div>
 
                         <div class="col-xs-8 padding-0 margin-bottom-10">
                             <input ng-model="vm.errand.contact" type="text" class="form-control email-input" placeholder="Contact Number" required>
@@ -92,7 +126,7 @@
                             <div class="font-size-16 ">
                                 <p>
                                     <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
-                                    &nbsp;Upload&nbsp;&nbsp; 
+                                    &nbsp;Upload&nbsp;File&nbsp;&nbsp;
                                     <span ng-bind="vm.uploader.queue.length"></span>
                                     </p>
                             </div>
@@ -123,7 +157,7 @@
             <div class="clearfix"></div>
 
             <div class="row margin-left-0 margin-right-0">
-                <div class="col-sm-6">
+                <div class="col-sm-6 hidden-xs">
                     <event-calendar data-cal-id="evtCal" data-events="vm.events"></event-calendar>
                 </div>
 

@@ -26,12 +26,13 @@ $border-color: rgba(200,200,200, 0.7);
     }
 
     .panel-card {
-        -webkit-box-shadow: 0px 0px 5px 1px rgba(173,173,173,.3);
-        -moz-box-shadow: 0px 0px 5px 1px rgba(173,173,173,.3);
-        box-shadow: 0px 0px 5px 1px rgba(173,173,173,.3);
+        -webkit-box-shadow: 0px 0px 10px 1px #aaa;
+        -moz-box-shadow: 0px 0px 10px 1px #aaa;
+        box-shadow: 0px 0px 10px 1px #aaa;
         border: none;
         padding-bottom: 8px;
         padding-top: 10px;
+        margin-top: 10px;
         margin-bottom: 33px;
 
         .card-image {
@@ -53,9 +54,9 @@ $border-color: rgba(200,200,200, 0.7);
         // min-height: 840px;
 
         #login-form {
-            -webkit-box-shadow: 0px 0px 5px -2px rgba(69,69,69,1);
-            -moz-box-shadow: 0px 0px 5px -2px rgba(69,69,69,1);
-            box-shadow: 0px 0px 5px -2px rgba(69,69,69,1);
+            -webkit-box-shadow: 0px 0px 15px -2px #777;
+            -moz-box-shadow: 0px 0px 15px -2px #777;
+            box-shadow: 0px 0px 15px -2px #777;
 
             padding: 5em 1.5em 2.4em;
             // margin-top: 50px;
@@ -215,9 +216,9 @@ $border-color: rgba(200,200,200, 0.7);
         }
 
         .notifications {
-            -webkit-box-shadow: 0px 0px 5px -2px rgba(69,69,69,1);
-            -moz-box-shadow: 0px 0px 5px -2px rgba(69,69,69,1);
-            box-shadow: 0px 0px 5px -2px rgba(69,69,69,1);
+            -webkit-box-shadow: 0px 0px 15px -2px #777;
+            -moz-box-shadow: 0px 0px 15px -2px #777;
+            box-shadow: 0px 0px 15px -2px #777;
 
             background: #d7d7d7;
             padding-bottom: 21px;
@@ -349,64 +350,38 @@ $border-color: rgba(200,200,200, 0.7);
 
     }
 
+    #carousel {
+        .slick-prev::before, .slick-next::before {
+            opacity: 0;
+            color: transparent;
+
+        }
+        .slick-prev {
+            background: url("../../../assets/images/zoom/team-prev.png") no-repeat;
+            background-size: auto 90%;
+            margin-left: -40px;
+            margin-top: -35px;
+            min-height: 40px;
+
+        }
+        .slick-next {
+            background: url("../../../assets/images/zoom/team-next.png") no-repeat;
+            background-size: auto 90%;
+            margin-right: -40px;
+            margin-top: -35px;
+            min-height: 40px;
+        }
+        @media(max-width:600px) {
+            .team-image {
+                width: 90%;
+            }
+        }
+    }
+
+
 }
 
 // RESPONSIVE
-@media screen and (max-width: $layout-breakpoint-sm) {
-
-    #dashboard-client {
-
-        #login-form-wrapper {
-
-            #login-form {
-                clear: both;
-                padding: 75px 24px 24px;
-            }
-
-            .notifications {
-                margin-left: 0px !important;
-
-                .notification {
-                    .n-avatar {
-                        width: 10%;
-                    }
-                    .n-inner {
-                        width: 88%;
-                    }
-                }
-            }
-        }
-
-        .panel-card {
-            .card-image {
-                height: 100%;
-                width: 90%;
-            }
-            .panel-link {
-                font-size: 1em;
-            }
-        }
-    }
-
-}
-
-@media screen and (max-width: $layout-breakpoint-md) {
-    #dashboard-client {
-        .panel-card {
-            .card-image {
-                height: 100%;
-                width: 90%;
-            }
-        }
-
-        .col-sm-6>.col-sm-12 {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-
-    }
-}
 
 @media screen and (max-width: $layout-breakpoint-lg) {
     #dashboard-client {
@@ -422,7 +397,7 @@ $border-color: rgba(200,200,200, 0.7);
 
                 .notification {
                     .n-avatar {
-                        width: 20%;
+                        width: 16%;
                     }
                     .n-inner {
                         width: 78%;
@@ -441,3 +416,72 @@ $border-color: rgba(200,200,200, 0.7);
 
 }
 
+
+@media screen and (max-width: $layout-breakpoint-md) {
+    #dashboard-client {
+        #login-form-wrapper {
+            .panel-card {
+                .card-image {
+                    height: 100%;
+                    width: 90%;
+                }
+            }
+
+            .col-sm-6>.col-sm-12 {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .notifications {
+                .notification {
+                    .n-avatar {
+                        width: 18%;
+                    }
+                    .n-inner {
+                        width: 70%;
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+@media screen and (max-width: $layout-breakpoint-sm) {
+
+    #dashboard-client {
+
+        #login-form-wrapper {
+
+            #login-form {
+                clear: both;
+                padding: 75px 24px 24px;
+            }
+
+            .notifications {
+                margin-left: 0px !important;
+
+                .notification {
+                    .n-avatar {
+                        width: 20%;
+                    }
+                    .n-inner {
+                        width: 76%;
+                    }
+                }
+            }
+        }
+
+        .panel-card {
+            .card-image {
+                height: 100%;
+                width: 90%;
+            }
+            .panel-link {
+                font-size: 1em;
+            }
+        }
+    }
+
+}
