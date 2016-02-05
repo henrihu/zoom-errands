@@ -371,6 +371,11 @@ $border-color: rgba(200,200,200, 0.7);
             margin-top: -35px;
             min-height: 40px;
         }
+        @media(max-width:600px) {
+            .team-image {
+                width: 90%;
+            }
+        }
     }
 
 
