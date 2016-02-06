@@ -117,6 +117,9 @@ $border-color: rgba(200,200,200, 0.7);
             }
             .pos-rel {
                 position: relative;
+                .dropdown-menu  {
+                    left: calc(100% - 282px) !important;
+                }
             }
             .cal-btn {
                 float: right;
