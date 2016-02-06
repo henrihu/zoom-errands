@@ -6,102 +6,30 @@
                 <div class="dashboard-title">What can we do for you today <span>{{user.fname|capitalize}}</span>?</div>
                 <div class="col-sm-12 margin-bottom-20">
                     <div class="row" id="carousel">
-                        <slick dots=true infinite=true slides-to-show=4 slides-to-scroll=4 responsive="vm.breakpointCards">
-                            <div class="col-xs-3 col-sm-6">
-                                <div class="panel panel-default panel-card">
+                        <slick dots=true infinite=true slides-to-show=4 slides-to-scroll=2 responsive="vm.breakpointCards">
+                            <!-- <div class="col-xs-3 col-sm-6"> -->
+                                <div ng-repeat="service in vm.services" class="panel panel-default panel-card">
                                     <div class="panel-body text-center">
-                                        <a href="#">
-                                            <img class="center-block card-image" src="/assets/images/dashboard-delivery.png" alt=""/>
+                                        <a herf="" ng-click="vm.gotoAnchor(service.id)">
+                                            <img class="center-block card-image" ng-src={{service.image}} alt=""/>
                                         </a>
-                                        <a href="#" class="panel-link">Delivery</a>
+                                        <a href="#" class="panel-link">{{service.title}}</a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xs-3 col-sm-6">
-                                <div class="panel panel-default panel-card">
-                                    <div class="panel-body text-center">
-                                        <a href="#">
-                                            <img class="center-block card-image" src="/assets/images/dashboard-cleaning.png" alt=""/>
-                                        </a>
-                                        <a href="#" class="panel-link">Cleaning</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-3 col-sm-6">
-                                <div class="panel panel-default panel-card">
-                                    <div class="panel-body text-center">
-                                        <a href="#">
-                                            <img class="center-block card-image" src="/assets/images/dashboard-shopping.png" alt=""/>
-                                        </a>
-                                        <a href="#" class="panel-link">Shopping</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-3 col-sm-6">
-                                <div class="panel panel-default panel-card">
-                                    <div class="panel-body text-center">
-                                        <a href="#">
-                                            <img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/>
-                                        </a>
-                                        <a href="#" class="panel-link">Dog walker</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-3 col-sm-6">
-                                <div class="panel panel-default panel-card">
-                                    <div class="panel-body text-center">
-                                        <a href="#">
-                                            <img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/>
-                                        </a>
-                                        <a href="#" class="panel-link">Decorating</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-3 col-sm-6">
-                                <div class="panel panel-default panel-card">
-                                    <div class="panel-body text-center">
-                                        <a href="#">
-                                            <img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/>
-                                        </a>
-                                        <a href="#" class="panel-link">Clerical</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-3 col-sm-6">
-                                <div class="panel panel-default panel-card">
-                                    <div class="panel-body text-center">
-                                        <a href="#">
-                                            <img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/>
-                                        </a>
-                                        <a href="#" class="panel-link">Grocery</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-3 col-sm-6">
-                                <div class="panel panel-default panel-card">
-                                    <div class="panel-body text-center">
-                                        <a href="#">
-                                            <img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/>
-                                        </a>
-                                        <a href="#" class="panel-link">Pets</a>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </slick>
                     </div>
                 </div>
             <div class="col-sm-12 col-md-12">
-                <div id="login-form" class="col-sm-12 col-md-12 margin-bottom-15 text-center">
+                <div id="login-form" class="col-sm-12 col-md-12 margin-bottom-40 text-center">
                     <!-- <div class="logo">
                         <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
                     </div> -->
-                    <h2 class="errand-details">Enter the details of your errand below</h2>
-
+                    <h2 id="form-anchor" class="errand-details">Enter the details of your errand below</h2>
 
                     <form ng-submit="vm.submitErrand()" role="form" >
                         <div id="account-info">
                             <input ng-model="vm.errand.title" type="text" class="form-control email-input" placeholder="Errand Title" required>
-
 
                             <div class="col-xs-12 padding-0 margin-bottom-10">
                                 <select class="form-control" ng-options="office.id as office.longName for office in vm.zoomoffices" ng-model="vm.errand.zoom_office_id" required>
@@ -136,7 +64,7 @@
 
 
                             <textarea ng-model="vm.errand.details" class="form-control textarea"
-                            rows="3" placeholder="Errand Details" required>
+                            rows="4" placeholder="Errand Details" required>
                                 <span class="glyphicon glyphicon-list-alt"></span>
                             </textarea>
 
@@ -162,7 +90,7 @@
                                 Allow access escrow account
                             </div>
                         </div>
-                        <div class="col-md-8 col-md-push-2 text-center btn-dashboard-wrap">
+                        <div class="col-md-10 col-md-push-1 text-center btn-dashboard-wrap">
                            <button class="btn btn-dashboard ">Submit</button>
                         </div>
                       <!--

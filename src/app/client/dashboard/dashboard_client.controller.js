@@ -8,8 +8,8 @@
         //.directive('eventCalendar', eventCalendarDirective);
 
     /** @ngInject */
-    DashboardClientController.$inject = ['$log', '$scope', 'toastr', 'Restangular', 'FileUploader', 'API_URL', '$auth'];
-    function DashboardClientController($log, $scope, toastr, Restangular, FileUploader, API_URL, $auth)
+    DashboardClientController.$inject = ['$anchorScroll', '$location', '$log', '$scope', 'toastr', 'Restangular', 'FileUploader', 'API_URL', '$auth'];
+    function DashboardClientController($anchorScroll, $location, $log, $scope, toastr, Restangular, FileUploader, API_URL, $auth)
     {
         var vm = this; 
         vm.submitErrand = submitErrand; 
@@ -81,6 +81,60 @@
             vm.curPos = tasks.length;
             // $log.log(vm.displayedtasks);
         });
+
+        vm.services = [
+          {
+            'image': '/assets/images/dashboard-delivery.png',
+            'title': 'Delivery',
+            'id': 3 
+          },
+          {
+            'image': '/assets/images/dashboard-cleaning.png',
+            'title': 'Cleaning',
+            'id': 1 
+          },
+          {
+            'image': '/assets/images/dashboard-shopping.png',
+            'title': 'Shopping',
+            'id': 5 
+          },
+          {
+            'image': '/assets/images/dashboard-other.png',
+            'title': 'Dog walker',
+            'id': 0 
+          },
+          {
+            'image': '/assets/images/dashboard-other.png',
+            'title': 'Clerical',
+            'id': 4 
+          },
+          {
+            'image': '/assets/images/dashboard-other.png',
+            'title': 'Grocery',
+            'id': 6 
+          },
+          {
+            'image': '/assets/images/dashboard-other.png',
+            'title': 'Pets',
+            'id': 7 
+          },
+          {
+            'image': '/assets/images/dashboard-other.png',
+            'title': 'Decorating',
+            'id': 2 
+          }
+        ];
+
+        vm.gotoAnchor = function(id) {
+          
+            if ($location.hash() !== 'form-anchor') {
+                $location.hash('form-anchor');
+            } else {
+                $anchorScroll();
+            }
+
+            vm.errand.type_id = vm.alltypes[id].id;          
+        };
 
         vm.openCalendar = function(e) { 
             e.preventDefault();
