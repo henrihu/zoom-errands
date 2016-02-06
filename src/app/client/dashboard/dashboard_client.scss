@@ -14,11 +14,11 @@ $border-color: rgba(200,200,200, 0.7);
     }
 
     .dashboard-title {
-        color: #494949;
+        color: #696969;
         font-family: 'LatoWebLight';
         font-size: 36px;
-        margin-bottom: 50px;
-        margin-top: 50px;
+        margin-bottom: 0px;
+        margin-top: 0px;
         text-align: center;
         span {
             font-weight: bolder;
@@ -29,22 +29,44 @@ $border-color: rgba(200,200,200, 0.7);
         -webkit-box-shadow: 0px 0px 10px 1px #aaa;
         -moz-box-shadow: 0px 0px 10px 1px #aaa;
         box-shadow: 0px 0px 10px 1px #aaa;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        overflow: hidden;
         border: none;
-        padding-bottom: 8px;
-        padding-top: 10px;
-        margin-top: 10px;
-        margin-bottom: 33px;
+        padding-bottom: 3px;
+        padding-top: 0px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+
+        .panel-body {
+            padding: 0px;
+            position: relative;
+            a:first-child {
+                display: block;
+                overflow: hidden;
+                height: 150px;
+            }
+        }
 
         .card-image {
-            border-radius: 50%;
-            margin-bottom: 25px;
-            height: 200px;
-            width: 200px;
+            //border-radius: 50%;
+            margin-bottom: 2px;
+            //height: 200px;
+            //width: 200px;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
         }
         .panel-link {
             color: #3d77a9;
-            font-size: 1.5em;
+            font-size: 1em;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -1px;
+            height: 30px;
+            background: #fff;
+            line-height: 30px;
         }
     }
 
@@ -58,7 +80,7 @@ $border-color: rgba(200,200,200, 0.7);
             -moz-box-shadow: 0px 0px 15px -2px #777;
             box-shadow: 0px 0px 15px -2px #777;
 
-            padding: 5em 1.5em 2.4em;
+            padding: 3em 1.5em 0.5em;
             // margin-top: 50px;
             background: rgba(255,255,255,0.9);
             text-align: center;
@@ -69,20 +91,24 @@ $border-color: rgba(200,200,200, 0.7);
                 border-top-left-radius: 4px;
                 border-top-right-radius: 4px;
                 color: #fff;
-                font-size: 22px;
+                font-size: 18px;
                 position: absolute;
                 top: 0;
                 left: 0;
                 right: 0;
                 margin: 0;
-                height: 3em;
-                line-height: 3em;
+                height: 2.5em;
+                line-height: 2.5em;
             }
 
+            .btn-dashboard-wrap {
+                clear: both;
+            }
             .btn.btn-dashboard {
                 width: 100%;
-                height: 50px;
-                font-size: 20px;
+                height: 40px;
+                line-height: 20px;
+                font-size: 18px;
                 font-weight: bold;
                 // border: none;
                 color: white;
@@ -96,6 +122,8 @@ $border-color: rgba(200,200,200, 0.7);
                 float: right;
                 border: none;
                 margin-top: -2px;
+                padding-left: 0;
+                padding-right: 0;
                 &:focus {
                     outline: none;
                     background: transparent;
@@ -109,7 +137,8 @@ $border-color: rgba(200,200,200, 0.7);
 
             }
             .date-input {
-                width: calc(100% - 70px);
+                //width: calc(100% - 70px);
+                width: calc(100% - 42px);
             }
             .type-select {
                 margin-left: 10px;
@@ -131,10 +160,11 @@ $border-color: rgba(200,200,200, 0.7);
                 .form-control {
                     text-align: center;
                     margin-top: 10px;
-                    height: 58px;
+                    //height: 58px;
+                    height: 35px;
                     border: 1px solid $border-color;
                     border-radius: 5px;
-                    font-size: 18px;
+                    font-size: 14px;
                     // width: initial;
                     &.textarea {
                         height: auto;
@@ -173,9 +203,10 @@ $border-color: rgba(200,200,200, 0.7);
 
                 .icon-calendar {
                     background: transparent url('/assets/images/icons/icon-cal.png') no-repeat center center;
+                    background-size: contain;
                     display: inline-block;
-                    height: 48px;
-                    width: 46px;
+                    height: 27px;
+                    width: 40px;
                 }
 
                 .btn-login {
@@ -362,6 +393,19 @@ $border-color: rgba(200,200,200, 0.7);
     }
 
     #carousel {
+        .slick-slider {
+            margin-bottom: 10px;
+        }
+
+        .slick-dots {
+            bottom: -30px;
+            li {
+                button:before {
+                    font-size: 12px;
+                }
+            }
+        }
+
         .slick-prev::before, .slick-next::before {
             opacity: 0;
             color: transparent;
