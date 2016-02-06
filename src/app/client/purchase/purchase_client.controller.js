@@ -7,21 +7,23 @@
         .controller('PurchaseClientController', PurchaseClientController);
 
     /** @ngInject */
-    PurchaseClientController.$inject = ['$log','$window', '$scope', 'Restangular', 'toastr'];
-    function PurchaseClientController($log, $window, $scope, Restangular, toastr)
+    PurchaseClientController.$inject = ['$log','$window', '$scope', 'Restangular', 'toastr', '$filter'];
+    function PurchaseClientController($log, $window, $scope, Restangular, toastr, $filter)
     {
         var vm = this;       
 
         vm.hour = 2;
         vm.cost = 35;
-        vm.escrow = 30;
-        vm.fee = {percent: 0, cent: 0};
+        vm.escrow = 0;
+        vm.fee = {percent: 0, cent: 0};        
         vm.couponPercent = 0;
         vm.coupon = 0;
 
         Restangular.one('client/escrowhours/fee').get()
         .then(function(data) {
             vm.fee = data.fee;
+            vm.proFee = vm.subtotal*vm.fee.percent*0.01 + vm.fee.cent*0.01;
+            vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01);
         });
 
         // temp vals
@@ -78,8 +80,12 @@
                              purchaseEscrow: vm.escrow, couponCode: vm.coupon};
                 Restangular.all('client/escrowhours/charge').post(payload)
                 .then(function(resp) {
+                    toastr.success("Purchase Hour: " + resp.purchaseHour + "hrs" +
+                                    "<br/> Fund Escrow: " + $filter("currency")(resp.purchaseEscrow) ,
+                                    "You paid " + $filter("currency")(resp.charge.amount*0.01) + " successfully!");
                     $log.log(resp);
                 }, function(resp) {
+                    toastr.error(resp.data.error);
                     $log.log(resp);
                 });
             }
