@@ -1,296 +1,318 @@
 <div id="dashboard-client" class="border-top">
     <div id="login-form-wrapper"  class="container">
         <div class="row">
-            <div class="dashboard-title">What can we do for you today <span>{{user.fname|capitalize}}</span>?</div>
-            <div class="col-sm-12 margin-bottom-50">
-                <div class="row" id="carousel">
-                    <slick dots=true infinite=true slides-to-show=4 slides-to-scroll=4 responsive="vm.breakpointCards">
-                        <div class="col-xs-3 col-sm-6">
-                            <div class="panel panel-default panel-card">
-                                <div class="panel-body text-center">
-                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-delivery.png" alt=""/></a>
-                                    <a href="#" class="panel-link">Delivery</a>
+        <div class="col-md-8 col-md-push-2">
+            <div class="row">
+                <div class="dashboard-title">What can we do for you today <span>{{user.fname|capitalize}}</span>?</div>
+                <div class="col-sm-12 margin-bottom-20">
+                    <div class="row" id="carousel">
+                        <slick dots=true infinite=true slides-to-show=4 slides-to-scroll=4 responsive="vm.breakpointCards">
+                            <div class="col-xs-3 col-sm-6">
+                                <div class="panel panel-default panel-card">
+                                    <div class="panel-body text-center">
+                                        <a href="#">
+                                            <img class="center-block card-image" src="/assets/images/dashboard-delivery.png" alt=""/>
+                                        </a>
+                                        <a href="#" class="panel-link">Delivery</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-3 col-sm-6">
-                            <div class="panel panel-default panel-card">
-                                <div class="panel-body text-center">
-                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-cleaning.png" alt=""/></a>
-                                    <a href="#" class="panel-link">Cleaning</a>
+                            <div class="col-xs-3 col-sm-6">
+                                <div class="panel panel-default panel-card">
+                                    <div class="panel-body text-center">
+                                        <a href="#">
+                                            <img class="center-block card-image" src="/assets/images/dashboard-cleaning.png" alt=""/>
+                                        </a>
+                                        <a href="#" class="panel-link">Cleaning</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-3 col-sm-6">
-                            <div class="panel panel-default panel-card">
-                                <div class="panel-body text-center">
-                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-shopping.png" alt=""/></a>
-                                    <a href="#" class="panel-link">Shopping</a>
+                            <div class="col-xs-3 col-sm-6">
+                                <div class="panel panel-default panel-card">
+                                    <div class="panel-body text-center">
+                                        <a href="#">
+                                            <img class="center-block card-image" src="/assets/images/dashboard-shopping.png" alt=""/>
+                                        </a>
+                                        <a href="#" class="panel-link">Shopping</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-3 col-sm-6">
-                            <div class="panel panel-default panel-card">
-                                <div class="panel-body text-center">
-                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/></a>
-                                    <a href="#" class="panel-link">Dog walker</a>
+                            <div class="col-xs-3 col-sm-6">
+                                <div class="panel panel-default panel-card">
+                                    <div class="panel-body text-center">
+                                        <a href="#">
+                                            <img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/>
+                                        </a>
+                                        <a href="#" class="panel-link">Dog walker</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-3 col-sm-6">
-                            <div class="panel panel-default panel-card">
-                                <div class="panel-body text-center">
-                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/></a>
-                                    <a href="#" class="panel-link">Decorating</a>
+                            <div class="col-xs-3 col-sm-6">
+                                <div class="panel panel-default panel-card">
+                                    <div class="panel-body text-center">
+                                        <a href="#">
+                                            <img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/>
+                                        </a>
+                                        <a href="#" class="panel-link">Decorating</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-3 col-sm-6">
-                            <div class="panel panel-default panel-card">
-                                <div class="panel-body text-center">
-                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/></a>
-                                    <a href="#" class="panel-link">Clerical</a>
+                            <div class="col-xs-3 col-sm-6">
+                                <div class="panel panel-default panel-card">
+                                    <div class="panel-body text-center">
+                                        <a href="#">
+                                            <img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/>
+                                        </a>
+                                        <a href="#" class="panel-link">Clerical</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-3 col-sm-6">
-                            <div class="panel panel-default panel-card">
-                                <div class="panel-body text-center">
-                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/></a>
-                                    <a href="#" class="panel-link">Grocery</a>
+                            <div class="col-xs-3 col-sm-6">
+                                <div class="panel panel-default panel-card">
+                                    <div class="panel-body text-center">
+                                        <a href="#">
+                                            <img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/>
+                                        </a>
+                                        <a href="#" class="panel-link">Grocery</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xs-3 col-sm-6">
-                            <div class="panel panel-default panel-card">
-                                <div class="panel-body text-center">
-                                    <a href="#"><img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/></a>
-                                    <a href="#" class="panel-link">Pets</a>
+                            <div class="col-xs-3 col-sm-6">
+                                <div class="panel panel-default panel-card">
+                                    <div class="panel-body text-center">
+                                        <a href="#">
+                                            <img class="center-block card-image" src="/assets/images/dashboard-other.png" alt=""/>
+                                        </a>
+                                        <a href="#" class="panel-link">Pets</a>
+                                    </div>
                                 </div>
                             </div>
+                        </slick>
+                    </div>
+                </div>
+            <div class="col-sm-12 col-md-12">
+                <div id="login-form" class="col-sm-12 col-md-12 margin-bottom-15 text-center">
+                    <!-- <div class="logo">
+                        <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
+                    </div> -->
+                    <h2 class="errand-details">Enter the details of your errand below</h2>
+
+
+                    <form ng-submit="vm.submitErrand()" role="form" >
+                        <div id="account-info">
+                            <input ng-model="vm.errand.title" type="text" class="form-control email-input" placeholder="Errand Title" required>
+
+                            <div class="col-xs-12 padding-0 margin-bottom-10">
+                                <select class="form-control" ng-options="office.id as office.longName for office in vm.zoomoffices" ng-model="vm.errand.zoom_office_id" required>
+                                    <option value="" disabled>Zoom Errands Location</option>
+                                </select>
+                            </div>
+                            <!-- <datetimepicker data-ng-model="vm.errand.date"></datetimepicker> -->
+                            <div class="">
+                              <button type="button" class="btn btn-default cal-btn" ng-click="vm.openCalendar($event, prop)"><i class="icon-calendar"></i></button>
+                              <input type="text" class="form-control date-input" datetime-picker="dd MMM yyyy HH:mm" ng-model="vm.errand.datetime" is-open="vm.isOpen" placeholder="Date of errand" required>
+                            </div>
+                            <input g-places-autocomplete options="vm.autocompleteOptions" ng-model="vm.addr" type="text" class="form-control" placeholder="Starting" required>
+
+                            <div class="col-xs-12 col-sm-8 padding-0 margin-bottom-10">
+                                <input ng-model="vm.errand.contact" type="text" class="form-control email-input" placeholder="Contact phone number" required>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 padding-0 margin-bottom-10">
+                                <select class="form-control type-select" ng-options="type.id as type.name for type in vm.alltypes" ng-model="vm.errand.type_id" required>
+                                    <option value="" disabled>Type</option>
+                                </select>
+                            </div>
+                            <!-- <ui-select multiple ng-model="vm.errand.types" theme="bootstrap" ng-disabled="disabled">
+                                <ui-select-match placeholder="Select person...">{{$item.name}}</ui-select-match>
+                                <ui-select-choices repeat="type.id as type in vm.alltypes | filter:$select.search">
+                                  <div ng-bind-html="type.name | highlight: $select.search"></div>
+                                  <small>
+                                    <span ng-bind-html="type.comment | highlight: $select.search"></span>
+                                  </small>
+                                </ui-select-choices>
+                            </ui-select> -->
+
+
+                            <textarea ng-model="vm.errand.details" class="form-control textarea"
+                            rows="3" placeholder="Errand Details" required>
+                                <span class="glyphicon glyphicon-list-alt"></span>
+                            </textarea>
+
+                            <input id="errand-uploader" type="file" ng-show="false" nv-file-select
+                                   uploader="vm.uploader" multiple/>
+                            <a ng-click="vm.triggerFileInput('errandFile')" class="upload-errand">
+                                <div class="font-size-16 ">
+                                    <p>
+                                        <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+                                        &nbsp;Upload&nbsp;File&nbsp;&nbsp;
+                                        <span ng-bind="vm.uploader.queue.length"></span>
+                                        </p>
+                                </div>
+
+                            </a>
+
+                            <!-- <a ng-repeat="img in vm.uploader.queue" href="{{img.uploadUrl}}" class="no-decoration" target="_blank">
+                              <img class="upload-img" ng-src="{{img.thumbUrl}}">
+                            </a> -->
+
+                            <div class="text-right allow-cb-wrap">
+                                <input type="checkbox"  ng-model="vm.errand.escrowable" class="gray-font-color">
+                                Allow access escrow account
+                            </div>
                         </div>
-                    </slick>
+                        <div class="col-md-8 col-md-push-2 text-center btn-dashboard-wrap">
+                           <button class="btn btn-dashboard ">Submit</button>
+                        </div>
+                      <!--
+                        <div class=" col-md-6 text-center">
+                           <a class="btn btn-dashboard btn-cancel" ng-click="vm.reset()">Reset</a>
+                        </div>
+                        -->
+                    </form>
                 </div>
             </div>
-        <div class="col-sm-12 col-md-12">
-            <div id="login-form" class="col-sm-12 col-md-12 margin-bottom-15 text-center">
-                <!-- <div class="logo">
-                    <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
-                </div> -->
-                <h2 class="errand-details">Enter the details of your errand below</h2>
 
+                <div class="clearfix"></div>
 
-                <form ng-submit="vm.submitErrand()" role="form" >
-                    <div id="account-info">
-                        <input ng-model="vm.errand.title" type="text" class="form-control email-input" placeholder="Errand Title" required>
-
-                        <div class="col-xs-12 padding-0 margin-bottom-10">
-                            <select class="form-control" ng-options="office.id as office.longName for office in vm.zoomoffices" ng-model="vm.errand.zoom_office_id" required>
-                                <option value="" disabled>Zoom Location</option>
-                            </select>
-                        </div>
-                        <!-- <datetimepicker data-ng-model="vm.errand.date"></datetimepicker> -->
-                        <div class="">
-                          <button type="button" class="btn btn-default cal-btn" ng-click="vm.openCalendar($event, prop)"><i class="icon-calendar"></i></button>
-                          <input type="text" class="form-control date-input" datetime-picker="dd MMM yyyy HH:mm" ng-model="vm.errand.datetime" is-open="vm.isOpen" placeholder="Date of errand" required>
-                        </div>
-                        <input g-places-autocomplete options="vm.autocompleteOptions" ng-model="vm.addr" type="text" class="form-control" placeholder="Starting" required>
-
-                        <div class="col-xs-12 col-sm-8 padding-0 margin-bottom-10">
-                            <input ng-model="vm.errand.contact" type="text" class="form-control email-input" placeholder="Contact phone number" required>
-                        </div>
-                        <div class="col-xs-12 col-sm-4 padding-0 margin-bottom-10">
-                            <select class="form-control type-select" ng-options="type.id as type.name for type in vm.alltypes" ng-model="vm.errand.type_id" required>
-                                <option value="" disabled>Type</option>
-                            </select>
-                        </div>
-                        <!-- <ui-select multiple ng-model="vm.errand.types" theme="bootstrap" ng-disabled="disabled">
-                            <ui-select-match placeholder="Select person...">{{$item.name}}</ui-select-match>
-                            <ui-select-choices repeat="type.id as type in vm.alltypes | filter:$select.search">
-                              <div ng-bind-html="type.name | highlight: $select.search"></div>
-                              <small>
-                                <span ng-bind-html="type.comment | highlight: $select.search"></span>
-                              </small>
-                            </ui-select-choices>
-                        </ui-select> -->
-
-
-                        <textarea ng-model="vm.errand.details" class="form-control textarea"
-                        rows="3" placeholder="Errand Details" required>
-                            <span class="glyphicon glyphicon-list-alt"></span>
-                        </textarea>
-
-                        <input id="errand-uploader" type="file" ng-show="false" nv-file-select
-                               uploader="vm.uploader" multiple/>
-                        <a ng-click="vm.triggerFileInput('errandFile')" class="upload-errand">
-                            <div class="font-size-16 ">
-                                <p>
-                                    <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
-                                    &nbsp;Upload&nbsp;File&nbsp;&nbsp;
-                                    <span ng-bind="vm.uploader.queue.length"></span>
-                                    </p>
-                            </div>
-
-                        </a>
-                        
-                        <!-- <a ng-repeat="img in vm.uploader.queue" href="{{img.uploadUrl}}" class="no-decoration" target="_blank">
-                          <img class="upload-img" ng-src="{{img.thumbUrl}}">
-                        </a> -->
-
-                        <div class="text-right allow-cb-wrap">
-                            <input type="checkbox"  ng-model="vm.errand.escrowable" class="gray-font-color">
-                            Allow access escrow account
-                        </div>
-                    </div><br/>
-                    <div class="col-md-8 col-md-push-2 text-center">
-                       <button class="btn btn-dashboard ">Submit</button>
-                    </div>
-                  <!--
-                    <div class=" col-md-6 text-center">
-                       <a class="btn btn-dashboard btn-cancel" ng-click="vm.reset()">Reset</a>
+                <div class="row margin-left-0 margin-right-0">
+                    <!--
+                    <div class="col-sm-6 hidden-xs">
+                        <event-calendar data-cal-id="evtCal" data-events="vm.events"></event-calendar>
                     </div>
                     -->
-                </form>
-            </div>
-        </div>
 
-            <div class="clearfix"></div>
+                    <div class="col-sm-12">
+                        <div class="notifications">
+                            <h2 class="notifications-title">Notifications</h2>
 
-            <div class="row margin-left-0 margin-right-0">
-                <div class="col-sm-6 hidden-xs">
-                    <event-calendar data-cal-id="evtCal" data-events="vm.events"></event-calendar>
-                </div>
-
-                <div class="col-sm-6">
-                    <div class="notifications">
-                        <h2 class="notifications-title">Notifications</h2>
-
-                        <div class="n-scrollbars" ng-scrollbars ng-scrollbars-config="sbConfig">
-                            <div class="notification">
-                                <div class="n-avatar"><img src="/assets/images/avatars/n-avatar.png" alt=""/></div>
-                                <div class="n-time">7:24 PM</div>
-                                <div class="n-inner">
-                                    <h3 class="n-title">Yoshita</h3>
-                                    <p class="n-text">I’ve taken the dog on walk in the nearest park.</p>
+                            <div class="n-scrollbars" ng-scrollbars ng-scrollbars-config="sbConfig">
+                                <div class="notification">
+                                    <div class="n-avatar"><img src="/assets/images/avatars/n-avatar.png" alt=""/></div>
+                                    <div class="n-time">7:24 PM</div>
+                                    <div class="n-inner">
+                                        <h3 class="n-title">Yoshita</h3>
+                                        <p class="n-text">I’ve taken the dog on walk in the nearest park.</p>
+                                    </div>
+                                    <div class="clearfix"></div>
                                 </div>
-                                <div class="clearfix"></div>
+
+                                <div class="notification">
+                                    <div class="n-avatar"><img src="/assets/images/avatars/n-avatar.png" alt=""/></div>
+                                    <div class="n-time">7:24 PM</div>
+                                    <div class="n-inner">
+                                        <h3 class="n-title">Yoshita</h3>
+                                        <p class="n-text">I’ve taken the dog on walk in the nearest park.</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="notification">
+                                    <div class="n-avatar"><img src="/assets/images/avatars/n-avatar.png" alt=""/></div>
+                                    <div class="n-time">7:24 PM</div>
+                                    <div class="n-inner">
+                                        <h3 class="n-title">Yoshita</h3>
+                                        <p class="n-text">I’ve taken the dog on walk in the nearest park.</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="notification">
+                                    <div class="n-avatar"><img src="/assets/images/avatars/n-avatar.png" alt=""/></div>
+                                    <div class="n-time">7:24 PM</div>
+                                    <div class="n-inner">
+                                        <h3 class="n-title">Yoshita</h3>
+                                        <p class="n-text">I’ve taken the dog on walk in the nearest park.</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="notification">
+                                    <div class="n-avatar"><img src="/assets/images/avatars/n-avatar.png" alt=""/></div>
+                                    <div class="n-time">7:24 PM</div>
+                                    <div class="n-inner">
+                                        <h3 class="n-title">Yoshita</h3>
+                                        <p class="n-text">I’ve taken the dog on walk in the nearest park.</p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
                             </div>
 
-                            <div class="notification">
-                                <div class="n-avatar"><img src="/assets/images/avatars/n-avatar.png" alt=""/></div>
-                                <div class="n-time">7:24 PM</div>
-                                <div class="n-inner">
-                                    <h3 class="n-title">Yoshita</h3>
-                                    <p class="n-text">I’ve taken the dog on walk in the nearest park.</p>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="notification">
-                                <div class="n-avatar"><img src="/assets/images/avatars/n-avatar.png" alt=""/></div>
-                                <div class="n-time">7:24 PM</div>
-                                <div class="n-inner">
-                                    <h3 class="n-title">Yoshita</h3>
-                                    <p class="n-text">I’ve taken the dog on walk in the nearest park.</p>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="notification">
-                                <div class="n-avatar"><img src="/assets/images/avatars/n-avatar.png" alt=""/></div>
-                                <div class="n-time">7:24 PM</div>
-                                <div class="n-inner">
-                                    <h3 class="n-title">Yoshita</h3>
-                                    <p class="n-text">I’ve taken the dog on walk in the nearest park.</p>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="notification">
-                                <div class="n-avatar"><img src="/assets/images/avatars/n-avatar.png" alt=""/></div>
-                                <div class="n-time">7:24 PM</div>
-                                <div class="n-inner">
-                                    <h3 class="n-title">Yoshita</h3>
-                                    <p class="n-text">I’ve taken the dog on walk in the nearest park.</p>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
                         </div>
-
                     </div>
                 </div>
-            </div>
 
-            <!--
-            <div class="row errands-wrapper">
-                <h1 class="dashboard-title">Open Errands</h1>
+                <!--
+                <div class="row errands-wrapper">
+                    <h1 class="dashboard-title">Open Errands</h1>
 
-                <div id="login-form-errands" class="col-md-12  table-responsive margin-bottom-40">
-                    <table st-table="vm.displayedtasks" st-safe-src="vm.tasks" class="table ">
-                        <thead>
-                        <th class="text-center">DATE</th>
-                        <th>ERRAND TITLE</th>
-                        <th>SERVICE PROVIDER</th>
-                        <th class="text-center">UPLOADS</th>
-                        <th class="text-center">ESCROW USED</th>
-                        <th class="text-center">HOURS USED</th>
-                        <th class="text-center"></th>
-                        </thead>
-                        <tbody>
-                        <tr ng-repeat="task in vm.displayedtasks | filter:{ status: 'open' }" class="border-side">
-                            <td class="text-center">{{task.datetime | date}}</td>
-                            <td><a ui-sref='app.client.editerrand({id: {{task.id}}})'>{{task.title}}</a></td>
-                            <td>
-                                <img class="avatar" ng-src="{{task.provider.photoThumbUrl}}">
-                                {{task.provider.fname}} {{task.provider.lname}}
-                            </td>
-                            <td class="text-center">
-                                <a ng-repeat="upload in task.task_uploads" href="{{upload.uploadUrl}}" target="_blank">
-                                    <img class="upload-img"  ng-src="{{upload.uploadThumbUrl}}">
-                                </a>
-                            </td>
-                            <td class="text-center">{{task.escrowable | yesInprogress}}</td>
-                            <td class="text-center ">
-                                <button class="btn btn-danger padding-vertical-2">
-                                    Open</button>
-                            </td>
-                            <td>
-                                <a ng-click="vm.deleteTask(task)">delete</a>
-                            </td>
-                        </tr>
-                        <tr class="gap-tr">
-                            <td></td><td></td><td></td><td></td><td></td><td></td>
-                        </tr>
-                        <tr ng-repeat="task in vm.displayedtasks | filter:{ status: 'close' }" class="border-side">
-                            <td class="text-center">{{task.datetime | date}}</td>
-                            <td><a ui-sref='app.client.editerrand({id: {{task.id}}})'>{{task.title}}</a></td>
-                            <td>
-                                <img class="avatar" ng-src="{{task.provider.photoThumbUrl}}">
-                                {{task.provider.fname}}
-                            </td>
-                            <td class="text-center">
-                                <a ng-repeat="upload in task.task_uploads" href="{{upload.uploadUrl}}" target="_blank">
-                                    <img class="upload-img"  ng-src="{{upload.uploadThumbUrl}}">
-                                </a>
-                            </td>
-                            <td class="text-center">{{task.usedEscrow | currency}}</td>
-                            <td class="text-center">{{task.usedHour}}</td>
-                            <td></td>
-                        </tr>
+                    <div id="login-form-errands" class="col-md-12  table-responsive margin-bottom-40">
+                        <table st-table="vm.displayedtasks" st-safe-src="vm.tasks" class="table ">
+                            <thead>
+                            <th class="text-center">DATE</th>
+                            <th>ERRAND TITLE</th>
+                            <th>SERVICE PROVIDER</th>
+                            <th class="text-center">UPLOADS</th>
+                            <th class="text-center">ESCROW USED</th>
+                            <th class="text-center">HOURS USED</th>
+                            <th class="text-center"></th>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="task in vm.displayedtasks | filter:{ status: 'open' }" class="border-side">
+                                <td class="text-center">{{task.datetime | date}}</td>
+                                <td><a ui-sref='app.client.editerrand({id: {{task.id}}})'>{{task.title}}</a></td>
+                                <td>
+                                    <img class="avatar" ng-src="{{task.provider.photoThumbUrl}}">
+                                    {{task.provider.fname}} {{task.provider.lname}}
+                                </td>
+                                <td class="text-center">
+                                    <a ng-repeat="upload in task.task_uploads" href="{{upload.uploadUrl}}" target="_blank">
+                                        <img class="upload-img"  ng-src="{{upload.uploadThumbUrl}}">
+                                    </a>
+                                </td>
+                                <td class="text-center">{{task.escrowable | yesInprogress}}</td>
+                                <td class="text-center ">
+                                    <button class="btn btn-danger padding-vertical-2">
+                                        Open</button>
+                                </td>
+                                <td>
+                                    <a ng-click="vm.deleteTask(task)">delete</a>
+                                </td>
+                            </tr>
+                            <tr class="gap-tr">
+                                <td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr ng-repeat="task in vm.displayedtasks | filter:{ status: 'close' }" class="border-side">
+                                <td class="text-center">{{task.datetime | date}}</td>
+                                <td><a ui-sref='app.client.editerrand({id: {{task.id}}})'>{{task.title}}</a></td>
+                                <td>
+                                    <img class="avatar" ng-src="{{task.provider.photoThumbUrl}}">
+                                    {{task.provider.fname}}
+                                </td>
+                                <td class="text-center">
+                                    <a ng-repeat="upload in task.task_uploads" href="{{upload.uploadUrl}}" target="_blank">
+                                        <img class="upload-img"  ng-src="{{upload.uploadThumbUrl}}">
+                                    </a>
+                                </td>
+                                <td class="text-center">{{task.usedEscrow | currency}}</td>
+                                <td class="text-center">{{task.usedHour}}</td>
+                                <td></td>
+                            </tr>
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
+
+
                 </div>
+                -->
 
-
-            </div>
-            -->
-
-            <!-- <div class="col-sm-6  margin-top-80" >                               
-                <div id="map_canvas" style="width:400px; height:500px;">
-                </div>                  
-            </div>  -->
-        </div>
+                <!-- <div class="col-sm-6  margin-top-80" >
+                    <div id="map_canvas" style="width:400px; height:500px;">
+                    </div>
+                </div>  -->
+            </div> <!-- row -->
+        </div> <!-- col-md-6 -->
+        </div> <!-- row -->
     </div>
 </div>
 
