@@ -9,7 +9,7 @@
 
     .table {
         background: #fdfdfd;
-        margin-bottom: 12px;
+        // margin-bottom: 12px;
 
         td {
             color: #494949;
@@ -79,28 +79,27 @@
 
 }
 
-.timestatus-footer {
-  background: #bbb;
-  color: #fff;
-  font-weight: bold;
-  height: 70px;
-  line-height: 70px;
-  margin-top: -70px;
+// RESPONSIVE
+@media screen and (max-width: $layout-breakpoint-sm) {
 
-  .phone-text {
-      padding-right: 28px;
-  }
+    #timestatus-client  {
+        .table {
+            
+            td {
+                font-size: 16px;
+                padding: 0px 10px;
+                vertical-align: middle;
+            }
+            .num {
+                font-size: 18px;
+                line-height: 40px;
+                //font-weight: bold;
+                text-align: right;
+            }
+        }    
+    }
 
-  .glyphicon-earphone {
-    font-size: 14px;
-    font-weight: bold;
-  }
-
-  .glyphicon-earphone:before {
-    font-size: 18px;
-    position: relative;
-    left: 8px;
-    top: 3px;
-  }
 }
+
+
 
