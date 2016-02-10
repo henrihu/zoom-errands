@@ -126,7 +126,8 @@
         ];
 
         vm.gotoAnchor = function(id) {
-          
+            
+            $log.log(id);
             if ($location.hash() !== 'form-anchor') {
                 $location.hash('form-anchor');
             } else {
@@ -185,6 +186,13 @@
             }
             
         }
+
+        vm.slickOnInit = function(){
+          vm.refreshing=true;
+          $scope.$apply();
+          vm.refreshing=false;
+          $scope.$apply();
+        };
         
 
         vm.uploader.onBeforeUploadItem = function(item) 
