@@ -45,7 +45,7 @@
 
 
                             <div class="col-xs-12 col-sm-8 padding-0 margin-bottom-10">
-                                <input ng-model="vm.errand.contact" type="text" class="form-control email-input" placeholder="Contact phone number" required>
+                                <input ng-model="vm.errand.contact" type="text" class="form-control email-input" placeholder="Contact phone number" ui-us-phone-number required>
                             </div>
                             <div class="col-xs-12 col-sm-4 padding-0 margin-bottom-10">
                                 <select class="form-control type-select" ng-options="type.id as type.name for type in vm.alltypes" ng-model="vm.errand.type_id" required>

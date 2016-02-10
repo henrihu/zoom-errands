@@ -65,12 +65,12 @@
 
                     <div>
                         <label class="">Telephone: </label>
-                        <input type="text" ng-model="vm.accountSetting.phone1"  required>
+                        <input type="text" ng-model="vm.accountSetting.phone1" ui-us-phone-number required>
                     </div>
 
                     <div ng-if="vm.phone2">
                         <label class="">Telephone2: </label>
-                        <input type="text" ng-model="vm.accountSetting.phone2" >
+                        <input type="text" ng-model="vm.accountSetting.phone2" ui-us-phone-number >
                     </div>
 
                     <div ng-if="!vm.phone2">

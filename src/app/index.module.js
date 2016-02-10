@@ -22,6 +22,7 @@
 			'google.places',
 			'focus-if', 
 			'angularPayments',
+			'ui.utils.masks',
 
 			// Core
 			// 'app.core',
