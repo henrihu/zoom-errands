@@ -400,6 +400,13 @@ $border-color: rgba(200,200,200, 0.7);
     }
 
     #carousel {
+        slick {
+            display: none;
+        }
+        slick.slick-initialized {
+            display: block;
+        }
+
         .slick-slider {
             margin-bottom: 10px;
         }
