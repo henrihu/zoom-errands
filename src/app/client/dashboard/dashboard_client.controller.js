@@ -22,6 +22,13 @@
             },
             scrollInertia: 0
         }
+        vm.mwConfig = {
+            class: 'mw-mobile',
+            val: 480,
+            fn: function(){
+                //angular.element('.mCSB_draggerContainer').remove();
+            }
+        }
 
         // errands var
         vm.deleteTask = deleteTask;

@@ -565,6 +565,11 @@ $border-color: rgba(200,200,200, 0.7);
 
             .notifications {
                 margin-left: 0px !important;
+                &.mw-mobile {
+                    .mCSB_draggerContainer {
+                        display: none;
+                    }
+                }
 
                 .notification {
                     .n-avatar {
