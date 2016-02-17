@@ -175,6 +175,28 @@ html {
                       color: #108acb;
                   }
                 }
+
+                .toggle-switch{
+                    border: 1px solid gray;
+                    border-radius: 10px;  
+                    // max-height: 40px;  
+                    .switch-left {
+                        background: #4cae4c;
+                        width: 47%;
+                    }
+                    .switch-right {
+                        width: 47%;
+                    }
+                    .knob {
+                        width: 6%;
+                    }
+                    span {
+                        padding: 2px;
+                    }
+                    div {
+                        width: 150%;
+                    }
+                }
             } 
 
             #aggrement {

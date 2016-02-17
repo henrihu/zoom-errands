@@ -6,10 +6,6 @@
         .module('app.client.profile')
         .controller('ProfileClientController', ProfileClientController);
 
-    /** @ngInject */
-    //ProfileClientController.$inject = ['Restangular', 'toastr', '$scope', 'uiGmapGoogleMapApi', '$auth', 'FileUploader','API_URL'];
-    //function ProfileClientController(Restangular, toastr, $scope, uiGmapGoogleMapApi, $auth, FileUploader, API_URL){
-
     ProfileClientController.$inject = ['Restangular', 'toastr', '$scope', '$auth', 'FileUploader','API_URL'];
     function ProfileClientController(Restangular, toastr, $scope, $auth, FileUploader, API_URL){
       var vm = this;
@@ -71,15 +67,7 @@
         {
             vm.accountSetting = $scope.user;
             vm.phone2 = false;
-            //uiGmapGoogleMapApi.then(function ()
-            //{
-            //    vm.map = {
-            //        center: { latitude: 34.039959, longitude: -118.2693948 },
-            //        zoom: 12 ,
-            //        coords: { latitude: 34.039959, longitude: -118.2693948 },
-            //        id: 0
-            //    };
-            //});
+            
         }
 
         /**
@@ -114,34 +102,6 @@
         }
 
 
-      // var autocomplete;
-      // window['initAutocomplete'] = function(){
-      //   autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')),{types: ['geocode']});
-      //   autocomplete.addListener('place_changed', function(){
-      //     var place = autocomplete.getPlace();
-      //     fillInAddress(place);
-      //   });
-      // };
-
-      // function fillInAddress(p){
-      //   vm.accountSetting.address1 = "";
-      //   vm.accountSetting.city = "";
-      //   vm.accountSetting.state = "";
-      //   vm.accountSetting.zip = "";
-      //   for (var i = 0; i < p.address_components.length; i++) {
-      //     var addressType = p.address_components[i].types[0];
-      //     if (addressType=="route"){
-      //       vm.accountSetting.address1 = p.address_components[i]['long_name'];
-      //     }else if (addressType=="locality"){
-      //       vm.accountSetting.city = p.address_components[i]['long_name'];
-      //     }else if (addressType=="administrative_area_level_1"){
-      //       vm.accountSetting.state = p.address_components[i]['short_name'];
-      //     }else if (addressType=="postal_code"){
-      //       vm.accountSetting.zip = p.address_components[i]['short_name'];
-      //     }
-      //   }
-      //   vm.updateAccount();
-      // }
     }
 
 })();

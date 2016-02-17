@@ -129,17 +129,31 @@
         <div class="col-sm-10 col-sm-offset-2 ">    
             <div class="escrow-hours escrow-hours-left">
                 Errand hours remaining: 
-                <span class="text-primary">3.5</span>    
+                <span class="text-primary">{{user.escrow_hour.hoursavail}}</span>    
             </div>
 
             <div class="escrow-hours">
                 Escrow balance: 
-                <span class="text-primary">{{23.21 | currency}}</span>
+                <span class="text-primary">{{user.escrow_hour.escrowavail | currency}}</span>
             </div>
         </div>  
     </div>
    </div> 
 </div>
+
+<!-- <div class="available-toggle" ng-if="user.signedIn && user.configName=='provider'">
+    <div class="container">
+        <div class"row">
+            <div class="col-sm-12 text-center">    
+                <toggle-switch 
+                    ng-model="vm.availableStatus"
+                    on-label="available"
+                    off-label="unavailable">
+                <toggle-switch>           
+            </div>  
+        </div>
+    </div> 
+</div> -->
 </div>
 
 

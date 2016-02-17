@@ -13,7 +13,6 @@
 			'ui.bootstrap',
 			'ui.bootstrap.datetimepicker', 
 			'toastr',
-			'uiGmapgoogle-maps',
 			'restangular',
 			'ng-token-auth',
 			'angularFileUpload',
@@ -23,6 +22,7 @@
 			'focus-if', 
 			'angularPayments',
 			'ui.utils.masks',
+			'toggle-switch',
 
 			// Core
 			// 'app.core',

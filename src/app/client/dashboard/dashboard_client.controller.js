@@ -153,19 +153,19 @@
         function submitErrand() {            
             
             if (vm.addr.types) {
-                // var p = vm.addr;
-                // for (var i = 0; i < p.address_components.length; i++) {
-                //   var addressType = p.address_components[i].types[0];
-                //   if (addressType=="locality"){
-                //     vm.errand.longCity = p.address_components[i]['long_name'];
-                //     // vm.shortCity = p.address_components[i]['short_name'];
-                //     break;              
-                //   }
-                // }
-                // if (null === vm.errand.longCity || angular.isUndefined === vm.errand.longCity) {
-                //     toastr.warning('Please input city exatly');   
-                //     return; 
-                // }
+                var p = vm.addr;
+                for (var i = 0; i < p.address_components.length; i++) {
+                  var addressType = p.address_components[i].types[0];
+                  if (addressType=="locality"){
+                    vm.errand.city = p.address_components[i]['long_name'];
+                    // vm.shortCity = p.address_components[i]['short_name'];
+                    break;              
+                  }
+                }
+                if (null === vm.errand.city || angular.isUndefined === vm.errand.city) {
+                    toastr.warning('Please input address exatly.');   
+                    return; 
+                }
                 
                 vm.errand.address = vm.addr.formatted_address;
                 vm.errand.addrlat = vm.addr.geometry.location.lat();
