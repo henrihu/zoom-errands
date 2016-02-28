@@ -8,14 +8,14 @@
                     <div class="row" id="carousel">
                         <slick lazy-load="ondemand" on-init="vm.slickOnInit()" dots=true infinite=true slides-to-show=4 slides-to-scroll=2 responsive="vm.breakpointCards">
                             <!-- <div class="col-xs-3 col-sm-6"> -->
-                                <div ng-repeat="service in vm.services" class="panel panel-default panel-card">
-                                    <div class="panel-body text-center">
-                                        <a ng-if="!vm.refreshing" ng-click="vm.gotoAnchor(service.id)">
-                                            <img class="center-block card-image" ng-src={{service.image}} alt=""/>
-                                        </a>
-                                        <a ng-if="!vm.refreshing" ng-click="vm.gotoAnchor(service.id)" class="panel-link">{{service.title}}</a>
-                                    </div>
-                                </div>                            
+                            <div ng-repeat="service in vm.services" class="panel panel-default panel-card">
+                                <div class="panel-body text-center">
+                                    <a ng-if="!vm.refreshing" ng-click="vm.gotoAnchor(service.id)">
+                                        <img class="center-block card-image" ng-src={{service.image}} alt=""/>
+                                    </a>
+                                    <a ng-if="!vm.refreshing" ng-click="vm.gotoAnchor(service.id)" class="panel-link">{{service.title}}</a>
+                                </div>
+                            </div>                            
                         </slick>
                     </div>
                 </div>

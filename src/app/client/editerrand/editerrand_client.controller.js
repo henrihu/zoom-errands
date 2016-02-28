@@ -7,9 +7,9 @@
         .controller('EditerrandClientController', EditerrandClientController);
 
     /** @ngInject */
-    EditerrandClientController.$inject = [ '$scope', 'Restangular', '$stateParams', 'toastr', 
+    EditerrandClientController.$inject = ['$log', '$scope', 'Restangular', '$stateParams', 'toastr', 
                 'FileUploader', '$auth', 'API_URL'];
-    function EditerrandClientController($scope, Restangular, $stateParams, toastr, FileUploader, $auth, API_URL)
+    function EditerrandClientController($log, $scope, Restangular, $stateParams, toastr, FileUploader, $auth, API_URL)
     {
         var vm = this; 
         vm.updateErrand = updateErrand; 
@@ -37,6 +37,12 @@
             }
         });
 
+        vm.triggerFileInput = function(selectedInput)
+        {
+            vm.selectedInput = selectedInput;
+            angular.element('#errand-uploader').trigger('click');
+        }
+
         vm.autocompleteOptions = {
             componentRestrictions: { country: 'us' },
             types: ['geocode']
@@ -60,6 +66,8 @@
         .then(function(task) {
             vm.errand = task;
             vm.addr = vm.errand.address;
+            $log.log(vm.errand)
+
         });
 
 

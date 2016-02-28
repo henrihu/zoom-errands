@@ -231,6 +231,9 @@ $border-color: rgba(200,200,200, 0.7);
                     font-weight: bold;
                     background-color: rgba(120,150,90,0.4);
                 }
+                textarea {
+                   resize: none;
+                }
             }
 
             #aggrement {

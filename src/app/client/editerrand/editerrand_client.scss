@@ -1,120 +1,84 @@
 $border-color: rgba(200,200,200, 0.7);
 
+
 #editerrand-client {
+    background: #f9f9f9;
     width: 100%;
-    height: 100%;   
+    height: 100%;  
 
     .datetime-picker-dropdown > li.date-picker-menu div > table .btn-default {
         border: 0;
-    } 
-    
-    #login-form-wrapper {
-        // height: 100%;
-        // min-height: 840px;
-
-        #login-form {
-            // max-width: 650px;
-            padding: 40px 60px;
-            // margin-top: 50px;
-            background: rgba(255,255,255,0.9);
-            text-align: center;           
-
-
-            .editerrand-title {
-                font-size: 28px;
-                // font-weight: 100;
-                margin-bottom: 32px;
-                letter-spacing: 2px;
-            }
-
-            .btn.btn-editerrand {
-                width: 100%;
-                height: 50px;
-                font-size: 20px;
-                font-weight: bold;
-                // border: none;
-                color: white;
-                text-transform: none;
-            }
-
-            form {
-                // width: 100%;
-
-                .fname-input {
-                    padding-left: 0px;
-                    padding-right: 5px;
-                }
-                .lname-input {
-                    padding-left: 5px;
-                    padding-right: 0px;
-                }
-
-                .form-control {
-                    text-align: center;
-                    margin-top: 10px;
-                    height: 50px;
-                    border: 1px solid $border-color;
-                    border-radius: 5px;
-                    font-size: 18px;
-                    // width: initial;
-                    &.textarea {
-                        height: auto;
-                        // text-align: left;
-                    }
-                }
-
-                .btn-update {                    
-                    margin: 20px 0;
-                    font-size: 20px;
-                    font-weight: bold;
-                    background-color: $brand-primary;                    
-                }
-
-                .btn-cancel {                    
-                    margin: 20px 0;
-                    font-size: 20px;
-                    font-weight: bold;
-                    background-color: rgba(120,150,90,0.4);                    
-                }
-            } 
-
-            #aggrement {
-                // display: inline;
-
-                .btn-agree {
-                    border: 1px solid $border-color;
-                    font-size: 14px;
-                    color: #777;
-                    height: auto;
-                }
-            }
-
-            .jobtype {
-                .gray-font-color {
-                    color: #555;
-
-                    &.margin-0 {
-                        margin: 0px;
-                    }                    
-                }
-            }
-                        
-        }
     }
-}
-
-// RESPONSIVE
-@media screen and (max-width: $layout-breakpoint-sm) {
-
-    #editerrand-client {
-
-        #login-form-wrapper {
-
-            #login-form {
-                padding: 24px;
-                margin: 20px 10px ;
-            }
-        }
+    .datetime-picker-dropdown * {
+      ouline: none;
     }
 
+    // .dropdown-menu {
+    //     top: auto;
+    // }
+
+    #editerrand-panel {
+        -webkit-box-shadow: 0px 0px 10px -2px #777;
+        -moz-box-shadow: 0px 0px 10px -4px #777;
+        box-shadow: 0px 0px 10px -2px #777;
+
+        border-radius: 4px;
+
+        padding-left: 0;
+        padding-right: 0;
+        // margin-top: 50px;
+        background: rgba(255,255,255,0.9);
+        position: relative;
+
+        .editerrand-title {
+            color: white;
+            // font-family: 'LatoWebLight';
+            font-size: 20px;
+            
+            text-align: center;
+            
+            border-bottom: 1px solid lightgray;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            background-color: $brand-primary;
+        }
+
+        .form-editerrand{
+            padding: 20px;
+            // padding-left: 30px;
+            // padding-right: 30px;
+        }
+
+        textarea {
+           resize: none;
+        }
+
+        .provider-info {
+            border-top: 1px solid lightgray;
+            padding: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        label {
+            font-weight: normal;
+            color: grey;
+        }
+
+        .icon-calendar {
+            background: transparent url('/assets/images/icons/icon-cal-blue.png') no-repeat center center;
+            background-size: contain;
+            display: inline-block;
+            height: 27px;
+            width: 40px;
+        }
+
+        .upload-errand {            
+            &:hover {
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+
+    }
 }
