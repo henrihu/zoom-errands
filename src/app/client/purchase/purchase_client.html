@@ -2,50 +2,245 @@
     <div id="login-form-wrapper"  class="container">
         <div class="row">
             <div id="login-form" class="col-md-12">
-                <h1 class="purchase-title text-center">Purchase Hours and Escrow</h1>
+                <h1 class="purchase-title text-center">Purchase Hours</h1>
+
+                <div class="col-sm-6 payment-methods">
+                    We accept:
+                    <img src="/assets/images/logos/logo-visa.png" alt=""/>
+                    <img src="/assets/images/logos/logo-mastercard.png" alt=""/>
+                    <img src="/assets/images/logos/logo-americanexpress.png" alt=""/>
+                    <img src="/assets/images/logos/logo-discover.png" alt=""/>
+                    <img src="/assets/images/logos/logo-jbc.png" alt=""/>
+                </div>
+
+                <div class="col-sm-6 text-right payment-methods">
+                    Secure payments
+                    <img src="/assets/images/logos/logo-ssl.png" alt=""/>
+                </div>
 
                 <div class="col-sm-6">
-                    <h3>1. Choose your level of service.</h3>
+
+                    <div class="panel no-radius panel-default margin-bottom-40">
+                        <div class="panel-body">
+                            <h3 class="custom-header margin-top-10 text-center">1. Choose your level of service.</h3>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-6">
+                            <div class="ph-btn ph-default">
+                                <div class="ph-btn-top">
+                                    1 hour
+                                </div>
+                                <div class="ph-bottom">
+                                    <span class="ph-price">$32.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-6">
+                            <div class="ph-btn ph-red">
+                                <div class="ph-btn-top">
+                                    5 hours
+                                </div>
+                                <div class="ph-bottom ph-savings">
+                                    <span class="ph-price">$145.00</span>
+                                    <i class="ph-savings-icon">savings</i>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-sm-6">
+                            <div class="ph-btn ph-default">
+                                <div class="ph-btn-top">
+                                    10 hours
+                                </div>
+                                <div class="ph-bottom ph-savings">
+                                    <span class="ph-price">$275.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-6">
+                            <div class="ph-btn ph-red">
+                                <div class="ph-btn-top">
+                                    20 hours
+                                </div>
+                                <div class="ph-bottom ph-savings">
+                                    <span class="ph-price">$535.00</span>
+                                    <i class="ph-savings-icon">savings</i>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-sm-6">
+                            <div class="ph-btn ph-default">
+                                <div class="ph-btn-top">
+                                    30 hours
+                                </div>
+                                <div class="ph-bottom">
+                                    <span class="ph-price">$780.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-6">
+                            <div class="ph-btn ph-red">
+                                <div class="ph-btn-top">
+                                    40 hours
+                                </div>
+                                <div class="ph-bottom ph-savings">
+                                    <span class="ph-price">$1000.00</span>
+                                    <i class="ph-savings-icon">savings</i>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-sm-6">
+                            <div class="ph-btn ph-delivery">
+                                <img class="ph-delivery-car" src="/assets/images/ph-delivery-car.png" alt=""/>
+                                <div class="quick-delivery">
+                                    1/2 hours<br>
+                                    quick delivery
+                                </div>
+                                <div class="ph-price">$1000.00</div>
+                                <div class="ph-delivery-info">
+                                    *For local deliveries less than 30 minutes
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-6">
+                            <div class="ph-btn ph-red ph-makepayment">
+                                Make a Payment
+                                <input type="text" class="form-control" value="0.00">
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
                 </div>
                 
                 <div class="col-sm-6">
-                    <h3>2. Add funds for purchases.</h3> 
-                    <div class="">
-                        $<input ng-model="vm.escrow" type="Number" step="0.01" min="0" max="50000">
-                        Add Escrow Amount
-                        <p>Add funds here if we will be purchasing items on 
-                        Add funds here if we will be purchasing items on 
-                        Add funds here if we will be purchasing items on 
-                        </p>
+                    <div class="panel no-radius panel-default margin-bottom-40">
+                        <div class="panel-body">
+                            <h3 class="custom-header margin-top-10 text-center">2. Add funds for purchases.</h3>
+                        </div>
                     </div>
-                    <h3>3. Checkout</h3>
-                    <div class="checkout-amount">
-                        <div class="xs-6">Subtotal</div>
-                        <div class="xs-6" ng-bind="vm.subtotal | currency"></div>
-                        <div class="xs-6">Processing Fee</div>                        
-                        <div class="xs-6" ng-bind="vm.proFee | currency"></div>
 
-                        <input ng-model="vm.tmpcoupon" placeholder="coupon code"  />  
-                        
-                        <button ng-click="vm.couponApply()">Apply</button>
-                    </div>  
+                    <div class="panel panel-default ph-gray-panel">
+                        <div class="panel-body">
+                            <div class="ph-aea">
+                                <span class="font-size-24">$</span><input class="form-control" ng-model="vm.escrow" type="Number" step="0.01" min="0" max="50000">
+                                Add Escrow Amount
+                            </div>
+                            <p><i>Add funds here if we will be purchasing items on
+                            Add funds here if we will be purchasing items on
+                            Add funds here if we will be purchasing items on
+                            </i></p>
+                        </div>
+                    </div>
 
-                    <div class="checkout-form margin-top-20">
-                        <form stripe-form="stripeCallback" name="checkoutForm">
-                            <input ng-model="number" placeholder="Card Number" 
-                                     payments-format="card"  name="card" />
-                            <br/>         
-                            <input ng-model="expiry" placeholder="Expiration" 
-                                     payments-format="expiry" name="expiry" />                                      
-                            <input ng-model="cvc" placeholder="CVC" payments-format="cvc" name="cvc" />  
-                            <br/> 
-                            <button type="submit" ng-bind="'Pay ' + ((vm.total)|currency) "></button>
-                            
-                        </form>    
-                    </div>     
-                </div>    
+
+                    <div class="panel no-radius panel-default margin-top-40 margin-bottom-40">
+                        <div class="panel-body">
+                            <h3 class="custom-header margin-top-10 text-center">3. Checkout</h3>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="checkout-amount">
+                                <table class="table table-checkout-amount">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Subtotal
+                                            </th>
+                                            <th>
+                                                <div ng-bind="vm.subtotal | currency"></div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                Processing Fee
+                                            </td>
+                                            <td>
+                                                <div ng-bind="vm.proFee | currency"></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="ph-couponcode">
+                                    Coupone code
+                                    <input class="form-control" ng-model="vm.tmpcoupon" placeholder="Coupon code"  />
+                                    <button class="btn btn-primary" ng-click="vm.couponApply()">Apply</button>
+                                    <button class="btn btn-default ph-btn-cancel" ng-click="vm.couponCancel()">Cancel</button>
+                                </div>
+                                <div class="ph-checkout-info">
+                                    *Some codes can’t be used with others. Enter one at a time
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form stripe-form="stripeCallback" class="ph-form" name="checkoutForm">
+                                <input class="form-control input-email" placeholder="Enter your e-mail"
+                                       type="email" name="email" />
+                                <div class="remember-wrap">
+                                    <input type="checkbox" name="remember-info" />
+                                    <p>
+                                        remember<br>
+                                        my information
+                                    </p>
+                                </div>
+                                <br>
+                                <input class="form-control" ng-model="number" placeholder="Credit card number"
+                                       payments-format="card"  name="card" />
+                                <br/>
+                                <input class="form-control input-expired" ng-model="expiry" placeholder="MM/YY"
+                                       payments-format="expiry" name="expiry" />
+                                <input class="form-control input-cvc" ng-model="cvc" placeholder="CVC" payments-format="CVC" name="cvc" />
+                                <br/>
+                                <button class="btn btn-primary ph-btn-pay col-xs-8 col-xs-push-2" type="submit" ng-bind="'Pay ' + ((vm.total)|currency) "></button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>        
+    </div>
+</div>
+
+<div class="container-fluid pre-footer">
+    <div class="row">
+        <div class="container">
+            <ul>
+                <li>Payment must be made before time of service.</li>
+                <li>Billing is basend on a 1 hour minimum per order, and thereafter billed in 15 minute increments except
+                    for half hour quick deliveries.
+                </li>
+                <li>Escrow funds not used for purchases, will be refunded upon request.</li>
+                <li>First 10 miles of driving is complimentary, thereafter .65 per mile.</li>
+            </ul>
+        </div>
     </div>
 </div>
 

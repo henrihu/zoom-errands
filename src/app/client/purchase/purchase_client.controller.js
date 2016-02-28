@@ -51,6 +51,10 @@
             vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01);
         });
 
+        vm.couponCalcel = function() {
+            // What is here?
+        }
+
         vm.couponApply = function() {
             if (vm.tmpcoupon) {
                 Restangular.one('client/escrowhours/coupon_check').get({'couponCode': vm.tmpcoupon})
