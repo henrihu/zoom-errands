@@ -7,12 +7,25 @@
         .controller('AppController', AppController);
 
     /** @ngInject */
-    // AppController.$inject = ['$auth', 'toastr', '$log', '$scope', 'Restangular']
-    function AppController()
+    AppController.$inject = ['$rootScope', 'Restangular']
+    function AppController($rootScope, Restangular)
     {
         var vm = this;
 
         vm.hompage = false;
+
+        $rootScope.eh = {
+            hoursavail: 0,
+            hoursused: 0,
+            escrowavail:    0,
+            escrowused: 0
+        };
+
+        Restangular.one('client/escrowhours').get()
+        .then(function(data) {
+            $rootScope.eh = data.eh ? data.eh : $rootScope.eh;
+        });
+
         //////////
 
         // $scope.$watch('vm.availableStatus', function() {            

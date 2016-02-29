@@ -54,13 +54,13 @@
         }
 
 
-        Restangular.one('client/tasks/mytaskscalendar').get()
-        .then(function(data){
-            vm.events = data.events;
-        }, function(data){
-            // took from other controller, I believe error will be shown same way.
-            toastr.warning(data.data.alert);
-        });
+        // Restangular.one('client/tasks/mytaskscalendar').get()
+        // .then(function(data){
+        //     vm.events = data.events;
+        // }, function(data){
+        //     // took from other controller, I believe error will be shown same way.
+        //     toastr.warning(data.data.alert);
+        // });
 
         Restangular.all('client/alltypes').getList()
         .then(function(types) {
@@ -74,13 +74,7 @@
             vm.zoomoffices = offices;
         });
 
-        Restangular.all('client/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})
-        .then(function(tasks) {
-            vm.tasks = tasks;
-            vm.displayedtasks = [].concat(vm.tasks);
-            vm.curPos = tasks.length;
-            // $log.log(vm.displayedtasks);
-        });
+        
 
         vm.services = [
           {

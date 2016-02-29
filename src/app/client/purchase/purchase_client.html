@@ -1,43 +1,44 @@
 <div id="purchase-client" class="border-top">
     <div id="login-form-wrapper"  class="container">
         <div class="row">
-            <div id="login-form" class="col-sm-10 col-sm-offset-1">
+            <div id="login-form" class="col-md-8 col-md-offset-2 ">
                 <h1 class="purchase-title text-center margin-bottom-20">Purchase Hours</h1>
+                <div class="row">
+                    <div class="col-sm-6 payment-methods">
+                        We accept:
+                        <img src="/assets/images/logos/logo-visa.png" alt=""/>
+                        <img src="/assets/images/logos/logo-mastercard.png" alt=""/>
+                        <img src="/assets/images/logos/logo-americanexpress.png" alt=""/>
+                        <img src="/assets/images/logos/logo-discover.png" alt=""/>
+                        <img src="/assets/images/logos/logo-jbc.png" alt=""/>
+                    </div>
 
-                <div class="col-sm-6 payment-methods">
-                    We accept:
-                    <img src="/assets/images/logos/logo-visa.png" alt=""/>
-                    <img src="/assets/images/logos/logo-mastercard.png" alt=""/>
-                    <img src="/assets/images/logos/logo-americanexpress.png" alt=""/>
-                    <img src="/assets/images/logos/logo-discover.png" alt=""/>
-                    <img src="/assets/images/logos/logo-jbc.png" alt=""/>
-                </div>
+                    <div class="col-sm-6 payment-methods secure-payments">
+                        Secure payments
+                        <img src="/assets/images/logos/logo-ssl.png" alt=""/>
+                    </div>
+                </div>    
+                <div class="row">
+                <div class="col-sm-6 ">
 
-                <div class="col-sm-6 text-right payment-methods">
-                    Secure payments
-                    <img src="/assets/images/logos/logo-ssl.png" alt=""/>
-                </div>
-
-                <div class="col-sm-6">
-
-                    <div class="panel no-radius panel-default margin-bottom-40">
-                        <div class="panel-body">
-                            <h3 class="custom-header margin-top-10 text-center">1. Choose your level of service.</h3>
-                        </div>
+                    <div class="panel no-radius panel-default margin-bottom-30 padding-10">                        
+                        <h3 class="custom-header margin-top-10 text-center">
+                            1. Choose your level of service
+                        </h3>                        
                     </div>
 
                     <div class="row">
 
-                        <div class="col-sm-6">
+                        <div class="col-xs-6 padding-right-8">
 
-                            <ul class="ph-hours-dropdown" ng-show="vm.showDropdown">
+                            <ul class="ph-hours-dropdown"  ng-show="vm.showDropdown">
                                 <li ng-click="vm.setHours(1)">1 hour</li>
                                 <li ng-click="vm.setHours(2)">2 hour</li>
                                 <li ng-click="vm.setHours(3)">3 hour</li>
                                 <li ng-click="vm.setHours(4)">4 hour</li>
                             </ul>
 
-                            <div class="ph-btn ph-default" ng-click="vm.showDropdown=!vm.showDropdown">
+                            <div class="ph-btn ph-default" ng-class="{selected: (vm.hour>=1 && vm.hour <5)}" ng-click="vm.showDropdown=!vm.showDropdown">
 
                                 <div class="ph-btn-top">
                                     {{ vm.dropBtnText }} <i class="little-arrow">&#9660;</i>
@@ -49,13 +50,14 @@
                         </div>
 
 
-                        <div class="col-sm-6">
-                            <div class="ph-btn ph-red" ng-click="vm.setHours(5)">
+                        <div class="col-xs-6 padding-left-8">
+                            <div class="ph-btn ph-red" ng-class="{selected: vm.hour==5}" ng-click="vm.setHours(5)">
                                 <div class="ph-btn-top">
                                     5 hours
                                 </div>
                                 <div class="ph-bottom ph-savings">
                                     <span class="ph-price">{{vm.calcPrice(5)|currency}}</span>
+                                    <!-- <i class="ph-savings-icon">savings</i> -->
                                     <i class="ph-savings-icon">savings</i>
                                 </div>
                             </div>
@@ -63,20 +65,21 @@
 
 
 
-                        <div class="col-sm-6">
-                            <div class="ph-btn ph-default" ng-click="vm.setHours(10)">
+                        <div class="col-xs-6 padding-right-8">
+                            <div class="ph-btn ph-default" ng-class="{selected: vm.hour==10}" ng-click="vm.setHours(10)">
                                 <div class="ph-btn-top">
                                     10 hours
                                 </div>
                                 <div class="ph-bottom ph-savings">
                                     <span class="ph-price">{{vm.calcPrice(10)|currency}}</span>
+                                    <i class="ph-savings-icon">savings</i>
                                 </div>
                             </div>
                         </div>
 
 
-                        <div class="col-sm-6">
-                            <div class="ph-btn ph-red" ng-click="vm.setHours(20)">
+                        <div class="col-xs-6 padding-left-8">
+                            <div class="ph-btn ph-red " ng-class="{selected: vm.hour==20}" ng-click="vm.setHours(20)">
                                 <div class="ph-btn-top">
                                     20 hours
                                 </div>
@@ -87,20 +90,21 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-6">
-                            <div class="ph-btn ph-default" ng-click="vm.setHours(30)">
+                        <div class="col-xs-6 padding-right-8">
+                            <div class="ph-btn ph-default" ng-class="{selected: vm.hour==30}" ng-click="vm.setHours(30)">
                                 <div class="ph-btn-top">
                                     30 hours
                                 </div>
                                 <div class="ph-bottom">
                                     <span class="ph-price">{{vm.calcPrice(30)|currency}}</span>
+                                    <i class="ph-savings-icon">savings</i>
                                 </div>
                             </div>
                         </div>
 
 
-                        <div class="col-sm-6">
-                            <div class="ph-btn ph-red" ng-click="vm.setHours(40)">
+                        <div class="col-xs-6 padding-left-8">
+                            <div class="ph-btn ph-red" ng-class="{selected: vm.hour==40}" ng-click="vm.setHours(40)">
                                 <div class="ph-btn-top">
                                     40 hours
                                 </div>
@@ -112,11 +116,11 @@
                         </div>
 
 
-                        <div class="col-sm-6">
-                            <div class="ph-btn ph-delivery" ng-click="vm.setHours(0.5)">
+                        <div class="col-xs-6 padding-right-8">
+                            <div class="ph-btn ph-delivery" ng-class="{selected: vm.hour==0.5}" ng-click="vm.setHours(0.5)">
                                 <img class="ph-delivery-car" src="/assets/images/ph-delivery-car.png" alt=""/>
                                 <div class="quick-delivery">
-                                    1/2 hours<br>
+                                    1/2 hour<br>
                                     quick delivery
                                 </div>
                                 <div class="ph-price">{{vm.calcPrice(0.5)|currency}}</div>
@@ -128,51 +132,44 @@
                         </div>
 
 
-                        <div class="col-sm-6">
+                        <div class="col-xs-6 padding-left-8">
                             <div class="ph-btn ph-red ph-makepayment">
                                 Make a Payment
                                 <input type="text" class="form-control" value="0.00">
                             </div>
                         </div>
 
-
-
-
                     </div>
 
                 </div>
                 
-                <div class="col-sm-6">
-                    <div class="panel no-radius panel-default margin-bottom-40">
-                        <div class="panel-body">
-                            <h3 class="custom-header margin-top-10 text-center">2. Add funds for purchases.</h3>
-                        </div>
+                <div class="col-sm-6 ">
+                    <div class="panel no-radius panel-default margin-bottom-30 padding-10">                        
+                        <h3 class="custom-header margin-top-10 text-center">2. Add funds for purchases(optional)</h3>
                     </div>
 
                     <div class="panel panel-default ph-gray-panel">
                         <div class="panel-body">
                             <div class="ph-aea">
-                                <span class="font-size-24">$</span><input class="form-control" ng-model="vm.escrow" type="Number" step="0.01" min="0" max="50000">
+                                <span class="font-size-18">$</span><input class="form-control" ng-model="vm.escrow" type="Number" step="0.01" min="0" max="50000">
                                 Add Escrow Amount
                             </div>
                             <p><i>Add funds here if we will be purchasing items on
-                            Add funds here if we will be purchasing items on
-                            Add funds here if we will be purchasing items on
+                            your behalf. Make sure to add enough funds to cover purchases.
+                            Overpayment will be refunded to you if requested by contacting us.
                             </i></p>
                         </div>
                     </div>
 
 
-                    <div class="panel no-radius panel-default margin-top-40 margin-bottom-40">
-                        <div class="panel-body">
-                            <h3 class="custom-header margin-top-10 text-center">3. Checkout</h3>
-                        </div>
+                    <div class="panel no-radius panel-default padding-10">                        
+                        <h3 class="custom-header margin-top-10 text-center">3. Checkout</h3>                        
                     </div>
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="checkout-amount">
-                                <table class="table table-checkout-amount">
+                                <table class="table table-checkout-amount margin-bottom-0">
                                     <thead>
                                         <tr>
                                             <th>
@@ -206,17 +203,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-body">
+                        <div class="panel-body padding-vertical-8">
                             <form stripe-form="stripeCallback" class="ph-form" name="checkoutForm">
                                 <input class="form-control input-email" placeholder="Enter your e-mail"
-                                       type="email" name="email" />
-                                <div class="remember-wrap">
+                                    ng-model="user.email"   type="email" name="email" />
+                                <!-- <div class="remember-wrap">
                                     <input type="checkbox" name="remember-info" />
                                     <p>
                                         remember<br>
                                         my information
                                     </p>
-                                </div>
+                                </div> -->
                                 <br>
                                 <input class="form-control" ng-model="number" placeholder="Credit card number"
                                        payments-format="card"  name="card" />
@@ -230,7 +227,8 @@
                             </form>
                         </div>
                     </div>
-                </div>
+                </div> <!-- col-sm-6 -->
+                </div> <!-- row -->
             </div>
         </div>        
     </div>
@@ -240,8 +238,8 @@
     <div class="row">
         <div class="container">
             <div class="row">
-                <div class="col-sm-offset-1 col-sm-10">
-                    <ul>
+                <div class="col-sm-offset-2 col-sm-8">
+                    <ul >
                         <li>Payment must be made before time of service.</li>
                         <li>Billing is basend on a 1 hour minimum per order, and thereafter billed in 15 minute increments except
                             for half hour quick deliveries.

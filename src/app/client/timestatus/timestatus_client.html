@@ -9,11 +9,11 @@
                         <table class="hours-table table table-bordered">
                             <tr>
                                 <td class="">Total Hours Available</td>
-                                <td class="num num-positive">{{ vm.eh.hoursavail }}</td>
+                                <td class="num num-positive">{{ eh.hoursavail }}</td>
                             </tr>
                             <tr>
                                 <td class="">Total Hours Used</td>
-                                <td class="num num-negative">{{ vm.eh.hoursused | addMinusSignToZero }}</td>
+                                <td class="num num-negative">{{ eh.hoursused | addMinusSignToZero }}</td>
                             </tr>
                         </table>
                     </div>
@@ -27,11 +27,11 @@
                         <table class="money-table table table-bordered table-responsive">
                             <tr>
                                 <td class="">Total Escrow Available</td>
-                                <td class="num num-positive">{{ vm.eh.escrowavail | currency:"$" }}</td>
+                                <td class="num num-positive">{{ eh.escrowavail | currency:"$" }}</td>
                             </tr>
                             <tr>
                                 <td class="">Total Escrow Used</td>
-                                <td class="num num-negative">{{ vm.eh.escrowused | currency:"$" | addMinusSignToZero }}</td>
+                                <td class="num num-negative">{{ eh.escrowused | currency:"$" | addMinusSignToZero }}</td>
                             </tr>
                         </table>
                     </div>

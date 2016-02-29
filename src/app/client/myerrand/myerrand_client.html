@@ -2,7 +2,7 @@
     <div id="login-form-wrapper"  class="container">
         <div class="row">
             <h1 class="myerrand-title text-center">My Errands</h1>
-            <div id="login-form" class="col-md-12  table-responsive margin-bottom-40">                
+            <div id="login-form" class="col-md-12  table-responsive margin-bottom-20">                
                 <table st-table="vm.displayedtasks" st-safe-src="vm.tasks" class="table ">
                     <thead>                    
                         <th class="text-center">DATE</th>
@@ -60,7 +60,7 @@
             </div>
 
             <div class="col-md-12 text-center">
-                <button ng-click="vm.loadMore()" class="btn btn-primary btn-loadmore margin-bottom-60">Load more...</button> 
+                <button ng-show="vm.moredata" ng-click="vm.loadMore()" class="btn btn-primary btn-loadmore margin-bottom-60">Load more...</button> 
             </div>
 
         </div>        

@@ -20,11 +20,14 @@
         font-weight: bold;
         font-size: 16px;
         margin-bottom: 8px;
+        &.secure-payments {
+            text-align: right;
+        }
     }
 
     .custom-header {
         color: #3d77a9;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: bold;
     }
 
@@ -38,7 +41,7 @@
         box-shadow: 0px 0px 10px -2px #777;
 
         color: #fff;
-        font-size: 30px;
+        font-size: 24px;
         text-align: center;
         list-style-type: none;
         position: absolute;
@@ -62,7 +65,7 @@
         box-shadow: 0px 0px 10px -2px #777;
 
         border-radius: 7px;
-        margin-bottom: 30px;
+        margin-bottom: 22px;
         position: relative;
         overflow: hidden;
         &.ph-default {
@@ -73,7 +76,7 @@
                 display: inline-block;
                 font-size: 12px;
                 font-style: normal;
-                margin-left: 15px;
+                margin-left: 10px;
                 position: relative;
                 top: -4px;
             }
@@ -85,6 +88,15 @@
             }
         }
 
+        &.selected {
+            -webkit-box-shadow: 0px 0px 10px -1px red;
+            -moz-box-shadow: 0px 0px 10px -4px red;
+            box-shadow: 0px 0px 10px -1px red;
+        }
+        &:focus {
+            outline: none;
+        }
+
         &.ph-delivery {
             background: #0082c7;
             color: #fff;
@@ -92,9 +104,9 @@
             padding: 15px;
             position: relative;
             .quick-delivery {
-                font-family: 'LatoWebLight';
-                font-size: 16px;
-                margin-left: 75px;
+                // font-family: 'LatoWebLight';
+                font-size: 12px;
+                margin-left: 60px;
                 margin-top: -2px;
             }
             .ph-price {
@@ -103,29 +115,30 @@
                 margin: 2px 0;
             }
             .ph-delivery-info {
-                font-size: 9px;
+                font-size: 7px;
                 text-align: center;
             }
 
             .ph-delivery-car {
                 float: left;
+                width: 50px;
             }
         }
 
         &.ph-makepayment {
             background: #ea6539;
             color: #fff;
-            font-family: 'LatoWebLight';
-            font-size: 20px;
+            // font-family: 'LatoWebLight';
+            font-size: 16px;
             padding: 15px;
             text-align: center;
 
             input {
                 color: #000;
-                font-family: 'LatoWeb';
-                font-size: 18px;
-                height: 50px;
-                line-height: 50px;
+                // font-family: 'LatoWeb';
+                font-size: 16px;
+                // height: 50px;
+                // line-height: 50px;
                 margin-top: 20px;
                 text-align: right;
             }
@@ -133,50 +146,50 @@
 
         .ph-btn-top {
             color: #fff;
-            font-size: 40px;
+            font-size: 30px;
             text-align: center;
-            padding-top: 26px;
-            padding-bottom: 26px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
 
         .ph-bottom {
             color: #0082c7;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             text-align: center;
-            padding-top: 15px;
-            padding-bottom: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
 
             &.ph-savings {
-                margin-left: -10%;
+                // margin-left: -10%;
             }
         }
 
         .ph-savings-icon {
-            background: transparent url('/assets/images/icons/icon-close-red.png') no-repeat center center;
+            // background: transparent url('/assets/images/icons/icon-close-red.png') no-repeat center center;
             color: #d90000;
             display: inline-block;
-            font-size: 14px;
+            font-size: 12px;
             line-height: 12px;
-            margin-left: 15px;
+            // margin-left: 10px;
             height: 14px;
             padding-left: 20px;
             position: relative;
             top: -2px;
-            width: 15px;
+            // width: 15px;
             font-style: normal;
         }
     }
 
     .ph-gray-panel {
         background: #efefef;
-        padding: 25px 20px 0;
+        // padding: 10px 0;
     }
 
     .form-control {
         display: inline-block;
         height: 40px;
-        line-height: 30px;
+        // line-height: 30px;
 
         &::placeholder {
             color: #cacaca;
@@ -184,18 +197,21 @@
     }
 
     .ph-aea {
-        font-size: 20px;
+        font-size: 16px;
+        font-weight: bold;
         .form-control {
-            margin: 0 10px 25px;
+            margin: 0 10px 15px;
             text-align: right;
-            width: 50%;
-        }
-        p  {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            i {
-                font-size: 14px;
-            }
+            width: 40%;
+            height: 30px;
+        }        
+    }
+    p  {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        color: gray;
+        i {
+            font-size: 12px;
         }
     }
 
@@ -205,7 +221,7 @@
 
     .table-checkout-amount {
         table-layout: fixed;
-        font-size: 16px;
+        font-size: 14px;
         tr {
             td, th {
                 color: #494949;
@@ -214,7 +230,7 @@
             td:last-child,
             th:last-child {
                 border-left: 1px solid #e9e9e9;
-                width: 20%;
+                width: 30%;
             }
 
         }
@@ -222,21 +238,24 @@
 
     .ph-couponcode {
         color: #0082c7;
-        font-size: 18px;
+        font-size: 14px;
+        font-weight: bold;
         padding-left: 5px;
 
         .form-control {
             font-size: 14px;
-            height: 35px;
-            line-height: 14px;
-            margin-left: 5px;
+            height: 30px;
+            // line-height: 14px;
+            // margin-left: 5px;
             text-align: center;
-            width: 47%;
+            width: 30%;
         }
         button {
-            height: 34px;
-            position: relative;
-            top: -1px;
+            height: 30px;
+            // position: relative;
+            // top: -1px;
+            padding-left: 6px;
+            padding-right: 6px;
         }
         .ph-btn-cancel {
             color: #3d77a9;
@@ -252,36 +271,37 @@
     .ph-form {
         .form-control {
             display: inline-block;
-            font-size: 18px;
+            font-size: 16px;
             margin-bottom: 4px;
             text-align: center;
+            height: 35px;
         }
 
-        .remember-wrap {
-            display: inline-block;
-            position: relative;
-            float: right;
-            width: 35%;
+        // .remember-wrap {
+        //     display: inline-block;
+        //     position: relative;
+        //     float: right;
+        //     width: 35%;
 
-            input {
-                border-color: #ebebeb;
-                float: left;
-                height: 20px;
-                margin-top: 15px;
-                margin-left: 2px;
-                width: 20px;
-            }
+        //     input {
+        //         border-color: #ebebeb;
+        //         float: left;
+        //         height: 20px;
+        //         margin-top: 15px;
+        //         margin-left: 2px;
+        //         width: 20px;
+        //     }
 
-            p {
-                color: #585858;
-                font-size: 14px;
-                margin-bottom: 0;
-                overflow: hidden;
-            }
-        }
+        //     p {
+        //         color: #585858;
+        //         font-size: 14px;
+        //         margin-bottom: 0;
+        //         overflow: hidden;
+        //     }
+        // }
 
         .input-email {
-            width: 65%;
+            // width: 65%;
         }
 
         .input-expired {
@@ -291,15 +311,16 @@
         .input-cvc {
             width: calc(35% - 4px);
             
-            &::placeholder {
-                background: transparent url('/assets/images/icon-question.png') no-repeat 70% 10%;
-            }
+            // &::placeholder {
+            //     background: transparent url('/assets/images/icon-question.png') no-repeat 70% 10%;
+            // }
         }
 
         .ph-btn-pay {
             background: #3d77a9;
-            font-size: 22px;
-            height: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            // height: 50px;
             margin-top: 7px;
 
         }
@@ -311,5 +332,30 @@
 .pre-footer {
     background: #efefef;
     color: #494949;
-    padding: 30px 0;
+    padding: 20px 0;
 }
+
+@media screen and (max-width: $layout-breakpoint-sm) {
+
+#purchase-client {
+    .ph-btn {
+        .ph-bottom {
+            font-size: 14px;
+        }
+    }
+    .ph-aea {
+        font-size: 12px;
+    }
+    .ph-couponcode .form-control {
+        width: 60%;
+    }
+    .payment-methods.secure-payments {
+        text-align: left;
+    }
+    .custom-header {
+        font-size: 16px;
+    }
+
+}
+}
+

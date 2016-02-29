@@ -7,24 +7,23 @@
         .controller('MyerrandClientController', MyerrandClientController);
 
     /** @ngInject */
-    MyerrandClientController.$inject = ['$scope', 'Restangular', 'toastr'];
-    function MyerrandClientController($scope, Restangular, toastr)
+    MyerrandClientController.$inject = ['$scope', 'Restangular', 'toastr', '$log'];
+    function MyerrandClientController($scope, Restangular, toastr, $log)
     {
         var vm = this; 
-        vm.deleteTask = deleteTask;
-        vm.loadMore = loadMore;
-        vm.limit = 7;
+
+        vm.limit = 5;
         vm.curPos = 0;
 
-        Restangular.all('client/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})
-        .then(function(tasks) {
-            vm.tasks = tasks;
+        Restangular.one('client/tasks/mytasks').get({'limit': vm.limit, 'offset': vm.curPos})
+        .then(function(resp) {   
+            vm.tasks = resp.tasks;
             vm.displayedtasks = [].concat(vm.tasks);
-            vm.curPos = tasks.length;
-            // $log.log(vm.displayedtasks);
+            vm.curPos = resp.tasks.length;
+            vm.moredata = resp.moredata;
         });
 
-        function deleteTask(task) 
+        vm.deleteTask = function(task) 
         {   
             Restangular.one('client/tasks', task.id).remove()
             .then(function(data) {
@@ -40,14 +39,15 @@
 
         }
 
-        function loadMore()
+        vm.loadMore = function()
         {
-            Restangular.all('client/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})
-            .then(function(tasks) {
-                vm.tasks = vm.tasks.concat(tasks);
+            Restangular.one('client/tasks/mytasks').get({'limit': vm.limit, 'offset': vm.curPos})
+            .then(function(resp) {
+                $log.log(resp);
+                vm.tasks = vm.tasks.concat(resp.tasks);
                 vm.displayedtasks = [].concat(vm.tasks);
-                vm.curPos = vm.curPos + tasks.length;
-                // $log.log(vm.displayedtasks);
+                vm.curPos = vm.curPos + resp.tasks.length;
+                vm.moredata = resp.moredata;
             });
         }
 

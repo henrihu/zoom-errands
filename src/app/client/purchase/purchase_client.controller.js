@@ -7,8 +7,8 @@
         .controller('PurchaseClientController', PurchaseClientController);
 
     /** @ngInject */
-    PurchaseClientController.$inject = ['$log','$window', '$scope', 'Restangular', 'toastr', '$filter'];
-    function PurchaseClientController($log, $window, $scope, Restangular, toastr, $filter)
+    PurchaseClientController.$inject = ['$rootScope', '$log','$window', '$scope', 'Restangular', 'toastr', '$filter'];
+    function PurchaseClientController($rootScope, $log, $window, $scope, Restangular, toastr, $filter)
     {
         var vm = this;       
 
@@ -41,10 +41,7 @@
             vm.proFee = vm.subtotal*vm.fee.percent*0.01 + vm.fee.cent*0.01;
             vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01);
         });
-
-        vm.couponCalcel = function() {
-            // What is here?
-        }
+        
 
         vm.setHours = function(h) {
             vm.hour = h;
@@ -98,6 +95,12 @@
             vm.coupon = vm.tmpcoupon;                      
         };
 
+        vm.couponCancel = function() {
+            vm.coupon = "";
+            vm.couponPercent = 0;
+            vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01); 
+        }
+
         // Stripe Response Handler
         $scope.stripeCallback = function (code, result) {
             if (result.error) {
@@ -110,7 +113,13 @@
                     toastr.success("Purchase Hour: " + resp.purchaseHour + "hrs" +
                                     "<br/> Fund Escrow: " + $filter("currency")(resp.purchaseEscrow) ,
                                     "You paid " + $filter("currency")(resp.charge.amount*0.01) + " successfully!");
-                    $log.log(resp);
+                    Restangular.one('client/escrowhours').get()
+                    .then(function(data) {
+                        $rootScope.eh = data.eh ? data.eh : $rootScope.eh;
+                    }, function(data){
+                        // took from other controller, I believe error will be shown same way.
+                        toastr.warning(data.data.alert);
+                    });
                 }, function(resp) {
                     toastr.error(resp.data.error);
                     $log.log(resp);

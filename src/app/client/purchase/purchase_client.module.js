@@ -15,7 +15,11 @@
                 'content@app': {
                     templateUrl: 'app/client/purchase/purchase_client.html',
                     controller : 'PurchaseClientController as vm'
-                }
+                },
+                'navbar@app'    : {
+                  templateUrl: 'app/main/layouts/navbar.html',
+                  controller : 'PurchaseClientController as vm'
+              }  
             }
         });        
     }
