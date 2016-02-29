@@ -13,13 +13,13 @@
         var vm = this;       
 
         vm.hour = 1;
-        vm.cost = 35;
         vm.escrow = 0;
         vm.fee = {percent: 0, cent: 0};        
         vm.couponPercent = 0;
         vm.coupon = 0;
         vm.showDropdown = false;
         vm.dropBtnText = '1 hour';
+        vm.dropPriceText = 32;
         vm.hoursPrice = 32;
 
         Restangular.one('client/escrowhours/fee').get()
@@ -29,28 +29,12 @@
             vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01);
         });
 
-        // temp vals
-        vm.eh = {
-            hoursavail: 0,
-            hoursused: 0,
-            escrowavail: 0,
-            escrowused: 0
-        };
-
-        Restangular.one('client/escrowhours').get()
-        .then(function(data) {
-            vm.eh = data.eh ? data.eh : vm.eh;
-        }, function(data){
-            // took from other controller, I believe error will be shown same way.
-            toastr.warning(data.data.alert);
-        });
-
         $scope.$watch('vm.hour', function() {
-            vm.subtotal = vm.escrow + vm.hour * vm.cost;
+            vm.subtotal = vm.escrow + vm.hoursPrice;
         });
 
         $scope.$watch('vm.escrow', function() {
-            vm.subtotal = vm.escrow + vm.hour * vm.cost;
+            vm.subtotal = vm.escrow + vm.hoursPrice;
         });
 
         $scope.$watch('vm.subtotal', function() {
@@ -64,11 +48,34 @@
 
         vm.setHours = function(h) {
             vm.hour = h;
-            if (h < 5){
+            vm.hoursPrice = vm.calcPrice(vm.hour)
+            
+            if (h < 5 && h >=1) {
                 vm.dropBtnText = h + ' ' + (h == 1 ? 'hour' : 'hours');
-                vm.hoursPrice = h * 32;
+                vm.dropPriceText = vm.calcPrice(vm.hour)
                 vm.showDropdown = false;
             }
+        }
+
+        vm.calcPrice = function(h) {
+            var hoursPrice;
+            if (h >= 40) {
+                hoursPrice = h * 25
+            } else if (h >=30) {
+                hoursPrice = h * 26
+            } else if (h >=20) {
+                hoursPrice = h * 26.75
+            } else if (h >=10) {
+                hoursPrice = h * 27.5                
+            } else if (h >=5) {
+                hoursPrice = h * 29                
+            } else if (h >=1) {
+                hoursPrice = h * 32                
+            } else if (h >=0) {
+                hoursPrice = h * 32                
+            } 
+
+            return hoursPrice;
         }
 
         vm.couponApply = function() {

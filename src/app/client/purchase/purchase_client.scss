@@ -11,7 +11,7 @@
         color: #494949;
         font-family: 'LatoWebLight';
         font-size: 36px;
-        margin-bottom: 0px;
+        // margin-bottom: 0px;
         margin-top: 40px;
     }
 
@@ -38,14 +38,14 @@
         box-shadow: 0px 0px 10px -2px #777;
 
         color: #fff;
-        font-size: 40px;
+        font-size: 30px;
         text-align: center;
         list-style-type: none;
         position: absolute;
-        top: 15px;
+        top: 25px;
         left: 45px;
         padding: 0;
-        width: calc(100% - 30px);
+        width: calc(70% - 0px);
         z-index: 10;
         li {
             border-bottom: 1px solid #fff;
@@ -103,7 +103,7 @@
                 margin: 2px 0;
             }
             .ph-delivery-info {
-                font-size: 11px;
+                font-size: 9px;
                 text-align: center;
             }
 

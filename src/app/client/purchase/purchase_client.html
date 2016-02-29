@@ -1,8 +1,8 @@
 <div id="purchase-client" class="border-top">
     <div id="login-form-wrapper"  class="container">
         <div class="row">
-            <div id="login-form" class="col-md-12">
-                <h1 class="purchase-title text-center">Purchase Hours</h1>
+            <div id="login-form" class="col-sm-10 col-sm-offset-1">
+                <h1 class="purchase-title text-center margin-bottom-20">Purchase Hours</h1>
 
                 <div class="col-sm-6 payment-methods">
                     We accept:
@@ -43,7 +43,7 @@
                                     {{ vm.dropBtnText }} <i class="little-arrow">&#9660;</i>
                                 </div>
                                 <div class="ph-bottom">
-                                    <span class="ph-price">{{ vm.hoursPrice | currency }}</span>
+                                    <span class="ph-price">{{vm.dropPriceText|currency}}</span>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                                     5 hours
                                 </div>
                                 <div class="ph-bottom ph-savings">
-                                    <span class="ph-price">$145.00</span>
+                                    <span class="ph-price">{{vm.calcPrice(5)|currency}}</span>
                                     <i class="ph-savings-icon">savings</i>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                                     10 hours
                                 </div>
                                 <div class="ph-bottom ph-savings">
-                                    <span class="ph-price">$275.00</span>
+                                    <span class="ph-price">{{vm.calcPrice(10)|currency}}</span>
                                 </div>
                             </div>
                         </div>
@@ -81,13 +81,11 @@
                                     20 hours
                                 </div>
                                 <div class="ph-bottom ph-savings">
-                                    <span class="ph-price">$535.00</span>
+                                    <span class="ph-price">{{vm.calcPrice(20)|currency}}</span>
                                     <i class="ph-savings-icon">savings</i>
                                 </div>
                             </div>
                         </div>
-
-
 
                         <div class="col-sm-6">
                             <div class="ph-btn ph-default" ng-click="vm.setHours(30)">
@@ -95,7 +93,7 @@
                                     30 hours
                                 </div>
                                 <div class="ph-bottom">
-                                    <span class="ph-price">$780.00</span>
+                                    <span class="ph-price">{{vm.calcPrice(30)|currency}}</span>
                                 </div>
                             </div>
                         </div>
@@ -107,22 +105,21 @@
                                     40 hours
                                 </div>
                                 <div class="ph-bottom ph-savings">
-                                    <span class="ph-price">$1000.00</span>
+                                    <span class="ph-price">{{vm.calcPrice(40)|currency}}</span>
                                     <i class="ph-savings-icon">savings</i>
                                 </div>
                             </div>
                         </div>
 
 
-
                         <div class="col-sm-6">
-                            <div class="ph-btn ph-delivery">
+                            <div class="ph-btn ph-delivery" ng-click="vm.setHours(0.5)">
                                 <img class="ph-delivery-car" src="/assets/images/ph-delivery-car.png" alt=""/>
                                 <div class="quick-delivery">
                                     1/2 hours<br>
                                     quick delivery
                                 </div>
-                                <div class="ph-price">$1000.00</div>
+                                <div class="ph-price">{{vm.calcPrice(0.5)|currency}}</div>
                                 <div class="ph-delivery-info">
                                     *For local deliveries less than 30 minutes
                                 </div>
@@ -242,14 +239,18 @@
 <div class="container-fluid pre-footer">
     <div class="row">
         <div class="container">
-            <ul>
-                <li>Payment must be made before time of service.</li>
-                <li>Billing is basend on a 1 hour minimum per order, and thereafter billed in 15 minute increments except
-                    for half hour quick deliveries.
-                </li>
-                <li>Escrow funds not used for purchases, will be refunded upon request.</li>
-                <li>First 10 miles of driving is complimentary, thereafter .65 per mile.</li>
-            </ul>
+            <div class="row">
+                <div class="col-sm-offset-1 col-sm-10">
+                    <ul>
+                        <li>Payment must be made before time of service.</li>
+                        <li>Billing is basend on a 1 hour minimum per order, and thereafter billed in 15 minute increments except
+                            for half hour quick deliveries.
+                        </li>
+                        <li>Escrow funds not used for purchases, will be refunded upon request.</li>
+                        <li>First 10 miles of driving is complimentary, thereafter .65 per mile.</li>
+                    </ul>
+                </div>
+            </div>        
         </div>
     </div>
 </div>
