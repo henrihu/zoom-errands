@@ -7,5 +7,309 @@
         color: red;
     }
 
-}
+    .purchase-title {
+        color: #494949;
+        font-family: 'LatoWebLight';
+        font-size: 36px;
+        margin-bottom: 0px;
+        margin-top: 40px;
+    }
 
+    .payment-methods {
+        color: #494949;
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .custom-header {
+        color: #3d77a9;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .ph-hours-dropdown {
+        background: #3d77a9;
+        border: 2px solid #fff;
+        border-radius: 7px;
+
+        -webkit-box-shadow: 0px 0px 10px -2px #777;
+        -moz-box-shadow: 0px 0px 10px -4px #777;
+        box-shadow: 0px 0px 10px -2px #777;
+
+        color: #fff;
+        font-size: 40px;
+        text-align: center;
+        list-style-type: none;
+        position: absolute;
+        top: 15px;
+        left: 45px;
+        padding: 0;
+        width: calc(100% - 30px);
+        z-index: 10;
+        li {
+            border-bottom: 1px solid #fff;
+        }
+    }
+
+
+    .ph-btn {
+        background: #fff;
+        cursor: pointer;
+
+        -webkit-box-shadow: 0px 0px 10px -2px #777;
+        -moz-box-shadow: 0px 0px 10px -4px #777;
+        box-shadow: 0px 0px 10px -2px #777;
+
+        border-radius: 7px;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+        &.ph-default {
+            .ph-btn-top {
+                background: #0082c7;
+            }
+            .little-arrow {
+                display: inline-block;
+                font-size: 12px;
+                font-style: normal;
+                margin-left: 15px;
+                position: relative;
+                top: -4px;
+            }
+        }
+
+        &.ph-red {
+            .ph-btn-top {
+                background: #ea6539;
+            }
+        }
+
+        &.ph-delivery {
+            background: #0082c7;
+            color: #fff;
+            font-size: 16px;
+            padding: 15px;
+            position: relative;
+            .quick-delivery {
+                font-family: 'LatoWebLight';
+                font-size: 16px;
+                margin-left: 75px;
+                margin-top: -2px;
+            }
+            .ph-price {
+                font-size: 26px;
+                text-align: center;
+                margin: 2px 0;
+            }
+            .ph-delivery-info {
+                font-size: 11px;
+                text-align: center;
+            }
+
+            .ph-delivery-car {
+                float: left;
+            }
+        }
+
+        &.ph-makepayment {
+            background: #ea6539;
+            color: #fff;
+            font-family: 'LatoWebLight';
+            font-size: 20px;
+            padding: 15px;
+            text-align: center;
+
+            input {
+                color: #000;
+                font-family: 'LatoWeb';
+                font-size: 18px;
+                height: 50px;
+                line-height: 50px;
+                margin-top: 20px;
+                text-align: right;
+            }
+        }
+
+        .ph-btn-top {
+            color: #fff;
+            font-size: 40px;
+            text-align: center;
+            padding-top: 26px;
+            padding-bottom: 26px;
+        }
+
+        .ph-bottom {
+            color: #0082c7;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            &.ph-savings {
+                margin-left: -10%;
+            }
+        }
+
+        .ph-savings-icon {
+            background: transparent url('/assets/images/icons/icon-close-red.png') no-repeat center center;
+            color: #d90000;
+            display: inline-block;
+            font-size: 14px;
+            line-height: 12px;
+            margin-left: 15px;
+            height: 14px;
+            padding-left: 20px;
+            position: relative;
+            top: -2px;
+            width: 15px;
+            font-style: normal;
+        }
+    }
+
+    .ph-gray-panel {
+        background: #efefef;
+        padding: 25px 20px 0;
+    }
+
+    .form-control {
+        display: inline-block;
+        height: 40px;
+        line-height: 30px;
+
+        &::placeholder {
+            color: #cacaca;
+        }
+    }
+
+    .ph-aea {
+        font-size: 20px;
+        .form-control {
+            margin: 0 10px 25px;
+            text-align: right;
+            width: 50%;
+        }
+        p  {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            i {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .panel-heading {
+        padding-bottom: 5px;
+    }
+
+    .table-checkout-amount {
+        table-layout: fixed;
+        font-size: 16px;
+        tr {
+            td, th {
+                color: #494949;
+                font-weight: bold;
+            }
+            td:last-child,
+            th:last-child {
+                border-left: 1px solid #e9e9e9;
+                width: 20%;
+            }
+
+        }
+    }
+
+    .ph-couponcode {
+        color: #0082c7;
+        font-size: 18px;
+        padding-left: 5px;
+
+        .form-control {
+            font-size: 14px;
+            height: 35px;
+            line-height: 14px;
+            margin-left: 5px;
+            text-align: center;
+            width: 47%;
+        }
+        button {
+            height: 34px;
+            position: relative;
+            top: -1px;
+        }
+        .ph-btn-cancel {
+            color: #3d77a9;
+        }
+    }
+
+    .ph-checkout-info {
+        color: #a8a8a8;
+        font-size: 12px;
+        margin: 3px 0;
+    }
+
+    .ph-form {
+        .form-control {
+            display: inline-block;
+            font-size: 18px;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+
+        .remember-wrap {
+            display: inline-block;
+            position: relative;
+            float: right;
+            width: 35%;
+
+            input {
+                border-color: #ebebeb;
+                float: left;
+                height: 20px;
+                margin-top: 15px;
+                margin-left: 2px;
+                width: 20px;
+            }
+
+            p {
+                color: #585858;
+                font-size: 14px;
+                margin-bottom: 0;
+                overflow: hidden;
+            }
+        }
+
+        .input-email {
+            width: 65%;
+        }
+
+        .input-expired {
+            width: 65%;
+        }
+
+        .input-cvc {
+            width: calc(35% - 4px);
+            
+            &::placeholder {
+                background: transparent url('/assets/images/icon-question.png') no-repeat 70% 10%;
+            }
+        }
+
+        .ph-btn-pay {
+            background: #3d77a9;
+            font-size: 22px;
+            height: 50px;
+            margin-top: 7px;
+
+        }
+    }
+
+
+
+}
+.pre-footer {
+    background: #efefef;
+    color: #494949;
+    padding: 30px 0;
+}

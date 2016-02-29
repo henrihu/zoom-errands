@@ -12,12 +12,15 @@
     {
         var vm = this;       
 
-        vm.hour = 2;
+        vm.hour = 1;
         vm.cost = 35;
         vm.escrow = 0;
         vm.fee = {percent: 0, cent: 0};        
         vm.couponPercent = 0;
         vm.coupon = 0;
+        vm.showDropdown = false;
+        vm.dropBtnText = '1 hour';
+        vm.hoursPrice = 32;
 
         Restangular.one('client/escrowhours/fee').get()
         .then(function(data) {
@@ -42,6 +45,10 @@
             toastr.warning(data.data.alert);
         });
 
+        $scope.$watch('vm.hour', function() {
+            vm.subtotal = vm.escrow + vm.hour * vm.cost;
+        });
+
         $scope.$watch('vm.escrow', function() {
             vm.subtotal = vm.escrow + vm.hour * vm.cost;
         });
@@ -50,6 +57,19 @@
             vm.proFee = vm.subtotal*vm.fee.percent*0.01 + vm.fee.cent*0.01;
             vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01);
         });
+
+        vm.couponCalcel = function() {
+            // What is here?
+        }
+
+        vm.setHours = function(h) {
+            vm.hour = h;
+            if (h < 5){
+                vm.dropBtnText = h + ' ' + (h == 1 ? 'hour' : 'hours');
+                vm.hoursPrice = h * 32;
+                vm.showDropdown = false;
+            }
+        }
 
         vm.couponApply = function() {
             if (vm.tmpcoupon) {
