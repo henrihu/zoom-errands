@@ -55,8 +55,8 @@
                         <label for="errand-address" class="col-sm-3 control-label">Errand Type</label>
                         <div class="col-sm-8">
                             <select class="form-control" ng-options="type.id as type.name for type in vm.alltypes" ng-model="vm.errand.type_id" required>
-                            <option value="" disabled>Type</option>
-                        </select>  
+                                <option value="" disabled>Type</option>
+                            </select>  
                         </div>
                     </div>                   
                     
@@ -64,8 +64,7 @@
                         <label for="errand-address" class="col-sm-3 control-label">Errand Details</label>
                         <div class="col-sm-8">
                             <textarea ng-model="vm.errand.details" class="form-control textarea" 
-                                rows="3" placeholder="Errand Details" required></textarea>
-                        </select>  
+                                rows="3" placeholder="Errand Details" required></textarea>                        
                         </div>
                     </div>  
 
