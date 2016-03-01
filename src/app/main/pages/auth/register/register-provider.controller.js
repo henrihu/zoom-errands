@@ -10,14 +10,16 @@
     RegisterProviderController.$inject = ['$scope', 'toastr'];
     function RegisterProviderController($scope, toastr)
     {
-        // var vm = this;
+        var vm = this;
 
+        vm.signupSuccess = false;
         // event handler
         // event: 'auth:registration-email-success'
         $scope.$on('auth:registration-email-success', function(ev, data) 
         {            
-            toastr.success('A registration email was ' + 'sent to ' + data.email + '<br/>' +
-                '. follow the instructions contained in the ' + 'email to complete registration.');                       
+            // toastr.success('A registration email was ' + 'sent to ' + data.email + '<br/>' +
+            //     '. follow the instructions contained in the ' + 'email to complete registration.');
+            vm.signupSuccess = true;                       
         });
 
         // event :  'auth:registration-email-error'

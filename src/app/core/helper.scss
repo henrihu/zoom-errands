@@ -139,6 +139,10 @@ $border-style: 1px solid rgba(0, 0, 0, 0.12);
     text-align: right;
 }
 
+.text-justify {
+    text-align: justify;
+}
+
 // Font size helpers
 @for $size from 1 through 15 {
 

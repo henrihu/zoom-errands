@@ -5,24 +5,37 @@
                 <div class="logo">
                     <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
                 </div>
+                <div ng-if="!vm.signupSuccess">
+                    <div class="text-muted title margin-vertical-32">Service Provider Sign Up</div>  
 
-                <div class="text-muted title margin-vertical-32">Service Provider Sign Up</div>  
+                    <form ng-submit="submitRegistration(vm.form, {config: 'provider'})" role="form" >
+                        <input ng-model="vm.form.email" type="email" class="form-control email-input" placeholder="E-mail address">
+                        <input ng-model="vm.form.password" type="password" class="form-control password-input" placeholder="Create Password">
+                        <input ng-model="vm.form.password_confirmation" type="password" class="form-control password-input" placeholder="Password_confirmation">
+                        <button class="btn btn-login">Sign Up</button>
+                    </form> 
+    <!-- 
+                    <p class="or-divider">Or Sign Up with</p>
 
-                <form ng-submit="submitRegistration(vm.form, {config: 'provider'})" role="form" >
-                    <input ng-model="vm.form.email" type="email" class="form-control email-input" placeholder="E-mail address">
-                    <input ng-model="vm.form.password" type="password" class="form-control password-input" placeholder="Password">
-                    <input ng-model="vm.form.password_confirmation" type="password" class="form-control password-input" placeholder="Password_confirmation">
-                    <button class="btn btn-login">Sign Up</button>
-                </form> 
-<!-- 
-                <p class="or-divider">Or Sign Up with</p>
+                    <md-button ng-click="authenticate('facebook', {config: 'provider'})" class="btn btn-primary btn-facebook">Facebook</md-button> -->
 
-                <md-button ng-click="authenticate('facebook', {config: 'provider'})" class="btn btn-primary btn-facebook">Facebook</md-button> -->
-
-                <div class="row">
-                    <div class="col-xs-6 text-left"><a ui-sref="app.pages_auth_login_provider">Login</a></div>
-                    <div class="col-xs-6 text-right"><a ui-sref="app.pages_auth_forgot-password_provider">Forgot Password?</a></div>
-                </div>  
+                    <div class="row">
+                        <div class="col-xs-6 text-left"><a ui-sref="app.pages_auth_login_provider">Login</a></div>
+                        <div class="col-xs-6 text-right"><a ui-sref="app.pages_auth_forgot-password_provider">Forgot Password?</a></div>
+                    </div>  
+                </div>
+                <div ng-if="vm.signupSuccess">
+                    <div class="text-muted text-left notify-text text-justify margin-top-80">
+                        You have successfully registered for a Zoom Errands account! 
+                        Please check your email and click on the link to complete your registration.
+                    </div>
+                    <div class="text-muted text-left notify-text margin-vertical-32">
+                        Thank you,
+                    </div>
+                    <div class="text-brand text-left margin-bottom-100">
+                        Zoom Errands, Inc.
+                    </div>
+                </div>    
             </div>
         </div>        
     </div>
