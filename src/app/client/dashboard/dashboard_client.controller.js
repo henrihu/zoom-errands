@@ -8,11 +8,12 @@
         //.directive('eventCalendar', eventCalendarDirective);
 
     /** @ngInject */
-    DashboardClientController.$inject = ['$anchorScroll', '$location', '$log', '$scope', 'toastr', 'Restangular', 'FileUploader', 'API_URL', '$auth'];
-    function DashboardClientController($anchorScroll, $location, $log, $scope, toastr, Restangular, FileUploader, API_URL, $auth)
+    DashboardClientController.$inject = ['$timeout', '$state', '$anchorScroll', '$location', '$log', '$scope', 'toastr', 'Restangular', 'FileUploader', 'API_URL', '$auth'];
+    function DashboardClientController($timeout, $state, $anchorScroll, $location, $log, $scope, toastr, Restangular, FileUploader, API_URL, $auth)
     {
         var vm = this; 
         vm.submitErrand = submitErrand; 
+        vm.submitted = false;
         vm.errand = {}; 
         vm.errand.contact = $scope.user.phone1;
         vm.sbConfig = {
@@ -119,6 +120,11 @@
           }
         ];
 
+        vm.initSubmit = function() {
+            vm.submitted = false;
+            
+        }
+
         vm.gotoAnchor = function(id) {
             
             $log.log(id);
@@ -169,7 +175,9 @@
                     // $log.log(data);
                     vm.uploader.url = API_URL + '/client/tasks/' + data.id + '/upload'
                     vm.uploader.uploadAll();
-                    toastr.success('Your task ' + data.title + ' has been accepted.', 'Accept!');
+                    // toastr.success('Your task ' + data.title + ' has been accepted.', 'Accept!');
+                    vm.submitted = true;
+                    $timeout(vm.submitFalse, 12000);
                     // $state.go('app.client.myerrand');
                 }, function(data) {
                     $log.log(data);
@@ -177,8 +185,11 @@
                 });
             }else {
                 toastr.warning('Please input address exatly');           
-            }
-            
+            }            
+        }
+
+        vm.submitFalse = function() {
+            vm.submitted = false;
         }
 
         vm.slickOnInit = function(){

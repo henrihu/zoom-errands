@@ -7,8 +7,8 @@
         .controller('MyerrandClientController', MyerrandClientController);
 
     /** @ngInject */
-    MyerrandClientController.$inject = ['$scope', 'Restangular', 'toastr', '$log'];
-    function MyerrandClientController($scope, Restangular, toastr, $log)
+    MyerrandClientController.$inject = ['$scope', 'Restangular', 'toastr'];
+    function MyerrandClientController($scope, Restangular, toastr)
     {
         var vm = this; 
 
@@ -43,7 +43,6 @@
         {
             Restangular.one('client/tasks/mytasks').get({'limit': vm.limit, 'offset': vm.curPos})
             .then(function(resp) {
-                $log.log(resp);
                 vm.tasks = vm.tasks.concat(resp.tasks);
                 vm.displayedtasks = [].concat(vm.tasks);
                 vm.curPos = vm.curPos + resp.tasks.length;

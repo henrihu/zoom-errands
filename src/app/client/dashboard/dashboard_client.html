@@ -3,7 +3,7 @@
         <div class="row">
         <div class="col-md-8 col-md-push-2">
             <div class="row">
-                <div class="dashboard-title margin-bottom-30">What can we do for you today <span>{{user.fname|capitalize}}</span>?</div>
+                <div class="dashboard-title margin-bottom-30 margin-top-30">What can we do for you today <span>{{user.fname|capitalize}}</span>?</div>
                 <div class="col-sm-12 margin-bottom-20">
                     <div class="row" id="carousel">
                         <slick lazy-load="ondemand" on-init="vm.slickOnInit()" dots=true infinite=true slides-to-show=4 slides-to-scroll=2 responsive="vm.breakpointCards">
@@ -20,84 +20,101 @@
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-12">
-                    <div id="login-form" class="col-sm-12 col-md-12 margin-bottom-40 text-center">
-                        <!-- <div class="logo">
-                            <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
-                        </div> -->
-                        <h2 id="form-anchor" class="errand-details">Enter the details of your errand below</h2>
+                    <div id="login-form" class="col-sm-12 col-md-12 margin-bottom-40 text-center " ng-class="{'submitted-success': vm.submitted}">
+                        <div ng-if="!vm.submitted">
+                            <!-- <div class="logo">
+                                <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
+                            </div> -->
+                            <h2 id="form-anchor" class="errand-details">Enter the details of your errand below</h2>
 
-                        <form ng-submit="vm.submitErrand()" role="form" >
-                            <div id="account-info">
-                                <input ng-model="vm.errand.title" type="text" class="form-control email-input" placeholder="Errand Title" required>
+                            <form ng-submit="vm.submitErrand()" role="form" >
+                                <div id="account-info">
+                                    <input ng-model="vm.errand.title" type="text" class="form-control email-input" placeholder="Errand Title" autocomplete="off" required>
 
-                                <div class="col-xs-12 padding-0 margin-bottom-10">
-                                    <select class="form-control" ng-options="office.id as office.longName for office in vm.zoomoffices" ng-model="vm.errand.zoom_office_id" required>
-                                        <option value="" disabled>Zoom Errands Location</option>
-                                    </select>
-                                </div>
-                                <!-- <datetimepicker data-ng-model="vm.errand.date"></datetimepicker> -->
-                                <div class="">
-                                  <button type="button" class="btn btn-default cal-btn" ng-click="vm.openCalendar($event, prop)"><i class="icon-calendar"></i></button>
-                                  <input type="text" class="form-control date-input" datetime-picker="dd MMM yyyy HH:mm" ng-model="vm.errand.datetime" is-open="vm.isOpen" placeholder="Date of errand" required>
-                                </div>
-                                <input g-places-autocomplete options="vm.autocompleteOptions" ng-model="vm.addr" type="text" class="form-control" placeholder="Starting Address" required>
-
-
-                                <div class="col-xs-12 col-sm-8 padding-0 margin-bottom-10">
-                                    <input ng-model="vm.errand.contact" type="text" class="form-control email-input" placeholder="Contact phone number" ui-us-phone-number required>
-                                </div>
-                                <div class="col-xs-12 col-sm-4 padding-0 margin-bottom-10">
-                                    <select class="form-control type-select" ng-options="type.id as type.name for type in vm.alltypes" ng-model="vm.errand.type_id" required>
-                                        <option value="" disabled>Type</option>
-                                    </select>
-                                </div>
-                                <!-- <ui-select multiple ng-model="vm.errand.types" theme="bootstrap" ng-disabled="disabled">
-                                    <ui-select-match placeholder="Select person...">{{$item.name}}</ui-select-match>
-                                    <ui-select-choices repeat="type.id as type in vm.alltypes | filter:$select.search">
-                                      <div ng-bind-html="type.name | highlight: $select.search"></div>
-                                      <small>
-                                        <span ng-bind-html="type.comment | highlight: $select.search"></span>
-                                      </small>
-                                    </ui-select-choices>
-                                </ui-select> -->
-
-
-                                <textarea ng-model="vm.errand.details" class="form-control textarea"
-                                rows="4" placeholder="Errand Details" required>
-                                    <span class="glyphicon glyphicon-list-alt"></span>
-                                </textarea>
-
-                                <input id="errand-uploader" type="file" ng-show="false" nv-file-select
-                                       uploader="vm.uploader" multiple/>
-                                <a ng-click="vm.triggerFileInput('errandFile')" class="upload-errand">
-                                    <div class="font-size-16 ">
-                                        <p>
-                                            <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
-                                            &nbsp;Upload&nbsp;File&nbsp;&nbsp;
-                                            <span ng-bind="vm.uploader.queue.length"></span>
-                                        </p>
+                                    <div class="col-xs-12 padding-0 margin-bottom-10">
+                                        <select class="form-control" ng-options="office.id as office.longName for office in vm.zoomoffices" ng-model="vm.errand.zoom_office_id" required>
+                                            <option value="" disabled>Zoom Errands Location</option>
+                                        </select>
                                     </div>
+                                    <!-- <datetimepicker data-ng-model="vm.errand.date"></datetimepicker> -->
+                                    <div class="">
+                                      <button type="button" class="btn btn-default cal-btn" ng-click="vm.openCalendar($event, prop)"><i class="icon-calendar"></i></button>
+                                      <input type="text" class="form-control date-input" datetime-picker="dd MMM yyyy HH:mm" ng-model="vm.errand.datetime" is-open="vm.isOpen" placeholder="Date of errand" ng-click="vm.openCalendar($event, prop)" required>
+                                    </div>
+                                    <input g-places-autocomplete options="vm.autocompleteOptions" ng-model="vm.addr" type="text" class="form-control" placeholder="Starting Address" autocomplete="off" required>
 
-                                </a>
 
-                                <!-- <a ng-repeat="img in vm.uploader.queue" href="{{img.uploadUrl}}" class="no-decoration" target="_blank">
-                                  <img class="upload-img" ng-src="{{img.thumbUrl}}">
-                                </a> -->
+                                    <div class="col-xs-12 col-sm-8 padding-0 margin-bottom-10">
+                                        <input ng-model="vm.errand.contact" type="text" class="form-control email-input" placeholder="Contact phone number" ui-us-phone-number autocomplete="off" required>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-4 padding-0 margin-bottom-10">
+                                        <select class="form-control type-select" ng-options="type.id as type.name for type in vm.alltypes" ng-model="vm.errand.type_id" required>
+                                            <option value="" disabled>Type</option>
+                                        </select>
+                                    </div>
+                                    <!-- <ui-select multiple ng-model="vm.errand.types" theme="bootstrap" ng-disabled="disabled">
+                                        <ui-select-match placeholder="Select person...">{{$item.name}}</ui-select-match>
+                                        <ui-select-choices repeat="type.id as type in vm.alltypes | filter:$select.search">
+                                          <div ng-bind-html="type.name | highlight: $select.search"></div>
+                                          <small>
+                                            <span ng-bind-html="type.comment | highlight: $select.search"></span>
+                                          </small>
+                                        </ui-select-choices>
+                                    </ui-select> -->
 
-                                <div class="text-right allow-cb-wrap">
-                                    <input type="checkbox"  ng-model="vm.errand.escrowable" class="gray-font-color">
-                                    Allow access escrow account
+
+                                    <textarea ng-model="vm.errand.details" class="form-control textarea"
+                                    rows="4" placeholder="Errand Details" required>
+                                        <span class="glyphicon glyphicon-list-alt"></span>
+                                    </textarea>
+
+                                    <input id="errand-uploader" type="file" ng-show="false" nv-file-select
+                                           uploader="vm.uploader" multiple/>
+                                    <a ng-click="vm.triggerFileInput('errandFile')" class="upload-errand">
+                                        <div class="font-size-16 ">
+                                            <p>
+                                                <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+                                                &nbsp;Upload&nbsp;File&nbsp;&nbsp;
+                                                <span ng-bind="vm.uploader.queue.length"></span>
+                                            </p>
+                                        </div>
+
+                                    </a>
+
+                                    <!-- <a ng-repeat="img in vm.uploader.queue" href="{{img.uploadUrl}}" class="no-decoration" target="_blank">
+                                      <img class="upload-img" ng-src="{{img.thumbUrl}}">
+                                    </a> -->
+
+                                    <div class="text-right allow-cb-wrap">
+                                        <input type="checkbox"  ng-model="vm.errand.escrowable" class="gray-font-color">
+                                        Allow access escrow account
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-10 col-md-push-1 text-center btn-dashboard-wrap">
-                               <button class="btn btn-dashboard ">Submit</button>
-                            </div>
-                          <!--
-                            <div class=" col-md-6 text-center">
-                               <a class="btn btn-dashboard btn-cancel" ng-click="vm.reset()">Reset</a>
-                            </div>
-                            -->
-                        </form>
+                                <div class="col-md-10 col-md-push-1 text-center btn-dashboard-wrap">
+                                   <button class="btn btn-dashboard ">Submit</button>
+                                </div>
+                              <!--
+                                <div class=" col-md-6 text-center">
+                                   <a class="btn btn-dashboard btn-cancel" ng-click="vm.reset()">Reset</a>
+                                </div>
+                                -->
+                            </form>
+                        </div> <!-- ng-if="false" -->
+                        
+                        <div ng-if="vm.submitted" class="text-left submitted-notification">
+                            <p>Your errand {{vm.errand.title}} has been successfully submitted!</p>
+                            <p>Errand Date: {{vm.errand.datetime|date:'dd MMM yyyy'}}</p>
+                            <p>Errand Time: {{vm.errand.datetime|date:'h:mma'}}</p>
+                            <p>Errand Category: {{vm.alltypes[vm.errand.type_id-1].name}}</p>
+                            <p class="margin-bottom-30">Zoom Errands office: {{vm.zoomoffices[vm.errand.zoom_office_id-1].longName}}</p>
+                            <div class="col-sm-6 ">
+                                <button ng-click="vm.initSubmit()" class="btn btn-success">Post new errand</button>
+                            </div>    
+                               
+                            <div class="col-sm-6">
+                                <button ui-sref="app.client.myerrand" class="btn btn-primary">My errands list</button>
+                            </div>    
+                        </div> <!-- ng-if="false" -->    
                     </div>
                 </div>
 

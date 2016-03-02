@@ -45,23 +45,23 @@
                 <form ng-submit="vm.updateAccount()" role="form" >
                     <div id="account-info">
                         <div class="col-xs-6 fname-input  margin-bottom-10">
-                            <input type="text" class="form-control" ng-model="vm.accountSetting.fname" placeholder="First Name"required>
+                            <input type="text" class="form-control" ng-model="vm.accountSetting.fname" placeholder="First Name" autocomplete="off" required>
                         </div>  
                         <div class="col-xs-6 lname-input  margin-bottom-10">
-                            <input type="text" class="form-control" ng-model="vm.accountSetting.lname" placeholder="Last Name"required>
+                            <input type="text" class="form-control" ng-model="vm.accountSetting.lname" placeholder="Last Name" autocomplete="off" required>
                         </div>
                         <br/>
-                        <input g-places-autocomplete options="vm.autocompleteOptions" ng-model="vm.addr" type="text" class="form-control email-input" placeholder="Address1" required> 
+                        <input g-places-autocomplete options="vm.autocompleteOptions" ng-model="vm.addr" type="text" class="form-control email-input" placeholder="Address1"  autocomplete="off" required> 
                         <div class="col-xs-6 fname-input  margin-bottom-10">
-                            <input ng-model="vm.accountSetting.address2" type="text" class="form-control email-input" placeholder="Address2">
+                            <input ng-model="vm.accountSetting.address2" type="text" class="form-control email-input" placeholder="Address2" autocomplete="off">
                         </div>
                         <div class="col-xs-6 lname-input margin-bottom-10">
                             <select class="form-control" ng-options="office.id as office.longName for office in vm.zoomoffices" ng-model="vm.accountSetting.zoom_office_id" required>
                                 <option value="" disabled>Zoom Location</option>
                             </select>
                         </div>    
-                        <input ng-model="vm.accountSetting.phone1" type="text" class="form-control email-input" placeholder="Telephone Number" ui-us-phone-number required>
-                        <input ng-model="vm.accountSetting.email" type="email" class="form-control email-input" placeholder="E-mail address" required>
+                        <input ng-model="vm.accountSetting.phone1" type="text" class="form-control email-input" placeholder="Telephone Number" ui-us-phone-number autocomplete="off" required>
+                        <input ng-model="vm.accountSetting.email" type="email" class="form-control email-input" placeholder="E-mail address" autocomplete="off" required>
                     </div>
 
                     <div id="aggrement" class="margin-top-10 clearfix">

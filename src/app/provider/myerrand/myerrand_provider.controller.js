@@ -15,23 +15,23 @@
         vm.limit = 7;
         vm.curPos = 0;
 
-        Restangular.all('provider/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})
-        .then(function(tasks) {
-            vm.tasks = tasks;
+        Restangular.all('provider/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})        
+        .then(function(resp) {   
+            vm.tasks = resp.tasks;
             vm.displayedtasks = [].concat(vm.tasks);
-            vm.curPos = tasks.length;
-            // $log.log(vm.displayedtasks);
+            vm.curPos = resp.tasks.length;
+            vm.moredata = resp.moredata;
         });
 
 
         function loadMore()
         {
-            Restangular.all('provider/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})
-            .then(function(tasks) {
-                vm.tasks = vm.tasks.concat(tasks);
+            Restangular.all('provider/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})   
+            .then(function(resp) {
+                vm.tasks = vm.tasks.concat(resp.tasks);
                 vm.displayedtasks = [].concat(vm.tasks);
-                vm.curPos = vm.curPos + tasks.length;
-                // $log.log(vm.displayedtasks);
+                vm.curPos = vm.curPos + resp.tasks.length;
+                vm.moredata = resp.moredata;
             });
         }
 

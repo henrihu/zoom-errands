@@ -15,7 +15,7 @@
         vm.signupSuccess = false;   
         // event handler
         // event: 'auth:registration-email-success'
-        $scope.$on('auth:registration-email-success', function(ev, data) 
+        $scope.$on('auth:registration-email-success', function() 
         {            
             // toastr.success('A registration email was ' + 'sent to ' + data.email + '<br/>' +
             //     '. follow the instructions contained in the ' + 'email to complete registration.');    

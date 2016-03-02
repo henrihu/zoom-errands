@@ -10,8 +10,9 @@
     PurchaseClientController.$inject = ['$rootScope', '$log','$window', '$scope', 'Restangular', 'toastr', '$filter'];
     function PurchaseClientController($rootScope, $log, $window, $scope, Restangular, toastr, $filter)
     {
-        var vm = this;       
+        var vm = this;
 
+        vm.waiting = false;
         vm.hour = 1;
         vm.escrow = 0;
         vm.fee = {percent: 0, cent: 0};        
@@ -21,26 +22,34 @@
         vm.dropBtnText = '1 hour';
         vm.dropPriceText = 32;
         vm.hoursPrice = 32;
+        vm.otherPayment = 0;
 
         Restangular.one('client/escrowhours/fee').get()
         .then(function(data) {
             vm.fee = data.fee;
-            vm.proFee = vm.subtotal*vm.fee.percent*0.01 + vm.fee.cent*0.01;
-            vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01);
+            vm.proFee = vm.escrow*vm.fee.percent*0.01 + vm.fee.cent*0.01;
+            vm.total = vm.subtotal + vm.proFee + vm.otherPayment;
         });
 
         $scope.$watch('vm.hour', function() {
-            vm.subtotal = vm.escrow + vm.hoursPrice;
+            vm.subtotal = vm.escrow + vm.hoursPrice * (1 - vm.couponPercent*0.01);
+            vm.total = vm.subtotal + vm.proFee + vm.otherPayment;
         });
 
         $scope.$watch('vm.escrow', function() {
-            vm.subtotal = vm.escrow + vm.hoursPrice;
+            vm.subtotal = vm.escrow + vm.hoursPrice * (1 - vm.couponPercent*0.01);
+            vm.proFee = vm.escrow*vm.fee.percent*0.01 + vm.fee.cent*0.01;
+            vm.total = vm.subtotal + vm.proFee + vm.otherPayment;
         });
 
-        $scope.$watch('vm.subtotal', function() {
-            vm.proFee = vm.subtotal*vm.fee.percent*0.01 + vm.fee.cent*0.01;
-            vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01);
-        });
+        vm.changeOtherPayment = function() {
+            vm.total = vm.subtotal + vm.proFee + vm.otherPayment;
+        }
+
+        // $scope.$watch('vm.subtotal', function() {
+        //     vm.proFee = vm.subtotal*vm.fee.percent*0.01 + vm.fee.cent*0.01;
+        //     vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01);
+        // });
         
 
         vm.setHours = function(h) {
@@ -80,15 +89,18 @@
                 Restangular.one('client/escrowhours/coupon_check').get({'couponCode': vm.tmpcoupon})
                 .then(function(resp) {
                     vm.couponPercent = resp.percent;
-                    vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01); 
+                    vm.subtotal = vm.escrow + vm.hoursPrice * (1 - vm.couponPercent*0.01);
+                    vm.total = (vm.subtotal + vm.proFee + vm.otherPayment); 
                 }, function(resp) {
                     vm.couponPercent = 0;
-                    vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01); 
+                    vm.subtotal = vm.escrow + vm.hoursPrice * (1 - vm.couponPercent*0.01);
+                    vm.total = (vm.subtotal + vm.proFee +vm.otherPayment); 
                     toastr.warning(resp.data.error);
                 });
             } else {
                 vm.couponPercent = 0;
-                vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01); 
+                vm.subtotal = vm.escrow + vm.hoursPrice * (1 - vm.couponPercent*0.01);
+                vm.total = (vm.subtotal + vm.proFee + vm.otherPayment); 
                 toastr.warning("Please input Coupon code correctly.");
             }
             // vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01);  
@@ -98,18 +110,34 @@
         vm.couponCancel = function() {
             vm.coupon = "";
             vm.couponPercent = 0;
-            vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01); 
+            vm.subtotal = vm.escrow + vm.hoursPrice * (1 - vm.couponPercent*0.01);
+            vm.total = (vm.subtotal + vm.proFee + vm.otherPayment); 
+        }
+
+        vm.cancelSubmit = function() {
+            vm.waiting = false;
+            vm.hour = 0;
+            vm.escrow = 0;
+            vm.couponPercent = 0;
+            vm.coupon = 0;
+            vm.showDropdown = false;
+            vm.dropBtnText = '1 hour';
+            vm.dropPriceText = 32;
+            vm.hoursPrice = 0;
+            vm.otherPayment = 0;
         }
 
         // Stripe Response Handler
         $scope.stripeCallback = function (code, result) {
             if (result.error) {
                 $window.alert('it failed! error: ' + result.error.message);
-            } else {                
+            } else { 
+                vm.waiting = true;               
                 var payload = {stripeEmail: $scope.user.email, stripeToken: result.id, purchaseHour: vm.hour,
-                             purchaseEscrow: vm.escrow, couponCode: vm.coupon};
+                             purchaseEscrow: vm.escrow, couponCode: vm.coupon, otherPayment: vm.otherPayment};
                 Restangular.all('client/escrowhours/charge').post(payload)
                 .then(function(resp) {
+                    vm.waiting = false;
                     toastr.success("Purchase Hour: " + resp.purchaseHour + "hrs" +
                                     "<br/> Fund Escrow: " + $filter("currency")(resp.purchaseEscrow) ,
                                     "You paid " + $filter("currency")(resp.charge.amount*0.01) + " successfully!");
@@ -121,11 +149,14 @@
                         toastr.warning(data.data.alert);
                     });
                 }, function(resp) {
+                    vm.waiting = false;
                     toastr.error(resp.data.error);
                     $log.log(resp);
                 });
             }
         };
+
+
 
     }
 })();

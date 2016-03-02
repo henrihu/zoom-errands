@@ -1,3 +1,6 @@
+<div ng-if="vm.waiting" class="waiting-clock">
+    <img src="/assets/images/icons/bx_loader.gif" alt="Payment operation may take a bit long time." class="waiting-gif">
+</div>
 <div id="purchase-client" class="border-top">
     <div id="login-form-wrapper"  class="container">
         <div class="row">
@@ -134,8 +137,8 @@
 
                         <div class="col-xs-6 padding-left-8">
                             <div class="ph-btn ph-red ph-makepayment">
-                                Make a Payment
-                                <input type="text" class="form-control" value="0.00">
+                                Make a Payment                                
+                                <input class="form-control" ng-model="vm.otherPayment" ng-change="vm.changeOtherPayment()" type="Number" step="0.01" min="0" max="50000">
                             </div>
                         </div>
 
@@ -222,7 +225,12 @@
                                        payments-format="expiry" name="expiry" />
                                 <input class="form-control input-cvc" ng-model="cvc" placeholder="CVC" payments-format="cvc" name="cvc" />
                                 <br/>
-                                <button class="btn btn-primary ph-btn-pay col-xs-8 col-xs-push-2" type="submit" ng-bind="'Pay ' + ((vm.total)|currency) "></button>
+                                <div class="col-sm-6 text-center" >
+                                    <button class="btn btn-primary margin-top-10 " type="submit" ng-bind="'Pay ' + ((vm.total)|currency) "></button>
+                                </div>
+                                <div class="col-sm-6 text-center">
+                                    <a class="btn btn-info margin-top-10 padding-horizontal-25" type="submit" ng-click="vm.cancelSubmit()">Cancel</a>
+                                </div>
 
                             </form>
                         </div>
