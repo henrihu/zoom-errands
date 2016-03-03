@@ -135,15 +135,15 @@
         }
 
         vm.gotoAnchor = function(id) {
-            
-            $log.log(id);
+             
             if ($location.hash() !== 'form-anchor') {
                 $location.hash('form-anchor');
             } else {
                 $anchorScroll();
             }
 
-            vm.errand.type_id = vm.alltypes[id].id;          
+            vm.errand.type_id = vm.alltypes[id].id; 
+            vm.titleFocused = true;         
         };
         
 

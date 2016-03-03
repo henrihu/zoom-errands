@@ -29,7 +29,7 @@
 
                             <form ng-submit="vm.submitErrand()" role="form" >
                                 <div id="account-info">
-                                    <input ng-model="vm.errand.title" type="text" class="form-control email-input" placeholder="Errand Title" autocomplete="off" required>
+                                    <input ng-model="vm.errand.title" type="text" class="form-control email-input" placeholder="Errand Title" autocomplete="off" focus-if="vm.titleFocused" required>
 
                                     <div class="col-sm-4 padding-0 margin-bottom-10">
                                         <select class="form-control" ng-options="office.id as office.longName for office in vm.zoomoffices" ng-model="vm.errand.zoom_office_id" required>
