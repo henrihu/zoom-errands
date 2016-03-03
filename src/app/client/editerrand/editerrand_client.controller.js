@@ -8,8 +8,9 @@
 
     /** @ngInject */
     EditerrandClientController.$inject = ['$log', '$scope', 'Restangular', '$stateParams', 'toastr', 
-                'FileUploader', '$auth', 'API_URL'];
-    function EditerrandClientController($log, $scope, Restangular, $stateParams, toastr, FileUploader, $auth, API_URL)
+                'FileUploader', '$auth', 'API_URL', '$timeout', '$state'];
+    function EditerrandClientController($log, $scope, Restangular, $stateParams, toastr, 
+        FileUploader, $auth, API_URL, $timeout, $state)
     {
         var vm = this; 
         vm.updateErrand = updateErrand; 
@@ -92,6 +93,8 @@
                 vm.uploader.url = API_URL + '/client/tasks/' + data.id + '/upload'
                 vm.uploader.uploadAll();
                 toastr.success('Your task \"' + data.title + '\" has been updated.', 'Errand Updated!');
+                // $timeout(function() {$state.go('app.client.myerrand');}, 3000);
+                $state.go('app.client.myerrand');
             }, function(data) {
                 toastr.warning(data.data.alert);
             });
