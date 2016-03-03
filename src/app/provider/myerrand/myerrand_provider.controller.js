@@ -15,7 +15,7 @@
         vm.limit = 7;
         vm.curPos = 0;
 
-        Restangular.all('provider/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})        
+        Restangular.one('provider/tasks/mytasks').get({'limit': vm.limit, 'offset': vm.curPos})        
         .then(function(resp) {   
             vm.tasks = resp.tasks;
             vm.displayedtasks = [].concat(vm.tasks);
@@ -26,7 +26,7 @@
 
         function loadMore()
         {
-            Restangular.all('provider/tasks/mytasks').getList({'limit': vm.limit, 'offset': vm.curPos})   
+            Restangular.one('provider/tasks/mytasks').get({'limit': vm.limit, 'offset': vm.curPos})   
             .then(function(resp) {
                 vm.tasks = vm.tasks.concat(resp.tasks);
                 vm.displayedtasks = [].concat(vm.tasks);

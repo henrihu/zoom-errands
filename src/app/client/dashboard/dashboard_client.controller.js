@@ -14,6 +14,7 @@
         var vm = this; 
         vm.submitErrand = submitErrand; 
         vm.submitted = false;
+        vm.invalidAddress = false;
         vm.errand = {}; 
         vm.errand.contact = $scope.user.phone1;
         vm.sbConfig = {
@@ -125,6 +126,14 @@
             
         }
 
+        vm.blurAddress = function() {
+            if ((vm.addr) && (vm.addr.types)) {
+                vm.invalidAddress = false;    
+            } else {
+                vm.invalidAddress = true;        
+            }
+        }
+
         vm.gotoAnchor = function(id) {
             
             $log.log(id);
@@ -136,6 +145,7 @@
 
             vm.errand.type_id = vm.alltypes[id].id;          
         };
+        
 
         vm.openCalendar = function(e) { 
             e.preventDefault();
@@ -152,7 +162,7 @@
 
         function submitErrand() {            
             
-            if (vm.addr.types) {
+            if ((vm.addr) && (vm.addr.types)) {
                 var p = vm.addr;
                 for (var i = 0; i < p.address_components.length; i++) {
                   var addressType = p.address_components[i].types[0];
@@ -184,7 +194,9 @@
                     toastr.warning(data.data.alert);
                 });
             }else {
-                toastr.warning('Please input address exatly');           
+                // toastr.warning('Please input address exatly');  
+                vm.invalidAddress = false;
+                $timeout(function() {vm.invalidAddress = true}, 600);            
             }            
         }
 

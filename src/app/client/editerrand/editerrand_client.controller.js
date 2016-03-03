@@ -72,7 +72,7 @@
 
 
         function updateErrand() {
-            if (vm.addr.types) {                                
+            if ((vm.addr) && (vm.addr.types)) {                                
                 vm.errand.address = vm.addr.formatted_address;
                 vm.errand.addrlat = vm.addr.geometry.location.lat();
                 vm.errand.addrlng = vm.addr.geometry.location.lng();    

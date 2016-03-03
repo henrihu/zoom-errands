@@ -26,7 +26,7 @@
                         <label for="errand-datetime" class="col-sm-3 control-label">Errand Date/Time</label>
                         <div class="col-sm-8">
                             <p class="input-group margin-bottom-0">
-                                <input type="text" class="form-control" datetime-picker="dd MMM yyyy HH:mm" ng-model="vm.errand.datetime" is-open="vm.isOpen" placeholder="dd MMM yyyy HH:mm" required>
+                                <input type="text" class="form-control datetime-input" datetime-picker="MMMM dd, yyyy HH:mm" ng-model="vm.errand.datetime" is-open="vm.isOpen" ng-click="vm.openCalendar($event, prop)" placeholder="Date of errand" readonly required>
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-default" ng-click="vm.openCalendar($event, prop)">
                                     <i class="glyphicon glyphicon-calendar"></i>
@@ -40,7 +40,7 @@
                     <div class="form-group">
                         <label for="errand-address" class="col-sm-3 control-label">Starting Address</label>
                         <div class="col-sm-8">
-                            <input g-places-autocomplete options="vm.autocompleteOptions" ng-model="vm.addr" type="text" class="form-control" placeholder="Starting Address" required> 
+                            <input g-places-autocomplete force-selection="true" options="vm.autocompleteOptions" ng-model="vm.addr" type="text" class="form-control" placeholder="Starting Address" required> 
                         </div>
                     </div>
 
@@ -108,10 +108,10 @@
                     </div>  
 
                     <div class="form-group">
-                        <div class="col-sm-offset-3 col-sm-4">
+                        <div class="col-sm-offset-3 col-sm-4 col-xs-6">
                             <button class="btn btn-primary">Update Errand</button>
                         </div>    
-                        <div class="col-sm-5 ">
+                        <div class="col-sm-5 col-xs-6">
                             <a class="btn btn-danger padding-horizontal-30" ui-sref="app.client.myerrand">Back</a>
                         </div>
                     </div>            
