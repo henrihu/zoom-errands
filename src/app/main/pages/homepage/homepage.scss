@@ -243,6 +243,10 @@ section {
     .team-image {
         display: inline-block;
     }
+    .avatar {
+        width: 70%;
+        height: auto;
+    }
     .slick-prev::before, .slick-next::before {
       opacity: 0;
       color: transparent;

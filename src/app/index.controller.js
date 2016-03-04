@@ -26,6 +26,12 @@
             $rootScope.eh = data.eh ? data.eh : $rootScope.eh;
         });
 
+        // if ($state.is('app.pages_homepage')) {
+        //     vm.fixedHeader = true;
+        // } else {
+        //     vm.fixedHeader = false;
+        // }
+
         //////////
 
         // $scope.$watch('vm.availableStatus', function() {            
@@ -33,6 +39,8 @@
 
         //     Restangular.one('provider/setting').put(payload1);    
         // });
+
+
 
        
     }

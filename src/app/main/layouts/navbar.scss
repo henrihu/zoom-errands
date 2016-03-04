@@ -1,5 +1,12 @@
 @import "ze_layout";
 
+#header-nav.auto-fixed-header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    margin-bottom: 100px;
+}
+
 .navbar-default {
     
     // position: absolute;

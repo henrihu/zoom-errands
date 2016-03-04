@@ -13,7 +13,7 @@
         
         var vm = this;
 
-        // vm.homepage = true;
+        vm.homepage = true;
         vm.paddingClass = 'navbar-padding'
         // Data
         vm.carousel = [
@@ -150,25 +150,10 @@
             'content': 'Service Provider' 
           },
           {
-            'image': 'assets/images/zoom/provider1.png',
+            'image': 'assets/images/zoom/provider5.jpg',
             'title': 'Andrea',
             'content': 'Service Provider' 
-          },
-          {
-            'image': 'assets/images/zoom/provider2.png',
-            'title': 'Emily',
-            'content': 'Service Provider' 
-          },
-          {
-            'image': 'assets/images/zoom/provider3.png',
-            'title': 'Matt',
-            'content': 'Service Provider' 
-          },
-          {
-            'image': 'assets/images/zoom/provider4.png',
-            'title': 'Kobi',
-            'content': 'Service Provider' 
-          }         
+          }       
         ];
 
         vm.logos1 = [
