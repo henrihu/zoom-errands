@@ -38,14 +38,14 @@
               4. This Agreement and its validity, construction and effect shall be governed by the laws of the
               state of California.
             </p>
-            <div ng-show="!!vm.agreement.a1099">
-              <h2>AGREED AND ACCEPTED BY:</h2>
+            <div ng-show="!!vm.agreement.a1099" class="margin-top-25">
+              <h4>AGREED AND ACCEPTED BY:</h2>
               <p>Date: {{ vm.agreement.a1099 }} </p>
               <p>By  {{ vm.fullName }} </p>
               <p></p>
             </div>
         </div>
-        <div class="md-actions" layout="row" >
+        <div class="md-actions margin-top-25" layout="row" >
             <label ng-show="!vm.agreement.a1099">Full Name:&nbsp;&nbsp;</label>
             <input ng-show="!vm.agreement.a1099" ng-model="vm.fullName" type="text" placeholder="James Smith" >
             <span flex></span>

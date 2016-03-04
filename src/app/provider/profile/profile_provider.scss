@@ -211,7 +211,18 @@ html {
 .ngdialog.ngdialog-theme-default .ngdialog-content {
     width :50% ;
     margin-bottom: 100px;
+    background-color: white;
 }
+
+.ngdialog-content {
+
+  .agreement-contents {
+    p {
+      text-align: justify;
+    }
+  }  
+}
+
 
 // RESPONSIVE
 @media screen and (max-width: $layout-breakpoint-sm) {

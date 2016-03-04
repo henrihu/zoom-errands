@@ -38,14 +38,14 @@
           4. This Agreement and its validity, construction and effect shall be governed by the laws of the
           state of California.
         </p>
-        <div ng-show="!!vm.agreement.confidentiality">
-          <h2>AGREED AND ACCEPTED BY:</h2>
+        <div ng-show="!!vm.agreement.confidentiality"  class="margin-top-25">
+          <h4>AGREED AND ACCEPTED BY:</h2>
           <p>Date: {{ vm.agreement.confidentiality }} </p>
           <p>By  {{ vm.fullName }} </p>
           <p></p>
         </div>
     </div>
-    <div class="md-actions" layout="row" >
+    <div class="md-actions margin-top-25" layout="row" >
         <label ng-show="!vm.agreement.confidentiality">Full Name:&nbsp;&nbsp;</label>
         <input ng-show="!vm.agreement.confidentiality" ng-model="vm.fullName" type="text" placeholder="James Smith" >
         <span flex></span>
