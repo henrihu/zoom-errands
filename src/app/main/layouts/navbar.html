@@ -142,19 +142,22 @@
    </div> 
 </div>
 
-<!-- <div class="available-toggle" ng-if="user.signedIn && user.configName=='provider'">
+<div class="available-toggle" ng-if="user.signedIn && user.configName=='provider'">
     <div class="container">
         <div class"row">
             <div class="col-sm-12 text-center">    
                 <toggle-switch 
-                    ng-model="vm.availableStatus"
+                    ng-model="vm.available"
                     on-label="available"
-                    off-label="unavailable">
-                <toggle-switch>           
+                    off-label="unavailable"
+                    ng-click="vm.clickToggle()"
+                    class="switch-success switch-mini">
+                </toggle-switch>              
             </div>  
         </div>
     </div> 
-</div> -->
 </div>
+</div>
+
 
 

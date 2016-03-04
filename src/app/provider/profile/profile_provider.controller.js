@@ -296,11 +296,13 @@
             Restangular.one('provider/types').put(payload);
             
             //update notification setting
-            var payload1 = {sms: vm.agreement.sms, email: vm.agreement.email, available: vm.agreement.available};
+            var payload1 = {sms: vm.agreement.sms, email: vm.agreement.email};
 
             Restangular.one('provider/setting').put(payload1);                
              
         }
+
+
 
     }
 

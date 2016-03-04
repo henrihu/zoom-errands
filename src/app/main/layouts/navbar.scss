@@ -213,12 +213,34 @@
         // margin-bottom: 4px;
     }
 
-    // .available-toggle{
-    //     position: relative;
-    //     top: -40px;
-    //     left: -120px;
-    //     height: 0px;
-    //     // margin-bottom: 4px;
-    // }
+    .available-toggle{
+        position: relative;
+        top: -40px;
+        left: -120px;
+        height: 0px;
+        // margin-bottom: 4px;
+        .toggle-switch{
+            outline: none;
+            border: 1px solid gray;
+            border-radius: 10px;  
+            // max-height: 40px;  
+            .switch-left {
+                background: #5cb85c;
+                // width: 47%;
+            }
+            .switch-right {
+                // width: 47%;
+            }
+            .knob {
+                // width: 6%;
+            }
+            // span {
+            //     padding: 2px;
+            // }
+            // div {
+            //     width: 150%;
+            // }
+        }
+    }
      
 } 

@@ -16,7 +16,7 @@ html {
         #login-form {
             background: transparent;
             // max-width: 650px;
-            padding: 40px 60px;
+            padding: 20px 60px 40px;
             // margin-top: 50px;
             text-align: center;
             // border: 1px solid rgba(200,200,200, 0.7);
@@ -69,8 +69,8 @@ html {
             .title {
                 font-family: 'LatoWebLight';
                 font-size: 36px;
-                margin-bottom: 62px;
-                margin-top: 17px;
+                margin-bottom: 52px;
+                // margin-top: 17px;
             }
 
             .btn {
@@ -176,27 +176,8 @@ html {
                   }
                 }
 
-                .toggle-switch{
-                    border: 1px solid gray;
-                    border-radius: 10px;  
-                    // max-height: 40px;  
-                    .switch-left {
-                        background: #4cae4c;
-                        width: 47%;
-                    }
-                    .switch-right {
-                        width: 47%;
-                    }
-                    .knob {
-                        width: 6%;
-                    }
-                    span {
-                        padding: 2px;
-                    }
-                    div {
-                        width: 150%;
-                    }
-                }
+
+
             } 
 
             #aggrement {

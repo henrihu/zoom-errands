@@ -26,6 +26,17 @@
             $rootScope.eh = data.eh ? data.eh : $rootScope.eh;
         });
 
+        Restangular.one('provider/setting').get()
+        .then(function(resp) {
+            vm.available = resp.available;
+        });
+
+        vm.clickToggle = function() {
+            //update notification setting
+            var payload = {available: vm.available};
+            Restangular.one('provider/setting').put(payload);      
+        }
+
         // if ($state.is('app.pages_homepage')) {
         //     vm.fixedHeader = true;
         // } else {
