@@ -13,7 +13,7 @@
         var vm = this;
 
         vm.waiting = false;
-        vm.hour = 1;
+        vm.hour = 0;
         vm.escrow = 0;
         vm.fee = {percent: 0, cent: 0};        
         vm.couponPercent = 0;
