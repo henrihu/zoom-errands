@@ -20,8 +20,8 @@
         vm.coupon = 0;
         vm.showDropdown = false;
         vm.dropBtnText = '1 hour';
-        vm.dropPriceText = 32;
-        vm.hoursPrice = 32;
+        vm.dropPriceText = 0;
+        vm.hoursPrice = 0;
         vm.otherPayment = 0;
 
         Restangular.one('client/escrowhours/fee').get()
@@ -58,9 +58,9 @@
             
             if (h < 5 && h >=1) {
                 vm.dropBtnText = h + ' ' + (h == 1 ? 'hour' : 'hours');
-                vm.dropPriceText = vm.calcPrice(vm.hour)
-                vm.showDropdown = false;
+                vm.dropPriceText = vm.calcPrice(vm.hour)                
             }
+            vm.showDropdown = false;
         }
 
         vm.calcPrice = function(h) {

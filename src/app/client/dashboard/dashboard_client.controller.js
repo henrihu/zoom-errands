@@ -17,6 +17,7 @@
         vm.invalidAddress = false;
         vm.errand = {}; 
         vm.errand.contact = $scope.user.phone1;
+        vm.errand.zoom_office_id = $scope.user.zoom_office_id;
         vm.sbConfig = {
             autoHideScrollbar: false,
             advanced:{
@@ -121,11 +122,7 @@
           }
         ];
 
-        vm.initSubmit = function() {
-            vm.submitted = false;
-            
-        }
-
+        
         vm.blurAddress = function() {
             if ((vm.addr) && (vm.addr.types)) {
                 vm.invalidAddress = false;    
@@ -187,7 +184,7 @@
                     vm.uploader.uploadAll();
                     // toastr.success('Your task ' + data.title + ' has been accepted.', 'Accept!');
                     vm.submitted = true;
-                    $timeout(vm.submitFalse, 12000);
+                    $timeout(vm.submitFalse, 12000);                    
                     // $state.go('app.client.myerrand');
                 }, function(data) {
                     $log.log(data);
@@ -201,7 +198,13 @@
         }
 
         vm.submitFalse = function() {
-            vm.submitted = false;
+            var contact = vm.errand.contact;
+            var zoom_office_id = vm.errand.zoom_office_id;
+            vm.submitted = false;            
+            vm.errand = {};
+            vm.errand.zoom_office_id = zoom_office_id;
+            vm.errand.contact = contact;
+            vm.addr = {};       
         }
 
         vm.slickOnInit = function(){
