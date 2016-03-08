@@ -134,21 +134,46 @@ header {
     }
 }
 
-@media(min-width:768px) {
+@media(min-width: 768px) {
     header {
         background-attachment: scroll;
-        background-image: url("/assets/images/zoom/header1.jpg");
+        background-image: url("/assets/images/zoom/header2.jpg");
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: center bottom;
         background-size: 100% auto;
+        height: auto;
         .intro-text {
-            padding-top: 50px;
+            padding-top: 100px;
+            padding-top: 18vh;
             padding-bottom: 200px;
+            padding-bottom: 30vh;
             .intro-heading {
                 font-weight: 700;
                 font-size: 42px;
                 line-height: 50px;
-                margin-bottom: 15px;
+                margin-bottom: 30px;
+            }
+            .intro-lead-in {
+                font-size: 21px;
+                line-height: 22px;
+                // margin-bottom: 75px;
+            }
+            
+        }
+    }
+}
+
+@media(min-width: 1400px) {
+    header {        
+        height: calc(80vh - 100px);
+        .intro-text {
+            padding-top: 100px;            
+            padding-bottom: 200px;            
+            .intro-heading {
+                font-weight: 700;
+                font-size: 42px;
+                line-height: 50px;
+                margin-bottom: 30px;
             }
             .intro-lead-in {
                 font-size: 21px;
@@ -180,7 +205,7 @@ section {
 
 @media(min-width:768px) {
     section {
-        padding: 70px 0;
+        // padding: 0px 0;
     }
 }
 
