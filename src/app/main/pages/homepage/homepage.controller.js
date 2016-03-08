@@ -71,13 +71,13 @@
         vm.testimonials = [
           {
             'image': 'assets/images/zoom/testimonial1.png',
-            'title': 'Melissa Riey',
+            'title': 'Melissa Riley',
             'commenter': 'General Manager, Le Pain Quotidien',
             'content': '\"I run the Calabasas location of Le Pain Quotidien, and I use ' + 
                       'Zoom Errands for all of my catering deliveries. I\'ve tried serveral ' + 
                       'other services, and I had problems with them all... until I found ' +
                       'Zoom Errands. They are timely and efficient, and they take great care of ' +
-                      'our beautiful, organic food. I can always count on Zoom.\"' 
+                      'our beautiful, organic food. I can always count on Zoom Errands.\"' 
           },
           {
             'image': 'assets/images/zoom/testimonial2.png',
@@ -150,8 +150,8 @@
             'content': 'Service Provider' 
           },
           {
-            'image': 'assets/images/zoom/provider5.jpg',
-            'title': 'Andrea',
+            'image': 'assets/images/zoom/jodi.jpg',
+            'title': 'Jodi',
             'content': 'Service Provider' 
           }       
         ];

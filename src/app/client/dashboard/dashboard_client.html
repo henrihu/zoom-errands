@@ -101,7 +101,7 @@
                         </div> <!-- ng-if="false" -->
                         
                         <div ng-if="vm.submitted" class="text-left submitted-notification">
-                            <p>Your errand {{vm.errand.title}} has been successfully submitted!</p>
+                            <p>Your errand <b>{{vm.errand.title}}</b> has been successfully submitted!</p>
                             <p>Errand Date: {{vm.errand.datetime|date:'dd MMM yyyy'}}</p>
                             <p>Errand Time: {{vm.errand.datetime|date:'h:mma'}}</p>
                             <p>Errand Category: {{vm.alltypes[vm.errand.type_id-1].name}}</p>

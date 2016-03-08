@@ -126,7 +126,9 @@
                     cursor: pointer;                    
                 }
                 &.image-padding {
-                    padding-top: 8px;
+                    padding-top: 7px;
+                    padding-left: 10px;
+                    padding-right: 6px; 
                 }
                 .avatar-wrapper {
                     display: inline;

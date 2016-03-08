@@ -48,7 +48,8 @@ $border-style: 1px solid rgba(0, 0, 0, 0.12);
 
 .border-top,
 .bt {
-    border-top: $border-style;
+    // border-top: $border-style;
+    border-top: none;
 }
 
 .border-right,

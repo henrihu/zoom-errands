@@ -17,7 +17,7 @@
         $rootScope.eh = {
             hoursavail: 0,
             hoursused: 0,
-            escrowavail:    0,
+            escrowavail: 0,
             escrowused: 0
         };
 
