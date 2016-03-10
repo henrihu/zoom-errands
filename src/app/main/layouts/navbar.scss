@@ -16,7 +16,7 @@
     padding: 10px 20px 10px 20px;
 
     &.navbar-padding {
-        padding-top: 30px;
+        padding-top: 15px;
     }
 
     .logo-image{
@@ -126,7 +126,7 @@
                     cursor: pointer;                    
                 }
                 &.image-padding {
-                    padding-top: 7px;
+                    padding-top: 9px;
                     padding-left: 10px;
                     padding-right: 6px; 
                 }
@@ -138,6 +138,9 @@
                 }
                 &.padding-top-17 {
                     padding-top: 17px;
+                }
+                &.padding-top-16 {
+                    padding-top: 16px;
                 }
             }
             .phone-line {
@@ -166,6 +169,36 @@
     border-radius: 4px;
     padding: 4px;
     margin-top: 4px;
+}
+
+.available-toggle{    
+    .toggle-switch{
+        outline: none;
+        border: 1px solid gray;
+        font-weight: bold;
+        // border-radius: 10px;  
+        // max-height: 40px;  
+        .switch-left {
+            
+            // width: 47%;
+        }
+        .switch-right {
+            background: red;
+            color: white;
+        }
+        .knob {
+            display: none;
+        }
+        .switch-off {
+            left: -100%
+        }
+        div {
+            width: 200%;
+        }
+        span {
+            width: 50%;
+        }
+    }
 }
 
 
@@ -219,30 +252,7 @@
         position: relative;
         top: -40px;
         left: -120px;
-        height: 0px;
-        // margin-bottom: 4px;
-        .toggle-switch{
-            outline: none;
-            border: 1px solid gray;
-            border-radius: 10px;  
-            // max-height: 40px;  
-            .switch-left {
-                background: #5cb85c;
-                // width: 47%;
-            }
-            .switch-right {
-                // width: 47%;
-            }
-            .knob {
-                // width: 6%;
-            }
-            // span {
-            //     padding: 2px;
-            // }
-            // div {
-            //     width: 150%;
-            // }
-        }
+        height: 0px;        
     }
      
 } 

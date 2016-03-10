@@ -27,7 +27,7 @@
             vm.hoursPrice = 0;
             vm.otherPayment = 0;
             vm.payDisabled = false;
-        }; 
+        } 
               
 
         Restangular.one('client/escrowhours/fee').get()
