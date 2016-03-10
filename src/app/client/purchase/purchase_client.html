@@ -225,10 +225,10 @@
                                        payments-format="expiry" name="expiry" />
                                 <input class="form-control input-cvc" ng-model="cvc" placeholder="CVC" payments-format="cvc" name="cvc" />
                                 <br/>
-                                <div class="col-sm-6 text-center" >
-                                    <button class="btn btn-primary margin-top-10 " type="submit" ng-bind="'Pay ' + ((vm.total)|currency) "></button>
+                                <div class="col-xs-6 text-center" >
+                                    <button class="btn btn-primary margin-top-10 " type="submit" ng-bind="'Pay ' + ((vm.total)|currency) " ng-disabled="vm.payDisabled" ng-click="vm.payDisabled = true"></button>
                                 </div>
-                                <div class="col-sm-6 text-center">
+                                <div class="col-xs-6 text-center">
                                     <a class="btn btn-info margin-top-10 padding-horizontal-25" type="submit" ng-click="vm.cancelSubmit()">Cancel</a>
                                 </div>
 

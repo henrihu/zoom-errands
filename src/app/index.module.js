@@ -23,6 +23,7 @@
 			'angularPayments',
 			'ui.utils.masks',
 			'toggle-switch',
+			'infinite-scroll',
 
 			// Core
 			// 'app.core',

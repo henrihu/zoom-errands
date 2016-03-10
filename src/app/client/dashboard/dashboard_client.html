@@ -130,56 +130,23 @@
                             <div class="notifications">
                                 <h2 class="notifications-title">Notifications</h2>
 
-                                <div class="n-scrollbars" ng-scrollbars ng-scrollbars-config="sbConfig">
-                                    <div class="notification">
-                                        <div class="n-avatar"><img src="/assets/images/avatars/n-avatar.png" alt=""/></div>
-                                        <div class="n-time">7:24 PM</div>
-                                        <div class="n-inner">
-                                            <h3 class="n-title">Yoshita</h3>
-                                            <p class="n-text">I’ve taken the dog on walk in the nearest park.</p>
+                                <div class="notifications-scroll">
+                                    <div class="scroller-companies" infinite-scroll="vm.myPagingFunction()" infinite-scroll-parent="true" infinite-scroll-immediate-check="false" >
+                                        <div ng-repeat="notification in vm.notifications" class="notification">
+                                            <div class="n-avatar">
+                                                <!-- <img class="n-avatar-image" src="/assets/images/avatars/n-avatar.png" alt="{{notification.notify_type}}"/> -->
+                                                <img class="n-avatar-image" ng-src="/assets/images/icons/notification_{{notification.notify_type}}.png" alt="{{notification.notify_type}}"/>
+                                            </div>
+                                            
+                                            <div class="n-inner">
+                                                <h3 class="n-title" ng-bind="notification.name"></h3>
+                                                <div class="n-time" ng-bind="notification.updated_at|date:'MM/dd, h:mma'"></div>
+                                                <p class="n-text" ng-bind="notification.text"></p>
+                                            </div>
+                                            <div class="clearfix"></div>
                                         </div>
-                                        <div class="clearfix"></div>
-                                    </div>
 
-                                    <div class="notification">
-                                        <div class="n-avatar"><img src="/assets/images/avatars/n-avatar.png" alt=""/></div>
-                                        <div class="n-time">7:24 PM</div>
-                                        <div class="n-inner">
-                                            <h3 class="n-title">Yoshita</h3>
-                                            <p class="n-text">I’ve taken the dog on walk in the nearest park.</p>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
-                                    <div class="notification">
-                                        <div class="n-avatar"><img src="/assets/images/avatars/n-avatar.png" alt=""/></div>
-                                        <div class="n-time">7:24 PM</div>
-                                        <div class="n-inner">
-                                            <h3 class="n-title">Yoshita</h3>
-                                            <p class="n-text">I’ve taken the dog on walk in the nearest park.</p>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
-                                    <div class="notification">
-                                        <div class="n-avatar"><img src="/assets/images/avatars/n-avatar.png" alt=""/></div>
-                                        <div class="n-time">7:24 PM</div>
-                                        <div class="n-inner">
-                                            <h3 class="n-title">Yoshita</h3>
-                                            <p class="n-text">I’ve taken the dog on walk in the nearest park.</p>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-
-                                    <div class="notification">
-                                        <div class="n-avatar"><img src="/assets/images/avatars/n-avatar.png" alt=""/></div>
-                                        <div class="n-time">7:24 PM</div>
-                                        <div class="n-inner">
-                                            <h3 class="n-title">Yoshita</h3>
-                                            <p class="n-text">I’ve taken the dog on walk in the nearest park.</p>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
+                                    </div>    
                                 </div>
 
                             </div>

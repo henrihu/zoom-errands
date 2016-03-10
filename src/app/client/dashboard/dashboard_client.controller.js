@@ -18,6 +18,10 @@
         vm.errand = {}; 
         vm.errand.contact = $scope.user.phone1;
         vm.errand.zoom_office_id = $scope.user.zoom_office_id;
+        vm.notifications = [];
+        vm.busy = false;
+        vm.after = '';
+        
         vm.sbConfig = {
             autoHideScrollbar: false,
             advanced:{
@@ -77,7 +81,13 @@
             vm.zoomoffices = offices;
         });
 
-        
+        Restangular.one('client/my_notification').get({'after': vm.after, 'limit': 8})
+        .then(function(resp) {                
+            vm.notifications = vm.notifications.concat(resp.notifications);                
+            vm.after = vm.notifications[vm.notifications.length - 1].id;
+            $log.log(vm.after);
+            vm.busy = false;
+        });  
 
         vm.services = [
           {
@@ -131,8 +141,7 @@
             }
         }
 
-        vm.gotoAnchor = function(id) {
-             
+        vm.gotoAnchor = function(id) {             
             if ($location.hash() !== 'form-anchor') {
                 $location.hash('form-anchor');
             } else {
@@ -195,6 +204,22 @@
                 vm.invalidAddress = false;
                 $timeout(function() {vm.invalidAddress = true}, 600);            
             }            
+        }
+
+        vm.myPagingFunction = function() {            
+            $log.log('asfdasd');
+            if (vm.busy) return;
+            vm.busy = true;            
+            $log.log('starting');
+            var limit = 2;
+
+            Restangular.one('client/my_notification').get({'after': vm.after, 'limit': limit})
+            .then(function(resp) {                
+                vm.notifications = vm.notifications.concat(resp.notifications);                
+                vm.after = vm.notifications[vm.notifications.length - 1].id;
+                $log.log(vm.after);
+                vm.busy = false;
+            });                       
         }
 
         vm.submitFalse = function() {

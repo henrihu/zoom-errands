@@ -5,6 +5,10 @@
     .module('zeyogen')
     .config(config);
 
+  // you might call this after your module initalization
+  angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250)
+        
+
   /** @ngInject */
   config.$inject = ['RestangularProvider', 'API_URL', '$authProvider', '$logProvider', 'toastrConfig', '$windowProvider'];
   function config(RestangularProvider, API_URL, $authProvider, $logProvider, toastrConfig, $windowProvider) {

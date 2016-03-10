@@ -12,17 +12,23 @@
     {
         var vm = this;
 
-        vm.waiting = false;
-        vm.hour = 0;
-        vm.escrow = 0;
-        vm.fee = {percent: 0, cent: 0};        
-        vm.couponPercent = 0;
-        vm.coupon = 0;
-        vm.showDropdown = false;
-        vm.dropBtnText = '1 hour';
-        vm.dropPriceText = 0;
-        vm.hoursPrice = 0;
-        vm.otherPayment = 0;
+        init();
+
+        function init() {
+            vm.waiting = false;
+            vm.hour = 0;
+            vm.escrow = 0;
+            vm.fee = {percent: 0, cent: 0};        
+            vm.couponPercent = 0;
+            vm.coupon = 0;
+            vm.showDropdown = false;
+            vm.dropBtnText = '1 hour';
+            vm.dropPriceText = 0;
+            vm.hoursPrice = 0;
+            vm.otherPayment = 0;
+            vm.payDisabled = false;
+        }; 
+              
 
         Restangular.one('client/escrowhours/fee').get()
         .then(function(data) {
@@ -84,6 +90,7 @@
             return hoursPrice;
         }
 
+
         vm.couponApply = function() {
             if (vm.tmpcoupon) {
                 Restangular.one('client/escrowhours/coupon_check').get({'couponCode': vm.tmpcoupon})
@@ -115,16 +122,7 @@
         }
 
         vm.cancelSubmit = function() {
-            vm.waiting = false;
-            vm.hour = 0;
-            vm.escrow = 0;
-            vm.couponPercent = 0;
-            vm.coupon = 0;
-            vm.showDropdown = false;
-            vm.dropBtnText = '1 hour';
-            vm.dropPriceText = 32;
-            vm.hoursPrice = 0;
-            vm.otherPayment = 0;
+            init();
         }
 
         // Stripe Response Handler
@@ -138,6 +136,7 @@
                 Restangular.all('client/escrowhours/charge').post(payload)
                 .then(function(resp) {
                     vm.waiting = false;
+                    init();
                     toastr.success("Purchase Hour: " + resp.purchaseHour + "hrs" +
                                     "<br/> Fund Escrow: " + $filter("currency")(resp.purchaseEscrow) ,
                                     "You paid " + $filter("currency")(resp.charge.amount*0.01) + " successfully!");
@@ -154,6 +153,7 @@
                     $log.log(resp);
                 });
             }
+            vm.payDisabled = false;
         };
 
 

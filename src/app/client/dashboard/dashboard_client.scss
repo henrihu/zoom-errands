@@ -322,6 +322,11 @@ $border-color: rgba(200,200,200, 0.7);
                 width: 100%;
             }
 
+            .notifications-scroll {
+                max-height: 400px;
+                overflow: auto;
+            }
+
             .notification:first-of-type {
                 margin-top: 35px;
             }
@@ -336,21 +341,27 @@ $border-color: rgba(200,200,200, 0.7);
                 .n-avatar {
                     float: left;
                     margin: 0 1%;
-                    width: 12%;
+                    width: 9%;
+                    .n-avatar-image {
+                        width: 100%;
+                        max-width: 50px;
+                        border-radius: 50%;
+                    }
                 }
 
                 .n-time {
                     color: #ababab;
                     font-size: 16px;
-                    position: absolute;
-                    top: 20px;
-                    right: 20px;
+                    // position: absolute;
+                    // top: 20px;
+                    // right: 20px;
+                    float: right;
                 }
 
                 .n-inner {
-                    display: inline-block;
-                    float: left;
-                    width: 82%;
+                    // display: inline-block;
+                    float: right;
+                    width: 89%;
 
                     .n-title {
                         color: #3d77a9;
@@ -497,18 +508,18 @@ $border-color: rgba(200,200,200, 0.7);
                 //margin-left: 0;
             }
 
-            .notifications {
-                margin-left: 0px !important;
+            // .notifications {
+            //     margin-left: 0px !important;
 
-                .notification {
-                    .n-avatar {
-                        width: 16%;
-                    }
-                    .n-inner {
-                        width: 78%;
-                    }
-                }
-            }
+            //     .notification {
+            //         .n-avatar {
+            //             width: 16%;
+            //         }
+            //         .n-inner {
+            //             width: 78%;
+            //         }
+            //     }
+            // }
         }
 
         .panel-card {            
@@ -537,16 +548,16 @@ $border-color: rgba(200,200,200, 0.7);
                 padding-right: 0;
             }
 
-            .notifications {
-                .notification {
-                    .n-avatar {
-                        width: 18%;
-                    }
-                    .n-inner {
-                        width: 70%;
-                    }
-                }
-            }
+            // .notifications {
+            //     .notification {
+            //         .n-avatar {
+            //             width: 18%;
+            //         }
+            //         .n-inner {
+            //             width: 70%;
+            //         }
+            //     }
+            // }
 
 
         }
@@ -564,18 +575,18 @@ $border-color: rgba(200,200,200, 0.7);
                 width: 100% !important;
             }
 
-            .notifications {
-                margin-left: 0px !important;
+            // .notifications {
+            //     margin-left: 0px !important;
 
-                .notification {
-                    .n-avatar {
-                        width: 10%;
-                    }
-                    .n-inner {
-                        width: 82%;
-                    }
-                }
-            }
+            //     .notification {
+            //         .n-avatar {
+            //             width: 10%;
+            //         }
+            //         .n-inner {
+            //             width: 82%;
+            //         }
+            //     }
+            // }
         }
     }
 }
@@ -616,6 +627,10 @@ $border-color: rgba(200,200,200, 0.7);
                     }
                     .n-inner {
                         width: 76%;
+                    }
+                    .n-time {
+                        float: none;
+                        font-size: 14px;
                     }
                 }
             }
