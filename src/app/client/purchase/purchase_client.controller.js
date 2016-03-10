@@ -7,8 +7,8 @@
         .controller('PurchaseClientController', PurchaseClientController);
 
     /** @ngInject */
-    PurchaseClientController.$inject = ['$rootScope', '$log','$window', '$scope', 'Restangular', 'toastr', '$filter'];
-    function PurchaseClientController($rootScope, $log, $window, $scope, Restangular, toastr, $filter)
+    PurchaseClientController.$inject = ['$rootScope', '$log','$window', '$scope', 'Restangular', 'toastr', '$filter', '$timeout'];
+    function PurchaseClientController($rootScope, $log, $window, $scope, Restangular, toastr, $filter, $timeout)
     {
         var vm = this;
 
@@ -28,7 +28,6 @@
             vm.otherPayment = 0;
             vm.payDisabled = false;
         } 
-              
 
         Restangular.one('client/escrowhours/fee').get()
         .then(function(data) {
@@ -56,7 +55,18 @@
         //     vm.proFee = vm.subtotal*vm.fee.percent*0.01 + vm.fee.cent*0.01;
         //     vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01);
         // });
-        
+
+        angular.element('.ph-btn').on('click', function(evt){
+            evt.stopPropagation();
+        });
+
+        angular.element('html').on('click', function(){
+            if (vm.showDropdown) {
+                $timeout(function(){
+                    vm.showDropdown = false;
+                }, 0);
+            }
+        })
 
         vm.setHours = function(h) {
             vm.hour = h;
