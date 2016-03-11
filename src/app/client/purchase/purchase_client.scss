@@ -65,6 +65,9 @@
         z-index: 10;
         li {
             border-bottom: 1px solid #fff;
+            &:hover {
+                background: #5f99cb;
+            }
         }
     }
 

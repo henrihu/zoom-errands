@@ -56,18 +56,6 @@
         //     vm.total = (vm.subtotal + vm.proFee) * (1 - vm.couponPercent*0.01);
         // });
 
-        angular.element('.ph-btn').on('click', function(evt){
-            evt.stopPropagation();
-        });
-
-        angular.element('html').on('click', function(){
-            if (vm.showDropdown) {
-                $timeout(function(){
-                    vm.showDropdown = false;
-                }, 0);
-            }
-        })
-
         vm.setHours = function(h) {
             vm.hour = h;
             vm.hoursPrice = vm.calcPrice(vm.hour)
