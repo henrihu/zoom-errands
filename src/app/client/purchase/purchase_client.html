@@ -34,7 +34,7 @@
 
                         <div class="col-xs-6 padding-right-8">
 
-                            <ul class="ph-hours-dropdown"  ng-show="vm.showDropdown" ng-blur="vm.showDropdown = false;">
+                            <ul class="ph-hours-dropdown" ng-mouseleave="vm.showDropdown = false"  ng-show="vm.showDropdown" ng-blur="vm.showDropdown = false;">
                                 <li ng-click="vm.setHours(1)">1 hour</li>
                                 <li ng-click="vm.setHours(2)">2 hour</li>
                                 <li ng-click="vm.setHours(3)">3 hour</li>
