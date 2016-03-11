@@ -7,8 +7,8 @@
         .controller('PurchaseClientController', PurchaseClientController);
 
     /** @ngInject */
-    PurchaseClientController.$inject = ['$rootScope', '$log','$window', '$scope', 'Restangular', 'toastr', '$filter', '$timeout'];
-    function PurchaseClientController($rootScope, $log, $window, $scope, Restangular, toastr, $filter, $timeout)
+    PurchaseClientController.$inject = ['$rootScope', '$log','$window', '$scope', 'Restangular', 'toastr', '$filter'];
+    function PurchaseClientController($rootScope, $log, $window, $scope, Restangular, toastr, $filter)
     {
         var vm = this;
 

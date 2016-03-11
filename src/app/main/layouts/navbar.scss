@@ -250,9 +250,13 @@
 
     .available-toggle{
         position: relative;
-        top: -40px;
+        top: -45px;
         left: -120px;
-        height: 0px;        
+        height: 0px;    
+        font-size: 22px;  
+        span {
+            line-height: 30px;
+        }  
     }
      
 } 
