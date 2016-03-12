@@ -1,9 +1,11 @@
 <div id="dashboard-client" class="border-top">
     <div id="login-form-wrapper"  class="container">
+        <h1 class="dashboard-title margin-bottom-40 margin-top-40">What can we do for you today <span>{{user.fname|capitalize}}</span>?</h1>
+        
         <div class="row">
         <div class="col-md-8 col-md-push-2">
             <div class="row">
-                <div class="dashboard-title margin-bottom-30 margin-top-30">What can we do for you today <span>{{user.fname|capitalize}}</span>?</div>
+                
                 <div class="col-sm-12 margin-bottom-20">
                     <div class="row" id="carousel">
                         <slick lazy-load="ondemand" on-init="vm.slickOnInit()" dots=true infinite=true slides-to-show=4 slides-to-scroll=2 responsive="vm.breakpointCards">
