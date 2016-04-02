@@ -3,4 +3,16 @@
   <url>
     <loc>http://app.zoomerrands.com/pages/homepage</loc> 
   </url>
+  <url>
+    <loc>http://app.zoomerrands.com/pages/auth/login</loc> 
+  </url>
+  <url>
+    <loc>http://app.zoomerrands.com/pages/auth/register</loc> 
+  </url>
+  <url>
+    <loc>http://app.zoomerrands.com/client/dashboard</loc> 
+  </url>
+  <url>
+    <loc>http://app.zoomerrands.com/client/purchase</loc> 
+  </url>
 </urlset>
