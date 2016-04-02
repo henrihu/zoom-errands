@@ -9,6 +9,7 @@
   function routerConfig($stateProvider, $urlRouterProvider, $locationProvider)
   {
       $locationProvider.html5Mode(true);
+      $locationProvider.hashPrefix('!');
 
       // $urlRouterProvider.otherwise('/client/myerrand');
       $urlRouterProvider.otherwise('/pages/homepage');
