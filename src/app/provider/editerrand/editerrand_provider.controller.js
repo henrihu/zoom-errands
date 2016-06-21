@@ -20,6 +20,9 @@
         Restangular.one('provider/tasks', taskid).get()
         .then(function(task) {
             vm.job = task;
+            if (vm.job.status == 'open') {
+                vm.job.usedEscrow = vm.job.funds;
+            }
         });
 
         vm.uploader = new FileUploader({            

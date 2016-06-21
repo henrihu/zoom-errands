@@ -6,7 +6,6 @@
                 <table st-table="vm.displayedtasks" st-safe-src="vm.tasks" class="table ">
                     <thead>                    
                         <th class="text-center">DATE</th>
-                        <th>ERRAND TITLE</th>                        
                         <th>CLIENT</th>                      
                         <th class="text-center">UPLOADS</th>
                         <th class="text-center">ESCROW USED</th>
@@ -14,9 +13,8 @@
                                              
                     </thead>
                     <tbody>
-                        <tr ng-repeat="task in vm.displayedtasks | filter:{ status: 'open' }" class="border-side">
+                        <tr ng-repeat="task in vm.displayedtasks | filter:{ status: 'open' }" class="border-side" ui-sref='app.provider.editerrand({id: {{task.id}}})'>
                             <td class="text-center">{{task.datetime | date}}</td>
-                            <td><a ui-sref='app.provider.editerrand({id: {{task.id}}})'>{{task.title}}</a></td>
                             <td>
                                 <img class="avatar" ng-src="{{task.client.photoThumbUrl}}">
                                 {{task.client.fname}} {{task.client.lname}}
@@ -36,9 +34,8 @@
                         <tr class="gap-tr">
                             <td></td><td></td><td></td><td></td><td></td><td></td>
                         </tr>
-                        <tr ng-repeat="task in vm.displayedtasks | filter:{ status: 'close' }" class="border-side">
+                        <tr ng-repeat="task in vm.displayedtasks | filter:{ status: 'close' }" class="border-side" ui-sref='app.provider.editerrand({id: {{task.id}}})'>
                             <td class="text-center">{{task.datetime | date}}</td>
-                            <td><a ui-sref='app.provider.editerrand({id: {{task.id}}})'>{{task.title}}</a></td>
                             <td>
                                 <img class="avatar" ng-src="{{task.client.photoThumbUrl}}">
                                 {{task.client.fname}} {{task.client.lname}}

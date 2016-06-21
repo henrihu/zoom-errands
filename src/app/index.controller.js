@@ -21,10 +21,10 @@
             escrowused: 0
         };
 
-        Restangular.one('client/escrowhours').get()
-        .then(function(data) {
-            $rootScope.eh = data.eh ? data.eh : $rootScope.eh;
-        });
+        // Restangular.one('client/escrowhours').get()
+        // .then(function(data) {
+        //     $rootScope.eh = data.eh ? data.eh : $rootScope.eh;
+        // });
 
         Restangular.one('provider/setting').get()
         .then(function(resp) {

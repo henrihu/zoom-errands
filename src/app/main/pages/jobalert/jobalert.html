@@ -45,17 +45,26 @@
             <span class="alert-label">Time: </span>
             <span class="alert-value">{{vm.job.datetime | date : 'shortTime'}}</span>
           </p> 
+          <p ng-show="vm.job.type.name == 'Delivery'">
+            <span class="alert-label">Item: </span>
+            <span class="alert-value">{{vm.job.item}}</span>
+          </p>          
+          <p ng-show="vm.job.type.name == 'Delivery'">
+            <span class="alert-label">Pick up Location: </span>
+            <span class="alert-value">{{vm.job.pick_up_address}} {{vm.job.pick_up_unit}}</span>
+          </p>
           <p>
-            <span class="alert-label">Starting Address: </span>
-            <span class="alert-value">{{vm.job.address}}</span>
+            <span class="alert-label">{{vm.job.type.name == 'Delivery' ? 'Drop off Location' : 'Starting Address'}}: </span>
+            <span class="alert-value">{{vm.job.address}} {{vm.job.unit}}</span>
           </p>
           <p>
             <span class="alert-label">Require Purchase: </span>
-            <span class="alert-value">{{escrowable | yesNo}}</span>
+            <span class="alert-value">{{vm.job.escrowable | yesNo}}</span>
           </p> 
           <p class="alert-label">Job Notes</p>
           <div class="alert-notes b padding-15">
-            {{vm.job.details}}
+            {{vm.job.details}}<br>
+            {{vm.job.funds_details}}
           </div>            
         </div>        
       </div>
