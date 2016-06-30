@@ -17,6 +17,12 @@
             Restangular.one('provider/tasks', taskid).get()
             .then(function(task) {
                 vm.job = task;
+                if (vm.job.pick_up_address) {
+                    vm.job.pick_up_address_city = vm.job.pick_up_address.split(',').slice(-3).join(',').trim()
+                }
+                if (vm.job.address) {
+                    vm.job.address_city = vm.job.address.split(',').slice(-3).join(',').trim()
+                }
             }, function(data) {
                 toastr.error(data.data.errors, 'Error');    
             }); 

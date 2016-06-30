@@ -51,11 +51,11 @@
           </p>          
           <p ng-show="vm.job.type.name == 'Delivery'">
             <span class="alert-label">Pick up Location: </span>
-            <span class="alert-value">{{vm.job.pick_up_address}} {{vm.job.pick_up_unit}}</span>
+            <span class="alert-value">{{vm.job.pick_up_address_city}}</span>
           </p>
           <p>
             <span class="alert-label">{{vm.job.type.name == 'Delivery' ? 'Drop off Location' : 'Starting Address'}}: </span>
-            <span class="alert-value">{{vm.job.address}} {{vm.job.unit}}</span>
+            <span class="alert-value">{{vm.job.address_city}}</span>
           </p>
           <p>
             <span class="alert-label">Require Purchase: </span>
