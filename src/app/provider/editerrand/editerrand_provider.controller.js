@@ -69,7 +69,7 @@
             task.usedHour = vm.job.usedHour
             task.put()
             .then(function(data) {
-                toastr.success('Your task \"' + data.title + '\" has been completed.', 'Job Completed!');
+                toastr.success('Your task has been completed.', 'Job Completed!');
                 $state.go('app.provider.myerrand');
             }, function(data) {
                 toastr.error(data.data.errors);

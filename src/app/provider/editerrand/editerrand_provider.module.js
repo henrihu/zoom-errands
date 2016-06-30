@@ -10,7 +10,7 @@
     function config($stateProvider)
     {
         $stateProvider.state('app.provider.editerrand', {
-            url    : '/provider/edit_job?id',
+            url    : '/provider/editjob?id',
             views  : {                
                 'content@app': {
                     templateUrl: 'app/provider/editerrand/editerrand_provider.html',
