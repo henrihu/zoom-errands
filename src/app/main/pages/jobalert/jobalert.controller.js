@@ -49,7 +49,7 @@
         };
 
         vm.declineJob = function() {
-			$state.go('app.pages_homepage');
+			$state.go('app.provider.myerrand');
         };
 
         $scope.$on('auth:login-success', function() 

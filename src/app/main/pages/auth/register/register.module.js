@@ -111,7 +111,7 @@
         $rootScope.$on('$destroy', cleanupfunc6);
 
         var cleanupfunc7 = $rootScope.$on('auth:logout-success', function() {
-            $state.go('app.pages_homepage');
+            $state.go('app.pages_auth_login_provider');
         }); 
         $rootScope.$on('$destroy', cleanupfunc7);
 

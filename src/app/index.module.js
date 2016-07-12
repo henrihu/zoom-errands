@@ -35,7 +35,7 @@
 
 
 			//homepage module
-			'app.pages.homepage',
+			//'app.pages.homepage',
 
 			'app.pages.jobalert',
 

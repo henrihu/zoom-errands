@@ -12,7 +12,7 @@
       $locationProvider.hashPrefix('!');
 
       // $urlRouterProvider.otherwise('/client/myerrand');
-      $urlRouterProvider.otherwise('/pages/homepage');
+      $urlRouterProvider.otherwise('/pages/auth/login-provider');
 
       $stateProvider
           .state('app', {

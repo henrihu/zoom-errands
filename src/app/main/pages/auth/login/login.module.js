@@ -31,7 +31,16 @@
                     templateUrl: 'app/main/pages/auth/login/login-provider.html',
                     controller : 'LoginProviderController as vm'
                 }
+            },
+            resolve: {
+                checkloggedin: function($auth, $state) {
+                    $auth.validateUser()
+                    .then(function() {
+                        $state.go('app.provider.myerrand');
+                    });
+                }
             }
+
         });
 
         
