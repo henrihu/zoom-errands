@@ -118,6 +118,10 @@
          */
         function show1099()
         {
+            if (!vm.accountSetting.fname || !vm.accountSetting.lname) {
+                toastr.error('Please enter your first name and last name');
+                return;
+            }
             ngDialog.open({
                 // className: 'ngdialog-theme-plain custom-width',
                 controller: 'ProfileProviderController as vm',
@@ -126,6 +130,10 @@
         }
 
         function agree1099 () {
+            if ((vm.accountSetting.fname || '') + ' ' + (vm.accountSetting.lname || '') != vm.fullName) {
+                toastr.error('Please enter your full name');
+                return;
+            }
             var dialogID = '1099';
             var payload = {'agreement': dialogID, 'fullname': vm.fullName};
             Restangular.one('provider/setting').put(payload).then(function(resp) {
@@ -143,6 +151,10 @@
          */
         function showConfidentiality()
         {
+            if (!vm.accountSetting.fname || !vm.accountSetting.lname) {
+                toastr.error('Please enter your first name and last name');
+                return;
+            }
             ngDialog.open({
                 // className: 'ngdialog-theme-plain custom-width',
                 controller: 'ProfileProviderController as vm',
@@ -151,6 +163,10 @@
         }
 
         function agreeConfidentiality() {
+            if ((vm.accountSetting.fname || '') + ' ' + (vm.accountSetting.lname || '') != vm.fullName) {
+                toastr.error('Please enter your full name');
+                return;
+            }
             var dialogID = 'confidentiality';
             var payload = {'agreement': dialogID, 'fullname': vm.fullName};
             Restangular.one('provider/setting').put(payload).then(function(resp) {
@@ -167,6 +183,10 @@
          */
         function showNoncompete()
         {
+            if (!vm.accountSetting.fname || !vm.accountSetting.lname) {
+                toastr.error('Please enter your first name and last name');
+                return;
+            }
             ngDialog.open({
                 // className: 'ngdialog-theme-plain custom-width',
                 controller: 'ProfileProviderController as vm',
@@ -175,6 +195,10 @@
         }
 
         function agreeNoncompete() {
+            if ((vm.accountSetting.fname || '') + ' ' + (vm.accountSetting.lname || '') != vm.fullName) {
+                toastr.error('Please enter your full name');
+                return;
+            }
             var dialogID = 'noncompete';
             var payload = {'agreement': dialogID, 'fullname': vm.fullName};
             Restangular.one('provider/setting').put(payload).then(function(resp) {
@@ -191,25 +215,33 @@
          */
         function showDelivery()
         {
-          ngDialog.open({
-            // className: 'ngdialog-theme-plain custom-width',
-            controller: 'ProfileProviderController as vm',
-            template: 'app/provider/profile/tabs/account/dialog-b.delivery.html'
-          });
+            if (!vm.accountSetting.fname || !vm.accountSetting.lname) {
+                toastr.error('Please enter your first name and last name');
+                return;
+            }
+            ngDialog.open({
+                // className: 'ngdialog-theme-plain custom-width',
+                controller: 'ProfileProviderController as vm',
+                template: 'app/provider/profile/tabs/account/dialog-b.delivery.html'
+            });
         }
 
         function agreeDelivery() {
-          var dialogID = 'delivery';
-          var payload = {'agreement': dialogID, 'fullname': vm.fullName};
-          var po = 'OK';
-          Restangular.one('provider/setting').put(payload).then(function(resp) {
-            //vm.signedAt = resp.time;
-            vm.agreement.delivery = resp.time;
-            $log.log(po);
-            toastr.success('You signed ' + dialogID + ' agreement at ' + resp.time , 'Thank you!');
-          }, function errorCallback(resp){
-            toastr.error(resp.data.error);
-          });
+            if ((vm.accountSetting.fname || '') + ' ' + (vm.accountSetting.lname || '') != vm.fullName) {
+                toastr.error('Please enter your full name');
+                return
+            }
+            var dialogID = 'delivery';
+            var payload = {'agreement': dialogID, 'fullname': vm.fullName};
+            var po = 'OK';
+            Restangular.one('provider/setting').put(payload).then(function(resp) {
+                //vm.signedAt = resp.time;
+                vm.agreement.delivery = resp.time;
+                $log.log(po);
+                toastr.success('You signed ' + dialogID + ' agreement at ' + resp.time , 'Thank you!');
+            }, function errorCallback(resp){
+                toastr.error(resp.data.error);
+            });
         }
 
         //////////

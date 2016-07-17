@@ -68,7 +68,7 @@
             task.usedEscrow = vm.job.usedEscrow
             task.usedHour = vm.job.usedHour
             task.put()
-            .then(function(data) {
+            .then(function() {
                 toastr.success('Your task has been completed.', 'Job Completed!');
                 $state.go('app.provider.myerrand');
             }, function(data) {
