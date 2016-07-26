@@ -57,6 +57,11 @@
             });
 
 
+            Restangular.one('server_setting').get()
+            .then(function(resp) {
+                vm.server_setting = resp;
+            });
+
             Restangular.one('provider/setting').get()
             .then(function(resp) {
                 vm.agreement = resp;
