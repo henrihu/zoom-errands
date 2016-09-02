@@ -3,15 +3,15 @@
 
   angular
 		.module('zeyogen', [
-			'ngCookies', 
+			'ngCookies',
 			'ngTouch',
       'ngDialog',
-			'ngSanitize', 
-			'ngMessages', 
-			'ngAria', 
-			'ui.router', 
+			'ngSanitize',
+			'ngMessages',
+			'ngAria',
+			'ui.router',
 			'ui.bootstrap',
-			'ui.bootstrap.datetimepicker', 
+			'ui.bootstrap.datetimepicker',
 			'toastr',
 			'restangular',
 			'ng-token-auth',
@@ -19,7 +19,7 @@
 			'ui.select',
 			'smart-table',
 			'google.places',
-			'focus-if', 
+			'focus-if',
 			'angularPayments',
 			'ui.utils.masks',
 			'toggle-switch',
@@ -40,10 +40,10 @@
 			'app.pages.jobalert',
 
 			// client module
-			'app.client',
+			// 'app.client',
 			// provider module
 			'app.provider'
-									
+
 		]);
 
 })();

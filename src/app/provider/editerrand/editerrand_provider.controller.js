@@ -10,12 +10,12 @@
     EditerrandProviderController.$inject = ['$state', '$log', 'API_URL', '$scope', 'Restangular', '$stateParams', 'toastr', 'FileUploader', '$auth'];
     function EditerrandProviderController($state, $log, API_URL, $scope, Restangular, $stateParams, toastr, FileUploader, $auth)
     {
-        var vm = this; 
+        var vm = this;
         var taskid = $stateParams.id;
         vm.imgFiles = [];
-        vm.completeTask = completeTask; 
+        vm.completeTask = completeTask;
 
-        
+
         // console.log(taskid);
         Restangular.one('provider/tasks', taskid).get()
         .then(function(task) {
@@ -25,10 +25,10 @@
             }
         });
 
-        vm.uploader = new FileUploader({            
+        vm.uploader = new FileUploader({
             alias: 'upload',
             // method: 'PUT',
-            headers: $auth.retrieveData('auth_headers')              
+            headers: $auth.retrieveData('auth_headers')
         });
 
         vm.uploader.filters.push({
@@ -62,8 +62,7 @@
             // console.log(response);
         };
 
-
-        function completeTask() {            
+        function completeTask() {
             var task = Restangular.one('provider/tasks', taskid).one('complete')
             task.usedEscrow = vm.job.usedEscrow
             task.usedHour = vm.job.usedHour
@@ -76,8 +75,19 @@
             });
         }
 
-        
-        
+        vm.cancelTask = function() {
+            var task = Restangular.one('provider/tasks', taskid).one('cancel')
+            task.put()
+            .then(function() {
+                toastr.success('You cancelled this task.', 'Job cancelled.');
+                $state.go('app.provider.myerrand');
+            }, function(data) {
+                toastr.error(data.data.errors);
+            });
+        };
+
+
+
     }
 
 })();

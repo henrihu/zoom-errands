@@ -5,8 +5,9 @@
     angular
         .module('app.provider',
             [
-                'app.provider.profile',                
+                'app.provider.profile',
                 'app.provider.myerrand',
+                'app.provider.finderrand',
                 'app.provider.editerrand'
             ])
         .config(config);
@@ -15,12 +16,12 @@
     config.$inject = ['$stateProvider'];
     function config($stateProvider)
     {
-        $stateProvider.state('app.provider', {            
+        $stateProvider.state('app.provider', {
             resolve: {
                 auth: function($auth) {
                     return $auth.validateUser({config: 'provider'});
-                }                
+                }
             }
-        });        
-    }    
+        });
+    }
 })();

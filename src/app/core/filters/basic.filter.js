@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.client')
+        .module('app.provider')
         .filter('toTrusted', toTrustedFilter)
         .filter('htmlToPlaintext', htmlToPlainTextFilter)
         .filter('nospace', nospaceFilter)

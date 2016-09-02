@@ -3,7 +3,7 @@
 
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" 
+            <button type="button" class="navbar-toggle" ng-init="navCollapsed = true"
             ng-click="navCollapsed = !navCollapsed">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -13,22 +13,28 @@
             <img  src="assets/images/logos/ze_logo_header.png" class="logo-image" />
         </div>
 
-        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true">  
-            
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true">
+
             <ul class="nav navbar-nav navbar-right">
-                <li ng-if="user.signedIn && user.configName=='provider'">                         
+                <li ng-if="user.signedIn && user.configName=='provider'">
                     <a class=" text-primary padding-bottom-5-i" href="tel:(310) 425-6425" ng-click="navCollapsed=true">
                         <span class="glyphicon glyphicon-earphone"></span>
                         (310) 425-6425
                     </a>
                     <p class="phone-line text-right">service provider help line</p>
-                </li>  
+                </li>
 
         		<li ng-if="user.signedIn && user.configName=='provider'">
+                    <a  ui-sref="app.provider.finderrand" ng-click="navCollapsed=true">
+                        Find Jobs
+                    </a>
+                </li>
+
+                <li ng-if="user.signedIn && user.configName=='provider'">
                     <a  ui-sref="app.provider.myerrand" ng-click="navCollapsed=true">
                         My Jobs
                     </a>
-                </li>                
+                </li>
 
                 <li ng-if="user.signedIn && user.configName=='default'">
                     <a  ui-sref="app.client.dashboard" ng-click="navCollapsed=true" class="padding-top-17">
@@ -42,14 +48,14 @@
                         <i class="icon-list"></i>
                         My Errands
                     </a>
-                </li>  
+                </li>
 
                 <li ng-if="user.signedIn && user.configName=='default'">
                     <a  ui-sref="app.client.timestatus" ng-click="navCollapsed=true">
                         <i class="icon-timer"></i>
                         Time Status
                     </a>
-                </li>  
+                </li>
 
                 <li ng-if="user.signedIn && user.configName=='default'">
                     <a  ui-sref="app.client.purchase" ng-click="navCollapsed=true" class="padding-top-16">
@@ -86,7 +92,7 @@
                                  class="icon s16" hide-sm></md-icon> -->
                     </div>
                   </a>
-                  <ul class="uib-dropdown-menu" aria-labelledby="simple-dropdown">                    
+                  <ul class="uib-dropdown-menu" aria-labelledby="simple-dropdown">
                     <li><a ng-if="user.configName == 'default'" ui-sref="app.client.profile" ng-click="navCollapsed=true">My Profile</a></li>
                     <li><a ng-if="user.configName == 'provider'" ui-sref="app.provider.profile" ng-click="navCollapsed=true">My Profile</a></li>
                     <!-- <li role="separator" class="divider"></li> -->
@@ -100,26 +106,26 @@
                     	Sign Up
                     </a>
                 </li>
-                <li ng-if="!user.signedIn">	                		
+                <li ng-if="!user.signedIn">
                     <a  href="#howitworks" ng-click="navCollapsed=true">
                         <!-- <span class="glyphicon glyphicon-cog"></span> -->
                     	How It Works
                     </a>
                 </li>
-                <li ng-if="!user.signedIn">	                		
+                <li ng-if="!user.signedIn">
                     <a  ui-sref="app.pages_auth_login_provider" ng-click="navCollapsed=true">
                         <!-- <span class="glyphicon glyphicon-log-in"></span> -->
                     	Log In
                     </a>
                 </li>
-                <li ng-if="!user.signedIn">	                		
+                <li ng-if="!user.signedIn">
                     <a class=" text-primary" href="tel:(310) 425-6425" ng-click="navCollapsed=true">
                     	<!-- <span class="glyphicon glyphicon-earphone"></span> -->
                     	(310) 425-6425
                     </a>
                 </li>
-                	                
-            </ul>            
+
+            </ul>
         </div>
     </div>
 </nav>
@@ -127,35 +133,35 @@
 <div class="escrow-div" ng-if="user.signedIn && user.configName=='default'">
     <div class="container">
     <div class"row">
-        <div class="col-sm-10 col-sm-offset-2 ">    
+        <div class="col-sm-10 col-sm-offset-2 ">
             <div class="escrow-hours escrow-hours-left">
-                Errand hours remaining: 
-                <span class="text-primary">{{eh.hoursavail}}</span>    
+                Errand hours remaining:
+                <span class="text-primary">{{eh.hoursavail}}</span>
             </div>
 
             <div class="escrow-hours">
-                Escrow balance: 
+                Escrow balance:
                 <span class="text-primary">{{eh.escrowavail | currency}}</span>
             </div>
-        </div>  
+        </div>
     </div>
-   </div> 
+   </div>
 </div>
 
 <div class="available-toggle" ng-if="user.signedIn && user.configName=='provider'">
     <div class="container">
         <div class"row">
-            <div class="col-sm-12 text-center">    
-                <toggle-switch 
+            <div class="col-sm-12 text-center">
+                <toggle-switch
                     ng-model="vm.available"
                     on-label="available"
                     off-label="unavailable"
                     ng-click="vm.clickToggle()"
                     class="switch-success switch-mini">
-                </toggle-switch>              
-            </div>  
+                </toggle-switch>
+            </div>
         </div>
-    </div> 
+    </div>
 </div>
 </div>
 

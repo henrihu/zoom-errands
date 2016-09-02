@@ -7,12 +7,12 @@
 
   // you might call this after your module initalization
   angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 250)
-        
+
 
   /** @ngInject */
   config.$inject = ['RestangularProvider', 'API_URL', '$authProvider', '$logProvider', 'toastrConfig', '$windowProvider'];
   function config(RestangularProvider, API_URL, $authProvider, $logProvider, toastrConfig, $windowProvider) {
-    
+
     var $window = $windowProvider.$get();
     // Enable log
     $logProvider.debugEnabled(true);
@@ -28,21 +28,21 @@
 
     RestangularProvider.setBaseUrl(API_URL);
 
-    var isMob = $window.cordova !== angular.undefined;
+    // var isMob = $window.cordova !== angular.undefined;
     $authProvider.configure([
       {
-        default: {
-          apiUrl:  API_URL,
-          proxyIf: function() { $window.isOldIE(); },
-          authProviderPaths: {
-            github:    '/auth/github',
-            facebook:  '/auth/facebook',
-            google:    '/auth/google_oauth2'
-          },
-          omniauthWindowType: isMob ? 'inAppBrowser' : 'newWindow',
-          storage: isMob ? 'localStorage' : 'cookies'
-        }
-      }, {
+      //   default: {
+      //     apiUrl:  API_URL,
+      //     proxyIf: function() { $window.isOldIE(); },
+      //     authProviderPaths: {
+      //       github:    '/auth/github',
+      //       facebook:  '/auth/facebook',
+      //       google:    '/auth/google_oauth2'
+      //     },
+      //     omniauthWindowType: isMob ? 'inAppBrowser' : 'newWindow',
+      //     storage: isMob ? 'localStorage' : 'cookies'
+      //   }
+      // }, {
         provider: {
           apiUrl:                API_URL,
           proxyIf:               function() { $window.isOldIE(); },
