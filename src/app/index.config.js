@@ -63,7 +63,7 @@
             path: "/",
             expires: 9999,
             expirationUnit: 'days',
-            domain: 'provider.zoomerrands.com',
+            // domain: 'provider.zoomerrands.com',
             secure: false
           }
         }
