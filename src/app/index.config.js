@@ -58,6 +58,13 @@
             github:    '/provider_auth/github',
             facebook:  '/provider_auth/facebook',
             google:    '/provider_auth/google_oauth2'
+          },
+          cookieOps: {
+            path: "/",
+            expires: 9999,
+            expirationUnit: 'days',
+            domain: 'provider.zoomerrands.com',
+            secure: false
           }
         }
       }
