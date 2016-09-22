@@ -10,7 +10,7 @@
     JobalertController.$inject = ['$scope', '$auth', '$state', 'Restangular', '$location', 'toastr',  'ngDialog'];
     function JobalertController($scope, $auth, $state, Restangular, $location, toastr,  ngDialog)
     {
-        var vm = this;    
+        var vm = this;
 
         var taskid = $location.search().id;
         if (taskid) {
@@ -24,11 +24,11 @@
                     vm.job.address_city = vm.job.address.split(',').slice(-3).join(',').trim()
                 }
             }, function(data) {
-                toastr.error(data.data.errors, 'Error');    
-            }); 
+                toastr.error(data.data.errors, 'Error');
+            });
         } else {
             toastr.error('There is no such a task.', 'Error');
-        }        
+        }
 
         vm.acceptJob = function() {
             if (!$scope.user.configName) {
@@ -49,25 +49,25 @@
         };
 
         vm.declineJob = function() {
-			$state.go('app.provider.myerrand');
+			$state.go('app.provider.finderrand');
         };
 
-        $scope.$on('auth:login-success', function() 
+        $scope.$on('auth:login-success', function()
         {
-            
+
             Restangular.one('provider/tasks', taskid).one('accept').put()
             .then(function() {
                 toastr.success("You are awarded this task.", "Congratulations!");
                 $state.go('app.provider.editerrand', {id: taskid});
             }, function(data) {
                 toastr.error(data.data.errors.toString());
-            });       
+            });
         });
 
         // event 'auth:login-error'
-        $scope.$on('auth:login-error', function(ev, data) 
+        $scope.$on('auth:login-error', function(ev, data)
         {
-            return toastr.error(data.errors[0], 'Authentication failure', {timeOut: 7000});            
+            return toastr.error(data.errors[0], 'Authentication failure', {timeOut: 7000});
         });
     }
 })();

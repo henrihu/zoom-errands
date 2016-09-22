@@ -110,7 +110,7 @@
             <div ng-if="vm.job.status !== 'close'" class="col-xs-4 ">
               <a class="btn btn-danger padding-horizontal-15" ui-sref='app.provider.myerrand'> Still Working... </a>
             </div>
-            <div ng-if="vm.job.status !== 'close'" class="col-xs-4 ">
+            <div ng-show="false" ng-if="vm.job.status !== 'close'" class="col-xs-4 ">
               <a class="btn btn-warning padding-horizontal-15" ng-click='vm.cancelTask()'>Cancel Task</a>
             </div>
             <div ng-if="vm.job.status === 'close'" class="col-xs-12 ">
