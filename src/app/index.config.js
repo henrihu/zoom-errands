@@ -59,7 +59,8 @@
             facebook:  '/provider_auth/facebook',
             google:    '/provider_auth/google_oauth2'
           },
-          cookieHeader: 'provider_auth_headers',
+          keyAuthHeader:        'provider_auth_headers',
+          keyCurrentConfigName: 'provider_currentConfigName',
           cookieOps: {
             path: "/",
             expires: 9998,
