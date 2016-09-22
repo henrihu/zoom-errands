@@ -49,7 +49,11 @@
         };
 
         vm.declineJob = function() {
-			$state.go('app.provider.finderrand');
+            if (!$scope.user.configName) {
+                $state.go('app.pages_auth_login_provider');
+            }else {
+                $state.go('app.provider.finderrand');
+            }
         };
 
         $scope.$on('auth:login-success', function()
