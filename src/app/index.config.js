@@ -62,7 +62,7 @@
           cookieHeader: 'provider_auth_headers',
           cookieOps: {
             path: "/",
-            expires: 9999,
+            expires: 9998,
             expirationUnit: 'days',
             // domain: 'provider.zoomerrands.com',
             secure: false
