@@ -28,7 +28,7 @@
         vm.uploader = new FileUploader({
             alias: 'upload',
             // method: 'PUT',
-            headers: $auth.retrieveData('auth_headers')
+            headers: $auth.retrieveData($auth.getConfig().keyAuthHeader)
         });
 
         vm.uploader.filters.push({

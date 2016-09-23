@@ -29,7 +29,7 @@
         vm.agreeDelivery = agreeDelivery;
         vm.triggerFileInput = triggerFileInput;
         vm.updateAccount = updateAccount;
-        
+
 
         vm.autocompleteOptions = {
             componentRestrictions: { country: 'us' },
@@ -42,7 +42,7 @@
             // vm.accountSetting = {};
             vm.accountSetting = $scope.user;
             vm.addr = vm.accountSetting.address1;
-                 
+
             if (vm.accountSetting.fname && vm.accountSetting.lname) {
                 vm.fullName = vm.accountSetting.fname + ' ' + vm.accountSetting.lname;
             }
@@ -78,7 +78,7 @@
                 // $log.log(types);
                 vm.zoomoffices = offices;
             });
-            
+
             // vm.states = [
             //   {name: 'Alaska', abb: 'AK'}, {name: 'Alabama', abb: 'AL'}, {name: 'Arkansas', abb: 'AR'}, {name: 'Arizona', abb: 'AZ'},
             //   {name: 'California', abb: 'CA'}, {name: 'Colorado', abb: 'CO'}, {name: 'Connecticut', abb: 'CT'}, {name: 'District of Columbia', abb: 'DC'},
@@ -130,7 +130,7 @@
             ngDialog.open({
                 // className: 'ngdialog-theme-plain custom-width',
                 controller: 'ProfileProviderController as vm',
-                template: 'app/provider/profile/tabs/account/dialog-b.1099.html'                
+                template: 'app/provider/profile/tabs/account/dialog-b.1099.html'
             });
         }
 
@@ -262,7 +262,7 @@
             }
 
             item.method = 'PUT';
-            item.headers = $auth.retrieveData('auth_headers');
+            item.headers = $auth.retrieveData($auth.getConfig().keyAuthHeader);
             item.alias = vm.selectedInput;
             item.upload();
         };
@@ -302,17 +302,17 @@
         function updateAccount()
         {
             // update main accountSetting
-            if (vm.addr.types) {                                
+            if (vm.addr.types) {
                 vm.accountSetting.address1 = vm.addr.formatted_address;
                 vm.accountSetting.addrlat = vm.addr.geometry.location.lat();
-                vm.accountSetting.addrlng = vm.addr.geometry.location.lng();    
+                vm.accountSetting.addrlng = vm.addr.geometry.location.lng();
             } else {
                 if (!vm.accountSetting.address1) {
-                    toastr.warning('Please input address exatly'); 
+                    toastr.warning('Please input address exatly');
                     return;
                 }
-            }             
-                
+            }
+
             $auth.updateAccount(vm.accountSetting, {config: 'provider'}).then(function() {
                 toastr.success('Account setting updated successfully!');
             }, function (data) {
@@ -331,12 +331,12 @@
                 }
             }
             Restangular.one('provider/types').put(payload);
-            
+
             //update notification setting
             var payload1 = {sms: vm.agreement.sms, email: vm.agreement.email};
 
-            Restangular.one('provider/setting').put(payload1);                
-             
+            Restangular.one('provider/setting').put(payload1);
+
         }
 
 

@@ -24,7 +24,7 @@
         vm.updateAccount = updateAccount;
         // vm.updatePhoto = updatePhoto;
         vm.triggerFileInput = triggerFileInput;
-        
+
         Restangular.all('client/zoomoffices').getList()
         .then(function(offices) {
             // $log.log(types);
@@ -38,7 +38,7 @@
 
             item.alias = 'photo';
             item.method = 'PUT';
-            item.headers = $auth.retrieveData('auth_headers');
+            item.headers = $auth.retrieveData($auth.getConfig().keyAuthHeader);
             item.upload();
         };
 
@@ -67,7 +67,7 @@
         {
             vm.accountSetting = $scope.user;
             vm.phone2 = false;
-            
+
         }
 
         /**

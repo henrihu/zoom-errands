@@ -7,28 +7,28 @@
         .controller('EditerrandClientController', EditerrandClientController);
 
     /** @ngInject */
-    EditerrandClientController.$inject = ['$log', '$scope', 'Restangular', '$stateParams', 'toastr', 
+    EditerrandClientController.$inject = ['$log', '$scope', 'Restangular', '$stateParams', 'toastr',
                 'FileUploader', '$auth', 'API_URL', '$timeout', '$state'];
-    function EditerrandClientController($log, $scope, Restangular, $stateParams, toastr, 
+    function EditerrandClientController($log, $scope, Restangular, $stateParams, toastr,
         FileUploader, $auth, API_URL, $timeout, $state)
     {
-        var vm = this; 
-        vm.updateErrand = updateErrand; 
-        vm.errand = {}; 
-        vm.errand.contact = $scope.user.phone1;        
+        var vm = this;
+        vm.updateErrand = updateErrand;
+        vm.errand = {};
+        vm.errand.contact = $scope.user.phone1;
 
         vm.isOpen = false;
-        vm.openCalendar = function(e) { 
+        vm.openCalendar = function(e) {
             e.preventDefault();
             e.stopPropagation();
 
             vm.isOpen = true;
         };
 
-        vm.uploader = new FileUploader({            
+        vm.uploader = new FileUploader({
             alias: 'upload',
             // method: 'PUT',
-            headers: $auth.retrieveData('auth_headers')              
+            headers: $auth.retrieveData($auth.getConfig().keyAuthHeader)
         });
 
         vm.uploader.filters.push({
@@ -73,20 +73,20 @@
 
 
         function updateErrand() {
-            if ((vm.addr) && (vm.addr.types)) {                                
+            if ((vm.addr) && (vm.addr.types)) {
                 vm.errand.address = vm.addr.formatted_address;
                 vm.errand.addrlat = vm.addr.geometry.location.lat();
-                vm.errand.addrlng = vm.addr.geometry.location.lng();    
+                vm.errand.addrlng = vm.addr.geometry.location.lng();
             } else {
                 if (!vm.errand.address) {
-                    toastr.warning('Please input address exatly'); 
+                    toastr.warning('Please input address exatly');
                     return;
                 }
-            }  
+            }
             var payload = {};
             payload = {title: vm.errand.title, datetime: vm.errand.datetime, address: vm.errand.address,
-                  contact: vm.errand.contact, type_id: vm.errand.type_id, 
-                  addrlat: vm.errand.addrlat, addrlng: vm.errand.addrlng, details: vm.errand.details, 
+                  contact: vm.errand.contact, type_id: vm.errand.type_id,
+                  addrlat: vm.errand.addrlat, addrlng: vm.errand.addrlng, details: vm.errand.details,
                   escrowable: vm.errand.escrowable};
             Restangular.one('client/tasks', taskid).customPUT({"task": payload})
             .then(function(data) {
@@ -100,13 +100,13 @@
             });
         }
 
-        vm.uploader.onBeforeUploadItem = function(item) 
+        vm.uploader.onBeforeUploadItem = function(item)
         {
             item.url = vm.uploader.url;
         };
 
         vm.uploader.onCompleteAll = function() {
-            
+
             vm.uploader.clearQueue();
             // $state.go('app.client.myerrand');
         }

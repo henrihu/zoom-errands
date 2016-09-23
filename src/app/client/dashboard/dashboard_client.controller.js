@@ -11,17 +11,17 @@
     DashboardClientController.$inject = ['$timeout', '$state', '$anchorScroll', '$location', '$log', '$scope', 'toastr', 'Restangular', 'FileUploader', 'API_URL', '$auth'];
     function DashboardClientController($timeout, $state, $anchorScroll, $location, $log, $scope, toastr, Restangular, FileUploader, API_URL, $auth)
     {
-        var vm = this; 
-        vm.submitErrand = submitErrand; 
+        var vm = this;
+        vm.submitErrand = submitErrand;
         vm.submitted = false;
         vm.invalidAddress = false;
-        vm.errand = {}; 
+        vm.errand = {};
         vm.errand.contact = $scope.user.phone1;
         vm.errand.zoom_office_id = $scope.user.zoom_office_id;
         vm.notifications = [];
         vm.busy = false;
         vm.after = '';
-        
+
         vm.sbConfig = {
             autoHideScrollbar: false,
             advanced:{
@@ -42,10 +42,10 @@
         vm.triggerFileInput = triggerFileInput;
 
         vm.isOpen = false;
-        vm.uploader = new FileUploader({            
+        vm.uploader = new FileUploader({
             alias: 'upload',
             // method: 'PUT',
-            headers: $auth.retrieveData('auth_headers')              
+            headers: $auth.retrieveData($auth.getConfig().keyAuthHeader)
         });
 
         vm.uploader.filters.push({
@@ -82,78 +82,78 @@
         });
 
         Restangular.one('client/my_notification').get({'after': vm.after, 'limit': 8})
-        .then(function(resp) {                
-            vm.notifications = vm.notifications.concat(resp.notifications);                
+        .then(function(resp) {
+            vm.notifications = vm.notifications.concat(resp.notifications);
             vm.after = vm.notifications[vm.notifications.length - 1].id;
             $log.log(vm.after);
             vm.busy = false;
-        });  
+        });
 
         vm.services = [
           {
             'image': '/assets/images/dashboard-delivery.png',
             'title': 'Delivery',
-            'id': 3 
+            'id': 3
           },
           {
             'image': '/assets/images/dashboard-cleaning.png',
             'title': 'Cleaning',
-            'id': 1 
+            'id': 1
           },
           {
             'image': '/assets/images/dashboard-shopping.png',
             'title': 'Shopping',
-            'id': 5 
+            'id': 5
           },
           {
             'image': '/assets/images/dashboard-other.png',
             'title': 'Dog walker',
-            'id': 0 
+            'id': 0
           },
           {
             'image': '/assets/images/dashboard-other.png',
             'title': 'Clerical',
-            'id': 4 
+            'id': 4
           },
           {
             'image': '/assets/images/dashboard-other.png',
             'title': 'Grocery',
-            'id': 6 
+            'id': 6
           },
           {
             'image': '/assets/images/dashboard-other.png',
             'title': 'Pets',
-            'id': 7 
+            'id': 7
           },
           {
             'image': '/assets/images/dashboard-other.png',
             'title': 'Decorating',
-            'id': 2 
+            'id': 2
           }
         ];
 
-        
+
         vm.blurAddress = function() {
             if ((vm.addr) && (vm.addr.types)) {
-                vm.invalidAddress = false;    
+                vm.invalidAddress = false;
             } else {
-                vm.invalidAddress = true;        
+                vm.invalidAddress = true;
             }
         }
 
-        vm.gotoAnchor = function(id) {             
+        vm.gotoAnchor = function(id) {
             if ($location.hash() !== 'form-anchor') {
                 $location.hash('form-anchor');
             } else {
                 $anchorScroll();
             }
 
-            vm.errand.type_id = vm.alltypes[id].id; 
-            vm.titleFocused = true;         
+            vm.errand.type_id = vm.alltypes[id].id;
+            vm.titleFocused = true;
         };
-        
 
-        vm.openCalendar = function(e) { 
+
+        vm.openCalendar = function(e) {
             e.preventDefault();
             e.stopPropagation();
 
@@ -164,10 +164,10 @@
             vm.errand = {};
             vm.uploader.clearQueue();
         }
-        
 
-        function submitErrand() {            
-            
+
+        function submitErrand() {
+
             if ((vm.addr) && (vm.addr.types)) {
                 var p = vm.addr;
                 for (var i = 0; i < p.address_components.length; i++) {
@@ -175,14 +175,14 @@
                   if (addressType=="locality"){
                     vm.errand.city = p.address_components[i]['long_name'];
                     // vm.shortCity = p.address_components[i]['short_name'];
-                    break;              
+                    break;
                   }
                 }
                 if (null === vm.errand.city || angular.isUndefined === vm.errand.city) {
-                    toastr.warning('Please input address exatly.');   
-                    return; 
+                    toastr.warning('Please input address exatly.');
+                    return;
                 }
-                
+
                 vm.errand.address = vm.addr.formatted_address;
                 vm.errand.addrlat = vm.addr.geometry.location.lat();
                 vm.errand.addrlng = vm.addr.geometry.location.lng();
@@ -193,43 +193,43 @@
                     vm.uploader.uploadAll();
                     // toastr.success('Your task ' + data.title + ' has been accepted.', 'Accept!');
                     vm.submitted = true;
-                    $timeout(vm.submitFalse, 12000);                    
+                    $timeout(vm.submitFalse, 12000);
                     // $state.go('app.client.myerrand');
                 }, function(data) {
                     $log.log(data);
                     toastr.warning(data.data.alert);
                 });
             }else {
-                // toastr.warning('Please input address exatly');  
+                // toastr.warning('Please input address exatly');
                 vm.invalidAddress = false;
-                $timeout(function() {vm.invalidAddress = true}, 600);            
-            }            
+                $timeout(function() {vm.invalidAddress = true}, 600);
+            }
         }
 
-        vm.myPagingFunction = function() {            
+        vm.myPagingFunction = function() {
             $log.log('asfdasd');
             if (vm.busy) return;
-            vm.busy = true;            
+            vm.busy = true;
             $log.log('starting');
             var limit = 2;
 
             Restangular.one('client/my_notification').get({'after': vm.after, 'limit': limit})
-            .then(function(resp) {                
-                vm.notifications = vm.notifications.concat(resp.notifications);                
+            .then(function(resp) {
+                vm.notifications = vm.notifications.concat(resp.notifications);
                 vm.after = vm.notifications[vm.notifications.length - 1].id;
                 $log.log(vm.after);
                 vm.busy = false;
-            });                       
+            });
         }
 
         vm.submitFalse = function() {
             var contact = vm.errand.contact;
             var zoom_office_id = vm.errand.zoom_office_id;
-            vm.submitted = false;            
+            vm.submitted = false;
             vm.errand = {};
             vm.errand.zoom_office_id = zoom_office_id;
             vm.errand.contact = contact;
-            vm.addr = {};       
+            vm.addr = {};
         }
 
         vm.slickOnInit = function(){
@@ -238,15 +238,15 @@
           vm.refreshing=false;
           $scope.$apply();
         };
-        
 
-        vm.uploader.onBeforeUploadItem = function(item) 
+
+        vm.uploader.onBeforeUploadItem = function(item)
         {
             item.url = vm.uploader.url;
         };
 
         vm.uploader.onCompleteAll = function() {
-            
+
             vm.uploader.clearQueue();
             // $state.go('app.client.myerrand');
         }
