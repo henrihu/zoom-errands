@@ -10,6 +10,7 @@
                         <th class="text-center">Address</th>
                         <th class="text-center">ESCROW</th>
                         <th class="text-center">NOTES</th>
+                        <th></th>
                     </thead>
                     <tbody>
                         <tr ng-repeat="task in vm.displayedtasks" class="border-side" ui-sref='app.pages_jobalert({id: {{task.id}}})'>
@@ -18,6 +19,10 @@
                             <td class="text-center">{{task.address_city}}</td>
                             <td class="text-center">{{task.escrowable | yesNo}}</td>
                             <td class="text-center">{{task.details | limitTo:100}}</td>
+                            <td class="text-center ">
+                                <button class="btn btn-danger padding-vertical-2">
+                                <i>Details</i></button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
