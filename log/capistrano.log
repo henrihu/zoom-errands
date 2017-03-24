@@ -10853,3 +10853,1278 @@
   INFO [a90d7f33] Running /usr/bin/env echo "Branch master (at 8bda4352f371ad545785ed2442a1a71da91d5adf) deployed as release 20170324134835 by janies" >> /home/ubuntu/zoomerrands_provider/revisions.log as ubuntu@54.67.30.29
  DEBUG [a90d7f33] Command: cd /home/ubuntu/zoomerrands_provider/releases && ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env echo "Branch master (at 8bda4352f371ad545785ed2442a1a71da91d5adf) deployed as release 20170324134835 by janies" >> /home/ubuntu/zoomerrands_provider/revisions.log )
   INFO [a90d7f33] Finished in 0.409 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-24 22:05:20 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [10a0ea9e] Running /usr/bin/env mkdir -p /tmp/zoomerrands_provider/ as ubuntu@54.67.30.29
+ DEBUG [10a0ea9e] Command: ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" ; /usr/bin/env mkdir -p /tmp/zoomerrands_provider/ )
+  INFO [10a0ea9e] Finished in 3.752 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/zoomerrands_provider/nvm-exec.sh 0.0%
+  INFO Uploading /tmp/zoomerrands_provider/nvm-exec.sh 100.0%
+  INFO [e91cd736] Running /usr/bin/env chmod +x /tmp/zoomerrands_provider/nvm-exec.sh as ubuntu@54.67.30.29
+ DEBUG [e91cd736] Command: ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" ; /usr/bin/env chmod +x /tmp/zoomerrands_provider/nvm-exec.sh )
+  INFO [e91cd736] Finished in 0.393 seconds with exit status 0 (successful).
+ DEBUG [a1b0c061] Running [ -d $HOME/.nvm/v5.0.0 ] || [ -d $HOME/.nvm/versions/node/v5.0.0 ] as ubuntu@54.67.30.29
+ DEBUG [a1b0c061] Command: [ -d $HOME/.nvm/v5.0.0 ] || [ -d $HOME/.nvm/versions/node/v5.0.0 ]
+ DEBUG [a1b0c061] Finished in 3.940 seconds with exit status 0 (successful).
+  INFO [9769ab21] Running /usr/bin/env mkdir -p /tmp as ubuntu@54.67.30.29
+ DEBUG [9769ab21] Command: ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env mkdir -p /tmp )
+  INFO [9769ab21] Finished in 0.378 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-zoomerrands_provider-production-janies.sh 0.0%
+  INFO Uploading /tmp/git-ssh-zoomerrands_provider-production-janies.sh 100.0%
+  INFO [94447a2c] Running /usr/bin/env chmod 700 /tmp/git-ssh-zoomerrands_provider-production-janies.sh as ubuntu@54.67.30.29
+ DEBUG [94447a2c] Command: ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env chmod 700 /tmp/git-ssh-zoomerrands_provider-production-janies.sh )
+  INFO [94447a2c] Finished in 0.380 seconds with exit status 0 (successful).
+  INFO [c90cc4be] Running /usr/bin/env git ls-remote git@bitbucket.org:calimike/zoom-errands.git HEAD as ubuntu@54.67.30.29
+ DEBUG [c90cc4be] Command: ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-zoomerrands_provider-production-janies.sh" ; /usr/bin/env git ls-remote git@bitbucket.org:calimike/zoom-errands.git HEAD )
+ DEBUG [c90cc4be] 	e3161c51a5dd4b38bb923a45fd14a7c6871b3999
+ DEBUG [c90cc4be] 		
+ DEBUG [c90cc4be] 	HEAD
+ DEBUG [c90cc4be] 	
+  INFO [c90cc4be] Finished in 2.653 seconds with exit status 0 (successful).
+  INFO [b8f5f237] Running /usr/bin/env mkdir -p /home/ubuntu/zoomerrands_provider/shared /home/ubuntu/zoomerrands_provider/releases as ubuntu@54.67.30.29
+ DEBUG [b8f5f237] Command: ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env mkdir -p /home/ubuntu/zoomerrands_provider/shared /home/ubuntu/zoomerrands_provider/releases )
+  INFO [b8f5f237] Finished in 0.377 seconds with exit status 0 (successful).
+  INFO [639d9d88] Running /usr/bin/env mkdir -p /home/ubuntu/zoomerrands_provider/shared/node_modules /home/ubuntu/zoomerrands_provider/shared/bower_components as ubuntu@54.67.30.29
+ DEBUG [639d9d88] Command: ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env mkdir -p /home/ubuntu/zoomerrands_provider/shared/node_modules /home/ubuntu/zoomerrands_provider/shared/bower_components )
+  INFO [639d9d88] Finished in 0.424 seconds with exit status 0 (successful).
+ DEBUG [454dbdba] Running [ -f /home/ubuntu/zoomerrands_provider/current/REVISION ] as ubuntu@54.67.30.29
+ DEBUG [454dbdba] Command: [ -f /home/ubuntu/zoomerrands_provider/current/REVISION ]
+ DEBUG [454dbdba] Finished in 0.378 seconds with exit status 0 (successful).
+ DEBUG [c5de2ab1] Running /usr/bin/env cat /home/ubuntu/zoomerrands_provider/current/REVISION 2>/dev/null as ubuntu@54.67.30.29
+ DEBUG [c5de2ab1] Command: ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env cat /home/ubuntu/zoomerrands_provider/current/REVISION 2>/dev/null )
+ DEBUG [c5de2ab1] 	8bda4352f371ad545785ed2442a1a71da91d5adf
+ DEBUG [c5de2ab1] Finished in 0.462 seconds with exit status 0 (successful).
+ DEBUG [6cdbbeda] Running [ -f /home/ubuntu/zoomerrands_provider/repo/HEAD ] as ubuntu@54.67.30.29
+ DEBUG [6cdbbeda] Command: [ -f /home/ubuntu/zoomerrands_provider/repo/HEAD ]
+ DEBUG [6cdbbeda] Finished in 0.377 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/zoomerrands_provider/repo
+ DEBUG [403fac61] Running if test ! -d /home/ubuntu/zoomerrands_provider/repo; then echo "Directory does not exist '/home/ubuntu/zoomerrands_provider/repo'" 1>&2; false; fi as ubuntu@54.67.30.29
+ DEBUG [403fac61] Command: if test ! -d /home/ubuntu/zoomerrands_provider/repo; then echo "Directory does not exist '/home/ubuntu/zoomerrands_provider/repo'" 1>&2; false; fi
+ DEBUG [403fac61] Finished in 0.378 seconds with exit status 0 (successful).
+  INFO [8e422cff] Running /usr/bin/env git remote set-url origin git@bitbucket.org:calimike/zoom-errands.git as ubuntu@54.67.30.29
+ DEBUG [8e422cff] Command: cd /home/ubuntu/zoomerrands_provider/repo && ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-zoomerrands_provider-production-janies.sh" ; /usr/bin/env git remote set-url origin git@bitbucket.org:calimike/zoom-errands.git )
+  INFO [8e422cff] Finished in 0.385 seconds with exit status 0 (successful).
+  INFO [c121868a] Running /usr/bin/env git remote update --prune as ubuntu@54.67.30.29
+ DEBUG [c121868a] Command: cd /home/ubuntu/zoomerrands_provider/repo && ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-zoomerrands_provider-production-janies.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [c121868a] 	Fetching origin
+ DEBUG [c121868a] 	
+ DEBUG [c121868a] 	remote: Counting objects: 11, done.[K
+ DEBUG [c121868a] 	
+ DEBUG [c121868a] 	remote: Compressing objects:  10% (1/10)   [K
+ DEBUG [c121868a] 	remote: Compressing objects:  20% (2/10)   [K
+ DEBUG [c121868a] 	remote: Compressing objects:  30% (3/10)   [K
+ DEBUG [c121868a] 	remote: Compressing objects:  40% (4/10)   [K
+ DEBUG [c121868a] 	remote: Compressing objects:
+ DEBUG [c121868a] 	  50% (5/10)   [K
+ DEBUG [c121868a] 	remote: Compressing objects:  60% (6/10)   [K
+ DEBUG [c121868a] 	remote: Compressing objects:  70% (7/10)   [K
+ DEBUG [c121868a] 	remote: Compressing objects:  80% (8/10)   [K
+ DEBUG [c121868a] 	remote: Comp
+ DEBUG [c121868a] 	ressing objects:  90% (9/10)   [K
+ DEBUG [c121868a] 	remote: Compressing objects: 100% (10/10)   [K
+ DEBUG [c121868a] 	remote: Compressing objects: 100% (10/10), done.[K
+ DEBUG [c121868a] 	
+ DEBUG [c121868a] 	Unpacking objects:   9% (1/11)   
+ DEBUG [c121868a] 	Unpacking objects:  18% (2/11)   
+ DEBUG [c121868a] 	Unpacking objects:  27% (3/11)   
+ DEBUG [c121868a] 	Unpacking objects:  36% (4/11)   
+ DEBUG [c121868a] 	Unpacking objects:  45% (5/11)   
+ DEBUG [c121868a] 	Unpacking objects:  54% (6/11)   
+ DEBUG [c121868a] 	Unpacking objects:  63% (7/11)   
+ DEBUG [c121868a] 	Unpacking objects:  72% (8/11)   
+ DEBUG [c121868a] 	Unpacking objects:  81% (9/11)   
+ DEBUG [c121868a] 	Unpacking objects:  90% (10/11)   
+ DEBUG [c121868a] 	remote: Total 11 (delta 2), reused 0 (delta 0)[K
+ DEBUG [c121868a] 	
+ DEBUG [c121868a] 	Unpacking objects: 100% (11/11)   
+ DEBUG [c121868a] 	Unpacking objects: 100% (11/11), done.
+ DEBUG [c121868a] 	
+ DEBUG [c121868a] 	From bitbucket.org:calimike/zoom-errands
+ DEBUG [c121868a] 	
+ DEBUG [c121868a] 	   8bda435..e3161c5  master     -> master
+ DEBUG [c121868a] 	
+  INFO [c121868a] Finished in 2.739 seconds with exit status 0 (successful).
+ DEBUG [b7b7384e] Running if test ! -d /home/ubuntu/zoomerrands_provider/repo; then echo "Directory does not exist '/home/ubuntu/zoomerrands_provider/repo'" 1>&2; false; fi as ubuntu@54.67.30.29
+ DEBUG [b7b7384e] Command: if test ! -d /home/ubuntu/zoomerrands_provider/repo; then echo "Directory does not exist '/home/ubuntu/zoomerrands_provider/repo'" 1>&2; false; fi
+ DEBUG [b7b7384e] Finished in 0.377 seconds with exit status 0 (successful).
+  INFO [f74fc304] Running /usr/bin/env mkdir -p /home/ubuntu/zoomerrands_provider/releases/20170324140538 as ubuntu@54.67.30.29
+ DEBUG [f74fc304] Command: cd /home/ubuntu/zoomerrands_provider/repo && ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-zoomerrands_provider-production-janies.sh" ; /usr/bin/env mkdir -p /home/ubuntu/zoomerrands_provider/releases/20170324140538 )
+  INFO [f74fc304] Finished in 0.380 seconds with exit status 0 (successful).
+  INFO [9119594a] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/zoomerrands_provider/releases/20170324140538 as ubuntu@54.67.30.29
+ DEBUG [9119594a] Command: cd /home/ubuntu/zoomerrands_provider/repo && ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-zoomerrands_provider-production-janies.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/ubuntu/zoomerrands_provider/releases/20170324140538 )
+  INFO [9119594a] Finished in 0.475 seconds with exit status 0 (successful).
+ DEBUG [10666faf] Running if test ! -d /home/ubuntu/zoomerrands_provider/repo; then echo "Directory does not exist '/home/ubuntu/zoomerrands_provider/repo'" 1>&2; false; fi as ubuntu@54.67.30.29
+ DEBUG [10666faf] Command: if test ! -d /home/ubuntu/zoomerrands_provider/repo; then echo "Directory does not exist '/home/ubuntu/zoomerrands_provider/repo'" 1>&2; false; fi
+ DEBUG [10666faf] Finished in 0.376 seconds with exit status 0 (successful).
+ DEBUG [b4e7cd49] Running /usr/bin/env git rev-list --max-count=1 master as ubuntu@54.67.30.29
+ DEBUG [b4e7cd49] Command: cd /home/ubuntu/zoomerrands_provider/repo && ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-zoomerrands_provider-production-janies.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [b4e7cd49] 	e3161c51a5dd4b38bb923a45fd14a7c6871b3999
+ DEBUG [b4e7cd49] 	
+ DEBUG [b4e7cd49] Finished in 0.402 seconds with exit status 0 (successful).
+ DEBUG [a7e0fed4] Running if test ! -d /home/ubuntu/zoomerrands_provider/releases/20170324140538; then echo "Directory does not exist '/home/ubuntu/zoomerrands_provider/releases/20170324140538'" 1>&2; false; fi as ubuntu@54.67.30.29
+ DEBUG [a7e0fed4] Command: if test ! -d /home/ubuntu/zoomerrands_provider/releases/20170324140538; then echo "Directory does not exist '/home/ubuntu/zoomerrands_provider/releases/20170324140538'" 1>&2; false; fi
+ DEBUG [a7e0fed4] Finished in 0.405 seconds with exit status 0 (successful).
+  INFO [c635c927] Running /usr/bin/env echo "e3161c51a5dd4b38bb923a45fd14a7c6871b3999" >> REVISION as ubuntu@54.67.30.29
+ DEBUG [c635c927] Command: cd /home/ubuntu/zoomerrands_provider/releases/20170324140538 && ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env echo "e3161c51a5dd4b38bb923a45fd14a7c6871b3999" >> REVISION )
+  INFO [c635c927] Finished in 0.381 seconds with exit status 0 (successful).
+  INFO [8a22c2af] Running /usr/bin/env mkdir -p /home/ubuntu/zoomerrands_provider/releases/20170324140538 as ubuntu@54.67.30.29
+ DEBUG [8a22c2af] Command: ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env mkdir -p /home/ubuntu/zoomerrands_provider/releases/20170324140538 )
+  INFO [8a22c2af] Finished in 0.381 seconds with exit status 0 (successful).
+ DEBUG [4b150a1b] Running [ -L /home/ubuntu/zoomerrands_provider/releases/20170324140538/node_modules ] as ubuntu@54.67.30.29
+ DEBUG [4b150a1b] Command: [ -L /home/ubuntu/zoomerrands_provider/releases/20170324140538/node_modules ]
+ DEBUG [4b150a1b] Finished in 0.375 seconds with exit status 1 (failed).
+ DEBUG [1f84f3e7] Running [ -d /home/ubuntu/zoomerrands_provider/releases/20170324140538/node_modules ] as ubuntu@54.67.30.29
+ DEBUG [1f84f3e7] Command: [ -d /home/ubuntu/zoomerrands_provider/releases/20170324140538/node_modules ]
+ DEBUG [1f84f3e7] Finished in 0.374 seconds with exit status 1 (failed).
+  INFO [f3850414] Running /usr/bin/env ln -s /home/ubuntu/zoomerrands_provider/shared/node_modules /home/ubuntu/zoomerrands_provider/releases/20170324140538/node_modules as ubuntu@54.67.30.29
+ DEBUG [f3850414] Command: ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env ln -s /home/ubuntu/zoomerrands_provider/shared/node_modules /home/ubuntu/zoomerrands_provider/releases/20170324140538/node_modules )
+  INFO [f3850414] Finished in 0.380 seconds with exit status 0 (successful).
+ DEBUG [6403b724] Running [ -L /home/ubuntu/zoomerrands_provider/releases/20170324140538/bower_components ] as ubuntu@54.67.30.29
+ DEBUG [6403b724] Command: [ -L /home/ubuntu/zoomerrands_provider/releases/20170324140538/bower_components ]
+ DEBUG [6403b724] Finished in 0.376 seconds with exit status 1 (failed).
+ DEBUG [234a0d4a] Running [ -d /home/ubuntu/zoomerrands_provider/releases/20170324140538/bower_components ] as ubuntu@54.67.30.29
+ DEBUG [234a0d4a] Command: [ -d /home/ubuntu/zoomerrands_provider/releases/20170324140538/bower_components ]
+ DEBUG [234a0d4a] Finished in 0.376 seconds with exit status 1 (failed).
+  INFO [6c5b06d8] Running /usr/bin/env ln -s /home/ubuntu/zoomerrands_provider/shared/bower_components /home/ubuntu/zoomerrands_provider/releases/20170324140538/bower_components as ubuntu@54.67.30.29
+ DEBUG [6c5b06d8] Command: ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env ln -s /home/ubuntu/zoomerrands_provider/shared/bower_components /home/ubuntu/zoomerrands_provider/releases/20170324140538/bower_components )
+  INFO [6c5b06d8] Finished in 0.376 seconds with exit status 0 (successful).
+  INFO [9b7a18aa] Running /usr/bin/env ln -s /home/ubuntu/zoomerrands_provider/releases/20170324140538 /home/ubuntu/zoomerrands_provider/releases/current as ubuntu@54.67.30.29
+ DEBUG [9b7a18aa] Command: ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env ln -s /home/ubuntu/zoomerrands_provider/releases/20170324140538 /home/ubuntu/zoomerrands_provider/releases/current )
+  INFO [9b7a18aa] Finished in 0.378 seconds with exit status 0 (successful).
+  INFO [58588b91] Running /usr/bin/env mv /home/ubuntu/zoomerrands_provider/releases/current /home/ubuntu/zoomerrands_provider as ubuntu@54.67.30.29
+ DEBUG [58588b91] Command: ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env mv /home/ubuntu/zoomerrands_provider/releases/current /home/ubuntu/zoomerrands_provider )
+  INFO [58588b91] Finished in 0.382 seconds with exit status 0 (successful).
+ DEBUG [e7c3951b] Running if test ! -d /home/ubuntu/zoomerrands_provider/releases/20170324140538; then echo "Directory does not exist '/home/ubuntu/zoomerrands_provider/releases/20170324140538'" 1>&2; false; fi as ubuntu@54.67.30.29
+ DEBUG [e7c3951b] Command: if test ! -d /home/ubuntu/zoomerrands_provider/releases/20170324140538; then echo "Directory does not exist '/home/ubuntu/zoomerrands_provider/releases/20170324140538'" 1>&2; false; fi
+ DEBUG [e7c3951b] Finished in 0.377 seconds with exit status 0 (successful).
+  INFO [ec60c22e] Running /tmp/zoomerrands_provider/nvm-exec.sh npm install as ubuntu@54.67.30.29
+ DEBUG [ec60c22e] Command: cd /home/ubuntu/zoomerrands_provider/releases/20170324140538 && ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /tmp/zoomerrands_provider/nvm-exec.sh npm install )
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	Now using node v5.0.0 (npm v3.3.6)
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	▄ ╢░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	▌ ╢░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	▀ ╢░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	▐ ╢░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDevDep:browser-sync   ▌ ╢████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:glob-base         ▌ ╢████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:fsevents → attemp ▌ ╢████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:fsevents → reques ▌ ╢████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	[37m
+ DEBUG [ec60c22e] 	[40m
+ DEBUG [ec60c22e] 	npm
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	 
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	[30m
+ DEBUG [ec60c22e] 	[43m
+ DEBUG [ec60c22e] 	WARN
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	 
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	[35m
+ DEBUG [ec60c22e] 	install
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	 Couldn't install optional dependency: Unsupported
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:fsevents          ▄ ╢████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:ansi-styles       ▌ ╢████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:request           ▌ ╢████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:asn1              ▌ ╢████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:debug             ▌ ╢████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:component-inherit ▌ ╢████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:gulp-util         ▌ ╢█████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:findup-sync       ▌ ╢█████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:glob              ▌ ╢█████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDevDep:gulp-angular-t ▌ ╢█████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDevDep:gulp-autoprefi ▌ ╢█████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:concat-stream     ▌ ╢█████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:amdefine          ▌ ╢█████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:lodash._arraycopy ▌ ╢█████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:event-stream      ▌ ╢██████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:memoizee          ▌ ╢██████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDevDep:gulp-ng-annota ▌ ╢██████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:accessibility-dev ▌ ╢██████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:hawk              ▌ ╢██████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDevDep:gulp-rev       ▌ ╢███████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:globule           ▌ ╢███████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:graceful-fs       ▌ ╢███████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:are-we-there-yet  ▌ ╢███████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:yargs-parser      ▌ ╢███████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:uglify-js         ▌ ╢███████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:readable-stream   ▌ ╢███████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:xtend             ▌ ╢████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:http-errors       ▌ ╢████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDevDep:karma-angular- ▌ ╢████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:has-flag          ▌ ╢████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:xtend             ▌ ╢█████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:graceful-fs       ▌ ╢█████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadDep:request-progress  ▌ ╢█████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadAllDepsIntoIdealTree  ▐ ╢███████████████████████████░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	loadIdealTree → idealTree ▀ ╢███████████████████████████░░░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	diffTrees                 ▄ ╢█████████████████████████████░░░░░░░░░░░░░░░░░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → rebuildBundles  ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → build           ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	> bufferutil@1.2.1 install /home/ubuntu/zoomerrands_provider/releases/20170324140538/node_modules/bufferutil
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	> node-gyp rebuild
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:.                   ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	make: Entering directory `/home/ubuntu/zoomerrands_provider/shared/node_modules/bufferutil/build'
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	  CXX(target) Release/obj.target/bufferutil/src/bufferutil.o
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	  SOLINK_MODULE(target) Release/obj.target/bufferutil.node
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	  COPY Release/bufferutil.node
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	make: Leaving directory `/home/ubuntu/zoomerrands_provider/shared/node_modules/bufferutil/build'
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:.                   ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → build           ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → build           ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → rebuild bundle  ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → linkStuff       ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → build           ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → rebuild bundle  ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → linkStuff       ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → build           ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → linkStuff       ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → build           ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → linkStuff       ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → build           ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → build           ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → rebuild bundle  ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → linkBins        ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → rebuild bundle  ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → linkStuff       ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → rebuildBundles  ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → linkStuff       ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → build           ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → linkStuff       ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → linkStuff       ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	[37m
+ DEBUG [ec60c22e] 	[40m
+ DEBUG [ec60c22e] 	npm
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	 
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	[30m
+ DEBUG [ec60c22e] 	[43m
+ DEBUG [ec60c22e] 	WARN
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	 
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	[35m
+ DEBUG [ec60c22e] 	prefer global
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	 node-gyp@3.6.0 should be installed with -g
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:.                   ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	> node-sass@3.13.1 install /home/ubuntu/zoomerrands_provider/releases/20170324140538/node_modules/node-sass
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	> node scripts/install.js
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:.                   ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	node-sass build Binary found at /home/ubuntu/zoomerrands_provider/shared/node_modules/node-sass/vendor/linux-x64-47/binding.node
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:.                   ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	> node-sass@3.13.1 postinstall /home/ubuntu/zoomerrands_provider/releases/20170324140538/node_modules/node-sass
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	> node scripts/build.js
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:.                   ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	Binary found at /home/ubuntu/zoomerrands_provider/shared/node_modules/node-sass/vendor/linux-x64-47/binding.node
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	Testing binary
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	Binary is fine
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:.                   ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → linkStuff       ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → linkBins        ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → rebuildBundles  ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → build           ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → build           ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → linkBins        ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → linkStuff       ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▀ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → linkStuff       ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → linkBins        ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	> utf-8-validate@1.2.2 install /home/ubuntu/zoomerrands_provider/releases/20170324140538/node_modules/utf-8-validate
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	> node-gyp rebuild
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:.                   ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	make: Entering directory `/home/ubuntu/zoomerrands_provider/shared/node_modules/utf-8-validate/build'
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	  CXX(target) Release/obj.target/validation/src/validation.o
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	  SOLINK_MODULE(target) Release/obj.target/validation.node
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	  COPY Release/validation.node
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	make: Leaving directory `/home/ubuntu/zoomerrands_provider/shared/node_modules/utf-8-validate/build'
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:.                   ▐ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → lifecycle       ▌ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	build:. → build           ▄ ╢█████████████████████████████████████████████░░░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	runTopLevelLifecycles     ▀ ╢███████████████████████████████████████████████░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	[37m
+ DEBUG [ec60c22e] 	[40m
+ DEBUG [ec60c22e] 	npm
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	 
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	[30m
+ DEBUG [ec60c22e] 	[43m
+ DEBUG [ec60c22e] 	WARN
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	 
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	[35m
+ DEBUG [ec60c22e] 	EPACKAGEJSON
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	 zeyogen@0.0.0 No description
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	runTopLevelLifecycles     ▐ ╢███████████████████████████████████████████████░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	[37m
+ DEBUG [ec60c22e] 	[40m
+ DEBUG [ec60c22e] 	npm
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	 
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	[30m
+ DEBUG [ec60c22e] 	[43m
+ DEBUG [ec60c22e] 	WARN
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	 
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	[35m
+ DEBUG [ec60c22e] 	EPACKAGEJSON
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	 zeyogen@0.0.0 No repository field.
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	runTopLevelLifecycles     ▄ ╢███████████████████████████████████████████████░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	[37m
+ DEBUG [ec60c22e] 	[40m
+ DEBUG [ec60c22e] 	npm
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	 
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	[30m
+ DEBUG [ec60c22e] 	[43m
+ DEBUG [ec60c22e] 	WARN
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	 
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	[35m
+ DEBUG [ec60c22e] 	EPACKAGEJSON
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	 zeyogen@0.0.0 No license field.
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[0m
+ DEBUG [ec60c22e] 	[?25l
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	runTopLevelLifecycles     ▌ ╢███████████████████████████████████████████████░░╟
+ DEBUG [ec60c22e] 	
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[1A
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+ DEBUG [ec60c22e] 	[?25h
+ DEBUG [ec60c22e] 	[0G
+ DEBUG [ec60c22e] 	[K
+  INFO [ec60c22e] Finished in 15.560 seconds with exit status 0 (successful).
+  INFO [b130bd29] Running /usr/bin/env bower install as ubuntu@54.67.30.29
+ DEBUG [b130bd29] Command: cd /home/ubuntu/zoomerrands_provider/releases/20170324140538 && ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env bower install )
+  INFO [b130bd29] Finished in 2.007 seconds with exit status 0 (successful).
+ DEBUG [7ed74dd6] Running if test ! -d /home/ubuntu/zoomerrands_provider/releases/20170324140538; then echo "Directory does not exist '/home/ubuntu/zoomerrands_provider/releases/20170324140538'" 1>&2; false; fi as ubuntu@54.67.30.29
+ DEBUG [7ed74dd6] Command: if test ! -d /home/ubuntu/zoomerrands_provider/releases/20170324140538; then echo "Directory does not exist '/home/ubuntu/zoomerrands_provider/releases/20170324140538'" 1>&2; false; fi
+ DEBUG [7ed74dd6] Finished in 0.379 seconds with exit status 0 (successful).
+  INFO [398879d7] Running /usr/bin/env gulp build as ubuntu@54.67.30.29
+ DEBUG [398879d7] Command: cd /home/ubuntu/zoomerrands_provider/releases/20170324140538 && ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env gulp build )
+ DEBUG [398879d7] 	[[90m14:06:11[39m] 
+ DEBUG [398879d7] 	Using gulpfile [35m~/zoomerrands_provider/releases/20170324140538/gulpfile.js[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:11[39m] 
+ DEBUG [398879d7] 	Starting '[36mscripts[39m'...
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:11[39m] 
+ DEBUG [398879d7] 	Starting '[36mstyles[39m'...
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:12[39m] 
+ DEBUG [398879d7] 	Starting '[36mpartials[39m'...
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:12[39m] 
+ DEBUG [398879d7] 	Starting '[36mfonts[39m'...
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:12[39m] 
+ DEBUG [398879d7] 	Starting '[36mother[39m'...
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:13[39m] 
+ DEBUG [398879d7] 	[35mgulp-inject[39m [36m21[39m files into [35mindex.scss[39m.
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:16[39m] 
+ DEBUG [398879d7] 	Finished '[36mstyles[39m' after [35m5 s[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:17[39m] 
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[4m/home/ubuntu/zoomerrands_provider/releases/20170324140538/src/app/client/purchase/purchase_client.controller.js[24m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	  [90m127:9[39m  [31merror[39m  You should not set properties on $scope in controllers. Use controllerAs syntax and add data to "this"  [90mangular/controller-as[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[31m[1m✖ 1 problem (1 error, 0 warnings)
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[22m[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:17[39m] 
+ DEBUG [398879d7] 	[32mall files[39m [35m103.68 kB[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:17[39m] 
+ DEBUG [398879d7] 	Finished '[36mscripts[39m' after [35m5.98 s[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:17[39m] 
+ DEBUG [398879d7] 	Starting '[36minject[39m'...
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:17[39m] 
+ DEBUG [398879d7] 	[35mgulp-inject[39m [36m1[39m files into [35mgoogle73f5106470adecf2.html[39m.
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:17[39m] 
+ DEBUG [398879d7] 	[35mgulp-inject[39m [36m1[39m files into [35mindex.html[39m.
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:17[39m] 
+ DEBUG [398879d7] 	Finished '[36mfonts[39m' after [35m5.26 s[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:17[39m] 
+ DEBUG [398879d7] 	[35mgulp-inject[39m [36m46[39m files into [35mgoogle73f5106470adecf2.html[39m.
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:17[39m] 
+ DEBUG [398879d7] 	[35mgulp-inject[39m [36m46[39m files into [35mindex.html[39m.
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:17[39m] 
+ DEBUG [398879d7] 	Finished '[36minject[39m' after [35m299 ms[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:17[39m] 
+ DEBUG [398879d7] 	Finished '[36mother[39m' after [35m5.42 s[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:18[39m] 
+ DEBUG [398879d7] 	Finished '[36mpartials[39m' after [35m5.69 s[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:18[39m] 
+ DEBUG [398879d7] 	Starting '[36mhtml[39m'...
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:18[39m] 
+ DEBUG [398879d7] 	[35mgulp-inject[39m [36m1[39m files into [35mgoogle73f5106470adecf2.html[39m.
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:18[39m] 
+ DEBUG [398879d7] 	[35mgulp-inject[39m [36m1[39m files into [35mindex.html[39m.
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:19[39m] 
+ DEBUG [398879d7] 	[36mdist/[39m [34mmaps/styles/app-71e776fd6e.css.map[39m [35m74.5 kB[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:20[39m] 
+ DEBUG [398879d7] 	[36mdist/[39m [34mmaps/styles/vendor-644654e9f0.css.map[39m [35m19.41 kB[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:52[39m] [36mdist/[39m [34mmaps/scripts/vendor-5e14d201a4.js.map[39m [35m4.22 MB[39m
+ DEBUG [398879d7] 	[[90m14:06:55[39m] 
+ DEBUG [398879d7] 	[36mdist/[39m [34mmaps/scripts/app-34932888f6.js.map[39m [35m259.89 kB[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:55[39m] 
+ DEBUG [398879d7] 	[36mdist/[39m [34mgoogle73f5106470adecf2.html[39m [35m53 B[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:55[39m] 
+ DEBUG [398879d7] 	[36mdist/[39m [34mstyles/app-71e776fd6e.css[39m [35m186.93 kB[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:55[39m] 
+ DEBUG [398879d7] 	[36mdist/[39m [34mstyles/vendor-644654e9f0.css[39m [35m63.93 kB[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:55[39m] 
+ DEBUG [398879d7] 	[36mdist/[39m [34mscripts/vendor-5e14d201a4.js[39m [35m825.62 kB[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:55[39m] 
+ DEBUG [398879d7] 	[36mdist/[39m [34mscripts/app-34932888f6.js[39m [35m142.74 kB[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:55[39m] 
+ DEBUG [398879d7] 	[36mdist/[39m [34mindex.html[39m [35m1.11 kB[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:55[39m] 
+ DEBUG [398879d7] 	[36mdist/[39m [32mall files[39m [35m5.8 MB[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:55[39m] 
+ DEBUG [398879d7] 	Finished '[36mhtml[39m' after [35m37 s[39m
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:55[39m] 
+ DEBUG [398879d7] 	Starting '[36mbuild[39m'...
+ DEBUG [398879d7] 	
+ DEBUG [398879d7] 	[[90m14:06:55[39m] 
+ DEBUG [398879d7] 	Finished '[36mbuild[39m' after [35m10 μs[39m
+ DEBUG [398879d7] 	
+  INFO [398879d7] Finished in 46.428 seconds with exit status 0 (successful).
+ DEBUG [c6403582] Running /usr/bin/env ls -x /home/ubuntu/zoomerrands_provider/releases as ubuntu@54.67.30.29
+ DEBUG [c6403582] Command: ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env ls -x /home/ubuntu/zoomerrands_provider/releases )
+ DEBUG [c6403582] 	20170324134142
+ DEBUG [c6403582] 		
+ DEBUG [c6403582] 	20170324134629
+ DEBUG [c6403582] 		
+ DEBUG [c6403582] 	20170324134835
+ DEBUG [c6403582] 		
+ DEBUG [c6403582] 	20170324140538
+ DEBUG [c6403582] 	
+ DEBUG [c6403582] Finished in 0.449 seconds with exit status 0 (successful).
+ DEBUG [03eb4eea] Running if test ! -d /home/ubuntu/zoomerrands_provider/releases; then echo "Directory does not exist '/home/ubuntu/zoomerrands_provider/releases'" 1>&2; false; fi as ubuntu@54.67.30.29
+ DEBUG [03eb4eea] Command: if test ! -d /home/ubuntu/zoomerrands_provider/releases; then echo "Directory does not exist '/home/ubuntu/zoomerrands_provider/releases'" 1>&2; false; fi
+ DEBUG [03eb4eea] Finished in 0.380 seconds with exit status 0 (successful).
+  INFO [07efe6fb] Running /usr/bin/env echo "Branch master (at e3161c51a5dd4b38bb923a45fd14a7c6871b3999) deployed as release 20170324140538 by janies" >> /home/ubuntu/zoomerrands_provider/revisions.log as ubuntu@54.67.30.29
+ DEBUG [07efe6fb] Command: cd /home/ubuntu/zoomerrands_provider/releases && ( export PATH="/home/ubuntu/zoomerrands_provider/shared/node_modules/bower/bin:/home/ubuntu/zoomerrands_provider/shared/node_modules/grunt-cli/bin:/home/ubuntu/.nvm/versions/node/v5.0.0/bin:$PATH" NODE_VERSION="v5.0.0" ; /usr/bin/env echo "Branch master (at e3161c51a5dd4b38bb923a45fd14a7c6871b3999) deployed as release 20170324140538 by janies" >> /home/ubuntu/zoomerrands_provider/revisions.log )
+  INFO [07efe6fb] Finished in 0.381 seconds with exit status 0 (successful).
