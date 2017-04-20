@@ -29,7 +29,7 @@ set :ssh_options, {
 
 set :stage,           :production
 # Default value for :linked_files is []
-# append :linked_files, "app/scripts/config.js", "app/scripts/constants.js"
+append :linked_files, "src/app/index.constants.js" #, "app/scripts/config.js"
 
 # Default value for linked_dirs is []
 append :linked_dirs,  "node_modules", "bower_components"
@@ -92,9 +92,9 @@ namespace :deploy do
 
       # Overwrites existing files
       # cap dev1 -S local_file="file.yml" -S remote_file="/apps/showmojo/shared/config/file.yml" -S force=true config:distribute
-      filename = "app/scripts/config.js"
-      local_file = "/home/janies/work/angular/zoomerrands/zoomerrands_frontend/#{filename}"
-      remote_file = "/home/ubuntu/rails/shared/config/#{filename}"
+      filename = "src/app/index.constants.js"
+      local_file = "/home/janies/work/angular/zoomerrands/zoomerrands_provider/#{filename}"
+      remote_file = "/home/ubuntu/zoomerrands_provider/shared/#{filename}"
       # force = fetch(:force, false)
       # options = { via: :scp }
 
