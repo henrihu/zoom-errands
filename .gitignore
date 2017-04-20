@@ -8,4 +8,6 @@ dist/
 zoom-errands.iml
 .DS_Store
 
+# src/app/index.constants.js
+
 log
