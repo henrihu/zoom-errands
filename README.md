@@ -1,4 +1,4 @@
-# ZoomErrands #
+# Zeliver client app for service provider #
 
 
 
@@ -6,11 +6,15 @@
 
 * Quick summary
 
-       zoomerrands angular client-side project.
+       zoomerrands angular client-side project for providers.
 
 * Version
 
        0.0.1
+
+* Angularjs version
+
+      1.5.3
 
 ### How do I get set up? ###
 
@@ -24,7 +28,7 @@
    bower install
 ```
 * Configuration
-```  
+```
    edit src/app/index.constant.js  to select api server.
 ```
 * Dependencies
@@ -35,8 +39,8 @@
 ```
 * Deployment instructions
 ```
-    gulp build
-    http-server dist
+    cap staging deploy
+    cap production deploy
 ```
 
 ### Who do I talk to? ###
