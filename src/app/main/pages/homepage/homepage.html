@@ -1,8 +1,8 @@
-<div id="homepage" class="padding-top-100" >	
-	
+<div id="homepage" class="padding-top-100" >
+
 	<header class="">
 	    <div class="container">
-	        <div class="intro-text">	            
+	        <div class="intro-text">
 	            <div class="intro-heading">
 	            	<span class="text-dark">YOUR ERRANDS DONE</span>
 	            	<span class="text-primary">FOR YOU</span>
@@ -14,38 +14,38 @@
 	        </div>
 	    </div>
 	</header>
-		
+
 	<!-- Services Section -->
   <section id="steps">
-      <div class="container">          
+      <div class="container">
           <div class="row text-center">
               <div ng-repeat="step in vm.steps" class="col-sm-4">
               	<div class="col-md-10 col-md-offset-1">
-                  <img ng-src={{step.image}} class="step-image" alt="image">                  
+                  <img ng-src={{step.image}} class="step-image" alt="image">
                   <h4 class="step-heading text-dark">{{step.title}}</h4>
                   <p class="text-muted large">{{step.content}}</p>
                 </div>
-              </div>              
+              </div>
           </div>
       </div>
   </section>
 
   <!-- Carousel Section -->
   <section id="carousel">
-      <div class="container">          
+      <div class="container">
           <div class="row text-center">
-          		<slick infinite=true slides-to-show=3 slides-to-scroll=1 
-          		arrows="true" mobile-first="true" responsive="vm.breakpointStep">		
-          			<div ng-repeat="card in vm.carousel" style="padding: 10px 40px;">					  
+          		<slick infinite=true slides-to-show=3 slides-to-scroll=1
+          		arrows="true" mobile-first="true" responsive="vm.breakpointStep">
+          			<div ng-repeat="card in vm.carousel" style="padding: 10px 40px;">
 		              <div class="panel panel-default">
                     <div class="panel-body">
   									 	<img ng-src={{card.image}} class="card-image" alt="image">
                   	 	<h4 class="text-primary">{{card.title}}</h4>
   									  <p class="text-muted">{{card.content}}</p>
-                    </div>  
+                    </div>
 									</div>
 								</div>
-	            </slick> 
+	            </slick>
           </div>
       </div>
   </section>
@@ -75,30 +75,30 @@
   		<div class="row">
   			<div class="col-md-12 text-center whyus-header">
   				<h2 class="text-white font-size-28">WHY US?</h2>
-  			</div>   			
+  			</div>
 				<div ng-repeat="item in vm.whyuses" class="col-md-4 col-sm-6 margin-top-30">
 					<div class="col-md-10 col-md-offset-1 text-center">
-  					<img ng-src={{item.image}} class="whyus-image" alt="image">            
+  					<img ng-src={{item.image}} class="whyus-image" alt="image">
             <h4 class="step-heading text-white">{{item.title}}</h4>
             <p class="text-white">{{item.content}}</p>
-          </div>  
-				</div>  			
+          </div>
+				</div>
   		</div>
   	</div>
-  </section>	
+  </section>
 
   <!-- Carousel Section -->
   <section id="team">
-      <div class="container">          
+      <div class="container">
           <div class="row text-center">
-          		<slick infinite=true slides-to-show=4 slides-to-scroll=1 
-          		arrows="true" responsive="vm.breakpointTeam">		
-          			<div ng-repeat="item in vm.team" class="text-center">	          				
-			            <img ng-src={{item.image}} class="team-image avatar" alt="image">       						 
+          		<slick infinite=true slides-to-show=4 slides-to-scroll=1
+          		arrows="true" responsive="vm.breakpointTeam">
+          			<div ng-repeat="item in vm.team" class="text-center">
+			            <img ng-src={{item.image}} class="team-image avatar" alt="image">
 								 	<h4 class="margin-top-20 margin-bottom-0">{{item.title}}</h4>
 								  <p class="large">{{item.content}}</p>
 								</div>
-	            </slick> 
+	            </slick>
           </div>
       </div>
   </section>
@@ -114,7 +114,7 @@
   			</div>
   		</div>
   	</div>
-  </section>	
+  </section>
 
   <section id="footer">
   	<div class="container">
@@ -124,16 +124,16 @@
   				<p>Zoom Errands, Inc.</p>
   				<p>10850 Wilshire Blvd #350, </p>
   				<p>Los Angeles, CA 90024</p>
-  				<a href="mailto:info@zoomerrands.com"><p>info@zoomerrands.com</p></a>
+  				<a href="mailto:info@zeliver.com"><p>info@zeliver.com</p></a>
           <a href="tel:(310) 425-6425"><p>(310) 425-6425</p></a>
-  				
+
   			</div>
 
   			<div class="col-md-4 col-sm-6">
   				<h4>ABOUT US</h4>
   				<p>Zoom Errands is a FULLY MANAGED complete errand services provider company.
   					This means you get the security and backing of a company behind everything we do.
-  					We started operations in 2010 and serve the Los Angeles county community.</p>  				
+  					We started operations in 2010 and serve the Los Angeles county community.</p>
   			</div>
 
   			<div class="col-md-2 col-sm-6">
@@ -143,9 +143,9 @@
   				<p>Moving and Relocating</p>
   				<p>Concierge Services</p>
   				<p>Senior Services</p>
-  				<p>Business Services</p>	
+  				<p>Business Services</p>
   			</div>
-  			
+
   			<div class="col-md-2 col-sm-4">
   				<h4>QUICK LINKS</h4>
   				<a ui-sref="app.pages_auth_register_provider"><p>Serivce Provider Sign up</p></a>
@@ -153,12 +153,12 @@
   				<p>Testimonials</p>
   				<p>Pricing</p>
   				<p>Blog</p>
-  				<p>Privacy Policy</p>	
+  				<p>Privacy Policy</p>
   			</div>
 
   			<div class="col-md-1 col-sm-2 social-icons">
   				<div class="col-sm-12 col-xs-3">
-  				<a target="_blank" href="https://www.facebook.com/zoomerrands">
+  				<a target="_blank" href="https://www.facebook.com/zeliver">
   					<img src="assets/images/zoom/facebook.png" class="social-image" alt="f">
   				</a>
   				</div>
@@ -170,7 +170,7 @@
   				<div class="col-sm-12 col-xs-3">
   				<a target="_blank" href="https://www.google.com/+Zoomerrandsinc">
   					<img src="assets/images/zoom/googleplus.png" class="social-image" alt="g+">
-  				</a>	
+  				</a>
   				</div>
   			</div>
 
@@ -179,5 +179,5 @@
   </section>
 
 
-	
-</div>  
+
+</div>

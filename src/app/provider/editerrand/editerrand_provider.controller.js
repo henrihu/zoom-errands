@@ -23,6 +23,9 @@
             if (vm.job.status == 'open') {
                 vm.job.usedEscrow = vm.job.funds;
             }
+            if (vm.job.client.notes) {
+                toastr.info(vm.job.client.notes.replace("\r\n", "<br>"));
+            }
         });
 
         vm.uploader = new FileUploader({
@@ -85,9 +88,5 @@
                 toastr.error(data.data.errors);
             });
         };
-
-
-
     }
-
 })();

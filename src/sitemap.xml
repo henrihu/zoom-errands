@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://app.zoomerrands.com/pages/homepage</loc> 
+    <loc>http://provider.zeliver.com/pages/homepage</loc>
   </url>
   <url>
-    <loc>http://app.zoomerrands.com/pages/auth/login</loc> 
+    <loc>http://provider.zeliver.com/pages/auth/login</loc>
   </url>
   <url>
-    <loc>http://app.zoomerrands.com/pages/auth/register</loc> 
+    <loc>http://provider.zeliver.com/pages/auth/register</loc>
   </url>
   <url>
-    <loc>http://app.zoomerrands.com/client/dashboard</loc> 
+    <loc>http://provider.zeliver.com/client/dashboard</loc>
   </url>
   <url>
-    <loc>http://app.zoomerrands.com/client/purchase</loc> 
+    <loc>http://provider.zeliver.com/client/purchase</loc>
   </url>
 </urlset>

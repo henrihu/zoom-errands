@@ -6,7 +6,7 @@
 
 * Quick summary
 
-       zoomerrands angular client-side project for providers.
+       Zeliver angular client-side project for providers.
 
 * Version
 
@@ -47,6 +47,6 @@
 
 * Repo owner or admin
 ```
-   owner : info@zoomerrands.com
+   owner : info@zeliver.com
 ```
 * Other community or team contact
