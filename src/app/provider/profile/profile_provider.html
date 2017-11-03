@@ -6,7 +6,7 @@
                     <img ng-src="assets/images/logos/ze_logo_header.png" alt="Zoom Errands"/>
                 </div> -->
 
-                <div class="text-muted title">Profile</div>  
+                <div class="text-muted title">Profile</div>
                 <div layout="row" layout-align="center" >
                     <a ng-click="vm.triggerFileInput('photo')" class="avatar-image" layout="column" layout-align="center center">
                         <div ng-if="!user.photo_file_name" class="blank-image font-size-16">
@@ -17,11 +17,11 @@
                     </a>
                 </div>
 
-                <input id="imageuploader" ng-show="false" type="file" nv-file-select 
-                uploader="vm.uploader" filter="queueLimit" /> 
-                
+                <input id="imageuploader" ng-show="false" type="file" nv-file-select
+                uploader="vm.uploader" filter="queueLimit" />
+
                 <div class="row license-insuarance margin-top-25" >
-                    <div class="col-xs-6 padding-right-5">                        
+                    <div class="col-xs-6 padding-right-5">
                         <a ng-click="vm.triggerFileInput('driverlicense')" class="license-image" layout="column" layout-align="center center">
                             <div ng-if="!user.driverlicense_file_name" class="blank-image font-size-16">
                                 <span class="glyphicon glyphicon-picture font-size-22" aria-hidden="true"></span>
@@ -29,9 +29,9 @@
                             </div>
                             <img ng-if="user.driverlicense_file_name"  ng-src="{{user.driverUrl}}" >
                         </a>
-                    </div> 
+                    </div>
 
-                    <div class="col-xs-6 padding-left-5">                        
+                    <div class="col-xs-6 padding-left-5">
                         <a ng-click="vm.triggerFileInput('proofinsurance')" class="license-image" layout="column" layout-align="center center">
                             <div ng-if="!user.proofinsurance_file_name" class="blank-image font-size-16">
                                 <span class="glyphicon glyphicon-picture font-size-22" aria-hidden="true"></span>
@@ -39,27 +39,27 @@
                             </div>
                             <img ng-if="user.proofinsurance_file_name"  ng-src="{{user.proofUrl}}" >
                         </a>
-                    </div>    
+                    </div>
                 </div>
 
                 <form ng-submit="vm.updateAccount()" role="form" >
                     <div id="account-info">
                         <div class="col-xs-6 fname-input  margin-bottom-10">
                             <input type="text" class="form-control" ng-model="vm.accountSetting.fname" placeholder="First Name" autocomplete="off" required>
-                        </div>  
+                        </div>
                         <div class="col-xs-6 lname-input  margin-bottom-10">
                             <input type="text" class="form-control" ng-model="vm.accountSetting.lname" placeholder="Last Name" autocomplete="off" required>
                         </div>
                         <br/>
-                        <input g-places-autocomplete options="vm.autocompleteOptions" ng-model="vm.addr" type="text" class="form-control email-input" placeholder="Address1"  autocomplete="off" required> 
+                        <input g-places-autocomplete options="vm.autocompleteOptions" ng-model="vm.addr" type="text" class="form-control email-input" placeholder="Address1"  autocomplete="off" required>
                         <div class="col-xs-6 fname-input  margin-bottom-10">
-                            <input ng-model="vm.accountSetting.address2" type="text" class="form-control email-input" placeholder="Address2" autocomplete="off">
+                            <input ng-model="vm.accountSetting.address2" type="text" class="form-control email-input" placeholder="Unit/Apt #" autocomplete="off">
                         </div>
                         <div class="col-xs-6 lname-input margin-bottom-10">
                             <select class="form-control" ng-options="office.id as office.longName for office in vm.zoomoffices" ng-model="vm.accountSetting.zoom_office_id" required>
                                 <option value="" disabled>Zoom Location</option>
                             </select>
-                        </div>    
+                        </div>
                         <input ng-model="vm.accountSetting.phone1" type="text" class="form-control email-input" placeholder="Telephone Number" ui-us-phone-number autocomplete="off" required>
                         <input ng-model="vm.accountSetting.email" type="email" class="form-control email-input" placeholder="E-mail address" autocomplete="off" required>
                     </div>
@@ -68,32 +68,32 @@
                         <div class="col-sm-4 col-padding col-first margin-bottom-10">
                             <!-- <a class="btn btn-agree"  ng-click="vm.showAdvanced($event, '1099', user.fname, user.lname, user.driverlicense_updated_at)"> -->
                             <a class="btn btn-agree"  ng-click="vm.show1099()">
-                                <span>1099 check</span>                                            
+                                <span>1099 check</span>
                             </a>
-                        </div>  
+                        </div>
                         <div class="col-sm-4 col-padding margin-bottom-10">
                             <a class="btn btn-agree"
                                 ng-click="vm.showConfidentiality()">
-                                <span>Confidentiality check</span>                                             
-                            </a>  
+                                <span>Confidentiality check</span>
+                            </a>
                         </div>
                         <div class="col-sm-4 col-padding margin-bottom-10">
                             <a class="btn btn-agree"
                                 ng-click="vm.showNoncompete()">
-                                <span>Noncircumvent check</span>                                             
-                            </a>  
-                        </div>  
+                                <span>Noncircumvent check</span>
+                            </a>
+                        </div>
                         <div class="col-sm-5 col-padding col-first margin-bottom-10">
                              <a class="btn btn-agree"
                                 ng-click="vm.showDelivery()">
-                                <span>Delivery promise</span>                                             
+                                <span>Delivery promise</span>
                             </a>
-                        </div>                         
+                        </div>
                     </div>
 
                     <div class="jobtype margin-top-25 ">
                         <div class="subtitle font-size-20">Type of Service Provider</div>
-                        
+
                         <div class="row type-check cb-wrap margin-top-15">
                             <div ng-repeat="item in vm.types" class="col-sm-4 col-xs-6 text-left">
                                 <input type="checkbox" id="cb-{{$index}}" ng-model="item.value" class="gray-font-color margin-0">
@@ -109,7 +109,7 @@
 
                     <div class="jobtype margin-top-25 ">
                         <div class="subtitle font-size-20">Send job notifications by:</div>
-                        
+
                         <div class="cb-wrap font-size-18 col-md-7 col-md-offset-3">
                             <input type="checkbox" id="jt-sms" ng-model="vm.agreement.sms" class="gray-font-color">
                             <label for="jt-sms" class="jt-sms-lable"> </label> SMS
@@ -127,14 +127,14 @@
                         </div>
                     </div>
 
-                    
-                                                         
+
+
                     <div class=" col-md-8 col-md-offset-2">
-                       <button class="btn btn-login">Update Profile</button> 
-                    </div>                    
-                </form> 
+                       <button class="btn btn-login">Update Profile</button>
+                    </div>
+                </form>
 
             </div>
-        </div>        
+        </div>
     </div>
 </div>
