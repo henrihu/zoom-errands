@@ -8,7 +8,8 @@
                 'app.provider.profile',
                 'app.provider.myerrand',
                 'app.provider.finderrand',
-                'app.provider.editerrand'
+                'app.provider.editerrand',
+                'app.provider.payout'
             ])
         .config(config);
 
