@@ -6,8 +6,8 @@ $alert-color: darkorange;
   // .alert-header{
   //   background-color: rgba(240, 240, 240, 1);
   //   .alert-header-title{
-  //     font-weight: bold; 
-  //     color: $alert-color;    
+  //     font-weight: bold;
+  //     color: $alert-color;
   //   }
   // }
 
@@ -49,3 +49,96 @@ $alert-color: darkorange;
   margin-bottom: 30px;
 }
 
+.delivery_payments{
+  width:100%;
+  float:left;
+  padding:50px 15px;
+  background:#fff;
+  position:relative;
+  border: 1px solid #dfdfdf;
+  border-radius: 5px;
+  margin-bottom:30px;
+}
+
+.pay_history{
+  position:absolute;
+  right:27px;
+  top:15px;
+  color:#000;
+  font-size:large;
+}
+
+.pay_history:hover{
+  text-decoration:none;
+  color:#000;
+}
+
+.delivery_payments h1{
+
+}
+
+.delivery_payments ul{
+  list-style:none;
+  width:100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.delivery_payments ul li{
+  display:inline-block;
+  padding:0 20px;
+  border-right:2px solid #dfdfdf;
+  width: 33%;
+  margin-top: 25px;
+}
+
+.delivery_payments ul li:last-child{
+   border-right:0px;
+}
+
+.delivery_payments ul li span.cost_value{
+  font-size:30px;
+    font-weight:700;
+}
+
+.delivery_payments ul li span{
+  display:block;
+  font-size:20px;
+  font-weight:400;
+}
+
+.instant_pay_wrapper{
+      width: 100%;
+    float: left;
+    padding: 0 130px;
+}
+
+.get_paid_btn{
+  background: rgba(52,193,213,1);
+background: -moz-linear-gradient(left, rgba(52,193,213,1) 0%, rgba(50,200,172,1) 38%, rgba(49,205,143,1) 58%, rgba(49,205,143,1) 62%, rgba(49,205,143,1) 85%, rgba(49,205,143,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(52,193,213,1)), color-stop(38%, rgba(50,200,172,1)), color-stop(58%, rgba(49,205,143,1)), color-stop(62%, rgba(49,205,143,1)), color-stop(85%, rgba(49,205,143,1)), color-stop(100%, rgba(49,205,143,1)));
+background: -webkit-linear-gradient(left, rgba(52,193,213,1) 0%, rgba(50,200,172,1) 38%, rgba(49,205,143,1) 58%, rgba(49,205,143,1) 62%, rgba(49,205,143,1) 85%, rgba(49,205,143,1) 100%);
+background: -o-linear-gradient(left, rgba(52,193,213,1) 0%, rgba(50,200,172,1) 38%, rgba(49,205,143,1) 58%, rgba(49,205,143,1) 62%, rgba(49,205,143,1) 85%, rgba(49,205,143,1) 100%);
+background: -ms-linear-gradient(left, rgba(52,193,213,1) 0%, rgba(50,200,172,1) 38%, rgba(49,205,143,1) 58%, rgba(49,205,143,1) 62%, rgba(49,205,143,1) 85%, rgba(49,205,143,1) 100%);
+background: linear-gradient(to right, rgba(52,193,213,1) 0%, rgba(50,200,172,1) 38%, rgba(49,205,143,1) 58%, rgba(49,205,143,1) 62%, rgba(49,205,143,1) 85%, rgba(49,205,143,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34c1d5', endColorstr='#31cd8f', GradientType=1 );
+
+max-width:120px;
+width:100%;
+display:inline-block;
+color:#fff;
+font-weight: 700;
+height: 35px;
+line-height: 25px;
+text-align: center;
+}
+
+.instant_pay{
+  font-size:20px;
+  font-weight:700;
+  float: left;
+    padding-top: 30px;
+    text-align: center;
+    width: 100%;
+}
