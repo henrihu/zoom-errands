@@ -79,6 +79,13 @@
                     </a>
                 </li>
 
+                <li ng-if="user.signedIn">
+                  <a  ui-sref="app.provider.payout" ng-click="navCollapsed=true" class="padding-top-16">
+                    <i class=""></i>
+                      Request Payout
+                  </a>
+                </li>
+
               <li ng-if="user.signedIn" class="hidden-xs" uib-dropdown>
                   <a href class="image-padding" id="simple-dropdown" uib-dropdown-toggle>
                     <div class="float-right">
