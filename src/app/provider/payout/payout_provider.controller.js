@@ -13,19 +13,23 @@
       var vm = this;
       vm.limit = 7;
       vm.curPos = 0;
-
+      vm.tipsAmount = 0;
+      vm.earningAmount = 0;
+      vm.taskId = [];
       getPayout();
 
       function getPayout() {
         Restangular.one('provider/tasks/get_pay_out').get({}).then(function(resp) {
           vm.earningAmount = resp.earning_amount
           vm.tipsAmount = resp.tips_amount
+          vm.taskId = resp.task_id
         })
       }
 
-      vm.createPayout = function (earningAmount, totalTips){
+      vm.createPayout = function (){
         var params;
-        params = {earning_amount: earningAmount, total_tips: totalTips}
+        params = {earning_amount: vm.earningAmount, total_tips: vm.tipsAmount,
+         task_id: vm.taskId}
         Restangular.one('provider/tasks/create_pay_out').customPOST({payout: params}).then(function(resp) {
           getPayout();
         })
