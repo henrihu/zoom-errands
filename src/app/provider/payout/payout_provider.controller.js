@@ -16,16 +16,18 @@
 
       getPayout();
 
-      vm.createPayout = function (){
-        $scope.$root.createPayouts(vm.earningAmount, vm.tipsAmount).then(function(res){
-          getPayout();
-        })
-      }
-
       function getPayout() {
         Restangular.one('provider/tasks/get_pay_out').get({}).then(function(resp) {
           vm.earningAmount = resp.earning_amount
           vm.tipsAmount = resp.tips_amount
+        })
+      }
+
+      vm.createPayout = function (earningAmount, totalTips){
+        var params;
+        params = {earning_amount: earningAmount, total_tips: totalTips}
+        Restangular.one('provider/tasks/create_pay_out').customPOST({payout: params}).then(function(resp) {
+          getPayout();
         })
       }
     }
