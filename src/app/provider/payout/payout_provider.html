@@ -4,8 +4,9 @@
          <h1>Delivery <span>Payments</span></h1>
          <a href="javascript:void()" class="pay_history">View Payout History</a>
          <ul>
-            <li><span class="cost_value">$0.00<span>Earnings</span></span></li>
-            <li><span class="cost_value">0<span>Tips</span></span></li>
+
+            <li><span class="cost_value">${{vm.earningAmount}}<span>Earning Amount</span></span></li>
+            <li><span class="cost_value">{{vm.tipsAmount}}<span>Tips</span></span></li>
             <li><span class="cost_value">-0<span>Penalities</span></span></li>
          </ul>
       </div>
@@ -14,7 +15,7 @@
           <div class="instant_pay_wrapper">
              <div class="col-lg-4">
                  <h3>Instant Pay Click to cash out now</h3>
-                 <a href="javascript:void()" class="btn get_paid_btn">GET PAID</a>
+                 <button ng-click="vm.createPayout()" class="btn btn-primary btn-loadmore">GET PAID</button>
              </div>
              <div class="col-lg-8">
                  <span class="instant_pay">$939.50</span>
