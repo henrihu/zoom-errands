@@ -142,3 +142,54 @@ text-align: center;
     text-align: center;
     width: 100%;
 }
+
+@media only screen and (min-width:308px) and (max-width:767px){
+
+.delivery_payments h1 {
+    font-size: 30px;
+    margin-top: 0px;
+}
+.delivery_payments{
+  margin-top: 22px;
+}
+
+.pay_history {
+    right: inherit;
+    left: 14px;
+}
+.delivery_payments ul li {
+    padding: 14px 20px;
+    border-right: none;
+    margin-top: 0px;
+    width: 100%;
+    border-bottom: 2px solid #ddd;
+}
+.instant_pay_wrapper {
+    padding: 0 0px;
+}
+.instant_pay {
+    text-align: left;
+}
+.delivery_payments.instant {
+    padding-top: 6px;
+}
+.delivery_payments ul li:last-child {
+    border-right: 0px;
+    border-bottom:0px;
+}
+}
+
+
+@media only screen and (min-width:768px) and (max-width:1023px){
+
+.instant_pay_wrapper {
+    padding: 0 0px;
+}
+.delivery_payments ul li {
+    width: 32%;
+}
+.available-toggle {
+    left: 0px;
+}
+
+}
