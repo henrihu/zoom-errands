@@ -8,7 +8,7 @@
 
             <li><span class="cost_value">${{vm.earningAmount}}<span>Earning Amount</span></span></li>
             <li><span class="cost_value">{{vm.tipsAmount}}<span>Tips</span></span></li>
-            <li><span class="cost_value">-0<span>Penalities</span></span></li>
+            <li><span class="cost_value">{{vm.penaltiesAmount}}<span>Penalities</span></span></li>
          </ul>
       </div>
 
@@ -19,7 +19,7 @@
                  <button ng-click="vm.createPayout()" class="btn btn-primary get_paid_btn">GET PAID</button>
              </div>
              <div class="col-lg-8 col-sm-4">
-                 <span class="instant_pay">$939.50</span>
+                 <span class="instant_pay">${{vm.total_amount}}</span>
              </div>
           </div>
       </div>
